@@ -23,7 +23,14 @@ if exist "%ROOT%.run\ports.txt" (
     )
     echo 已读取端口文件：.run\ports.txt
 ) else (
-    echo 未找到 .run\ports.txt，按默认端口检查：%BACKEND_PORT% / %FRONTEND_PORT%
+    echo [提示] 未找到 .run\ports.txt，无法确认本项目服务实际使用的端口。
+    echo 为避免误结束其他项目的进程，本次不执行任何结束操作。
+    echo.
+    echo 如果服务是通过 start.bat 启动的，重新运行一次 start.bat 生成端口文件后再停止；
+    echo 也可以直接在被启动的窗口里按 Ctrl+C 结束进程。
+    echo.
+    pause
+    exit /b 0
 )
 echo.
 

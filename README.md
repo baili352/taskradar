@@ -194,7 +194,7 @@ TaskRadar/
 - 后端固定使用 `8000`。端口被占用时直接给出中文提示并退出，不会结束其他进程。
 - 前端优先 `5173`；被占用时自动改用 `5174`，仍被占用则使用 `5175`。
 - 实际使用的端口写入 `.run\ports.txt`（格式为 `BACKEND=8000`、`FRONTEND=5174`），该目录已加入 `.gitignore`。
-- `stop.bat` 读取该文件，先列出将结束的端口、PID 与进程名，输入 `Y` 确认后才执行 `taskkill /PID /T /F`；不会按 `uvicorn` / `node` 进程名批量结束。端口已空闲时会提示「已空闲」。
+- `stop.bat` 读取该文件，先列出将结束的端口、PID 与进程名，输入 `Y` 确认后才执行 `taskkill /PID /T /F`；不会按 `uvicorn` / `node` 进程名批量结束。端口已空闲时会提示「已空闲」。若 `.run\ports.txt` 不存在（例如服务不是通过 `start.bat` 启动的），脚本只给出提示并退出，**不会按默认端口猜测并结束进程**，避免误杀其他项目。
 
 启动失败排查顺序：`backend\.venv\Scripts\python.exe` → `frontend\node_modules` → `backend\.env`（从 `.env.example` 复制，且不要提交）→ `8000` 是否被占用 → 查看标题为「TaskRadar 后端」的窗口报错。脚本不会读取、输出或回显 `.env` 内容与密钥。
 
