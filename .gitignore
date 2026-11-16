@@ -31,5 +31,8 @@ Thumbs.db
 *.log
 logs/
 
+# 一键启动运行时端口文件
+.run/
+
 # 测试与界面验证截图（本地生成，不随代码提交）
 .screenshots/
