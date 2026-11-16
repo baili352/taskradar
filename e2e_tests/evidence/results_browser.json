@@ -1,0 +1,82 @@
+{
+  "captured_at": "2026-11-14T22:05:00+08:00",
+  "environment": {
+    "frontend_url": "http://127.0.0.1:5180",
+    "backend_url": "http://127.0.0.1:8020",
+    "viewport": "599x701",
+    "browser_mode": "移动宽度浏览器视口（非真实手机设备）",
+    "isolated_database": "e2e_tests/data/taskradar_e2e.db",
+    "isolated_uploads": "e2e_tests/data/uploads"
+  },
+  "category": "浏览器交互",
+  "summary": { "total": 22, "passed": 20, "failed": 1, "unexecuted": 1 },
+  "checks": [
+    { "name": "上传文档并查看解析结果", "result": "PASS", "actual": "POST /api/analysis/analyze 200；页面展示解析结果", "evidence": "network id 13；matter #14" },
+    { "name": "保存为事项", "result": "PASS", "actual": "POST /api/matters 201；生成事项 #14", "evidence": "network id 14" },
+    { "name": "刷新页面后事项仍存在", "result": "PASS", "actual": "刷新后 GET /api/matters 200，事项 #14 仍在列表", "evidence": "screenshots/e2e_matters_after_refresh.jpg" },
+    { "name": "编辑事项名称与状态", "result": "PASS", "actual": "PATCH /api/matters/14 200；名称追加“（E2E）”，状态改为进行中", "evidence": "network id 19" },
+    { "name": "生成任务", "result": "PASS", "actual": "POST /api/matters/14/tasks 201；生成 4 个任务，均来自原文流程步骤", "evidence": "network id 24" },
+    { "name": "编辑任务截止日期", "result": "PASS", "actual": "PATCH /api/tasks/58 200；截止日期改为 2026-12-01", "evidence": "screenshots/e2e_tasks_after_edit.jpg" },
+    { "name": "完成任务", "result": "PASS", "actual": "PATCH /api/tasks/58 200；状态变为已完成", "evidence": "network id 29-31" },
+    { "name": "重新打开任务", "result": "PASS", "actual": "PATCH /api/tasks/58 200；状态恢复为进行中", "evidence": "network id 29-31" },
+    { "name": "生成材料清单", "result": "PASS", "actual": "POST /api/matters/14/materials/generate 201；生成 2 项材料", "evidence": "network id 38" },
+    { "name": "上传材料测试文件", "result": "PASS", "actual": "POST /api/materials/33/file 200；material_ok.txt 上传成功", "evidence": "network id 41" },
+    { "name": "执行规则核验", "result": "PASS", "actual": "POST /api/materials/33/verify 200；结果“信息不完整”", "evidence": "network id 43" },
+    { "name": "人工确认", "result": "PASS", "actual": "POST /api/materials/33/confirm 200；确认结果“已确认符合”，记录可追溯", "evidence": "screenshots/e2e_material_detail_before_confirm.jpg / e2e_material_confirmed.jpg" },
+    { "name": "刷新风险", "result": "PASS", "actual": "POST /api/risks/refresh 200（用户手动刷新 6 次，均成功）", "evidence": "network id 1,3,23,50,72 等" },
+    { "name": "查看风险详情", "result": "PASS", "actual": "GET /api/risks/36 200；弹窗展示风险详情", "evidence": "network id 53" },
+    { "name": "标记风险已读", "result": "PASS", "actual": "PATCH /api/risks/36/read 200；状态变为已读", "evidence": "network id 55；screenshots/e2e_risks_read_filter.jpg" },
+    { "name": "刷新浏览器后已读状态保持", "result": "PASS", "actual": "刷新后 GET /api/risks?status=read 200，已读风险仍存在", "evidence": "network id 59,76；screenshots/e2e_risks_read_filter.jpg" },
+    { "name": "无重复提交", "result": "PASS", "actual": "分析/保存事项/生成任务/生成材料/上传/核验/确认各 1 次；仅风险刷新为用户手动重复 6 次", "evidence": "network POST 统计" },
+    { "name": "操作后数据不丢失、不同步", "result": "PASS", "actual": "事项、任务、材料、风险状态在页面间同步；刷新后一致", "evidence": "network id 19-71；截图 5 张" },
+    { "name": "页面无卡死", "result": "PASS", "actual": "全部交互在视口内完成，无长时间无响应", "evidence": "交互记录" },
+    { "name": "无页面报错", "result": "FAIL", "actual": "控制台 1 条 error 级警告：React key 缺失，来源 RisksPage.tsx:86", "evidence": "见 console_error 字段" },
+    { "name": "浏览器内非法格式/超限上传的错误提示", "result": "UNEXECUTED", "actual": "仅通过 API 层验证（返回 415/413/422/400 且 message 明确）；未在浏览器文件选择器中逐项复测", "evidence": "results_api.json B13-B16" }
+  ],
+  "console_error": {
+    "level": "error",
+    "count": 1,
+    "text": "Warning: Each child in a list should have a unique \"key\" prop. Check the render method of `RisksPage`. at li at RisksPage (http://127.0.0.1:5180/src/pages/RisksPage.tsx:86:29)",
+    "source": "frontend/src/pages/RisksPage.tsx:86"
+  },
+  "network_summary": {
+    "total": 76,
+    "by_method": { "GET": 58, "POST": 13, "PATCH": 5 },
+    "status_counts": { "200": 71, "201": 3, "aborted": 2 },
+    "http_4xx_5xx": 0,
+    "aborted_requests": [
+      { "method": "POST", "url": "/api/risks/refresh", "error": "signal is aborted without reason", "reason": "页面切换时组件卸载主动取消请求，非服务端错误" },
+      { "method": "POST", "url": "/api/risks/refresh", "error": "signal is aborted without reason", "reason": "页面切换时组件卸载主动取消请求，非服务端错误" }
+    ],
+    "post_counts": {
+      "/api/risks/refresh": 6,
+      "/api/analysis/analyze": 1,
+      "/api/matters": 1,
+      "/api/matters/14/tasks": 1,
+      "/api/matters/14/materials/generate": 1,
+      "/api/materials/33/file": 1,
+      "/api/materials/33/verify": 1,
+      "/api/materials/33/confirm": 1
+    }
+  },
+  "mobile_viewport": {
+    "category": "手机端适配",
+    "summary": { "total": 7, "passed": 6, "failed": 0, "unexecuted": 1 },
+    "checks": [
+      { "name": "移动宽度布局与侧边栏折叠", "result": "PASS", "actual": "viewport 599x701；侧边栏 offscreen，顶部“打开导航”按钮可用" },
+      { "name": "移动宽度上传与分析", "result": "PASS", "actual": "上传 DOCX 并成功解析" },
+      { "name": "移动宽度事项详情与编辑", "result": "PASS", "actual": "详情弹窗可滚动，名称/状态编辑成功" },
+      { "name": "移动宽度任务生成与编辑", "result": "PASS", "actual": "任务列表、编辑表单与状态切换均可用" },
+      { "name": "移动宽度材料核验弹窗", "result": "PASS", "actual": "滚动 700px 后可操作确认表单并保存" },
+      { "name": "移动宽度风险列表与详情", "result": "PASS", "actual": "筛选、详情、已读标记均可用" },
+      { "name": "桌面端（≥1280px）适配", "result": "UNEXECUTED", "actual": "本次浏览器视口固定为 599x701，未在桌面宽度下验证" }
+    ]
+  },
+  "screenshots": [
+    "screenshots/e2e_matters_after_refresh.jpg",
+    "screenshots/e2e_tasks_after_edit.jpg",
+    "screenshots/e2e_material_detail_before_confirm.jpg",
+    "screenshots/e2e_material_confirmed.jpg",
+    "screenshots/e2e_risks_read_filter.jpg"
+  ]
+}

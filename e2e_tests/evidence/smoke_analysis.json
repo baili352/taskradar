@@ -1,0 +1,304 @@
+[
+  {
+    "file": "d01_校园活动通知.txt",
+    "status": 200,
+    "char_count": 312,
+    "title": "关于开展2026年校园文化节活动的通知",
+    "title_status": "found",
+    "matter_type": null,
+    "qualification": "参与对象：全体在校学生均可报名参加",
+    "registration_start": null,
+    "deadline": null,
+    "deadline_note": "原文中未找到日期信息，无法确定截止日期，请向办理机构核实。",
+    "materials": [
+      "登录学校活动平台填写报名表",
+      "学生证复印件"
+    ],
+    "process": [
+      "登录学校活动平台填写报名表",
+      "将报名表和学生证复印件交至校团委办公室",
+      "扫码加入活动通知群，确认报名成功"
+    ],
+    "notes_count": 1,
+    "warnings": []
+  },
+  {
+    "file": "d02_竞赛通知.docx",
+    "status": 200,
+    "char_count": 253,
+    "title": "关于举办2026年大学生创新创业竞赛的通知",
+    "title_status": "found",
+    "matter_type": "活动赛事",
+    "qualification": "参与对象：全日制在校本科生、研究生均可报名参加",
+    "registration_start": "2026年3月1日",
+    "deadline": "2026年3月31日",
+    "deadline_note": null,
+    "materials": [
+      "项目申报书",
+      "承诺书",
+      "登录竞赛平台填写报名表",
+      "推荐表",
+      "纸质材料"
+    ],
+    "process": [
+      "登录竞赛平台填写报名表",
+      "提交项目申报书和推荐表"
+    ],
+    "notes_count": 1,
+    "warnings": []
+  },
+  {
+    "file": "d03_跨年度申报通知.pdf",
+    "status": 200,
+    "char_count": 279,
+    "title": "关于2027年寒假社会实践项目申报的通知",
+    "title_status": "found",
+    "matter_type": "材料申报",
+    "qualification": "参与对象：全体本科生、研究生；参与对象：全体在校学生均可申请参与",
+    "registration_start": "2026年12月1日",
+    "deadline": "2027年1月15日",
+    "deadline_note": null,
+    "materials": [
+      "社会实践项目申请书",
+      "实践方案",
+      "安全承诺书"
+    ],
+    "process": [
+      "填写社会实践项目申请书",
+      "将申请书和实践方案发送至校团委邮箱",
+      "登录实践管理系统确认提交"
+    ],
+    "notes_count": 1,
+    "warnings": []
+  },
+  {
+    "file": "d03_跨年度申报通知.txt",
+    "status": 200,
+    "char_count": 269,
+    "title": "关于2027年寒假社会实践项目申报的通知",
+    "title_status": "found",
+    "matter_type": "材料申报",
+    "qualification": "参与对象：全体本科生、研究生；参与对象：全体在校学生均可申请参与",
+    "registration_start": "2026年12月1日",
+    "deadline": "2027年1月15日",
+    "deadline_note": null,
+    "materials": [
+      "社会实践项目申请书",
+      "实践方案",
+      "安全承诺书"
+    ],
+    "process": [
+      "填写社会实践项目申请书",
+      "将申请书和实践方案发送至校团委邮箱",
+      "登录实践管理系统确认提交"
+    ],
+    "notes_count": 1,
+    "warnings": []
+  },
+  {
+    "file": "d04_多材料申报通知.docx",
+    "status": 200,
+    "char_count": 267,
+    "title": "关于2026年度学生科研项目申报的通知",
+    "title_status": "found",
+    "matter_type": "材料申报",
+    "qualification": "参与对象：全日制在校本科生、研究生",
+    "registration_start": "2026年5月6日",
+    "deadline": "2026年5月26日",
+    "deadline_note": null,
+    "materials": [
+      "学生科研项目申请书",
+      "项目汇总表",
+      "承诺书",
+      "成绩单复印件"
+    ],
+    "process": [
+      "下载并填写项目申请书",
+      "准备项目汇总表和成绩单复印件",
+      "登录科研系统上传电子版"
+    ],
+    "notes_count": 1,
+    "warnings": []
+  },
+  {
+    "file": "d05_招聘公告.txt",
+    "status": 200,
+    "char_count": 255,
+    "title": "某大学2026年公开招聘工作人员公告",
+    "title_status": "found",
+    "matter_type": "招聘招录",
+    "qualification": "参与对象：具有硕士研究生及以上学历，符合岗位要求",
+    "registration_start": "2026年5月6日",
+    "deadline": "2026年5月20日",
+    "deadline_note": null,
+    "materials": [
+      "应聘报名表",
+      "个人简历",
+      "学历学位证书复印件",
+      "身份证复印件"
+    ],
+    "process": [
+      "填写应聘报名表",
+      "将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱",
+      "登录招聘系统确认报名信息"
+    ],
+    "notes_count": 1,
+    "warnings": []
+  },
+  {
+    "file": "d06_日期模糊通知.txt",
+    "status": 200,
+    "char_count": 257,
+    "title": "关于2026年春季学期资助申请的通知",
+    "title_status": "found",
+    "matter_type": "材料申报",
+    "qualification": "参与对象：家庭经济困难的在校学生均可申请",
+    "registration_start": null,
+    "deadline": "5月20日",
+    "deadline_note": "原文未标注截止日期的年份，请核实具体年份。",
+    "materials": [
+      "资助申请表",
+      "家庭情况说明"
+    ],
+    "process": [
+      "填写资助申请表",
+      "将申请表发送至学院邮箱",
+      "联系辅导员确认提交结果"
+    ],
+    "notes_count": 1,
+    "warnings": []
+  },
+  {
+    "file": "d07_多流程办事通知.docx",
+    "status": 200,
+    "char_count": 285,
+    "title": "关于办理2026年校园一卡通补办的通知",
+    "title_status": "found",
+    "matter_type": "证件办理",
+    "qualification": "参与对象：校园一卡通遗失或损坏的师生均可申请补办",
+    "registration_start": "2026年9月1日",
+    "deadline": "2026年9月30日",
+    "deadline_note": null,
+    "materials": [
+      "一卡通补办申请表",
+      "身份证复印件"
+    ],
+    "process": [
+      "登录校园卡系统填写补办申请表",
+      "打印申请表并签字",
+      "携带申请表和身份证复印件前往校园卡服务中心",
+      "缴纳补办费用并领取新卡"
+    ],
+    "notes_count": 1,
+    "warnings": []
+  },
+  {
+    "file": "d08_无材料要求通知.txt",
+    "status": 200,
+    "char_count": 215,
+    "title": "关于举办2026年秋季运动会的通知",
+    "title_status": "found",
+    "matter_type": "活动赛事",
+    "qualification": "参与对象：全体在校学生均可报名参加",
+    "registration_start": null,
+    "deadline": null,
+    "deadline_note": "原文中未找到日期信息，无法确定截止日期，请向办理机构核实。",
+    "materials": [],
+    "process": [
+      "登录体育系统填写报名信息",
+      "前往体育部办公室确认参赛项目"
+    ],
+    "notes_count": 1,
+    "warnings": [
+      "未识别到材料要求，请核实原文是否包含材料清单或「填写/提交」类要求。"
+    ]
+  },
+  {
+    "file": "d09_标题含材料关键词通知.txt",
+    "status": 200,
+    "char_count": 280,
+    "title": "关于提交2026年国家奖学金材料的通知",
+    "title_status": "found",
+    "matter_type": "材料申报",
+    "qualification": "参与对象：符合条件的全日制在校本科生均可申请；提交时间；2026年9月10日至2026年9月25日",
+    "registration_start": "2026年9月10日",
+    "deadline": "2026年9月25日",
+    "deadline_note": null,
+    "materials": [
+      "国家奖学金申请表",
+      "成绩单",
+      "获奖证书复印件",
+      "2026年国家奖学金材料",
+      "按材料"
+    ],
+    "process": [
+      "填写国家奖学金申请表",
+      "登录学生资助系统上传电子版"
+    ],
+    "notes_count": 1,
+    "warnings": []
+  },
+  {
+    "file": "d10_信息冲突通知.docx",
+    "status": 200,
+    "char_count": 254,
+    "title": "关于2026年优秀学生评选工作的通知",
+    "title_status": "found",
+    "matter_type": "活动赛事",
+    "qualification": "参与对象：全体在校学生；参与对象：全日制在校本科生、研究生均可申请参与",
+    "registration_start": "2026年5月1日",
+    "deadline": "2026年5月10日",
+    "deadline_note": null,
+    "materials": [
+      "优秀学生申请表",
+      "成绩单复印件",
+      "获奖证明"
+    ],
+    "process": [
+      "填写优秀学生申请表"
+    ],
+    "notes_count": 0,
+    "warnings": [
+      "未识别到注意事项，请核实原文是否包含「注意事项 / 温馨提示」章节。"
+    ]
+  },
+  {
+    "file": "d11_空流程通知.txt",
+    "status": 200,
+    "char_count": 161,
+    "title": "关于举办2026年学术讲座的通知",
+    "title_status": "found",
+    "matter_type": "会议培训",
+    "qualification": "参与对象：全体师生均可参加",
+    "registration_start": null,
+    "deadline": null,
+    "deadline_note": "原文中未找到日期信息，无法确定截止日期，请向办理机构核实。",
+    "materials": [],
+    "process": [],
+    "notes_count": 1,
+    "warnings": [
+      "未识别到材料要求，请核实原文是否包含材料清单或「填写/提交」类要求。",
+      "未识别到办理流程，请核实原文是否包含「报名方式 / 办理流程」等章节。"
+    ]
+  },
+  {
+    "file": "d12_非法日期通知.txt",
+    "status": 200,
+    "char_count": 187,
+    "title": "关于2026年2月30日事项申报的通知",
+    "title_status": "found",
+    "matter_type": "材料申报",
+    "qualification": "参与对象：全体在校学生",
+    "registration_start": null,
+    "deadline": "2026年2月30日",
+    "deadline_note": "原文出现日期，但未明确标注为截止日期，请核实。",
+    "materials": [
+      "事项申请表"
+    ],
+    "process": [
+      "填写事项申请表"
+    ],
+    "notes_count": 1,
+    "warnings": []
+  }
+]

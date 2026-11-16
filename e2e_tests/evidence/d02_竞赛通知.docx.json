@@ -1,0 +1,1679 @@
+{
+  "file": "d02_竞赛通知.docx",
+  "steps": {
+    "1_analyze": {
+      "status": 200,
+      "body": {
+        "document": {
+          "filename": "d02_竞赛通知.docx",
+          "extension": ".docx",
+          "size": 37144,
+          "char_count": 253,
+          "page_count": null,
+          "paragraph_count": 16
+        },
+        "fields": [
+          {
+            "key": "title",
+            "label": "事项名称",
+            "value": "关于举办2026年大学生创新创业竞赛的通知",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "关于举办2026年大学生创新创业竞赛的通知",
+                "location": "第 1 段",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "matter_type",
+            "label": "事项类型",
+            "value": "活动赛事",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "关于举办2026年大学生创新创业竞赛的通知",
+                "location": "第 1 段",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": "依据标题关键词「竞赛」判断，仅供参考。"
+          },
+          {
+            "key": "qualification",
+            "label": "申请资格",
+            "value": "参与对象：全日制在校本科生、研究生均可报名参加",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "参赛对象：全日制在校本科生、研究生均可报名参加。",
+                "location": "第 2 段",
+                "page": null,
+                "paragraph": 2
+              }
+            ],
+            "note": "以上内容直接摘自原文对应章节或正文句子。"
+          },
+          {
+            "key": "registration_start",
+            "label": "报名开始日期",
+            "value": "2026年3月1日",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "2026年3月1日至2026年3月31日",
+                "location": "第 4 段",
+                "page": null,
+                "paragraph": 4
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "deadline",
+            "label": "截止日期",
+            "value": "2026年3月31日",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "2026年3月1日至2026年3月31日",
+                "location": "第 4 段",
+                "page": null,
+                "paragraph": 4
+              }
+            ],
+            "note": null
+          }
+        ],
+        "materials": [
+          {
+            "name": "项目申报书",
+            "status": "found",
+            "evidence": {
+              "text": "《项目申报书》《推荐意见表》、承诺书。",
+              "location": "第 10 段",
+              "page": null,
+              "paragraph": 10
+            }
+          },
+          {
+            "name": "承诺书",
+            "status": "found",
+            "evidence": {
+              "text": "《项目申报书》《推荐意见表》、承诺书。",
+              "location": "第 10 段",
+              "page": null,
+              "paragraph": 10
+            }
+          },
+          {
+            "name": "登录竞赛平台填写报名表",
+            "status": "found",
+            "evidence": {
+              "text": "1. 登录竞赛平台填写报名表。",
+              "location": "第 6 段",
+              "page": null,
+              "paragraph": 6
+            }
+          },
+          {
+            "name": "推荐表",
+            "status": "found",
+            "evidence": {
+              "text": "2. 提交项目申报书和推荐表。",
+              "location": "第 7 段",
+              "page": null,
+              "paragraph": 7
+            }
+          },
+          {
+            "name": "纸质材料",
+            "status": "found",
+            "evidence": {
+              "text": "3. 将纸质材料交至教务处创新创业办公室。",
+              "location": "第 8 段",
+              "page": null,
+              "paragraph": 8
+            }
+          }
+        ],
+        "process": [
+          {
+            "index": 1,
+            "text": "登录竞赛平台填写报名表",
+            "evidence": {
+              "text": "登录竞赛平台填写报名表",
+              "location": "第 6 段",
+              "page": null,
+              "paragraph": 6
+            }
+          },
+          {
+            "index": 2,
+            "text": "提交项目申报书和推荐表",
+            "evidence": {
+              "text": "提交项目申报书和推荐表",
+              "location": "第 7 段",
+              "page": null,
+              "paragraph": 7
+            }
+          }
+        ],
+        "notes": [
+          {
+            "text": "逾期不予受理，请提前准备材料。",
+            "evidence": {
+              "text": "逾期不予受理，请提前准备材料。",
+              "location": "第 12 段",
+              "page": null,
+              "paragraph": 12
+            }
+          }
+        ],
+        "warnings": [],
+        "analysis_mode": "rule_based",
+        "ai_configured": false,
+        "ai_message": "当前未配置大模型 API，本次分析仅使用本地规则（章节标题 + 关键词 + 日期正则）提取，不是 AI 分析结果。未找到原文依据的字段已标记为「待核实」，请人工核对。",
+        "elapsed_ms": 9
+      }
+    },
+    "5_create_matter": {
+      "status": 201,
+      "body": {
+        "id": 2,
+        "name": "关于举办2026年大学生创新创业竞赛的通知",
+        "matter_type": "活动赛事",
+        "qualification": "参与对象：全日制在校本科生、研究生均可报名参加",
+        "registration_start": "2026年3月1日",
+        "deadline": "2026年3月31日",
+        "deadline_source": "document",
+        "materials": [
+          {
+            "name": "项目申报书",
+            "status": "found",
+            "evidence": {
+              "text": "《项目申报书》《推荐意见表》、承诺书。",
+              "location": "第 10 段",
+              "page": null,
+              "paragraph": 10
+            }
+          },
+          {
+            "name": "承诺书",
+            "status": "found",
+            "evidence": {
+              "text": "《项目申报书》《推荐意见表》、承诺书。",
+              "location": "第 10 段",
+              "page": null,
+              "paragraph": 10
+            }
+          },
+          {
+            "name": "登录竞赛平台填写报名表",
+            "status": "found",
+            "evidence": {
+              "text": "1. 登录竞赛平台填写报名表。",
+              "location": "第 6 段",
+              "page": null,
+              "paragraph": 6
+            }
+          },
+          {
+            "name": "推荐表",
+            "status": "found",
+            "evidence": {
+              "text": "2. 提交项目申报书和推荐表。",
+              "location": "第 7 段",
+              "page": null,
+              "paragraph": 7
+            }
+          },
+          {
+            "name": "纸质材料",
+            "status": "found",
+            "evidence": {
+              "text": "3. 将纸质材料交至教务处创新创业办公室。",
+              "location": "第 8 段",
+              "page": null,
+              "paragraph": 8
+            }
+          }
+        ],
+        "process": [
+          {
+            "index": 1,
+            "text": "登录竞赛平台填写报名表",
+            "evidence": {
+              "text": "登录竞赛平台填写报名表",
+              "location": "第 6 段",
+              "page": null,
+              "paragraph": 6
+            }
+          },
+          {
+            "index": 2,
+            "text": "提交项目申报书和推荐表",
+            "evidence": {
+              "text": "提交项目申报书和推荐表",
+              "location": "第 7 段",
+              "page": null,
+              "paragraph": 7
+            }
+          }
+        ],
+        "notes": [
+          {
+            "text": "逾期不予受理，请提前准备材料。",
+            "evidence": {
+              "text": "逾期不予受理，请提前准备材料。",
+              "location": "第 12 段",
+              "page": null,
+              "paragraph": 12
+            }
+          }
+        ],
+        "fields": [
+          {
+            "key": "title",
+            "label": "事项名称",
+            "value": "关于举办2026年大学生创新创业竞赛的通知",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "关于举办2026年大学生创新创业竞赛的通知",
+                "location": "第 1 段",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "matter_type",
+            "label": "事项类型",
+            "value": "活动赛事",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "关于举办2026年大学生创新创业竞赛的通知",
+                "location": "第 1 段",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": "依据标题关键词「竞赛」判断，仅供参考。"
+          },
+          {
+            "key": "qualification",
+            "label": "申请资格",
+            "value": "参与对象：全日制在校本科生、研究生均可报名参加",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "参赛对象：全日制在校本科生、研究生均可报名参加。",
+                "location": "第 2 段",
+                "page": null,
+                "paragraph": 2
+              }
+            ],
+            "note": "以上内容直接摘自原文对应章节或正文句子。"
+          },
+          {
+            "key": "registration_start",
+            "label": "报名开始日期",
+            "value": "2026年3月1日",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "2026年3月1日至2026年3月31日",
+                "location": "第 4 段",
+                "page": null,
+                "paragraph": 4
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "deadline",
+            "label": "截止日期",
+            "value": "2026年3月31日",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "2026年3月1日至2026年3月31日",
+                "location": "第 4 段",
+                "page": null,
+                "paragraph": 4
+              }
+            ],
+            "note": null
+          }
+        ],
+        "source_filename": "d02_竞赛通知.docx",
+        "status": "pending",
+        "analysis_mode": "rule_based",
+        "created_at": "2026-11-14T21:34:49.008",
+        "updated_at": "2026-11-14T21:34:49.008"
+      }
+    },
+    "6_get_matter": {
+      "status": 200,
+      "body": {
+        "id": 2,
+        "name": "关于举办2026年大学生创新创业竞赛的通知",
+        "matter_type": "活动赛事",
+        "qualification": "参与对象：全日制在校本科生、研究生均可报名参加",
+        "registration_start": "2026年3月1日",
+        "deadline": "2026年3月31日",
+        "deadline_source": "document",
+        "materials": [
+          {
+            "name": "项目申报书",
+            "status": "found",
+            "evidence": {
+              "text": "《项目申报书》《推荐意见表》、承诺书。",
+              "location": "第 10 段",
+              "page": null,
+              "paragraph": 10
+            }
+          },
+          {
+            "name": "承诺书",
+            "status": "found",
+            "evidence": {
+              "text": "《项目申报书》《推荐意见表》、承诺书。",
+              "location": "第 10 段",
+              "page": null,
+              "paragraph": 10
+            }
+          },
+          {
+            "name": "登录竞赛平台填写报名表",
+            "status": "found",
+            "evidence": {
+              "text": "1. 登录竞赛平台填写报名表。",
+              "location": "第 6 段",
+              "page": null,
+              "paragraph": 6
+            }
+          },
+          {
+            "name": "推荐表",
+            "status": "found",
+            "evidence": {
+              "text": "2. 提交项目申报书和推荐表。",
+              "location": "第 7 段",
+              "page": null,
+              "paragraph": 7
+            }
+          },
+          {
+            "name": "纸质材料",
+            "status": "found",
+            "evidence": {
+              "text": "3. 将纸质材料交至教务处创新创业办公室。",
+              "location": "第 8 段",
+              "page": null,
+              "paragraph": 8
+            }
+          }
+        ],
+        "process": [
+          {
+            "index": 1,
+            "text": "登录竞赛平台填写报名表",
+            "evidence": {
+              "text": "登录竞赛平台填写报名表",
+              "location": "第 6 段",
+              "page": null,
+              "paragraph": 6
+            }
+          },
+          {
+            "index": 2,
+            "text": "提交项目申报书和推荐表",
+            "evidence": {
+              "text": "提交项目申报书和推荐表",
+              "location": "第 7 段",
+              "page": null,
+              "paragraph": 7
+            }
+          }
+        ],
+        "notes": [
+          {
+            "text": "逾期不予受理，请提前准备材料。",
+            "evidence": {
+              "text": "逾期不予受理，请提前准备材料。",
+              "location": "第 12 段",
+              "page": null,
+              "paragraph": 12
+            }
+          }
+        ],
+        "fields": [
+          {
+            "key": "title",
+            "label": "事项名称",
+            "value": "关于举办2026年大学生创新创业竞赛的通知",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "关于举办2026年大学生创新创业竞赛的通知",
+                "location": "第 1 段",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "matter_type",
+            "label": "事项类型",
+            "value": "活动赛事",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "关于举办2026年大学生创新创业竞赛的通知",
+                "location": "第 1 段",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": "依据标题关键词「竞赛」判断，仅供参考。"
+          },
+          {
+            "key": "qualification",
+            "label": "申请资格",
+            "value": "参与对象：全日制在校本科生、研究生均可报名参加",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "参赛对象：全日制在校本科生、研究生均可报名参加。",
+                "location": "第 2 段",
+                "page": null,
+                "paragraph": 2
+              }
+            ],
+            "note": "以上内容直接摘自原文对应章节或正文句子。"
+          },
+          {
+            "key": "registration_start",
+            "label": "报名开始日期",
+            "value": "2026年3月1日",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "2026年3月1日至2026年3月31日",
+                "location": "第 4 段",
+                "page": null,
+                "paragraph": 4
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "deadline",
+            "label": "截止日期",
+            "value": "2026年3月31日",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "2026年3月1日至2026年3月31日",
+                "location": "第 4 段",
+                "page": null,
+                "paragraph": 4
+              }
+            ],
+            "note": null
+          }
+        ],
+        "source_filename": "d02_竞赛通知.docx",
+        "status": "pending",
+        "analysis_mode": "rule_based",
+        "created_at": "2026-11-14T21:34:49.008",
+        "updated_at": "2026-11-14T21:34:49.008"
+      }
+    },
+    "7_generate_tasks": {
+      "status": 201,
+      "body": {
+        "matter_id": 2,
+        "created": 2,
+        "skipped": 0,
+        "total_process_steps": 2,
+        "message": "已生成 2 个任务。",
+        "tasks": [
+          {
+            "id": 7,
+            "matter_id": 2,
+            "title": "登录竞赛平台填写报名表",
+            "description": "登录竞赛平台填写报名表",
+            "deadline": null,
+            "deadline_source": "none",
+            "priority": "high",
+            "status": "pending",
+            "origin": "generated",
+            "source_evidence": {
+              "text": "登录竞赛平台填写报名表",
+              "location": "第 6 段",
+              "page": null,
+              "paragraph": 6
+            },
+            "created_at": "2026-11-14T21:34:49.053",
+            "updated_at": "2026-11-14T21:34:49.053"
+          },
+          {
+            "id": 8,
+            "matter_id": 2,
+            "title": "提交项目申报书和推荐表",
+            "description": "提交项目申报书和推荐表",
+            "deadline": null,
+            "deadline_source": "none",
+            "priority": "high",
+            "status": "pending",
+            "origin": "generated",
+            "source_evidence": {
+              "text": "提交项目申报书和推荐表",
+              "location": "第 7 段",
+              "page": null,
+              "paragraph": 7
+            },
+            "created_at": "2026-11-14T21:34:49.066",
+            "updated_at": "2026-11-14T21:34:49.066"
+          }
+        ],
+        "suggestion": {
+          "deadline": "2026年3月31日",
+          "note": "系统建议：依据事项总截止日期推断，仅作用于未设置截止时间的任务，确认后才会保存。",
+          "task_ids": [
+            7,
+            8
+          ]
+        }
+      }
+    },
+    "9_generate_tasks_again": {
+      "status": 201,
+      "body": {
+        "matter_id": 2,
+        "created": 0,
+        "skipped": 2,
+        "total_process_steps": 2,
+        "message": "该事项的 2 个流程步骤都已生成过任务，未重复创建。",
+        "tasks": [],
+        "suggestion": null
+      }
+    },
+    "10_generate_materials": {
+      "status": 201,
+      "body": {
+        "matter_id": 2,
+        "created": 5,
+        "skipped": 0,
+        "total_source_materials": 5,
+        "message": "已生成 5 项材料。",
+        "materials": [
+          {
+            "id": 3,
+            "matter_id": 2,
+            "matter_name": "关于举办2026年大学生创新创业竞赛的通知",
+            "name": "项目申报书",
+            "description": "《项目申报书》《推荐意见表》、承诺书。",
+            "status": "missing",
+            "file_path": null,
+            "original_filename": null,
+            "file_size": null,
+            "file_type": null,
+            "verification": null,
+            "source_evidence": {
+              "text": "《项目申报书》《推荐意见表》、承诺书。",
+              "location": "第 10 段",
+              "page": null,
+              "paragraph": 10
+            },
+            "origin": "generated",
+            "created_at": "2026-11-14T21:34:49.136",
+            "updated_at": "2026-11-14T21:34:49.136",
+            "events": []
+          },
+          {
+            "id": 4,
+            "matter_id": 2,
+            "matter_name": "关于举办2026年大学生创新创业竞赛的通知",
+            "name": "承诺书",
+            "description": "《项目申报书》《推荐意见表》、承诺书。",
+            "status": "missing",
+            "file_path": null,
+            "original_filename": null,
+            "file_size": null,
+            "file_type": null,
+            "verification": null,
+            "source_evidence": {
+              "text": "《项目申报书》《推荐意见表》、承诺书。",
+              "location": "第 10 段",
+              "page": null,
+              "paragraph": 10
+            },
+            "origin": "generated",
+            "created_at": "2026-11-14T21:34:49.136",
+            "updated_at": "2026-11-14T21:34:49.136",
+            "events": []
+          },
+          {
+            "id": 5,
+            "matter_id": 2,
+            "matter_name": "关于举办2026年大学生创新创业竞赛的通知",
+            "name": "登录竞赛平台填写报名表",
+            "description": "1. 登录竞赛平台填写报名表。",
+            "status": "missing",
+            "file_path": null,
+            "original_filename": null,
+            "file_size": null,
+            "file_type": null,
+            "verification": null,
+            "source_evidence": {
+              "text": "1. 登录竞赛平台填写报名表。",
+              "location": "第 6 段",
+              "page": null,
+              "paragraph": 6
+            },
+            "origin": "generated",
+            "created_at": "2026-11-14T21:34:49.136",
+            "updated_at": "2026-11-14T21:34:49.136",
+            "events": []
+          },
+          {
+            "id": 6,
+            "matter_id": 2,
+            "matter_name": "关于举办2026年大学生创新创业竞赛的通知",
+            "name": "推荐表",
+            "description": "2. 提交项目申报书和推荐表。",
+            "status": "missing",
+            "file_path": null,
+            "original_filename": null,
+            "file_size": null,
+            "file_type": null,
+            "verification": null,
+            "source_evidence": {
+              "text": "2. 提交项目申报书和推荐表。",
+              "location": "第 7 段",
+              "page": null,
+              "paragraph": 7
+            },
+            "origin": "generated",
+            "created_at": "2026-11-14T21:34:49.136",
+            "updated_at": "2026-11-14T21:34:49.136",
+            "events": []
+          },
+          {
+            "id": 7,
+            "matter_id": 2,
+            "matter_name": "关于举办2026年大学生创新创业竞赛的通知",
+            "name": "纸质材料",
+            "description": "3. 将纸质材料交至教务处创新创业办公室。",
+            "status": "missing",
+            "file_path": null,
+            "original_filename": null,
+            "file_size": null,
+            "file_type": null,
+            "verification": null,
+            "source_evidence": {
+              "text": "3. 将纸质材料交至教务处创新创业办公室。",
+              "location": "第 8 段",
+              "page": null,
+              "paragraph": 8
+            },
+            "origin": "generated",
+            "created_at": "2026-11-14T21:34:49.136",
+            "updated_at": "2026-11-14T21:34:49.136",
+            "events": []
+          }
+        ]
+      }
+    },
+    "11_upload_material": {
+      "status": 200,
+      "body": {
+        "id": 7,
+        "matter_id": 2,
+        "matter_name": "关于举办2026年大学生创新创业竞赛的通知",
+        "name": "纸质材料",
+        "description": "3. 将纸质材料交至教务处创新创业办公室。",
+        "status": "pending",
+        "file_path": "matter-2/55fd2f833f4b48eda340301c923b0f22.txt",
+        "original_filename": "material_ok.txt",
+        "file_size": 197,
+        "file_type": "TXT",
+        "verification": null,
+        "source_evidence": {
+          "text": "3. 将纸质材料交至教务处创新创业办公室。",
+          "location": "第 8 段",
+          "page": null,
+          "paragraph": 8
+        },
+        "origin": "generated",
+        "created_at": "2026-11-14T21:34:49.136",
+        "updated_at": "2026-11-14T21:34:49.202",
+        "events": []
+      }
+    },
+    "12_verify_material": {
+      "status": 200,
+      "body": {
+        "id": 7,
+        "matter_id": 2,
+        "matter_name": "关于举办2026年大学生创新创业竞赛的通知",
+        "name": "纸质材料",
+        "description": "3. 将纸质材料交至教务处创新创业办公室。",
+        "status": "incomplete",
+        "file_path": "matter-2/55fd2f833f4b48eda340301c923b0f22.txt",
+        "original_filename": "material_ok.txt",
+        "file_size": 197,
+        "file_type": "TXT",
+        "verification": {
+          "result": "incomplete",
+          "source": "rule",
+          "verified_at": "2026-11-14T21:34:49.221",
+          "summary": "文件可读取，但部分关键内容或要求要素未在文本中找到，信息可能不完整，请人工确认。",
+          "checks": [
+            {
+              "key": "file_readable",
+              "label": "文件可读取",
+              "status": "pass",
+              "message": "文件已通过格式与内容校验，可正常读取：8 段，85 字。",
+              "excerpt": null,
+              "location": "material_ok.txt"
+            },
+            {
+              "key": "text_extracted",
+              "label": "有效文本",
+              "status": "pass",
+              "message": "成功提取到 85 个字符，可用于内容比对。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "keyword_coverage",
+              "label": "关键内容",
+              "status": "warn",
+              "message": "已匹配：无；未找到：纸质。可能是材料不匹配，或文件内容缺少相关表述。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "required_elements",
+              "label": "要求要素",
+              "status": "pass",
+              "message": "材料要求中未提到签字、盖章、日期等必须要素，无需逐项比对。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "suspicious_phrases",
+              "label": "冲突风险",
+              "status": "pass",
+              "message": "未发现「过期、失效、无效」等可能表示材料不符合要求的表述。",
+              "excerpt": null,
+              "location": null
+            }
+          ],
+          "reasons": [
+            "文件文本中未找到关键词：纸质，需人工确认材料是否匹配。"
+          ],
+          "reviewer_note": null
+        },
+        "source_evidence": {
+          "text": "3. 将纸质材料交至教务处创新创业办公室。",
+          "location": "第 8 段",
+          "page": null,
+          "paragraph": 8
+        },
+        "origin": "generated",
+        "created_at": "2026-11-14T21:34:49.136",
+        "updated_at": "2026-11-14T21:34:49.221",
+        "events": []
+      }
+    },
+    "13_confirm_material": {
+      "status": 200,
+      "body": {
+        "id": 7,
+        "matter_id": 2,
+        "matter_name": "关于举办2026年大学生创新创业竞赛的通知",
+        "name": "纸质材料",
+        "description": "3. 将纸质材料交至教务处创新创业办公室。",
+        "status": "incomplete",
+        "file_path": "matter-2/55fd2f833f4b48eda340301c923b0f22.txt",
+        "original_filename": "material_ok.txt",
+        "file_size": 197,
+        "file_type": "TXT",
+        "verification": {
+          "result": "incomplete",
+          "source": "manual",
+          "verified_at": "2026-11-14T21:34:49.249",
+          "summary": "人工确认：信息不完整。E2E 测试人工确认",
+          "checks": [
+            {
+              "key": "file_readable",
+              "label": "文件可读取",
+              "status": "pass",
+              "message": "文件已通过格式与内容校验，可正常读取：8 段，85 字。",
+              "excerpt": null,
+              "location": "material_ok.txt"
+            },
+            {
+              "key": "text_extracted",
+              "label": "有效文本",
+              "status": "pass",
+              "message": "成功提取到 85 个字符，可用于内容比对。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "keyword_coverage",
+              "label": "关键内容",
+              "status": "warn",
+              "message": "已匹配：无；未找到：纸质。可能是材料不匹配，或文件内容缺少相关表述。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "required_elements",
+              "label": "要求要素",
+              "status": "pass",
+              "message": "材料要求中未提到签字、盖章、日期等必须要素，无需逐项比对。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "suspicious_phrases",
+              "label": "冲突风险",
+              "status": "pass",
+              "message": "未发现「过期、失效、无效」等可能表示材料不符合要求的表述。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "manual_evidence",
+              "label": "人工补充依据",
+              "status": "pass",
+              "message": "E2E 测试人工确认",
+              "excerpt": "测试用途材料样本",
+              "location": "人工填写"
+            }
+          ],
+          "reasons": [
+            "文件文本中未找到关键词：纸质，需人工确认材料是否匹配。"
+          ],
+          "reviewer_note": "E2E 测试人工确认"
+        },
+        "source_evidence": {
+          "text": "3. 将纸质材料交至教务处创新创业办公室。",
+          "location": "第 8 段",
+          "page": null,
+          "paragraph": 8
+        },
+        "origin": "generated",
+        "created_at": "2026-11-14T21:34:49.136",
+        "updated_at": "2026-11-14T21:34:49.249",
+        "events": []
+      }
+    },
+    "13_material_detail": {
+      "id": 7,
+      "matter_id": 2,
+      "matter_name": "关于举办2026年大学生创新创业竞赛的通知",
+      "name": "纸质材料",
+      "description": "3. 将纸质材料交至教务处创新创业办公室。",
+      "status": "incomplete",
+      "file_path": "matter-2/55fd2f833f4b48eda340301c923b0f22.txt",
+      "original_filename": "material_ok.txt",
+      "file_size": 197,
+      "file_type": "TXT",
+      "verification": {
+        "result": "incomplete",
+        "source": "manual",
+        "verified_at": "2026-11-14T21:34:49.249",
+        "summary": "人工确认：信息不完整。E2E 测试人工确认",
+        "checks": [
+          {
+            "key": "file_readable",
+            "label": "文件可读取",
+            "status": "pass",
+            "message": "文件已通过格式与内容校验，可正常读取：8 段，85 字。",
+            "excerpt": null,
+            "location": "material_ok.txt"
+          },
+          {
+            "key": "text_extracted",
+            "label": "有效文本",
+            "status": "pass",
+            "message": "成功提取到 85 个字符，可用于内容比对。",
+            "excerpt": null,
+            "location": null
+          },
+          {
+            "key": "keyword_coverage",
+            "label": "关键内容",
+            "status": "warn",
+            "message": "已匹配：无；未找到：纸质。可能是材料不匹配，或文件内容缺少相关表述。",
+            "excerpt": null,
+            "location": null
+          },
+          {
+            "key": "required_elements",
+            "label": "要求要素",
+            "status": "pass",
+            "message": "材料要求中未提到签字、盖章、日期等必须要素，无需逐项比对。",
+            "excerpt": null,
+            "location": null
+          },
+          {
+            "key": "suspicious_phrases",
+            "label": "冲突风险",
+            "status": "pass",
+            "message": "未发现「过期、失效、无效」等可能表示材料不符合要求的表述。",
+            "excerpt": null,
+            "location": null
+          },
+          {
+            "key": "manual_evidence",
+            "label": "人工补充依据",
+            "status": "pass",
+            "message": "E2E 测试人工确认",
+            "excerpt": "测试用途材料样本",
+            "location": "人工填写"
+          }
+        ],
+        "reasons": [
+          "文件文本中未找到关键词：纸质，需人工确认材料是否匹配。"
+        ],
+        "reviewer_note": "E2E 测试人工确认"
+      },
+      "source_evidence": {
+        "text": "3. 将纸质材料交至教务处创新创业办公室。",
+        "location": "第 8 段",
+        "page": null,
+        "paragraph": 8
+      },
+      "origin": "generated",
+      "created_at": "2026-11-14T21:34:49.136",
+      "updated_at": "2026-11-14T21:34:49.249",
+      "events": [
+        {
+          "id": 10,
+          "action": "generated",
+          "detail": "由事项材料要求生成",
+          "created_at": "2026-11-14T21:34:49.136"
+        },
+        {
+          "id": 11,
+          "action": "file_uploaded",
+          "detail": "上传文件：material_ok.txt",
+          "created_at": "2026-11-14T21:34:49.202"
+        },
+        {
+          "id": 12,
+          "action": "verified",
+          "detail": "文件可读取，但部分关键内容或要求要素未在文本中找到，信息可能不完整，请人工确认。",
+          "created_at": "2026-11-14T21:34:49.221"
+        },
+        {
+          "id": 13,
+          "action": "confirmed",
+          "detail": "人工确认：信息不完整。E2E 测试人工确认",
+          "created_at": "2026-11-14T21:34:49.249"
+        }
+      ]
+    },
+    "14_refresh_risks": {
+      "status": 200,
+      "body": {
+        "generated_at": "2026-11-14T21:34:49.320+08:00",
+        "created": 6,
+        "updated": 0,
+        "revived": 0,
+        "resolved": 0,
+        "summary": {
+          "generated_at": "2026-11-14T21:34:49.320+08:00",
+          "timezone": "Asia/Shanghai",
+          "today": "2026-11-14",
+          "total_unresolved": 6,
+          "total_risks": 8,
+          "active": 6,
+          "read": 0,
+          "resolved": 2,
+          "high": 0,
+          "medium": 6,
+          "low": 0,
+          "by_type": {
+            "backlog": 1,
+            "material_incomplete": 1,
+            "material_missing": 4
+          },
+          "overdue_tasks": 0,
+          "due_soon_3d_tasks": 0,
+          "due_soon_7d_tasks": 0,
+          "pending_materials": 0,
+          "conflict_materials": 0,
+          "missing_materials": 5,
+          "uncertain_materials": 0,
+          "unfinished_tasks": 3,
+          "matters_with_risks": 1
+        }
+      }
+    },
+    "14_matter_risks": {
+      "status": 200,
+      "body": {
+        "summary": {
+          "matter_id": 2,
+          "matter_name": "关于举办2026年大学生创新创业竞赛的通知",
+          "matter_status": "pending",
+          "deadline": "2026年3月31日",
+          "deadline_source": "document",
+          "deadline_state": "overdue",
+          "deadline_days_left": -228,
+          "unfinished_tasks": 0,
+          "material_total": 5,
+          "material_missing": 4,
+          "material_pending": 0,
+          "material_conflict": 0,
+          "risk_total": 6,
+          "level": "high",
+          "headline": "已超过事项截止日期 228 天；4 项材料未提供。"
+        },
+        "risks": [
+          {
+            "id": 8,
+            "fingerprint": "material_missing|matter:2|material:3",
+            "risk_type": "material_missing",
+            "risk_level": "medium",
+            "title": "材料缺失：项目申报书",
+            "description": "事项「关于举办2026年大学生创新创业竞赛的通知」的材料「项目申报书」必需材料尚未提供。 材料要求：《项目申报书》《推荐意见表》、承诺书。",
+            "matter_id": 2,
+            "matter_name": "关于举办2026年大学生创新创业竞赛的通知",
+            "task_id": null,
+            "task_title": null,
+            "material_id": 3,
+            "material_name": "项目申报书",
+            "evidence": {
+              "rule": "材料状态为「missing」，必需材料尚未提供。",
+              "data_sources": [
+                "materials.status",
+                "materials.verification_evidence_json"
+              ],
+              "timezone": "Asia/Shanghai",
+              "today": "2026-11-14",
+              "deadline_raw": null,
+              "deadline_normalized": null,
+              "deadline_source": null,
+              "days_left": null,
+              "matter_name": "关于举办2026年大学生创新创业竞赛的通知",
+              "task": null,
+              "unfinished_tasks": [],
+              "material": {
+                "name": "项目申报书",
+                "description": "《项目申报书》《推荐意见表》、承诺书。",
+                "status": "missing",
+                "original_filename": null,
+                "file_type": null,
+                "file_size": null,
+                "requirement_evidence": {
+                  "text": "《项目申报书》《推荐意见表》、承诺书。",
+                  "location": "第 10 段",
+                  "page": null,
+                  "paragraph": 10
+                },
+                "verification": null
+              },
+              "note": null
+            },
+            "suggestion": "请准备并上传该材料，上传后可执行规则核验。",
+            "status": "active",
+            "first_seen_at": "2026-11-14T21:34:49.305+08:00",
+            "last_seen_at": "2026-11-14T21:34:49.305+08:00",
+            "read_at": null,
+            "resolved_at": null
+          },
+          {
+            "id": 7,
+            "fingerprint": "material_missing|matter:2|material:4",
+            "risk_type": "material_missing",
+            "risk_level": "medium",
+            "title": "材料缺失：承诺书",
+            "description": "事项「关于举办2026年大学生创新创业竞赛的通知」的材料「承诺书」必需材料尚未提供。 材料要求：《项目申报书》《推荐意见表》、承诺书。",
+            "matter_id": 2,
+            "matter_name": "关于举办2026年大学生创新创业竞赛的通知",
+            "task_id": null,
+            "task_title": null,
+            "material_id": 4,
+            "material_name": "承诺书",
+            "evidence": {
+              "rule": "材料状态为「missing」，必需材料尚未提供。",
+              "data_sources": [
+                "materials.status",
+                "materials.verification_evidence_json"
+              ],
+              "timezone": "Asia/Shanghai",
+              "today": "2026-11-14",
+              "deadline_raw": null,
+              "deadline_normalized": null,
+              "deadline_source": null,
+              "days_left": null,
+              "matter_name": "关于举办2026年大学生创新创业竞赛的通知",
+              "task": null,
+              "unfinished_tasks": [],
+              "material": {
+                "name": "承诺书",
+                "description": "《项目申报书》《推荐意见表》、承诺书。",
+                "status": "missing",
+                "original_filename": null,
+                "file_type": null,
+                "file_size": null,
+                "requirement_evidence": {
+                  "text": "《项目申报书》《推荐意见表》、承诺书。",
+                  "location": "第 10 段",
+                  "page": null,
+                  "paragraph": 10
+                },
+                "verification": null
+              },
+              "note": null
+            },
+            "suggestion": "请准备并上传该材料，上传后可执行规则核验。",
+            "status": "active",
+            "first_seen_at": "2026-11-14T21:34:49.305+08:00",
+            "last_seen_at": "2026-11-14T21:34:49.305+08:00",
+            "read_at": null,
+            "resolved_at": null
+          },
+          {
+            "id": 6,
+            "fingerprint": "material_missing|matter:2|material:5",
+            "risk_type": "material_missing",
+            "risk_level": "medium",
+            "title": "材料缺失：登录竞赛平台填写报名表",
+            "description": "事项「关于举办2026年大学生创新创业竞赛的通知」的材料「登录竞赛平台填写报名表」必需材料尚未提供。 材料要求：1. 登录竞赛平台填写报名表。",
+            "matter_id": 2,
+            "matter_name": "关于举办2026年大学生创新创业竞赛的通知",
+            "task_id": null,
+            "task_title": null,
+            "material_id": 5,
+            "material_name": "登录竞赛平台填写报名表",
+            "evidence": {
+              "rule": "材料状态为「missing」，必需材料尚未提供。",
+              "data_sources": [
+                "materials.status",
+                "materials.verification_evidence_json"
+              ],
+              "timezone": "Asia/Shanghai",
+              "today": "2026-11-14",
+              "deadline_raw": null,
+              "deadline_normalized": null,
+              "deadline_source": null,
+              "days_left": null,
+              "matter_name": "关于举办2026年大学生创新创业竞赛的通知",
+              "task": null,
+              "unfinished_tasks": [],
+              "material": {
+                "name": "登录竞赛平台填写报名表",
+                "description": "1. 登录竞赛平台填写报名表。",
+                "status": "missing",
+                "original_filename": null,
+                "file_type": null,
+                "file_size": null,
+                "requirement_evidence": {
+                  "text": "1. 登录竞赛平台填写报名表。",
+                  "location": "第 6 段",
+                  "page": null,
+                  "paragraph": 6
+                },
+                "verification": null
+              },
+              "note": null
+            },
+            "suggestion": "请准备并上传该材料，上传后可执行规则核验。",
+            "status": "active",
+            "first_seen_at": "2026-11-14T21:34:49.305+08:00",
+            "last_seen_at": "2026-11-14T21:34:49.305+08:00",
+            "read_at": null,
+            "resolved_at": null
+          },
+          {
+            "id": 5,
+            "fingerprint": "material_missing|matter:2|material:6",
+            "risk_type": "material_missing",
+            "risk_level": "medium",
+            "title": "材料缺失：推荐表",
+            "description": "事项「关于举办2026年大学生创新创业竞赛的通知」的材料「推荐表」必需材料尚未提供。 材料要求：2. 提交项目申报书和推荐表。",
+            "matter_id": 2,
+            "matter_name": "关于举办2026年大学生创新创业竞赛的通知",
+            "task_id": null,
+            "task_title": null,
+            "material_id": 6,
+            "material_name": "推荐表",
+            "evidence": {
+              "rule": "材料状态为「missing」，必需材料尚未提供。",
+              "data_sources": [
+                "materials.status",
+                "materials.verification_evidence_json"
+              ],
+              "timezone": "Asia/Shanghai",
+              "today": "2026-11-14",
+              "deadline_raw": null,
+              "deadline_normalized": null,
+              "deadline_source": null,
+              "days_left": null,
+              "matter_name": "关于举办2026年大学生创新创业竞赛的通知",
+              "task": null,
+              "unfinished_tasks": [],
+              "material": {
+                "name": "推荐表",
+                "description": "2. 提交项目申报书和推荐表。",
+                "status": "missing",
+                "original_filename": null,
+                "file_type": null,
+                "file_size": null,
+                "requirement_evidence": {
+                  "text": "2. 提交项目申报书和推荐表。",
+                  "location": "第 7 段",
+                  "page": null,
+                  "paragraph": 7
+                },
+                "verification": null
+              },
+              "note": null
+            },
+            "suggestion": "请准备并上传该材料，上传后可执行规则核验。",
+            "status": "active",
+            "first_seen_at": "2026-11-14T21:34:49.305+08:00",
+            "last_seen_at": "2026-11-14T21:34:49.305+08:00",
+            "read_at": null,
+            "resolved_at": null
+          },
+          {
+            "id": 4,
+            "fingerprint": "material_incomplete|matter:2|material:7",
+            "risk_type": "material_incomplete",
+            "risk_level": "medium",
+            "title": "材料信息不完整：纸质材料",
+            "description": "事项「关于举办2026年大学生创新创业竞赛的通知」的材料「纸质材料」材料已上传，但核验发现信息可能不完整，需要人工确认。 材料要求：3. 将纸质材料交至教务处创新创业办公室。",
+            "matter_id": 2,
+            "matter_name": "关于举办2026年大学生创新创业竞赛的通知",
+            "task_id": null,
+            "task_title": null,
+            "material_id": 7,
+            "material_name": "纸质材料",
+            "evidence": {
+              "rule": "材料状态为「incomplete」，材料已上传，但核验发现信息可能不完整，需要人工确认。",
+              "data_sources": [
+                "materials.status",
+                "materials.verification_evidence_json"
+              ],
+              "timezone": "Asia/Shanghai",
+              "today": "2026-11-14",
+              "deadline_raw": null,
+              "deadline_normalized": null,
+              "deadline_source": null,
+              "days_left": null,
+              "matter_name": "关于举办2026年大学生创新创业竞赛的通知",
+              "task": null,
+              "unfinished_tasks": [],
+              "material": {
+                "name": "纸质材料",
+                "description": "3. 将纸质材料交至教务处创新创业办公室。",
+                "status": "incomplete",
+                "original_filename": "material_ok.txt",
+                "file_type": "TXT",
+                "file_size": 197,
+                "requirement_evidence": {
+                  "text": "3. 将纸质材料交至教务处创新创业办公室。",
+                  "location": "第 8 段",
+                  "page": null,
+                  "paragraph": 8
+                },
+                "verification": {
+                  "result": "incomplete",
+                  "source": "manual",
+                  "verified_at": "2026-11-14T21:34:49.249",
+                  "summary": "人工确认：信息不完整。E2E 测试人工确认",
+                  "reasons": [
+                    "文件文本中未找到关键词：纸质，需人工确认材料是否匹配。"
+                  ],
+                  "checks": [
+                    {
+                      "label": "文件可读取",
+                      "status": "pass",
+                      "message": "文件已通过格式与内容校验，可正常读取：8 段，85 字。",
+                      "excerpt": null,
+                      "location": "material_ok.txt"
+                    },
+                    {
+                      "label": "有效文本",
+                      "status": "pass",
+                      "message": "成功提取到 85 个字符，可用于内容比对。",
+                      "excerpt": null,
+                      "location": null
+                    },
+                    {
+                      "label": "关键内容",
+                      "status": "warn",
+                      "message": "已匹配：无；未找到：纸质。可能是材料不匹配，或文件内容缺少相关表述。",
+                      "excerpt": null,
+                      "location": null
+                    },
+                    {
+                      "label": "要求要素",
+                      "status": "pass",
+                      "message": "材料要求中未提到签字、盖章、日期等必须要素，无需逐项比对。",
+                      "excerpt": null,
+                      "location": null
+                    },
+                    {
+                      "label": "冲突风险",
+                      "status": "pass",
+                      "message": "未发现「过期、失效、无效」等可能表示材料不符合要求的表述。",
+                      "excerpt": null,
+                      "location": null
+                    },
+                    {
+                      "label": "人工补充依据",
+                      "status": "pass",
+                      "message": "E2E 测试人工确认",
+                      "excerpt": "测试用途材料样本",
+                      "location": "人工填写"
+                    }
+                  ]
+                }
+              },
+              "note": null
+            },
+            "suggestion": "请核对材料内容并补全信息，确认后重新核验。",
+            "status": "active",
+            "first_seen_at": "2026-11-14T21:34:49.305+08:00",
+            "last_seen_at": "2026-11-14T21:34:49.305+08:00",
+            "read_at": null,
+            "resolved_at": null
+          },
+          {
+            "id": 3,
+            "fingerprint": "backlog|matter:2",
+            "risk_type": "backlog",
+            "risk_level": "medium",
+            "title": "事项任务积压：关于举办2026年大学生创新创业竞赛的通知",
+            "description": "事项「关于举办2026年大学生创新创业竞赛的通知」还有 2 个未完成任务：提交项目申报书和推荐表、登录竞赛平台填写报名表。任务处于未完成状态本身不判定为逾期，只有存在明确截止日期且已过期时才单独产生逾期提醒。",
+            "matter_id": 2,
+            "matter_name": "关于举办2026年大学生创新创业竞赛的通知",
+            "task_id": null,
+            "task_title": null,
+            "material_id": null,
+            "material_name": null,
+            "evidence": {
+              "rule": "事项下存在 2 个未完成任务（状态非 done）。",
+              "data_sources": [
+                "tasks.status",
+                "tasks.title",
+                "tasks.deadline"
+              ],
+              "timezone": "Asia/Shanghai",
+              "today": "2026-11-14",
+              "deadline_raw": null,
+              "deadline_normalized": null,
+              "deadline_source": null,
+              "days_left": null,
+              "matter_name": "关于举办2026年大学生创新创业竞赛的通知",
+              "task": null,
+              "unfinished_tasks": [
+                {
+                  "id": 8,
+                  "title": "提交项目申报书和推荐表",
+                  "status": "pending",
+                  "deadline": null,
+                  "deadline_source": "none",
+                  "days_left": null
+                },
+                {
+                  "id": 7,
+                  "title": "登录竞赛平台填写报名表",
+                  "status": "pending",
+                  "deadline": null,
+                  "deadline_source": "none",
+                  "days_left": null
+                }
+              ],
+              "material": null,
+              "note": null
+            },
+            "suggestion": "建议按截止时间与优先级安排处理顺序，可前往任务中心逐项完成。",
+            "status": "active",
+            "first_seen_at": "2026-11-14T21:34:49.305+08:00",
+            "last_seen_at": "2026-11-14T21:34:49.305+08:00",
+            "read_at": null,
+            "resolved_at": null
+          }
+        ]
+      }
+    },
+    "16_task_status_change": {
+      "task_id": 8,
+      "after_done": [
+        "material_missing",
+        "material_missing",
+        "material_missing",
+        "material_missing",
+        "material_incomplete"
+      ],
+      "after_reopen": [
+        "material_missing",
+        "material_missing",
+        "material_missing",
+        "material_missing",
+        "material_incomplete",
+        "backlog"
+      ]
+    },
+    "16_all_tasks_done_risks": [
+      "material_missing",
+      "material_missing",
+      "material_missing",
+      "material_missing",
+      "material_incomplete"
+    ]
+  },
+  "checks": [],
+  "matter_id": 2,
+  "task_ids": [
+    8,
+    7
+  ],
+  "material_ids": [
+    7,
+    6,
+    5,
+    4,
+    3
+  ],
+  "analysis": {
+    "document": {
+      "filename": "d02_竞赛通知.docx",
+      "extension": ".docx",
+      "size": 37144,
+      "char_count": 253,
+      "page_count": null,
+      "paragraph_count": 16
+    },
+    "fields": [
+      {
+        "key": "title",
+        "label": "事项名称",
+        "value": "关于举办2026年大学生创新创业竞赛的通知",
+        "status": "found",
+        "evidence": [
+          {
+            "text": "关于举办2026年大学生创新创业竞赛的通知",
+            "location": "第 1 段",
+            "page": null,
+            "paragraph": 1
+          }
+        ],
+        "note": null
+      },
+      {
+        "key": "matter_type",
+        "label": "事项类型",
+        "value": "活动赛事",
+        "status": "found",
+        "evidence": [
+          {
+            "text": "关于举办2026年大学生创新创业竞赛的通知",
+            "location": "第 1 段",
+            "page": null,
+            "paragraph": 1
+          }
+        ],
+        "note": "依据标题关键词「竞赛」判断，仅供参考。"
+      },
+      {
+        "key": "qualification",
+        "label": "申请资格",
+        "value": "参与对象：全日制在校本科生、研究生均可报名参加",
+        "status": "found",
+        "evidence": [
+          {
+            "text": "参赛对象：全日制在校本科生、研究生均可报名参加。",
+            "location": "第 2 段",
+            "page": null,
+            "paragraph": 2
+          }
+        ],
+        "note": "以上内容直接摘自原文对应章节或正文句子。"
+      },
+      {
+        "key": "registration_start",
+        "label": "报名开始日期",
+        "value": "2026年3月1日",
+        "status": "found",
+        "evidence": [
+          {
+            "text": "2026年3月1日至2026年3月31日",
+            "location": "第 4 段",
+            "page": null,
+            "paragraph": 4
+          }
+        ],
+        "note": null
+      },
+      {
+        "key": "deadline",
+        "label": "截止日期",
+        "value": "2026年3月31日",
+        "status": "found",
+        "evidence": [
+          {
+            "text": "2026年3月1日至2026年3月31日",
+            "location": "第 4 段",
+            "page": null,
+            "paragraph": 4
+          }
+        ],
+        "note": null
+      }
+    ],
+    "materials": [
+      {
+        "name": "项目申报书",
+        "status": "found",
+        "evidence": {
+          "text": "《项目申报书》《推荐意见表》、承诺书。",
+          "location": "第 10 段",
+          "page": null,
+          "paragraph": 10
+        }
+      },
+      {
+        "name": "承诺书",
+        "status": "found",
+        "evidence": {
+          "text": "《项目申报书》《推荐意见表》、承诺书。",
+          "location": "第 10 段",
+          "page": null,
+          "paragraph": 10
+        }
+      },
+      {
+        "name": "登录竞赛平台填写报名表",
+        "status": "found",
+        "evidence": {
+          "text": "1. 登录竞赛平台填写报名表。",
+          "location": "第 6 段",
+          "page": null,
+          "paragraph": 6
+        }
+      },
+      {
+        "name": "推荐表",
+        "status": "found",
+        "evidence": {
+          "text": "2. 提交项目申报书和推荐表。",
+          "location": "第 7 段",
+          "page": null,
+          "paragraph": 7
+        }
+      },
+      {
+        "name": "纸质材料",
+        "status": "found",
+        "evidence": {
+          "text": "3. 将纸质材料交至教务处创新创业办公室。",
+          "location": "第 8 段",
+          "page": null,
+          "paragraph": 8
+        }
+      }
+    ],
+    "process": [
+      {
+        "index": 1,
+        "text": "登录竞赛平台填写报名表",
+        "evidence": {
+          "text": "登录竞赛平台填写报名表",
+          "location": "第 6 段",
+          "page": null,
+          "paragraph": 6
+        }
+      },
+      {
+        "index": 2,
+        "text": "提交项目申报书和推荐表",
+        "evidence": {
+          "text": "提交项目申报书和推荐表",
+          "location": "第 7 段",
+          "page": null,
+          "paragraph": 7
+        }
+      }
+    ],
+    "notes": [
+      {
+        "text": "逾期不予受理，请提前准备材料。",
+        "evidence": {
+          "text": "逾期不予受理，请提前准备材料。",
+          "location": "第 12 段",
+          "page": null,
+          "paragraph": 12
+        }
+      }
+    ],
+    "warnings": [],
+    "analysis_mode": "rule_based",
+    "ai_configured": false,
+    "ai_message": "当前未配置大模型 API，本次分析仅使用本地规则（章节标题 + 关键词 + 日期正则）提取，不是 AI 分析结果。未找到原文依据的字段已标记为「待核实」，请人工核对。",
+    "elapsed_ms": 9
+  }
+}

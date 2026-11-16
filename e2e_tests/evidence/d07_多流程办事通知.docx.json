@@ -1,0 +1,1349 @@
+{
+  "file": "d07_多流程办事通知.docx",
+  "steps": {
+    "1_analyze": {
+      "status": 200,
+      "body": {
+        "document": {
+          "filename": "d07_多流程办事通知.docx",
+          "extension": ".docx",
+          "size": 37155,
+          "char_count": 285,
+          "page_count": null,
+          "paragraph_count": 19
+        },
+        "fields": [
+          {
+            "key": "title",
+            "label": "事项名称",
+            "value": "关于办理2026年校园一卡通补办的通知",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "关于办理2026年校园一卡通补办的通知",
+                "location": "第 1 段",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "matter_type",
+            "label": "事项类型",
+            "value": "证件办理",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "《一卡通补办申请表》、身份证复印件。",
+                "location": "第 8 段",
+                "page": null,
+                "paragraph": 8
+              }
+            ],
+            "note": "依据原文关键词「身份证」判断，仅供参考。"
+          },
+          {
+            "key": "qualification",
+            "label": "申请资格",
+            "value": "参与对象：校园一卡通遗失或损坏的师生均可申请补办",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "校园一卡通遗失或损坏的师生均可申请补办。",
+                "location": "第 6 段",
+                "page": null,
+                "paragraph": 6
+              }
+            ],
+            "note": "以上内容直接摘自原文对应章节或正文句子。"
+          },
+          {
+            "key": "registration_start",
+            "label": "报名开始日期",
+            "value": "2026年9月1日",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "2026年9月1日至2026年9月30日",
+                "location": "第 4 段",
+                "page": null,
+                "paragraph": 4
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "deadline",
+            "label": "截止日期",
+            "value": "2026年9月30日",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "2026年9月1日至2026年9月30日",
+                "location": "第 4 段",
+                "page": null,
+                "paragraph": 4
+              }
+            ],
+            "note": null
+          }
+        ],
+        "materials": [
+          {
+            "name": "一卡通补办申请表",
+            "status": "found",
+            "evidence": {
+              "text": "《一卡通补办申请表》、身份证复印件。",
+              "location": "第 8 段",
+              "page": null,
+              "paragraph": 8
+            }
+          },
+          {
+            "name": "身份证复印件",
+            "status": "found",
+            "evidence": {
+              "text": "《一卡通补办申请表》、身份证复印件。",
+              "location": "第 8 段",
+              "page": null,
+              "paragraph": 8
+            }
+          }
+        ],
+        "process": [
+          {
+            "index": 1,
+            "text": "登录校园卡系统填写补办申请表",
+            "evidence": {
+              "text": "登录校园卡系统填写补办申请表",
+              "location": "第 10 段",
+              "page": null,
+              "paragraph": 10
+            }
+          },
+          {
+            "index": 2,
+            "text": "打印申请表并签字",
+            "evidence": {
+              "text": "打印申请表并签字",
+              "location": "第 11 段",
+              "page": null,
+              "paragraph": 11
+            }
+          },
+          {
+            "index": 3,
+            "text": "携带申请表和身份证复印件前往校园卡服务中心",
+            "evidence": {
+              "text": "携带申请表和身份证复印件前往校园卡服务中心",
+              "location": "第 12 段",
+              "page": null,
+              "paragraph": 12
+            }
+          },
+          {
+            "index": 4,
+            "text": "缴纳补办费用并领取新卡",
+            "evidence": {
+              "text": "缴纳补办费用并领取新卡",
+              "location": "第 13 段",
+              "page": null,
+              "paragraph": 13
+            }
+          }
+        ],
+        "notes": [
+          {
+            "text": "补办期间原卡停止使用，请提前安排。",
+            "evidence": {
+              "text": "补办期间原卡停止使用，请提前安排。",
+              "location": "第 15 段",
+              "page": null,
+              "paragraph": 15
+            }
+          }
+        ],
+        "warnings": [],
+        "analysis_mode": "rule_based",
+        "ai_configured": false,
+        "ai_message": "当前未配置大模型 API，本次分析仅使用本地规则（章节标题 + 关键词 + 日期正则）提取，不是 AI 分析结果。未找到原文依据的字段已标记为「待核实」，请人工核对。",
+        "elapsed_ms": 7
+      }
+    },
+    "5_create_matter": {
+      "status": 201,
+      "body": {
+        "id": 7,
+        "name": "关于办理2026年校园一卡通补办的通知",
+        "matter_type": "证件办理",
+        "qualification": "参与对象：校园一卡通遗失或损坏的师生均可申请补办",
+        "registration_start": "2026年9月1日",
+        "deadline": "2026年9月30日",
+        "deadline_source": "document",
+        "materials": [
+          {
+            "name": "一卡通补办申请表",
+            "status": "found",
+            "evidence": {
+              "text": "《一卡通补办申请表》、身份证复印件。",
+              "location": "第 8 段",
+              "page": null,
+              "paragraph": 8
+            }
+          },
+          {
+            "name": "身份证复印件",
+            "status": "found",
+            "evidence": {
+              "text": "《一卡通补办申请表》、身份证复印件。",
+              "location": "第 8 段",
+              "page": null,
+              "paragraph": 8
+            }
+          }
+        ],
+        "process": [
+          {
+            "index": 1,
+            "text": "登录校园卡系统填写补办申请表",
+            "evidence": {
+              "text": "登录校园卡系统填写补办申请表",
+              "location": "第 10 段",
+              "page": null,
+              "paragraph": 10
+            }
+          },
+          {
+            "index": 2,
+            "text": "打印申请表并签字",
+            "evidence": {
+              "text": "打印申请表并签字",
+              "location": "第 11 段",
+              "page": null,
+              "paragraph": 11
+            }
+          },
+          {
+            "index": 3,
+            "text": "携带申请表和身份证复印件前往校园卡服务中心",
+            "evidence": {
+              "text": "携带申请表和身份证复印件前往校园卡服务中心",
+              "location": "第 12 段",
+              "page": null,
+              "paragraph": 12
+            }
+          },
+          {
+            "index": 4,
+            "text": "缴纳补办费用并领取新卡",
+            "evidence": {
+              "text": "缴纳补办费用并领取新卡",
+              "location": "第 13 段",
+              "page": null,
+              "paragraph": 13
+            }
+          }
+        ],
+        "notes": [
+          {
+            "text": "补办期间原卡停止使用，请提前安排。",
+            "evidence": {
+              "text": "补办期间原卡停止使用，请提前安排。",
+              "location": "第 15 段",
+              "page": null,
+              "paragraph": 15
+            }
+          }
+        ],
+        "fields": [
+          {
+            "key": "title",
+            "label": "事项名称",
+            "value": "关于办理2026年校园一卡通补办的通知",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "关于办理2026年校园一卡通补办的通知",
+                "location": "第 1 段",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "matter_type",
+            "label": "事项类型",
+            "value": "证件办理",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "《一卡通补办申请表》、身份证复印件。",
+                "location": "第 8 段",
+                "page": null,
+                "paragraph": 8
+              }
+            ],
+            "note": "依据原文关键词「身份证」判断，仅供参考。"
+          },
+          {
+            "key": "qualification",
+            "label": "申请资格",
+            "value": "参与对象：校园一卡通遗失或损坏的师生均可申请补办",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "校园一卡通遗失或损坏的师生均可申请补办。",
+                "location": "第 6 段",
+                "page": null,
+                "paragraph": 6
+              }
+            ],
+            "note": "以上内容直接摘自原文对应章节或正文句子。"
+          },
+          {
+            "key": "registration_start",
+            "label": "报名开始日期",
+            "value": "2026年9月1日",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "2026年9月1日至2026年9月30日",
+                "location": "第 4 段",
+                "page": null,
+                "paragraph": 4
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "deadline",
+            "label": "截止日期",
+            "value": "2026年9月30日",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "2026年9月1日至2026年9月30日",
+                "location": "第 4 段",
+                "page": null,
+                "paragraph": 4
+              }
+            ],
+            "note": null
+          }
+        ],
+        "source_filename": "d07_多流程办事通知.docx",
+        "status": "pending",
+        "analysis_mode": "rule_based",
+        "created_at": "2026-11-14T21:34:52.950",
+        "updated_at": "2026-11-14T21:34:52.950"
+      }
+    },
+    "6_get_matter": {
+      "status": 200,
+      "body": {
+        "id": 7,
+        "name": "关于办理2026年校园一卡通补办的通知",
+        "matter_type": "证件办理",
+        "qualification": "参与对象：校园一卡通遗失或损坏的师生均可申请补办",
+        "registration_start": "2026年9月1日",
+        "deadline": "2026年9月30日",
+        "deadline_source": "document",
+        "materials": [
+          {
+            "name": "一卡通补办申请表",
+            "status": "found",
+            "evidence": {
+              "text": "《一卡通补办申请表》、身份证复印件。",
+              "location": "第 8 段",
+              "page": null,
+              "paragraph": 8
+            }
+          },
+          {
+            "name": "身份证复印件",
+            "status": "found",
+            "evidence": {
+              "text": "《一卡通补办申请表》、身份证复印件。",
+              "location": "第 8 段",
+              "page": null,
+              "paragraph": 8
+            }
+          }
+        ],
+        "process": [
+          {
+            "index": 1,
+            "text": "登录校园卡系统填写补办申请表",
+            "evidence": {
+              "text": "登录校园卡系统填写补办申请表",
+              "location": "第 10 段",
+              "page": null,
+              "paragraph": 10
+            }
+          },
+          {
+            "index": 2,
+            "text": "打印申请表并签字",
+            "evidence": {
+              "text": "打印申请表并签字",
+              "location": "第 11 段",
+              "page": null,
+              "paragraph": 11
+            }
+          },
+          {
+            "index": 3,
+            "text": "携带申请表和身份证复印件前往校园卡服务中心",
+            "evidence": {
+              "text": "携带申请表和身份证复印件前往校园卡服务中心",
+              "location": "第 12 段",
+              "page": null,
+              "paragraph": 12
+            }
+          },
+          {
+            "index": 4,
+            "text": "缴纳补办费用并领取新卡",
+            "evidence": {
+              "text": "缴纳补办费用并领取新卡",
+              "location": "第 13 段",
+              "page": null,
+              "paragraph": 13
+            }
+          }
+        ],
+        "notes": [
+          {
+            "text": "补办期间原卡停止使用，请提前安排。",
+            "evidence": {
+              "text": "补办期间原卡停止使用，请提前安排。",
+              "location": "第 15 段",
+              "page": null,
+              "paragraph": 15
+            }
+          }
+        ],
+        "fields": [
+          {
+            "key": "title",
+            "label": "事项名称",
+            "value": "关于办理2026年校园一卡通补办的通知",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "关于办理2026年校园一卡通补办的通知",
+                "location": "第 1 段",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "matter_type",
+            "label": "事项类型",
+            "value": "证件办理",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "《一卡通补办申请表》、身份证复印件。",
+                "location": "第 8 段",
+                "page": null,
+                "paragraph": 8
+              }
+            ],
+            "note": "依据原文关键词「身份证」判断，仅供参考。"
+          },
+          {
+            "key": "qualification",
+            "label": "申请资格",
+            "value": "参与对象：校园一卡通遗失或损坏的师生均可申请补办",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "校园一卡通遗失或损坏的师生均可申请补办。",
+                "location": "第 6 段",
+                "page": null,
+                "paragraph": 6
+              }
+            ],
+            "note": "以上内容直接摘自原文对应章节或正文句子。"
+          },
+          {
+            "key": "registration_start",
+            "label": "报名开始日期",
+            "value": "2026年9月1日",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "2026年9月1日至2026年9月30日",
+                "location": "第 4 段",
+                "page": null,
+                "paragraph": 4
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "deadline",
+            "label": "截止日期",
+            "value": "2026年9月30日",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "2026年9月1日至2026年9月30日",
+                "location": "第 4 段",
+                "page": null,
+                "paragraph": 4
+              }
+            ],
+            "note": null
+          }
+        ],
+        "source_filename": "d07_多流程办事通知.docx",
+        "status": "pending",
+        "analysis_mode": "rule_based",
+        "created_at": "2026-11-14T21:34:52.950",
+        "updated_at": "2026-11-14T21:34:52.950"
+      }
+    },
+    "7_generate_tasks": {
+      "status": 201,
+      "body": {
+        "matter_id": 7,
+        "created": 4,
+        "skipped": 0,
+        "total_process_steps": 4,
+        "message": "已生成 4 个任务。",
+        "tasks": [
+          {
+            "id": 35,
+            "matter_id": 7,
+            "title": "登录校园卡系统填写补办申请表",
+            "description": "登录校园卡系统填写补办申请表",
+            "deadline": null,
+            "deadline_source": "none",
+            "priority": "medium",
+            "status": "pending",
+            "origin": "generated",
+            "source_evidence": {
+              "text": "登录校园卡系统填写补办申请表",
+              "location": "第 10 段",
+              "page": null,
+              "paragraph": 10
+            },
+            "created_at": "2026-11-14T21:34:52.984",
+            "updated_at": "2026-11-14T21:34:52.984"
+          },
+          {
+            "id": 36,
+            "matter_id": 7,
+            "title": "打印申请表并签字",
+            "description": "打印申请表并签字",
+            "deadline": null,
+            "deadline_source": "none",
+            "priority": "medium",
+            "status": "pending",
+            "origin": "generated",
+            "source_evidence": {
+              "text": "打印申请表并签字",
+              "location": "第 11 段",
+              "page": null,
+              "paragraph": 11
+            },
+            "created_at": "2026-11-14T21:34:52.991",
+            "updated_at": "2026-11-14T21:34:52.991"
+          },
+          {
+            "id": 37,
+            "matter_id": 7,
+            "title": "携带申请表和身份证复印件前往校园卡服务中心",
+            "description": "携带申请表和身份证复印件前往校园卡服务中心",
+            "deadline": null,
+            "deadline_source": "none",
+            "priority": "low",
+            "status": "pending",
+            "origin": "generated",
+            "source_evidence": {
+              "text": "携带申请表和身份证复印件前往校园卡服务中心",
+              "location": "第 12 段",
+              "page": null,
+              "paragraph": 12
+            },
+            "created_at": "2026-11-14T21:34:53.002",
+            "updated_at": "2026-11-14T21:34:53.002"
+          },
+          {
+            "id": 38,
+            "matter_id": 7,
+            "title": "缴纳补办费用并领取新卡",
+            "description": "缴纳补办费用并领取新卡",
+            "deadline": null,
+            "deadline_source": "none",
+            "priority": "high",
+            "status": "pending",
+            "origin": "generated",
+            "source_evidence": {
+              "text": "缴纳补办费用并领取新卡",
+              "location": "第 13 段",
+              "page": null,
+              "paragraph": 13
+            },
+            "created_at": "2026-11-14T21:34:53.013",
+            "updated_at": "2026-11-14T21:34:53.013"
+          }
+        ],
+        "suggestion": {
+          "deadline": "2026年9月30日",
+          "note": "系统建议：依据事项总截止日期推断，仅作用于未设置截止时间的任务，确认后才会保存。",
+          "task_ids": [
+            35,
+            36,
+            37,
+            38
+          ]
+        }
+      }
+    },
+    "9_generate_tasks_again": {
+      "status": 201,
+      "body": {
+        "matter_id": 7,
+        "created": 0,
+        "skipped": 4,
+        "total_process_steps": 4,
+        "message": "该事项的 4 个流程步骤都已生成过任务，未重复创建。",
+        "tasks": [],
+        "suggestion": null
+      }
+    },
+    "10_generate_materials": {
+      "status": 201,
+      "body": {
+        "matter_id": 7,
+        "created": 2,
+        "skipped": 0,
+        "total_source_materials": 2,
+        "message": "已生成 2 项材料。",
+        "materials": [
+          {
+            "id": 21,
+            "matter_id": 7,
+            "matter_name": "关于办理2026年校园一卡通补办的通知",
+            "name": "一卡通补办申请表",
+            "description": "《一卡通补办申请表》、身份证复印件。",
+            "status": "missing",
+            "file_path": null,
+            "original_filename": null,
+            "file_size": null,
+            "file_type": null,
+            "verification": null,
+            "source_evidence": {
+              "text": "《一卡通补办申请表》、身份证复印件。",
+              "location": "第 8 段",
+              "page": null,
+              "paragraph": 8
+            },
+            "origin": "generated",
+            "created_at": "2026-11-14T21:34:53.121",
+            "updated_at": "2026-11-14T21:34:53.121",
+            "events": []
+          },
+          {
+            "id": 22,
+            "matter_id": 7,
+            "matter_name": "关于办理2026年校园一卡通补办的通知",
+            "name": "身份证复印件",
+            "description": "《一卡通补办申请表》、身份证复印件。",
+            "status": "missing",
+            "file_path": null,
+            "original_filename": null,
+            "file_size": null,
+            "file_type": null,
+            "verification": null,
+            "source_evidence": {
+              "text": "《一卡通补办申请表》、身份证复印件。",
+              "location": "第 8 段",
+              "page": null,
+              "paragraph": 8
+            },
+            "origin": "generated",
+            "created_at": "2026-11-14T21:34:53.121",
+            "updated_at": "2026-11-14T21:34:53.121",
+            "events": []
+          }
+        ]
+      }
+    },
+    "11_upload_material": {
+      "status": 200,
+      "body": {
+        "id": 22,
+        "matter_id": 7,
+        "matter_name": "关于办理2026年校园一卡通补办的通知",
+        "name": "身份证复印件",
+        "description": "《一卡通补办申请表》、身份证复印件。",
+        "status": "pending",
+        "file_path": "matter-7/e391c3b465f8496390792151aa60bb2f.txt",
+        "original_filename": "material_ok.txt",
+        "file_size": 197,
+        "file_type": "TXT",
+        "verification": null,
+        "source_evidence": {
+          "text": "《一卡通补办申请表》、身份证复印件。",
+          "location": "第 8 段",
+          "page": null,
+          "paragraph": 8
+        },
+        "origin": "generated",
+        "created_at": "2026-11-14T21:34:53.121",
+        "updated_at": "2026-11-14T21:34:53.183",
+        "events": []
+      }
+    },
+    "12_verify_material": {
+      "status": 200,
+      "body": {
+        "id": 22,
+        "matter_id": 7,
+        "matter_name": "关于办理2026年校园一卡通补办的通知",
+        "name": "身份证复印件",
+        "description": "《一卡通补办申请表》、身份证复印件。",
+        "status": "qualified",
+        "file_path": "matter-7/e391c3b465f8496390792151aa60bb2f.txt",
+        "original_filename": "material_ok.txt",
+        "file_size": 197,
+        "file_type": "TXT",
+        "verification": {
+          "result": "qualified",
+          "source": "rule",
+          "verified_at": "2026-11-14T21:34:53.215",
+          "summary": "规则核验通过：文件可读取、文本有效，材料名称关键词均已匹配。该结论仅为规则比对结果，不代表对材料真实性或法律效力的认定，请人工确认。",
+          "checks": [
+            {
+              "key": "file_readable",
+              "label": "文件可读取",
+              "status": "pass",
+              "message": "文件已通过格式与内容校验，可正常读取：8 段，85 字。",
+              "excerpt": null,
+              "location": "material_ok.txt"
+            },
+            {
+              "key": "text_extracted",
+              "label": "有效文本",
+              "status": "pass",
+              "message": "成功提取到 85 个字符，可用于内容比对。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "keyword_coverage",
+              "label": "关键内容",
+              "status": "pass",
+              "message": "文件文本包含材料名称中的全部关键内容：身份证。",
+              "excerpt": "身份证号：TEST-ID-0001",
+              "location": "第 4 行"
+            },
+            {
+              "key": "required_elements",
+              "label": "要求要素",
+              "status": "pass",
+              "message": "材料要求涉及的要素均已出现：身份证号。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "suspicious_phrases",
+              "label": "冲突风险",
+              "status": "pass",
+              "message": "未发现「过期、失效、无效」等可能表示材料不符合要求的表述。",
+              "excerpt": null,
+              "location": null
+            }
+          ],
+          "reasons": [],
+          "reviewer_note": null
+        },
+        "source_evidence": {
+          "text": "《一卡通补办申请表》、身份证复印件。",
+          "location": "第 8 段",
+          "page": null,
+          "paragraph": 8
+        },
+        "origin": "generated",
+        "created_at": "2026-11-14T21:34:53.121",
+        "updated_at": "2026-11-14T21:34:53.215",
+        "events": []
+      }
+    },
+    "13_confirm_material": {
+      "status": 200,
+      "body": {
+        "id": 22,
+        "matter_id": 7,
+        "matter_name": "关于办理2026年校园一卡通补办的通知",
+        "name": "身份证复印件",
+        "description": "《一卡通补办申请表》、身份证复印件。",
+        "status": "qualified",
+        "file_path": "matter-7/e391c3b465f8496390792151aa60bb2f.txt",
+        "original_filename": "material_ok.txt",
+        "file_size": 197,
+        "file_type": "TXT",
+        "verification": {
+          "result": "qualified",
+          "source": "manual",
+          "verified_at": "2026-11-14T21:34:53.246",
+          "summary": "人工确认：已确认符合。E2E 测试人工确认",
+          "checks": [
+            {
+              "key": "file_readable",
+              "label": "文件可读取",
+              "status": "pass",
+              "message": "文件已通过格式与内容校验，可正常读取：8 段，85 字。",
+              "excerpt": null,
+              "location": "material_ok.txt"
+            },
+            {
+              "key": "text_extracted",
+              "label": "有效文本",
+              "status": "pass",
+              "message": "成功提取到 85 个字符，可用于内容比对。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "keyword_coverage",
+              "label": "关键内容",
+              "status": "pass",
+              "message": "文件文本包含材料名称中的全部关键内容：身份证。",
+              "excerpt": "身份证号：TEST-ID-0001",
+              "location": "第 4 行"
+            },
+            {
+              "key": "required_elements",
+              "label": "要求要素",
+              "status": "pass",
+              "message": "材料要求涉及的要素均已出现：身份证号。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "suspicious_phrases",
+              "label": "冲突风险",
+              "status": "pass",
+              "message": "未发现「过期、失效、无效」等可能表示材料不符合要求的表述。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "manual_evidence",
+              "label": "人工补充依据",
+              "status": "pass",
+              "message": "E2E 测试人工确认",
+              "excerpt": "测试用途材料样本",
+              "location": "人工填写"
+            }
+          ],
+          "reasons": [],
+          "reviewer_note": "E2E 测试人工确认"
+        },
+        "source_evidence": {
+          "text": "《一卡通补办申请表》、身份证复印件。",
+          "location": "第 8 段",
+          "page": null,
+          "paragraph": 8
+        },
+        "origin": "generated",
+        "created_at": "2026-11-14T21:34:53.121",
+        "updated_at": "2026-11-14T21:34:53.246",
+        "events": []
+      }
+    },
+    "13_material_detail": {
+      "id": 22,
+      "matter_id": 7,
+      "matter_name": "关于办理2026年校园一卡通补办的通知",
+      "name": "身份证复印件",
+      "description": "《一卡通补办申请表》、身份证复印件。",
+      "status": "qualified",
+      "file_path": "matter-7/e391c3b465f8496390792151aa60bb2f.txt",
+      "original_filename": "material_ok.txt",
+      "file_size": 197,
+      "file_type": "TXT",
+      "verification": {
+        "result": "qualified",
+        "source": "manual",
+        "verified_at": "2026-11-14T21:34:53.246",
+        "summary": "人工确认：已确认符合。E2E 测试人工确认",
+        "checks": [
+          {
+            "key": "file_readable",
+            "label": "文件可读取",
+            "status": "pass",
+            "message": "文件已通过格式与内容校验，可正常读取：8 段，85 字。",
+            "excerpt": null,
+            "location": "material_ok.txt"
+          },
+          {
+            "key": "text_extracted",
+            "label": "有效文本",
+            "status": "pass",
+            "message": "成功提取到 85 个字符，可用于内容比对。",
+            "excerpt": null,
+            "location": null
+          },
+          {
+            "key": "keyword_coverage",
+            "label": "关键内容",
+            "status": "pass",
+            "message": "文件文本包含材料名称中的全部关键内容：身份证。",
+            "excerpt": "身份证号：TEST-ID-0001",
+            "location": "第 4 行"
+          },
+          {
+            "key": "required_elements",
+            "label": "要求要素",
+            "status": "pass",
+            "message": "材料要求涉及的要素均已出现：身份证号。",
+            "excerpt": null,
+            "location": null
+          },
+          {
+            "key": "suspicious_phrases",
+            "label": "冲突风险",
+            "status": "pass",
+            "message": "未发现「过期、失效、无效」等可能表示材料不符合要求的表述。",
+            "excerpt": null,
+            "location": null
+          },
+          {
+            "key": "manual_evidence",
+            "label": "人工补充依据",
+            "status": "pass",
+            "message": "E2E 测试人工确认",
+            "excerpt": "测试用途材料样本",
+            "location": "人工填写"
+          }
+        ],
+        "reasons": [],
+        "reviewer_note": "E2E 测试人工确认"
+      },
+      "source_evidence": {
+        "text": "《一卡通补办申请表》、身份证复印件。",
+        "location": "第 8 段",
+        "page": null,
+        "paragraph": 8
+      },
+      "origin": "generated",
+      "created_at": "2026-11-14T21:34:53.121",
+      "updated_at": "2026-11-14T21:34:53.246",
+      "events": [
+        {
+          "id": 40,
+          "action": "generated",
+          "detail": "由事项材料要求生成",
+          "created_at": "2026-11-14T21:34:53.121"
+        },
+        {
+          "id": 41,
+          "action": "file_uploaded",
+          "detail": "上传文件：material_ok.txt",
+          "created_at": "2026-11-14T21:34:53.183"
+        },
+        {
+          "id": 42,
+          "action": "verified",
+          "detail": "规则核验通过：文件可读取、文本有效，材料名称关键词均已匹配。该结论仅为规则比对结果，不代表对材料真实性或法律效力的认定，请人工确认。",
+          "created_at": "2026-11-14T21:34:53.215"
+        },
+        {
+          "id": 43,
+          "action": "confirmed",
+          "detail": "人工确认：已确认符合。E2E 测试人工确认",
+          "created_at": "2026-11-14T21:34:53.246"
+        }
+      ]
+    },
+    "14_refresh_risks": {
+      "status": 200,
+      "body": {
+        "generated_at": "2026-11-14T21:34:53.325+08:00",
+        "created": 2,
+        "updated": 15,
+        "revived": 0,
+        "resolved": 0,
+        "summary": {
+          "generated_at": "2026-11-14T21:34:53.325+08:00",
+          "timezone": "Asia/Shanghai",
+          "today": "2026-11-14",
+          "total_unresolved": 17,
+          "total_risks": 24,
+          "active": 17,
+          "read": 0,
+          "resolved": 7,
+          "high": 0,
+          "medium": 16,
+          "low": 1,
+          "by_type": {
+            "backlog": 1,
+            "date_unverified": 1,
+            "material_incomplete": 1,
+            "material_missing": 14
+          },
+          "overdue_tasks": 0,
+          "due_soon_3d_tasks": 0,
+          "due_soon_7d_tasks": 0,
+          "pending_materials": 0,
+          "conflict_materials": 0,
+          "missing_materials": 15,
+          "uncertain_materials": 0,
+          "unfinished_tasks": 10,
+          "matters_with_risks": 6
+        }
+      }
+    },
+    "14_matter_risks": {
+      "status": 200,
+      "body": {
+        "summary": {
+          "matter_id": 7,
+          "matter_name": "关于办理2026年校园一卡通补办的通知",
+          "matter_status": "pending",
+          "deadline": "2026年9月30日",
+          "deadline_source": "document",
+          "deadline_state": "overdue",
+          "deadline_days_left": -45,
+          "unfinished_tasks": 0,
+          "material_total": 2,
+          "material_missing": 1,
+          "material_pending": 0,
+          "material_conflict": 0,
+          "risk_total": 2,
+          "level": "high",
+          "headline": "已超过事项截止日期 45 天；1 项材料未提供。"
+        },
+        "risks": [
+          {
+            "id": 24,
+            "fingerprint": "material_missing|matter:7|material:21",
+            "risk_type": "material_missing",
+            "risk_level": "medium",
+            "title": "材料缺失：一卡通补办申请表",
+            "description": "事项「关于办理2026年校园一卡通补办的通知」的材料「一卡通补办申请表」必需材料尚未提供。 材料要求：《一卡通补办申请表》、身份证复印件。",
+            "matter_id": 7,
+            "matter_name": "关于办理2026年校园一卡通补办的通知",
+            "task_id": null,
+            "task_title": null,
+            "material_id": 21,
+            "material_name": "一卡通补办申请表",
+            "evidence": {
+              "rule": "材料状态为「missing」，必需材料尚未提供。",
+              "data_sources": [
+                "materials.status",
+                "materials.verification_evidence_json"
+              ],
+              "timezone": "Asia/Shanghai",
+              "today": "2026-11-14",
+              "deadline_raw": null,
+              "deadline_normalized": null,
+              "deadline_source": null,
+              "days_left": null,
+              "matter_name": "关于办理2026年校园一卡通补办的通知",
+              "task": null,
+              "unfinished_tasks": [],
+              "material": {
+                "name": "一卡通补办申请表",
+                "description": "《一卡通补办申请表》、身份证复印件。",
+                "status": "missing",
+                "original_filename": null,
+                "file_type": null,
+                "file_size": null,
+                "requirement_evidence": {
+                  "text": "《一卡通补办申请表》、身份证复印件。",
+                  "location": "第 8 段",
+                  "page": null,
+                  "paragraph": 8
+                },
+                "verification": null
+              },
+              "note": null
+            },
+            "suggestion": "请准备并上传该材料，上传后可执行规则核验。",
+            "status": "active",
+            "first_seen_at": "2026-11-14T21:34:53.308+08:00",
+            "last_seen_at": "2026-11-14T21:34:53.308+08:00",
+            "read_at": null,
+            "resolved_at": null
+          },
+          {
+            "id": 23,
+            "fingerprint": "backlog|matter:7",
+            "risk_type": "backlog",
+            "risk_level": "medium",
+            "title": "事项任务积压：关于办理2026年校园一卡通补办的通知",
+            "description": "事项「关于办理2026年校园一卡通补办的通知」还有 4 个未完成任务：缴纳补办费用并领取新卡、携带申请表和身份证复印件前往校园卡服务中心、打印申请表并签字、登录校园卡系统填写补办申请表。任务处于未完成状态本身不判定为逾期，只有存在明确截止日期且已过期时才单独产生逾期提醒。",
+            "matter_id": 7,
+            "matter_name": "关于办理2026年校园一卡通补办的通知",
+            "task_id": null,
+            "task_title": null,
+            "material_id": null,
+            "material_name": null,
+            "evidence": {
+              "rule": "事项下存在 4 个未完成任务（状态非 done）。",
+              "data_sources": [
+                "tasks.status",
+                "tasks.title",
+                "tasks.deadline"
+              ],
+              "timezone": "Asia/Shanghai",
+              "today": "2026-11-14",
+              "deadline_raw": null,
+              "deadline_normalized": null,
+              "deadline_source": null,
+              "days_left": null,
+              "matter_name": "关于办理2026年校园一卡通补办的通知",
+              "task": null,
+              "unfinished_tasks": [
+                {
+                  "id": 38,
+                  "title": "缴纳补办费用并领取新卡",
+                  "status": "pending",
+                  "deadline": null,
+                  "deadline_source": "none",
+                  "days_left": null
+                },
+                {
+                  "id": 37,
+                  "title": "携带申请表和身份证复印件前往校园卡服务中心",
+                  "status": "pending",
+                  "deadline": null,
+                  "deadline_source": "none",
+                  "days_left": null
+                },
+                {
+                  "id": 36,
+                  "title": "打印申请表并签字",
+                  "status": "pending",
+                  "deadline": null,
+                  "deadline_source": "none",
+                  "days_left": null
+                },
+                {
+                  "id": 35,
+                  "title": "登录校园卡系统填写补办申请表",
+                  "status": "pending",
+                  "deadline": null,
+                  "deadline_source": "none",
+                  "days_left": null
+                }
+              ],
+              "material": null,
+              "note": null
+            },
+            "suggestion": "建议按截止时间与优先级安排处理顺序，可前往任务中心逐项完成。",
+            "status": "active",
+            "first_seen_at": "2026-11-14T21:34:53.308+08:00",
+            "last_seen_at": "2026-11-14T21:34:53.308+08:00",
+            "read_at": null,
+            "resolved_at": null
+          }
+        ]
+      }
+    },
+    "16_task_status_change": {
+      "task_id": 38,
+      "after_done": [
+        "material_missing",
+        "backlog"
+      ],
+      "after_reopen": [
+        "material_missing",
+        "backlog"
+      ]
+    },
+    "16_all_tasks_done_risks": [
+      "material_missing"
+    ]
+  },
+  "checks": [],
+  "matter_id": 7,
+  "task_ids": [
+    38,
+    37,
+    36,
+    35
+  ],
+  "material_ids": [
+    22,
+    21
+  ],
+  "analysis": {
+    "document": {
+      "filename": "d07_多流程办事通知.docx",
+      "extension": ".docx",
+      "size": 37155,
+      "char_count": 285,
+      "page_count": null,
+      "paragraph_count": 19
+    },
+    "fields": [
+      {
+        "key": "title",
+        "label": "事项名称",
+        "value": "关于办理2026年校园一卡通补办的通知",
+        "status": "found",
+        "evidence": [
+          {
+            "text": "关于办理2026年校园一卡通补办的通知",
+            "location": "第 1 段",
+            "page": null,
+            "paragraph": 1
+          }
+        ],
+        "note": null
+      },
+      {
+        "key": "matter_type",
+        "label": "事项类型",
+        "value": "证件办理",
+        "status": "found",
+        "evidence": [
+          {
+            "text": "《一卡通补办申请表》、身份证复印件。",
+            "location": "第 8 段",
+            "page": null,
+            "paragraph": 8
+          }
+        ],
+        "note": "依据原文关键词「身份证」判断，仅供参考。"
+      },
+      {
+        "key": "qualification",
+        "label": "申请资格",
+        "value": "参与对象：校园一卡通遗失或损坏的师生均可申请补办",
+        "status": "found",
+        "evidence": [
+          {
+            "text": "校园一卡通遗失或损坏的师生均可申请补办。",
+            "location": "第 6 段",
+            "page": null,
+            "paragraph": 6
+          }
+        ],
+        "note": "以上内容直接摘自原文对应章节或正文句子。"
+      },
+      {
+        "key": "registration_start",
+        "label": "报名开始日期",
+        "value": "2026年9月1日",
+        "status": "found",
+        "evidence": [
+          {
+            "text": "2026年9月1日至2026年9月30日",
+            "location": "第 4 段",
+            "page": null,
+            "paragraph": 4
+          }
+        ],
+        "note": null
+      },
+      {
+        "key": "deadline",
+        "label": "截止日期",
+        "value": "2026年9月30日",
+        "status": "found",
+        "evidence": [
+          {
+            "text": "2026年9月1日至2026年9月30日",
+            "location": "第 4 段",
+            "page": null,
+            "paragraph": 4
+          }
+        ],
+        "note": null
+      }
+    ],
+    "materials": [
+      {
+        "name": "一卡通补办申请表",
+        "status": "found",
+        "evidence": {
+          "text": "《一卡通补办申请表》、身份证复印件。",
+          "location": "第 8 段",
+          "page": null,
+          "paragraph": 8
+        }
+      },
+      {
+        "name": "身份证复印件",
+        "status": "found",
+        "evidence": {
+          "text": "《一卡通补办申请表》、身份证复印件。",
+          "location": "第 8 段",
+          "page": null,
+          "paragraph": 8
+        }
+      }
+    ],
+    "process": [
+      {
+        "index": 1,
+        "text": "登录校园卡系统填写补办申请表",
+        "evidence": {
+          "text": "登录校园卡系统填写补办申请表",
+          "location": "第 10 段",
+          "page": null,
+          "paragraph": 10
+        }
+      },
+      {
+        "index": 2,
+        "text": "打印申请表并签字",
+        "evidence": {
+          "text": "打印申请表并签字",
+          "location": "第 11 段",
+          "page": null,
+          "paragraph": 11
+        }
+      },
+      {
+        "index": 3,
+        "text": "携带申请表和身份证复印件前往校园卡服务中心",
+        "evidence": {
+          "text": "携带申请表和身份证复印件前往校园卡服务中心",
+          "location": "第 12 段",
+          "page": null,
+          "paragraph": 12
+        }
+      },
+      {
+        "index": 4,
+        "text": "缴纳补办费用并领取新卡",
+        "evidence": {
+          "text": "缴纳补办费用并领取新卡",
+          "location": "第 13 段",
+          "page": null,
+          "paragraph": 13
+        }
+      }
+    ],
+    "notes": [
+      {
+        "text": "补办期间原卡停止使用，请提前安排。",
+        "evidence": {
+          "text": "补办期间原卡停止使用，请提前安排。",
+          "location": "第 15 段",
+          "page": null,
+          "paragraph": 15
+        }
+      }
+    ],
+    "warnings": [],
+    "analysis_mode": "rule_based",
+    "ai_configured": false,
+    "ai_message": "当前未配置大模型 API，本次分析仅使用本地规则（章节标题 + 关键词 + 日期正则）提取，不是 AI 分析结果。未找到原文依据的字段已标记为「待核实」，请人工核对。",
+    "elapsed_ms": 7
+  }
+}

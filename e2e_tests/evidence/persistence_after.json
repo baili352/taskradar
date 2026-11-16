@@ -1,0 +1,554 @@
+{
+  "d01_校园活动通知.txt": {
+    "matter": {
+      "id": 1,
+      "name": "关于开展2026年校园文化节活动的通知",
+      "status": "done",
+      "deadline": null,
+      "registration_start": null,
+      "materials_count": 2,
+      "process_count": 3
+    },
+    "tasks": [
+      {
+        "id": 3,
+        "title": "扫码加入活动通知群",
+        "status": "pending"
+      },
+      {
+        "id": 2,
+        "title": "将报名表和学生证复印件交至校团委办公室",
+        "status": "done"
+      },
+      {
+        "id": 1,
+        "title": "登录学校活动平台填写报名表",
+        "status": "done"
+      }
+    ],
+    "materials": [
+      {
+        "id": 2,
+        "name": "学生证复印件",
+        "status": "qualified",
+        "file": "material_ok.txt"
+      },
+      {
+        "id": 1,
+        "name": "登录学校活动平台填写报名表",
+        "status": "missing",
+        "file": null
+      }
+    ],
+    "risk_types": []
+  },
+  "d02_竞赛通知.docx": {
+    "matter": {
+      "id": 2,
+      "name": "关于举办2026年大学生创新创业竞赛的通知",
+      "status": "pending",
+      "deadline": "2026年3月31日",
+      "registration_start": "2026年3月1日",
+      "materials_count": 5,
+      "process_count": 2
+    },
+    "tasks": [
+      {
+        "id": 8,
+        "title": "提交项目申报书和推荐表",
+        "status": "pending"
+      },
+      {
+        "id": 7,
+        "title": "登录竞赛平台填写报名表",
+        "status": "done"
+      }
+    ],
+    "materials": [
+      {
+        "id": 7,
+        "name": "纸质材料",
+        "status": "incomplete",
+        "file": "material_ok.txt"
+      },
+      {
+        "id": 6,
+        "name": "推荐表",
+        "status": "missing",
+        "file": null
+      },
+      {
+        "id": 5,
+        "name": "登录竞赛平台填写报名表",
+        "status": "missing",
+        "file": null
+      },
+      {
+        "id": 4,
+        "name": "承诺书",
+        "status": "missing",
+        "file": null
+      },
+      {
+        "id": 3,
+        "name": "项目申报书",
+        "status": "missing",
+        "file": null
+      }
+    ],
+    "risk_types": [
+      "overdue",
+      "material_missing",
+      "material_missing",
+      "material_missing",
+      "material_missing",
+      "material_incomplete"
+    ]
+  },
+  "d03_跨年度申报通知.txt": {
+    "matter": {
+      "id": 3,
+      "name": "关于2027年寒假社会实践项目申报的通知",
+      "status": "pending",
+      "deadline": "2027年1月15日",
+      "registration_start": "2026年12月1日",
+      "materials_count": 3,
+      "process_count": 3
+    },
+    "tasks": [
+      {
+        "id": 13,
+        "title": "登录实践管理系统确认提交",
+        "status": "pending"
+      },
+      {
+        "id": 12,
+        "title": "将申请书和实践方案发送至校团委邮箱",
+        "status": "done"
+      },
+      {
+        "id": 11,
+        "title": "填写社会实践项目申请书",
+        "status": "done"
+      }
+    ],
+    "materials": [
+      {
+        "id": 10,
+        "name": "安全承诺书",
+        "status": "qualified",
+        "file": "material_ok.txt"
+      },
+      {
+        "id": 9,
+        "name": "实践方案",
+        "status": "missing",
+        "file": null
+      },
+      {
+        "id": 8,
+        "name": "社会实践项目申请书",
+        "status": "missing",
+        "file": null
+      }
+    ],
+    "risk_types": [
+      "material_missing",
+      "material_missing"
+    ]
+  },
+  "d04_多材料申报通知.docx": {
+    "matter": {
+      "id": 4,
+      "name": "关于2026年度学生科研项目申报的通知",
+      "status": "pending",
+      "deadline": "2026年5月26日",
+      "registration_start": "2026年5月6日",
+      "materials_count": 4,
+      "process_count": 3
+    },
+    "tasks": [
+      {
+        "id": 19,
+        "title": "登录科研系统上传电子版",
+        "status": "pending"
+      },
+      {
+        "id": 18,
+        "title": "准备项目汇总表和成绩单复印件",
+        "status": "done"
+      },
+      {
+        "id": 17,
+        "title": "下载并填写项目申请书",
+        "status": "done"
+      }
+    ],
+    "materials": [
+      {
+        "id": 14,
+        "name": "成绩单复印件",
+        "status": "qualified",
+        "file": "material_suspicious.txt"
+      },
+      {
+        "id": 13,
+        "name": "承诺书",
+        "status": "conflict",
+        "file": "material_suspicious.txt"
+      },
+      {
+        "id": 12,
+        "name": "项目汇总表",
+        "status": "missing",
+        "file": null
+      },
+      {
+        "id": 11,
+        "name": "学生科研项目申请书",
+        "status": "missing",
+        "file": null
+      }
+    ],
+    "risk_types": [
+      "material_conflict",
+      "material_missing",
+      "material_missing"
+    ]
+  },
+  "d05_招聘公告.txt": {
+    "matter": {
+      "id": 5,
+      "name": "某大学2026年公开招聘工作人员公告",
+      "status": "pending",
+      "deadline": "2026年5月20日",
+      "registration_start": "2026年5月6日",
+      "materials_count": 4,
+      "process_count": 3
+    },
+    "tasks": [
+      {
+        "id": 25,
+        "title": "登录招聘系统确认报名信息",
+        "status": "pending"
+      },
+      {
+        "id": 24,
+        "title": "将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱",
+        "status": "done"
+      },
+      {
+        "id": 23,
+        "title": "填写应聘报名表",
+        "status": "done"
+      }
+    ],
+    "materials": [
+      {
+        "id": 18,
+        "name": "身份证复印件",
+        "status": "qualified",
+        "file": "material_ok.txt"
+      },
+      {
+        "id": 17,
+        "name": "学历学位证书复印件",
+        "status": "missing",
+        "file": null
+      },
+      {
+        "id": 16,
+        "name": "个人简历",
+        "status": "missing",
+        "file": null
+      },
+      {
+        "id": 15,
+        "name": "应聘报名表",
+        "status": "missing",
+        "file": null
+      }
+    ],
+    "risk_types": [
+      "material_missing",
+      "material_missing",
+      "material_missing"
+    ]
+  },
+  "d06_日期模糊通知.txt": {
+    "matter": {
+      "id": 6,
+      "name": "关于2026年春季学期资助申请的通知",
+      "status": "pending",
+      "deadline": "5月20日",
+      "registration_start": null,
+      "materials_count": 2,
+      "process_count": 3
+    },
+    "tasks": [
+      {
+        "id": 31,
+        "title": "联系辅导员确认提交结果",
+        "status": "pending"
+      },
+      {
+        "id": 30,
+        "title": "将申请表发送至学院邮箱",
+        "status": "done"
+      },
+      {
+        "id": 29,
+        "title": "填写资助申请表",
+        "status": "done"
+      }
+    ],
+    "materials": [
+      {
+        "id": 20,
+        "name": "家庭情况说明",
+        "status": "qualified",
+        "file": "material_ok.txt"
+      },
+      {
+        "id": 19,
+        "name": "资助申请表",
+        "status": "missing",
+        "file": null
+      }
+    ],
+    "risk_types": [
+      "material_missing",
+      "date_unverified"
+    ]
+  },
+  "d07_多流程办事通知.docx": {
+    "matter": {
+      "id": 7,
+      "name": "关于办理2026年校园一卡通补办的通知",
+      "status": "pending",
+      "deadline": "2026年9月30日",
+      "registration_start": "2026年9月1日",
+      "materials_count": 2,
+      "process_count": 4
+    },
+    "tasks": [
+      {
+        "id": 38,
+        "title": "缴纳补办费用并领取新卡",
+        "status": "pending"
+      },
+      {
+        "id": 37,
+        "title": "携带申请表和身份证复印件前往校园卡服务中心",
+        "status": "done"
+      },
+      {
+        "id": 36,
+        "title": "打印申请表并签字",
+        "status": "done"
+      },
+      {
+        "id": 35,
+        "title": "登录校园卡系统填写补办申请表",
+        "status": "done"
+      }
+    ],
+    "materials": [
+      {
+        "id": 22,
+        "name": "身份证复印件",
+        "status": "qualified",
+        "file": "material_ok.txt"
+      },
+      {
+        "id": 21,
+        "name": "一卡通补办申请表",
+        "status": "missing",
+        "file": null
+      }
+    ],
+    "risk_types": [
+      "material_missing"
+    ]
+  },
+  "d08_无材料要求通知.txt": {
+    "matter": {
+      "id": 8,
+      "name": "关于举办2026年秋季运动会的通知",
+      "status": "pending",
+      "deadline": null,
+      "registration_start": null,
+      "materials_count": 0,
+      "process_count": 2
+    },
+    "tasks": [
+      {
+        "id": 44,
+        "title": "前往体育部办公室确认参赛项目",
+        "status": "pending"
+      },
+      {
+        "id": 43,
+        "title": "登录体育系统填写报名信息",
+        "status": "done"
+      }
+    ],
+    "materials": [
+      {
+        "id": 32,
+        "name": "材料",
+        "status": "uncertain",
+        "file": "material_ok.txt"
+      }
+    ],
+    "risk_types": [
+      "material_uncertain"
+    ]
+  },
+  "d09_标题含材料关键词通知.txt": {
+    "matter": {
+      "id": 9,
+      "name": "关于提交2026年国家奖学金材料的通知",
+      "status": "pending",
+      "deadline": "2026年9月25日",
+      "registration_start": "2026年9月10日",
+      "materials_count": 5,
+      "process_count": 2
+    },
+    "tasks": [
+      {
+        "id": 48,
+        "title": "登录学生资助系统上传电子版",
+        "status": "pending"
+      },
+      {
+        "id": 47,
+        "title": "填写国家奖学金申请表",
+        "status": "done"
+      }
+    ],
+    "materials": [
+      {
+        "id": 27,
+        "name": "按材料",
+        "status": "qualified",
+        "file": "material_ok.txt"
+      },
+      {
+        "id": 26,
+        "name": "2026年国家奖学金材料",
+        "status": "missing",
+        "file": null
+      },
+      {
+        "id": 25,
+        "name": "获奖证书复印件",
+        "status": "missing",
+        "file": null
+      },
+      {
+        "id": 24,
+        "name": "成绩单",
+        "status": "missing",
+        "file": null
+      },
+      {
+        "id": 23,
+        "name": "国家奖学金申请表",
+        "status": "missing",
+        "file": null
+      }
+    ],
+    "risk_types": [
+      "material_missing",
+      "material_missing",
+      "material_missing",
+      "material_missing"
+    ]
+  },
+  "d10_信息冲突通知.docx": {
+    "matter": {
+      "id": 10,
+      "name": "关于2026年优秀学生评选工作的通知",
+      "status": "pending",
+      "deadline": "2026年5月10日",
+      "registration_start": "2026年5月1日",
+      "materials_count": 3,
+      "process_count": 1
+    },
+    "tasks": [
+      {
+        "id": 51,
+        "title": "填写优秀学生申请表",
+        "status": "pending"
+      }
+    ],
+    "materials": [
+      {
+        "id": 30,
+        "name": "获奖证明",
+        "status": "qualified",
+        "file": "material_ok.txt"
+      },
+      {
+        "id": 29,
+        "name": "成绩单复印件",
+        "status": "missing",
+        "file": null
+      },
+      {
+        "id": 28,
+        "name": "优秀学生申请表",
+        "status": "missing",
+        "file": null
+      }
+    ],
+    "risk_types": [
+      "material_missing",
+      "material_missing"
+    ]
+  },
+  "d11_空流程通知.txt": {
+    "matter": {
+      "id": 11,
+      "name": "关于举办2026年学术讲座的通知",
+      "status": "pending",
+      "deadline": null,
+      "registration_start": null,
+      "materials_count": 0,
+      "process_count": 0
+    },
+    "tasks": [],
+    "materials": [],
+    "risk_types": []
+  },
+  "d12_非法日期通知.txt": {
+    "matter": {
+      "id": 12,
+      "name": "关于2026年2月30日事项申报的通知",
+      "status": "pending",
+      "deadline": "2026年2月30日",
+      "registration_start": null,
+      "materials_count": 1,
+      "process_count": 1
+    },
+    "tasks": [
+      {
+        "id": 53,
+        "title": "填写事项申请表",
+        "status": "pending"
+      }
+    ],
+    "materials": [
+      {
+        "id": 31,
+        "name": "事项申请表",
+        "status": "qualified",
+        "file": "material_ok.txt"
+      }
+    ],
+    "risk_types": [
+      "date_unverified"
+    ]
+  }
+}

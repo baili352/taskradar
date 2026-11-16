@@ -1,0 +1,488 @@
+{
+  "category": "数据持久化",
+  "total": 48,
+  "passed": 48,
+  "failed": 0,
+  "checks": [
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d01_校园活动通知.txt：事项仍存在且关键字段一致",
+      "result": "PASS",
+      "expected": "事项 ID/名称/截止日期/状态一致",
+      "actual": "一致",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d01_校园活动通知.txt：任务状态持久化",
+      "result": "PASS",
+      "expected": "3 个任务及状态一致",
+      "actual": "3 个任务；一致=True",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d01_校园活动通知.txt：材料状态与文件持久化",
+      "result": "PASS",
+      "expected": "2 项材料及文件信息一致",
+      "actual": "2 项；一致=True",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d01_校园活动通知.txt：风险状态持久化",
+      "result": "PASS",
+      "expected": "重启前后未解决风险类型一致",
+      "actual": "一致=True",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d02_竞赛通知.docx：事项仍存在且关键字段一致",
+      "result": "PASS",
+      "expected": "事项 ID/名称/截止日期/状态一致",
+      "actual": "一致",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d02_竞赛通知.docx：任务状态持久化",
+      "result": "PASS",
+      "expected": "2 个任务及状态一致",
+      "actual": "2 个任务；一致=True",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d02_竞赛通知.docx：材料状态与文件持久化",
+      "result": "PASS",
+      "expected": "5 项材料及文件信息一致",
+      "actual": "5 项；一致=True",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d02_竞赛通知.docx：风险状态持久化",
+      "result": "PASS",
+      "expected": "重启前后未解决风险类型一致",
+      "actual": "一致=True",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d03_跨年度申报通知.txt：事项仍存在且关键字段一致",
+      "result": "PASS",
+      "expected": "事项 ID/名称/截止日期/状态一致",
+      "actual": "一致",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d03_跨年度申报通知.txt：任务状态持久化",
+      "result": "PASS",
+      "expected": "3 个任务及状态一致",
+      "actual": "3 个任务；一致=True",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d03_跨年度申报通知.txt：材料状态与文件持久化",
+      "result": "PASS",
+      "expected": "3 项材料及文件信息一致",
+      "actual": "3 项；一致=True",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d03_跨年度申报通知.txt：风险状态持久化",
+      "result": "PASS",
+      "expected": "重启前后未解决风险类型一致",
+      "actual": "一致=True",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d04_多材料申报通知.docx：事项仍存在且关键字段一致",
+      "result": "PASS",
+      "expected": "事项 ID/名称/截止日期/状态一致",
+      "actual": "一致",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d04_多材料申报通知.docx：任务状态持久化",
+      "result": "PASS",
+      "expected": "3 个任务及状态一致",
+      "actual": "3 个任务；一致=True",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d04_多材料申报通知.docx：材料状态与文件持久化",
+      "result": "PASS",
+      "expected": "4 项材料及文件信息一致",
+      "actual": "4 项；一致=True",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d04_多材料申报通知.docx：风险状态持久化",
+      "result": "PASS",
+      "expected": "重启前后未解决风险类型一致",
+      "actual": "一致=True",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d05_招聘公告.txt：事项仍存在且关键字段一致",
+      "result": "PASS",
+      "expected": "事项 ID/名称/截止日期/状态一致",
+      "actual": "一致",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d05_招聘公告.txt：任务状态持久化",
+      "result": "PASS",
+      "expected": "3 个任务及状态一致",
+      "actual": "3 个任务；一致=True",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d05_招聘公告.txt：材料状态与文件持久化",
+      "result": "PASS",
+      "expected": "4 项材料及文件信息一致",
+      "actual": "4 项；一致=True",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d05_招聘公告.txt：风险状态持久化",
+      "result": "PASS",
+      "expected": "重启前后未解决风险类型一致",
+      "actual": "一致=True",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d06_日期模糊通知.txt：事项仍存在且关键字段一致",
+      "result": "PASS",
+      "expected": "事项 ID/名称/截止日期/状态一致",
+      "actual": "一致",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d06_日期模糊通知.txt：任务状态持久化",
+      "result": "PASS",
+      "expected": "3 个任务及状态一致",
+      "actual": "3 个任务；一致=True",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d06_日期模糊通知.txt：材料状态与文件持久化",
+      "result": "PASS",
+      "expected": "2 项材料及文件信息一致",
+      "actual": "2 项；一致=True",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d06_日期模糊通知.txt：风险状态持久化",
+      "result": "PASS",
+      "expected": "重启前后未解决风险类型一致",
+      "actual": "一致=True",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d07_多流程办事通知.docx：事项仍存在且关键字段一致",
+      "result": "PASS",
+      "expected": "事项 ID/名称/截止日期/状态一致",
+      "actual": "一致",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d07_多流程办事通知.docx：任务状态持久化",
+      "result": "PASS",
+      "expected": "4 个任务及状态一致",
+      "actual": "4 个任务；一致=True",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d07_多流程办事通知.docx：材料状态与文件持久化",
+      "result": "PASS",
+      "expected": "2 项材料及文件信息一致",
+      "actual": "2 项；一致=True",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d07_多流程办事通知.docx：风险状态持久化",
+      "result": "PASS",
+      "expected": "重启前后未解决风险类型一致",
+      "actual": "一致=True",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d08_无材料要求通知.txt：事项仍存在且关键字段一致",
+      "result": "PASS",
+      "expected": "事项 ID/名称/截止日期/状态一致",
+      "actual": "一致",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d08_无材料要求通知.txt：任务状态持久化",
+      "result": "PASS",
+      "expected": "2 个任务及状态一致",
+      "actual": "2 个任务；一致=True",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d08_无材料要求通知.txt：材料状态与文件持久化",
+      "result": "PASS",
+      "expected": "1 项材料及文件信息一致",
+      "actual": "1 项；一致=True",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d08_无材料要求通知.txt：风险状态持久化",
+      "result": "PASS",
+      "expected": "重启前后未解决风险类型一致",
+      "actual": "一致=True",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d09_标题含材料关键词通知.txt：事项仍存在且关键字段一致",
+      "result": "PASS",
+      "expected": "事项 ID/名称/截止日期/状态一致",
+      "actual": "一致",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d09_标题含材料关键词通知.txt：任务状态持久化",
+      "result": "PASS",
+      "expected": "2 个任务及状态一致",
+      "actual": "2 个任务；一致=True",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d09_标题含材料关键词通知.txt：材料状态与文件持久化",
+      "result": "PASS",
+      "expected": "5 项材料及文件信息一致",
+      "actual": "5 项；一致=True",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d09_标题含材料关键词通知.txt：风险状态持久化",
+      "result": "PASS",
+      "expected": "重启前后未解决风险类型一致",
+      "actual": "一致=True",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d10_信息冲突通知.docx：事项仍存在且关键字段一致",
+      "result": "PASS",
+      "expected": "事项 ID/名称/截止日期/状态一致",
+      "actual": "一致",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d10_信息冲突通知.docx：任务状态持久化",
+      "result": "PASS",
+      "expected": "1 个任务及状态一致",
+      "actual": "1 个任务；一致=True",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d10_信息冲突通知.docx：材料状态与文件持久化",
+      "result": "PASS",
+      "expected": "3 项材料及文件信息一致",
+      "actual": "3 项；一致=True",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d10_信息冲突通知.docx：风险状态持久化",
+      "result": "PASS",
+      "expected": "重启前后未解决风险类型一致",
+      "actual": "一致=True",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d11_空流程通知.txt：事项仍存在且关键字段一致",
+      "result": "PASS",
+      "expected": "事项 ID/名称/截止日期/状态一致",
+      "actual": "一致",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d11_空流程通知.txt：任务状态持久化",
+      "result": "PASS",
+      "expected": "0 个任务及状态一致",
+      "actual": "0 个任务；一致=True",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d11_空流程通知.txt：材料状态与文件持久化",
+      "result": "PASS",
+      "expected": "0 项材料及文件信息一致",
+      "actual": "0 项；一致=True",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d11_空流程通知.txt：风险状态持久化",
+      "result": "PASS",
+      "expected": "重启前后未解决风险类型一致",
+      "actual": "一致=True",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d12_非法日期通知.txt：事项仍存在且关键字段一致",
+      "result": "PASS",
+      "expected": "事项 ID/名称/截止日期/状态一致",
+      "actual": "一致",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d12_非法日期通知.txt：任务状态持久化",
+      "result": "PASS",
+      "expected": "1 个任务及状态一致",
+      "actual": "1 个任务；一致=True",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d12_非法日期通知.txt：材料状态与文件持久化",
+      "result": "PASS",
+      "expected": "1 项材料及文件信息一致",
+      "actual": "1 项；一致=True",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    },
+    {
+      "category": "数据持久化",
+      "case": "重启前后",
+      "name": "d12_非法日期通知.txt：风险状态持久化",
+      "result": "PASS",
+      "expected": "重启前后未解决风险类型一致",
+      "actual": "一致=True",
+      "repro": "重启后端进程后重新查询",
+      "evidence": "evidence/persistence_before.json / persistence_after.json"
+    }
+  ]
+}

@@ -1,0 +1,671 @@
+{
+  "file": "d08_无材料要求通知.txt",
+  "steps": {
+    "1_analyze": {
+      "status": 200,
+      "body": {
+        "document": {
+          "filename": "d08_无材料要求通知.txt",
+          "extension": ".txt",
+          "size": 562,
+          "char_count": 215,
+          "page_count": null,
+          "paragraph_count": 17
+        },
+        "fields": [
+          {
+            "key": "title",
+            "label": "事项名称",
+            "value": "关于举办2026年秋季运动会的通知",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "关于举办2026年秋季运动会的通知",
+                "location": "第 1 行",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "matter_type",
+            "label": "事项类型",
+            "value": "活动赛事",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "关于举办2026年秋季运动会的通知",
+                "location": "第 1 行",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": "依据标题关键词「运动会」判断，仅供参考。"
+          },
+          {
+            "key": "qualification",
+            "label": "申请资格",
+            "value": "参与对象：全体在校学生均可报名参加",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "全体在校学生均可报名参加。",
+                "location": "第 7 行",
+                "page": null,
+                "paragraph": 7
+              }
+            ],
+            "note": "以上内容直接摘自原文对应章节或正文句子。"
+          },
+          {
+            "key": "registration_start",
+            "label": "报名开始日期",
+            "value": null,
+            "status": "pending",
+            "evidence": [],
+            "note": "原文未找到明确的报名日期区间，无法确认报名开始日期，请核实。"
+          },
+          {
+            "key": "deadline",
+            "label": "截止日期",
+            "value": null,
+            "status": "pending",
+            "evidence": [],
+            "note": "原文中未找到日期信息，无法确定截止日期，请向办理机构核实。"
+          }
+        ],
+        "materials": [],
+        "process": [
+          {
+            "index": 1,
+            "text": "登录体育系统填写报名信息",
+            "evidence": {
+              "text": "登录体育系统填写报名信息",
+              "location": "第 9 行",
+              "page": null,
+              "paragraph": 9
+            }
+          },
+          {
+            "index": 2,
+            "text": "前往体育部办公室确认参赛项目",
+            "evidence": {
+              "text": "前往体育部办公室确认参赛项目",
+              "location": "第 10 行",
+              "page": null,
+              "paragraph": 10
+            }
+          }
+        ],
+        "notes": [
+          {
+            "text": "请根据身体状况选择参赛项目。",
+            "evidence": {
+              "text": "请根据身体状况选择参赛项目。",
+              "location": "第 12 行",
+              "page": null,
+              "paragraph": 12
+            }
+          }
+        ],
+        "warnings": [
+          "未识别到材料要求，请核实原文是否包含材料清单或「填写/提交」类要求。"
+        ],
+        "analysis_mode": "rule_based",
+        "ai_configured": false,
+        "ai_message": "当前未配置大模型 API，本次分析仅使用本地规则（章节标题 + 关键词 + 日期正则）提取，不是 AI 分析结果。未找到原文依据的字段已标记为「待核实」，请人工核对。",
+        "elapsed_ms": 2
+      }
+    },
+    "5_create_matter": {
+      "status": 201,
+      "body": {
+        "id": 8,
+        "name": "关于举办2026年秋季运动会的通知",
+        "matter_type": "活动赛事",
+        "qualification": "参与对象：全体在校学生均可报名参加",
+        "registration_start": null,
+        "deadline": null,
+        "deadline_source": "none",
+        "materials": [],
+        "process": [
+          {
+            "index": 1,
+            "text": "登录体育系统填写报名信息",
+            "evidence": {
+              "text": "登录体育系统填写报名信息",
+              "location": "第 9 行",
+              "page": null,
+              "paragraph": 9
+            }
+          },
+          {
+            "index": 2,
+            "text": "前往体育部办公室确认参赛项目",
+            "evidence": {
+              "text": "前往体育部办公室确认参赛项目",
+              "location": "第 10 行",
+              "page": null,
+              "paragraph": 10
+            }
+          }
+        ],
+        "notes": [
+          {
+            "text": "请根据身体状况选择参赛项目。",
+            "evidence": {
+              "text": "请根据身体状况选择参赛项目。",
+              "location": "第 12 行",
+              "page": null,
+              "paragraph": 12
+            }
+          }
+        ],
+        "fields": [
+          {
+            "key": "title",
+            "label": "事项名称",
+            "value": "关于举办2026年秋季运动会的通知",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "关于举办2026年秋季运动会的通知",
+                "location": "第 1 行",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "matter_type",
+            "label": "事项类型",
+            "value": "活动赛事",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "关于举办2026年秋季运动会的通知",
+                "location": "第 1 行",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": "依据标题关键词「运动会」判断，仅供参考。"
+          },
+          {
+            "key": "qualification",
+            "label": "申请资格",
+            "value": "参与对象：全体在校学生均可报名参加",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "全体在校学生均可报名参加。",
+                "location": "第 7 行",
+                "page": null,
+                "paragraph": 7
+              }
+            ],
+            "note": "以上内容直接摘自原文对应章节或正文句子。"
+          },
+          {
+            "key": "registration_start",
+            "label": "报名开始日期",
+            "value": null,
+            "status": "pending",
+            "evidence": [],
+            "note": "原文未找到明确的报名日期区间，无法确认报名开始日期，请核实。"
+          },
+          {
+            "key": "deadline",
+            "label": "截止日期",
+            "value": null,
+            "status": "pending",
+            "evidence": [],
+            "note": "原文中未找到日期信息，无法确定截止日期，请向办理机构核实。"
+          }
+        ],
+        "source_filename": "d08_无材料要求通知.txt",
+        "status": "pending",
+        "analysis_mode": "rule_based",
+        "created_at": "2026-11-14T21:34:53.815",
+        "updated_at": "2026-11-14T21:34:53.815"
+      }
+    },
+    "6_get_matter": {
+      "status": 200,
+      "body": {
+        "id": 8,
+        "name": "关于举办2026年秋季运动会的通知",
+        "matter_type": "活动赛事",
+        "qualification": "参与对象：全体在校学生均可报名参加",
+        "registration_start": null,
+        "deadline": null,
+        "deadline_source": "none",
+        "materials": [],
+        "process": [
+          {
+            "index": 1,
+            "text": "登录体育系统填写报名信息",
+            "evidence": {
+              "text": "登录体育系统填写报名信息",
+              "location": "第 9 行",
+              "page": null,
+              "paragraph": 9
+            }
+          },
+          {
+            "index": 2,
+            "text": "前往体育部办公室确认参赛项目",
+            "evidence": {
+              "text": "前往体育部办公室确认参赛项目",
+              "location": "第 10 行",
+              "page": null,
+              "paragraph": 10
+            }
+          }
+        ],
+        "notes": [
+          {
+            "text": "请根据身体状况选择参赛项目。",
+            "evidence": {
+              "text": "请根据身体状况选择参赛项目。",
+              "location": "第 12 行",
+              "page": null,
+              "paragraph": 12
+            }
+          }
+        ],
+        "fields": [
+          {
+            "key": "title",
+            "label": "事项名称",
+            "value": "关于举办2026年秋季运动会的通知",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "关于举办2026年秋季运动会的通知",
+                "location": "第 1 行",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "matter_type",
+            "label": "事项类型",
+            "value": "活动赛事",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "关于举办2026年秋季运动会的通知",
+                "location": "第 1 行",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": "依据标题关键词「运动会」判断，仅供参考。"
+          },
+          {
+            "key": "qualification",
+            "label": "申请资格",
+            "value": "参与对象：全体在校学生均可报名参加",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "全体在校学生均可报名参加。",
+                "location": "第 7 行",
+                "page": null,
+                "paragraph": 7
+              }
+            ],
+            "note": "以上内容直接摘自原文对应章节或正文句子。"
+          },
+          {
+            "key": "registration_start",
+            "label": "报名开始日期",
+            "value": null,
+            "status": "pending",
+            "evidence": [],
+            "note": "原文未找到明确的报名日期区间，无法确认报名开始日期，请核实。"
+          },
+          {
+            "key": "deadline",
+            "label": "截止日期",
+            "value": null,
+            "status": "pending",
+            "evidence": [],
+            "note": "原文中未找到日期信息，无法确定截止日期，请向办理机构核实。"
+          }
+        ],
+        "source_filename": "d08_无材料要求通知.txt",
+        "status": "pending",
+        "analysis_mode": "rule_based",
+        "created_at": "2026-11-14T21:34:53.815",
+        "updated_at": "2026-11-14T21:34:53.815"
+      }
+    },
+    "7_generate_tasks": {
+      "status": 201,
+      "body": {
+        "matter_id": 8,
+        "created": 2,
+        "skipped": 0,
+        "total_process_steps": 2,
+        "message": "已生成 2 个任务。",
+        "tasks": [
+          {
+            "id": 43,
+            "matter_id": 8,
+            "title": "登录体育系统填写报名信息",
+            "description": "登录体育系统填写报名信息",
+            "deadline": null,
+            "deadline_source": "none",
+            "priority": "high",
+            "status": "pending",
+            "origin": "generated",
+            "source_evidence": {
+              "text": "登录体育系统填写报名信息",
+              "location": "第 9 行",
+              "page": null,
+              "paragraph": 9
+            },
+            "created_at": "2026-11-14T21:34:53.863",
+            "updated_at": "2026-11-14T21:34:53.863"
+          },
+          {
+            "id": 44,
+            "matter_id": 8,
+            "title": "前往体育部办公室确认参赛项目",
+            "description": "前往体育部办公室确认参赛项目",
+            "deadline": null,
+            "deadline_source": "none",
+            "priority": "high",
+            "status": "pending",
+            "origin": "generated",
+            "source_evidence": {
+              "text": "前往体育部办公室确认参赛项目",
+              "location": "第 10 行",
+              "page": null,
+              "paragraph": 10
+            },
+            "created_at": "2026-11-14T21:34:53.873",
+            "updated_at": "2026-11-14T21:34:53.873"
+          }
+        ],
+        "suggestion": null
+      }
+    },
+    "9_generate_tasks_again": {
+      "status": 201,
+      "body": {
+        "matter_id": 8,
+        "created": 0,
+        "skipped": 2,
+        "total_process_steps": 2,
+        "message": "该事项的 2 个流程步骤都已生成过任务，未重复创建。",
+        "tasks": [],
+        "suggestion": null
+      }
+    },
+    "10_generate_materials": {
+      "status": 201,
+      "body": {
+        "matter_id": 8,
+        "created": 0,
+        "skipped": 0,
+        "total_source_materials": 0,
+        "message": "该事项没有登记材料要求，暂无材料可生成。",
+        "materials": []
+      }
+    },
+    "14_refresh_risks": {
+      "status": 200,
+      "body": {
+        "generated_at": "2026-11-14T21:34:54.020+08:00",
+        "created": 1,
+        "updated": 16,
+        "revived": 0,
+        "resolved": 0,
+        "summary": {
+          "generated_at": "2026-11-14T21:34:54.020+08:00",
+          "timezone": "Asia/Shanghai",
+          "today": "2026-11-14",
+          "total_unresolved": 17,
+          "total_risks": 25,
+          "active": 17,
+          "read": 0,
+          "resolved": 8,
+          "high": 0,
+          "medium": 16,
+          "low": 1,
+          "by_type": {
+            "backlog": 1,
+            "date_unverified": 1,
+            "material_incomplete": 1,
+            "material_missing": 14
+          },
+          "overdue_tasks": 0,
+          "due_soon_3d_tasks": 0,
+          "due_soon_7d_tasks": 0,
+          "pending_materials": 0,
+          "conflict_materials": 0,
+          "missing_materials": 15,
+          "uncertain_materials": 0,
+          "unfinished_tasks": 9,
+          "matters_with_risks": 7
+        }
+      }
+    },
+    "14_matter_risks": {
+      "status": 200,
+      "body": {
+        "summary": {
+          "matter_id": 8,
+          "matter_name": "关于举办2026年秋季运动会的通知",
+          "matter_status": "pending",
+          "deadline": null,
+          "deadline_source": "none",
+          "deadline_state": "none",
+          "deadline_days_left": null,
+          "unfinished_tasks": 0,
+          "material_total": 0,
+          "material_missing": 0,
+          "material_pending": 0,
+          "material_conflict": 0,
+          "risk_total": 1,
+          "level": "medium",
+          "headline": "暂无风险。"
+        },
+        "risks": [
+          {
+            "id": 25,
+            "fingerprint": "backlog|matter:8",
+            "risk_type": "backlog",
+            "risk_level": "medium",
+            "title": "事项任务积压：关于举办2026年秋季运动会的通知",
+            "description": "事项「关于举办2026年秋季运动会的通知」还有 2 个未完成任务：前往体育部办公室确认参赛项目、登录体育系统填写报名信息。任务处于未完成状态本身不判定为逾期，只有存在明确截止日期且已过期时才单独产生逾期提醒。",
+            "matter_id": 8,
+            "matter_name": "关于举办2026年秋季运动会的通知",
+            "task_id": null,
+            "task_title": null,
+            "material_id": null,
+            "material_name": null,
+            "evidence": {
+              "rule": "事项下存在 2 个未完成任务（状态非 done）。",
+              "data_sources": [
+                "tasks.status",
+                "tasks.title",
+                "tasks.deadline"
+              ],
+              "timezone": "Asia/Shanghai",
+              "today": "2026-11-14",
+              "deadline_raw": null,
+              "deadline_normalized": null,
+              "deadline_source": null,
+              "days_left": null,
+              "matter_name": "关于举办2026年秋季运动会的通知",
+              "task": null,
+              "unfinished_tasks": [
+                {
+                  "id": 44,
+                  "title": "前往体育部办公室确认参赛项目",
+                  "status": "pending",
+                  "deadline": null,
+                  "deadline_source": "none",
+                  "days_left": null
+                },
+                {
+                  "id": 43,
+                  "title": "登录体育系统填写报名信息",
+                  "status": "pending",
+                  "deadline": null,
+                  "deadline_source": "none",
+                  "days_left": null
+                }
+              ],
+              "material": null,
+              "note": null
+            },
+            "suggestion": "建议按截止时间与优先级安排处理顺序，可前往任务中心逐项完成。",
+            "status": "active",
+            "first_seen_at": "2026-11-14T21:34:54.009+08:00",
+            "last_seen_at": "2026-11-14T21:34:54.009+08:00",
+            "read_at": null,
+            "resolved_at": null
+          }
+        ]
+      }
+    },
+    "16_task_status_change": {
+      "task_id": 44,
+      "after_done": [],
+      "after_reopen": [
+        "backlog"
+      ]
+    },
+    "16_all_tasks_done_risks": []
+  },
+  "checks": [],
+  "matter_id": 8,
+  "task_ids": [
+    44,
+    43
+  ],
+  "material_ids": [],
+  "analysis": {
+    "document": {
+      "filename": "d08_无材料要求通知.txt",
+      "extension": ".txt",
+      "size": 562,
+      "char_count": 215,
+      "page_count": null,
+      "paragraph_count": 17
+    },
+    "fields": [
+      {
+        "key": "title",
+        "label": "事项名称",
+        "value": "关于举办2026年秋季运动会的通知",
+        "status": "found",
+        "evidence": [
+          {
+            "text": "关于举办2026年秋季运动会的通知",
+            "location": "第 1 行",
+            "page": null,
+            "paragraph": 1
+          }
+        ],
+        "note": null
+      },
+      {
+        "key": "matter_type",
+        "label": "事项类型",
+        "value": "活动赛事",
+        "status": "found",
+        "evidence": [
+          {
+            "text": "关于举办2026年秋季运动会的通知",
+            "location": "第 1 行",
+            "page": null,
+            "paragraph": 1
+          }
+        ],
+        "note": "依据标题关键词「运动会」判断，仅供参考。"
+      },
+      {
+        "key": "qualification",
+        "label": "申请资格",
+        "value": "参与对象：全体在校学生均可报名参加",
+        "status": "found",
+        "evidence": [
+          {
+            "text": "全体在校学生均可报名参加。",
+            "location": "第 7 行",
+            "page": null,
+            "paragraph": 7
+          }
+        ],
+        "note": "以上内容直接摘自原文对应章节或正文句子。"
+      },
+      {
+        "key": "registration_start",
+        "label": "报名开始日期",
+        "value": null,
+        "status": "pending",
+        "evidence": [],
+        "note": "原文未找到明确的报名日期区间，无法确认报名开始日期，请核实。"
+      },
+      {
+        "key": "deadline",
+        "label": "截止日期",
+        "value": null,
+        "status": "pending",
+        "evidence": [],
+        "note": "原文中未找到日期信息，无法确定截止日期，请向办理机构核实。"
+      }
+    ],
+    "materials": [],
+    "process": [
+      {
+        "index": 1,
+        "text": "登录体育系统填写报名信息",
+        "evidence": {
+          "text": "登录体育系统填写报名信息",
+          "location": "第 9 行",
+          "page": null,
+          "paragraph": 9
+        }
+      },
+      {
+        "index": 2,
+        "text": "前往体育部办公室确认参赛项目",
+        "evidence": {
+          "text": "前往体育部办公室确认参赛项目",
+          "location": "第 10 行",
+          "page": null,
+          "paragraph": 10
+        }
+      }
+    ],
+    "notes": [
+      {
+        "text": "请根据身体状况选择参赛项目。",
+        "evidence": {
+          "text": "请根据身体状况选择参赛项目。",
+          "location": "第 12 行",
+          "page": null,
+          "paragraph": 12
+        }
+      }
+    ],
+    "warnings": [
+      "未识别到材料要求，请核实原文是否包含材料清单或「填写/提交」类要求。"
+    ],
+    "analysis_mode": "rule_based",
+    "ai_configured": false,
+    "ai_message": "当前未配置大模型 API，本次分析仅使用本地规则（章节标题 + 关键词 + 日期正则）提取，不是 AI 分析结果。未找到原文依据的字段已标记为「待核实」，请人工核对。",
+    "elapsed_ms": 2
+  }
+}

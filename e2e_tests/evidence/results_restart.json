@@ -1,0 +1,30 @@
+{
+  "category": "数据持久化",
+  "scope": "重启后端 + 重启前端后核对",
+  "backend_restart": {
+    "method": "停止隔离后端进程后重新启动，重新查询全部事项/任务/材料/风险",
+    "checks": 48,
+    "passed": 48,
+    "failed": 0,
+    "evidence": "evidence/results_persistence.json（基于 persistence_before.json / persistence_after.json）"
+  },
+  "frontend_restart": {
+    "method": "停止 Vite 5180 进程后用同一临时配置重新启动，浏览器重新加载 #/matters",
+    "http_status": 200,
+    "new_pid": 29384,
+    "result": "PASS",
+    "actual": "页面显示共 14 个事项；事项 #14 名称仍为“关于办理2026年校园一卡通补办的通知（E2E）”，状态仍为“进行中”，截止日期仍为 2026年9月30日",
+    "evidence": "本文件 browser_snapshot_after_frontend_restart 字段；截图工具本次不可用，未生成第 6 张截图"
+  },
+  "browser_snapshot_after_frontend_restart": {
+    "url": "http://127.0.0.1:5180/#/matters",
+    "viewport": "599x701",
+    "list_summary": "共 14 个事项（数据来源：SQLite），当前显示 14 个",
+    "matter_14": "关于办理2026年校园一卡通补办的通知（E2E） # 14 · d07_多流程办事通知.docx · 更新于 2026-11-14 21:42:55；证件办理；2026年9月30日；进行中"
+  },
+  "cleanup": {
+    "frontend_temp_config": "frontend/vite.config.e2e.ts 已删除",
+    "isolated_ports": "5180 / 8020 已停止监听",
+    "test_data_retained": "e2e_tests/data 与 e2e_tests/evidence 保留"
+  }
+}

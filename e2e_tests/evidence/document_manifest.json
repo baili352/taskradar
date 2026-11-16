@@ -1,0 +1,119 @@
+[
+  {
+    "file": "d01_校园活动通知.txt",
+    "format": "txt",
+    "kind": "普通校园活动通知",
+    "focus": "活动时间区间、参与对象、流程步骤、材料与注意事项",
+    "title_in_document": "关于开展2026年校园文化节活动的通知",
+    "created": true,
+    "source": "人工编写的测试用途模拟文档，非真实官方文件"
+  },
+  {
+    "file": "d02_竞赛通知.docx",
+    "format": "docx",
+    "kind": "有明确报名起止日期的竞赛通知",
+    "focus": "报名起止日期、多材料、流程步骤、逾期提示",
+    "title_in_document": "关于举办2026年大学生创新创业竞赛的通知",
+    "created": true,
+    "source": "人工编写的测试用途模拟文档，非真实官方文件"
+  },
+  {
+    "file": "d03_跨年度申报通知.txt",
+    "format": "txt",
+    "kind": "跨年度日期通知",
+    "focus": "2026-12-01 至 2027-01-15 的跨年度区间解析",
+    "title_in_document": "关于2027年寒假社会实践项目申报的通知",
+    "created": true,
+    "source": "人工编写的测试用途模拟文档，非真实官方文件"
+  },
+  {
+    "file": "d04_多材料申报通知.docx",
+    "format": "docx",
+    "kind": "有多个材料要求的申报通知",
+    "focus": "四项材料名称提取、四步流程、材料清单生成",
+    "title_in_document": "关于2026年度学生科研项目申报的通知",
+    "created": true,
+    "source": "人工编写的测试用途模拟文档，非真实官方文件"
+  },
+  {
+    "file": "d05_招聘公告.txt",
+    "format": "txt",
+    "kind": "招聘公告",
+    "focus": "招聘招录类型、报名区间、简历与证书材料",
+    "title_in_document": "某大学2026年公开招聘工作人员公告",
+    "created": true,
+    "source": "人工编写的测试用途模拟文档，非真实官方文件"
+  },
+  {
+    "file": "d06_日期模糊通知.txt",
+    "format": "txt",
+    "kind": "日期缺失或表达模糊的通知",
+    "focus": "缺失报名区间、仅“5月20日”缺年份，应提示待核实",
+    "title_in_document": "关于2026年春季学期资助申请的通知",
+    "created": true,
+    "source": "人工编写的测试用途模拟文档，非真实官方文件"
+  },
+  {
+    "file": "d07_多流程办事通知.docx",
+    "format": "docx",
+    "kind": "含多个流程步骤的办事通知",
+    "focus": "四步流程完整性、任务生成来源",
+    "title_in_document": "关于办理2026年校园一卡通补办的通知",
+    "created": true,
+    "source": "人工编写的测试用途模拟文档，非真实官方文件"
+  },
+  {
+    "file": "d08_无材料要求通知.txt",
+    "format": "txt",
+    "kind": "没有明确材料要求的通知",
+    "focus": "材料清单为空时系统应给出明确提示，不臆造材料",
+    "title_in_document": "关于举办2026年秋季运动会的通知",
+    "created": true,
+    "source": "人工编写的测试用途模拟文档，非真实官方文件"
+  },
+  {
+    "file": "d09_标题含材料关键词通知.txt",
+    "format": "txt",
+    "kind": "标题包含“关于提交材料的通知”的文档",
+    "focus": "标题中的“材料”不得被误提取为材料名称",
+    "title_in_document": "关于提交2026年国家奖学金材料的通知",
+    "created": true,
+    "source": "人工编写的测试用途模拟文档，非真实官方文件"
+  },
+  {
+    "file": "d10_信息冲突通知.docx",
+    "format": "docx",
+    "kind": "内容存在冲突或信息不完整的文档",
+    "focus": "同一文档出现两个截止日期，系统需提示冲突/取最晚并待核实",
+    "title_in_document": "关于2026年优秀学生评选工作的通知",
+    "created": true,
+    "source": "人工编写的测试用途模拟文档，非真实官方文件"
+  },
+  {
+    "file": "d11_空流程通知.txt",
+    "format": "txt",
+    "kind": "空流程边界文档",
+    "focus": "无办理流程时任务生成应为 0，并给出明确提示",
+    "title_in_document": "关于举办2026年学术讲座的通知",
+    "created": true,
+    "source": "人工编写的测试用途模拟文档，非真实官方文件"
+  },
+  {
+    "file": "d12_非法日期通知.txt",
+    "format": "txt",
+    "kind": "非法日期边界文档",
+    "focus": "2026-02-30 不是真实日历日期，风险层应提示日期待核实",
+    "title_in_document": "关于2026年2月30日事项申报的通知",
+    "created": true,
+    "source": "人工编写的测试用途模拟文档，非真实官方文件"
+  },
+  {
+    "file": "d03_跨年度申报通知.pdf",
+    "format": "pdf",
+    "kind": "跨年度日期通知（PDF 格式副本）",
+    "focus": "PDF 文本提取与跨年度区间解析",
+    "title_in_document": "关于2027年寒假社会实践项目申报的通知",
+    "created": true,
+    "source": "由测试脚本生成的模拟 PDF，非真实官方文件"
+  }
+]

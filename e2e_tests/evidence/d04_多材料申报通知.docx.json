@@ -1,0 +1,1526 @@
+{
+  "file": "d04_多材料申报通知.docx",
+  "steps": {
+    "1_analyze": {
+      "status": 200,
+      "body": {
+        "document": {
+          "filename": "d04_多材料申报通知.docx",
+          "extension": ".docx",
+          "size": 37130,
+          "char_count": 267,
+          "page_count": null,
+          "paragraph_count": 17
+        },
+        "fields": [
+          {
+            "key": "title",
+            "label": "事项名称",
+            "value": "关于2026年度学生科研项目申报的通知",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "关于2026年度学生科研项目申报的通知",
+                "location": "第 1 段",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "matter_type",
+            "label": "事项类型",
+            "value": "材料申报",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "关于2026年度学生科研项目申报的通知",
+                "location": "第 1 段",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": "依据标题关键词「申报」判断，仅供参考。"
+          },
+          {
+            "key": "qualification",
+            "label": "申请资格",
+            "value": "参与对象：全日制在校本科生、研究生",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "申请对象：全日制在校本科生、研究生。",
+                "location": "第 2 段",
+                "page": null,
+                "paragraph": 2
+              }
+            ],
+            "note": "以上内容直接摘自原文对应章节或正文句子。"
+          },
+          {
+            "key": "registration_start",
+            "label": "报名开始日期",
+            "value": "2026年5月6日",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "2026年5月6日至2026年5月26日",
+                "location": "第 4 段",
+                "page": null,
+                "paragraph": 4
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "deadline",
+            "label": "截止日期",
+            "value": "2026年5月26日",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "2026年5月6日至2026年5月26日",
+                "location": "第 4 段",
+                "page": null,
+                "paragraph": 4
+              }
+            ],
+            "note": null
+          }
+        ],
+        "materials": [
+          {
+            "name": "学生科研项目申请书",
+            "status": "found",
+            "evidence": {
+              "text": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+              "location": "第 6 段",
+              "page": null,
+              "paragraph": 6
+            }
+          },
+          {
+            "name": "项目汇总表",
+            "status": "found",
+            "evidence": {
+              "text": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+              "location": "第 6 段",
+              "page": null,
+              "paragraph": 6
+            }
+          },
+          {
+            "name": "承诺书",
+            "status": "found",
+            "evidence": {
+              "text": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+              "location": "第 6 段",
+              "page": null,
+              "paragraph": 6
+            }
+          },
+          {
+            "name": "成绩单复印件",
+            "status": "found",
+            "evidence": {
+              "text": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+              "location": "第 6 段",
+              "page": null,
+              "paragraph": 6
+            }
+          }
+        ],
+        "process": [
+          {
+            "index": 1,
+            "text": "下载并填写项目申请书",
+            "evidence": {
+              "text": "下载并填写项目申请书",
+              "location": "第 8 段",
+              "page": null,
+              "paragraph": 8
+            }
+          },
+          {
+            "index": 2,
+            "text": "准备项目汇总表和成绩单复印件",
+            "evidence": {
+              "text": "准备项目汇总表和成绩单复印件",
+              "location": "第 9 段",
+              "page": null,
+              "paragraph": 9
+            }
+          },
+          {
+            "index": 3,
+            "text": "登录科研系统上传电子版",
+            "evidence": {
+              "text": "登录科研系统上传电子版",
+              "location": "第 11 段",
+              "page": null,
+              "paragraph": 11
+            }
+          }
+        ],
+        "notes": [
+          {
+            "text": "材料不齐全的不予受理。",
+            "evidence": {
+              "text": "材料不齐全的不予受理。",
+              "location": "第 13 段",
+              "page": null,
+              "paragraph": 13
+            }
+          }
+        ],
+        "warnings": [],
+        "analysis_mode": "rule_based",
+        "ai_configured": false,
+        "ai_message": "当前未配置大模型 API，本次分析仅使用本地规则（章节标题 + 关键词 + 日期正则）提取，不是 AI 分析结果。未找到原文依据的字段已标记为「待核实」，请人工核对。",
+        "elapsed_ms": 7
+      }
+    },
+    "5_create_matter": {
+      "status": 201,
+      "body": {
+        "id": 4,
+        "name": "关于2026年度学生科研项目申报的通知",
+        "matter_type": "材料申报",
+        "qualification": "参与对象：全日制在校本科生、研究生",
+        "registration_start": "2026年5月6日",
+        "deadline": "2026年5月26日",
+        "deadline_source": "document",
+        "materials": [
+          {
+            "name": "学生科研项目申请书",
+            "status": "found",
+            "evidence": {
+              "text": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+              "location": "第 6 段",
+              "page": null,
+              "paragraph": 6
+            }
+          },
+          {
+            "name": "项目汇总表",
+            "status": "found",
+            "evidence": {
+              "text": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+              "location": "第 6 段",
+              "page": null,
+              "paragraph": 6
+            }
+          },
+          {
+            "name": "承诺书",
+            "status": "found",
+            "evidence": {
+              "text": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+              "location": "第 6 段",
+              "page": null,
+              "paragraph": 6
+            }
+          },
+          {
+            "name": "成绩单复印件",
+            "status": "found",
+            "evidence": {
+              "text": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+              "location": "第 6 段",
+              "page": null,
+              "paragraph": 6
+            }
+          }
+        ],
+        "process": [
+          {
+            "index": 1,
+            "text": "下载并填写项目申请书",
+            "evidence": {
+              "text": "下载并填写项目申请书",
+              "location": "第 8 段",
+              "page": null,
+              "paragraph": 8
+            }
+          },
+          {
+            "index": 2,
+            "text": "准备项目汇总表和成绩单复印件",
+            "evidence": {
+              "text": "准备项目汇总表和成绩单复印件",
+              "location": "第 9 段",
+              "page": null,
+              "paragraph": 9
+            }
+          },
+          {
+            "index": 3,
+            "text": "登录科研系统上传电子版",
+            "evidence": {
+              "text": "登录科研系统上传电子版",
+              "location": "第 11 段",
+              "page": null,
+              "paragraph": 11
+            }
+          }
+        ],
+        "notes": [
+          {
+            "text": "材料不齐全的不予受理。",
+            "evidence": {
+              "text": "材料不齐全的不予受理。",
+              "location": "第 13 段",
+              "page": null,
+              "paragraph": 13
+            }
+          }
+        ],
+        "fields": [
+          {
+            "key": "title",
+            "label": "事项名称",
+            "value": "关于2026年度学生科研项目申报的通知",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "关于2026年度学生科研项目申报的通知",
+                "location": "第 1 段",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "matter_type",
+            "label": "事项类型",
+            "value": "材料申报",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "关于2026年度学生科研项目申报的通知",
+                "location": "第 1 段",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": "依据标题关键词「申报」判断，仅供参考。"
+          },
+          {
+            "key": "qualification",
+            "label": "申请资格",
+            "value": "参与对象：全日制在校本科生、研究生",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "申请对象：全日制在校本科生、研究生。",
+                "location": "第 2 段",
+                "page": null,
+                "paragraph": 2
+              }
+            ],
+            "note": "以上内容直接摘自原文对应章节或正文句子。"
+          },
+          {
+            "key": "registration_start",
+            "label": "报名开始日期",
+            "value": "2026年5月6日",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "2026年5月6日至2026年5月26日",
+                "location": "第 4 段",
+                "page": null,
+                "paragraph": 4
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "deadline",
+            "label": "截止日期",
+            "value": "2026年5月26日",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "2026年5月6日至2026年5月26日",
+                "location": "第 4 段",
+                "page": null,
+                "paragraph": 4
+              }
+            ],
+            "note": null
+          }
+        ],
+        "source_filename": "d04_多材料申报通知.docx",
+        "status": "pending",
+        "analysis_mode": "rule_based",
+        "created_at": "2026-11-14T21:34:50.521",
+        "updated_at": "2026-11-14T21:34:50.521"
+      }
+    },
+    "6_get_matter": {
+      "status": 200,
+      "body": {
+        "id": 4,
+        "name": "关于2026年度学生科研项目申报的通知",
+        "matter_type": "材料申报",
+        "qualification": "参与对象：全日制在校本科生、研究生",
+        "registration_start": "2026年5月6日",
+        "deadline": "2026年5月26日",
+        "deadline_source": "document",
+        "materials": [
+          {
+            "name": "学生科研项目申请书",
+            "status": "found",
+            "evidence": {
+              "text": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+              "location": "第 6 段",
+              "page": null,
+              "paragraph": 6
+            }
+          },
+          {
+            "name": "项目汇总表",
+            "status": "found",
+            "evidence": {
+              "text": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+              "location": "第 6 段",
+              "page": null,
+              "paragraph": 6
+            }
+          },
+          {
+            "name": "承诺书",
+            "status": "found",
+            "evidence": {
+              "text": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+              "location": "第 6 段",
+              "page": null,
+              "paragraph": 6
+            }
+          },
+          {
+            "name": "成绩单复印件",
+            "status": "found",
+            "evidence": {
+              "text": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+              "location": "第 6 段",
+              "page": null,
+              "paragraph": 6
+            }
+          }
+        ],
+        "process": [
+          {
+            "index": 1,
+            "text": "下载并填写项目申请书",
+            "evidence": {
+              "text": "下载并填写项目申请书",
+              "location": "第 8 段",
+              "page": null,
+              "paragraph": 8
+            }
+          },
+          {
+            "index": 2,
+            "text": "准备项目汇总表和成绩单复印件",
+            "evidence": {
+              "text": "准备项目汇总表和成绩单复印件",
+              "location": "第 9 段",
+              "page": null,
+              "paragraph": 9
+            }
+          },
+          {
+            "index": 3,
+            "text": "登录科研系统上传电子版",
+            "evidence": {
+              "text": "登录科研系统上传电子版",
+              "location": "第 11 段",
+              "page": null,
+              "paragraph": 11
+            }
+          }
+        ],
+        "notes": [
+          {
+            "text": "材料不齐全的不予受理。",
+            "evidence": {
+              "text": "材料不齐全的不予受理。",
+              "location": "第 13 段",
+              "page": null,
+              "paragraph": 13
+            }
+          }
+        ],
+        "fields": [
+          {
+            "key": "title",
+            "label": "事项名称",
+            "value": "关于2026年度学生科研项目申报的通知",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "关于2026年度学生科研项目申报的通知",
+                "location": "第 1 段",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "matter_type",
+            "label": "事项类型",
+            "value": "材料申报",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "关于2026年度学生科研项目申报的通知",
+                "location": "第 1 段",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": "依据标题关键词「申报」判断，仅供参考。"
+          },
+          {
+            "key": "qualification",
+            "label": "申请资格",
+            "value": "参与对象：全日制在校本科生、研究生",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "申请对象：全日制在校本科生、研究生。",
+                "location": "第 2 段",
+                "page": null,
+                "paragraph": 2
+              }
+            ],
+            "note": "以上内容直接摘自原文对应章节或正文句子。"
+          },
+          {
+            "key": "registration_start",
+            "label": "报名开始日期",
+            "value": "2026年5月6日",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "2026年5月6日至2026年5月26日",
+                "location": "第 4 段",
+                "page": null,
+                "paragraph": 4
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "deadline",
+            "label": "截止日期",
+            "value": "2026年5月26日",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "2026年5月6日至2026年5月26日",
+                "location": "第 4 段",
+                "page": null,
+                "paragraph": 4
+              }
+            ],
+            "note": null
+          }
+        ],
+        "source_filename": "d04_多材料申报通知.docx",
+        "status": "pending",
+        "analysis_mode": "rule_based",
+        "created_at": "2026-11-14T21:34:50.521",
+        "updated_at": "2026-11-14T21:34:50.521"
+      }
+    },
+    "7_generate_tasks": {
+      "status": 201,
+      "body": {
+        "matter_id": 4,
+        "created": 3,
+        "skipped": 0,
+        "total_process_steps": 3,
+        "message": "已生成 3 个任务。",
+        "tasks": [
+          {
+            "id": 17,
+            "matter_id": 4,
+            "title": "下载并填写项目申请书",
+            "description": "下载并填写项目申请书",
+            "deadline": null,
+            "deadline_source": "none",
+            "priority": "medium",
+            "status": "pending",
+            "origin": "generated",
+            "source_evidence": {
+              "text": "下载并填写项目申请书",
+              "location": "第 8 段",
+              "page": null,
+              "paragraph": 8
+            },
+            "created_at": "2026-11-14T21:34:50.561",
+            "updated_at": "2026-11-14T21:34:50.561"
+          },
+          {
+            "id": 18,
+            "matter_id": 4,
+            "title": "准备项目汇总表和成绩单复印件",
+            "description": "准备项目汇总表和成绩单复印件",
+            "deadline": null,
+            "deadline_source": "none",
+            "priority": "medium",
+            "status": "pending",
+            "origin": "generated",
+            "source_evidence": {
+              "text": "准备项目汇总表和成绩单复印件",
+              "location": "第 9 段",
+              "page": null,
+              "paragraph": 9
+            },
+            "created_at": "2026-11-14T21:34:50.570",
+            "updated_at": "2026-11-14T21:34:50.570"
+          },
+          {
+            "id": 19,
+            "matter_id": 4,
+            "title": "登录科研系统上传电子版",
+            "description": "登录科研系统上传电子版",
+            "deadline": null,
+            "deadline_source": "none",
+            "priority": "high",
+            "status": "pending",
+            "origin": "generated",
+            "source_evidence": {
+              "text": "登录科研系统上传电子版",
+              "location": "第 11 段",
+              "page": null,
+              "paragraph": 11
+            },
+            "created_at": "2026-11-14T21:34:50.579",
+            "updated_at": "2026-11-14T21:34:50.579"
+          }
+        ],
+        "suggestion": {
+          "deadline": "2026年5月26日",
+          "note": "系统建议：依据事项总截止日期推断，仅作用于未设置截止时间的任务，确认后才会保存。",
+          "task_ids": [
+            17,
+            18,
+            19
+          ]
+        }
+      }
+    },
+    "9_generate_tasks_again": {
+      "status": 201,
+      "body": {
+        "matter_id": 4,
+        "created": 0,
+        "skipped": 3,
+        "total_process_steps": 3,
+        "message": "该事项的 3 个流程步骤都已生成过任务，未重复创建。",
+        "tasks": [],
+        "suggestion": null
+      }
+    },
+    "10_generate_materials": {
+      "status": 201,
+      "body": {
+        "matter_id": 4,
+        "created": 4,
+        "skipped": 0,
+        "total_source_materials": 4,
+        "message": "已生成 4 项材料。",
+        "materials": [
+          {
+            "id": 11,
+            "matter_id": 4,
+            "matter_name": "关于2026年度学生科研项目申报的通知",
+            "name": "学生科研项目申请书",
+            "description": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+            "status": "missing",
+            "file_path": null,
+            "original_filename": null,
+            "file_size": null,
+            "file_type": null,
+            "verification": null,
+            "source_evidence": {
+              "text": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+              "location": "第 6 段",
+              "page": null,
+              "paragraph": 6
+            },
+            "origin": "generated",
+            "created_at": "2026-11-14T21:34:50.659",
+            "updated_at": "2026-11-14T21:34:50.659",
+            "events": []
+          },
+          {
+            "id": 12,
+            "matter_id": 4,
+            "matter_name": "关于2026年度学生科研项目申报的通知",
+            "name": "项目汇总表",
+            "description": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+            "status": "missing",
+            "file_path": null,
+            "original_filename": null,
+            "file_size": null,
+            "file_type": null,
+            "verification": null,
+            "source_evidence": {
+              "text": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+              "location": "第 6 段",
+              "page": null,
+              "paragraph": 6
+            },
+            "origin": "generated",
+            "created_at": "2026-11-14T21:34:50.659",
+            "updated_at": "2026-11-14T21:34:50.659",
+            "events": []
+          },
+          {
+            "id": 13,
+            "matter_id": 4,
+            "matter_name": "关于2026年度学生科研项目申报的通知",
+            "name": "承诺书",
+            "description": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+            "status": "missing",
+            "file_path": null,
+            "original_filename": null,
+            "file_size": null,
+            "file_type": null,
+            "verification": null,
+            "source_evidence": {
+              "text": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+              "location": "第 6 段",
+              "page": null,
+              "paragraph": 6
+            },
+            "origin": "generated",
+            "created_at": "2026-11-14T21:34:50.659",
+            "updated_at": "2026-11-14T21:34:50.659",
+            "events": []
+          },
+          {
+            "id": 14,
+            "matter_id": 4,
+            "matter_name": "关于2026年度学生科研项目申报的通知",
+            "name": "成绩单复印件",
+            "description": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+            "status": "missing",
+            "file_path": null,
+            "original_filename": null,
+            "file_size": null,
+            "file_type": null,
+            "verification": null,
+            "source_evidence": {
+              "text": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+              "location": "第 6 段",
+              "page": null,
+              "paragraph": 6
+            },
+            "origin": "generated",
+            "created_at": "2026-11-14T21:34:50.659",
+            "updated_at": "2026-11-14T21:34:50.659",
+            "events": []
+          }
+        ]
+      }
+    },
+    "11_upload_material": {
+      "status": 200,
+      "body": {
+        "id": 14,
+        "matter_id": 4,
+        "matter_name": "关于2026年度学生科研项目申报的通知",
+        "name": "成绩单复印件",
+        "description": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+        "status": "pending",
+        "file_path": "matter-4/b02888ad96e04544882170f8036d79b8.txt",
+        "original_filename": "material_suspicious.txt",
+        "file_size": 99,
+        "file_type": "TXT",
+        "verification": null,
+        "source_evidence": {
+          "text": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+          "location": "第 6 段",
+          "page": null,
+          "paragraph": 6
+        },
+        "origin": "generated",
+        "created_at": "2026-11-14T21:34:50.659",
+        "updated_at": "2026-11-14T21:34:50.706",
+        "events": []
+      }
+    },
+    "12_verify_material": {
+      "status": 200,
+      "body": {
+        "id": 14,
+        "matter_id": 4,
+        "matter_name": "关于2026年度学生科研项目申报的通知",
+        "name": "成绩单复印件",
+        "description": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+        "status": "uncertain",
+        "file_path": "matter-4/b02888ad96e04544882170f8036d79b8.txt",
+        "original_filename": "material_suspicious.txt",
+        "file_size": 99,
+        "file_type": "TXT",
+        "verification": {
+          "result": "uncertain",
+          "source": "rule",
+          "verified_at": "2026-11-14T21:34:50.735",
+          "summary": "文件文本出现可能表示材料存在问题的表述，系统无法判断，请人工确认。",
+          "checks": [
+            {
+              "key": "file_readable",
+              "label": "文件可读取",
+              "status": "pass",
+              "message": "文件已通过格式与内容校验，可正常读取：3 段，31 字。",
+              "excerpt": null,
+              "location": "material_suspicious.txt"
+            },
+            {
+              "key": "text_extracted",
+              "label": "有效文本",
+              "status": "pass",
+              "message": "成功提取到 31 个字符，可用于内容比对。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "keyword_coverage",
+              "label": "关键内容",
+              "status": "warn",
+              "message": "已匹配：无；未找到：成绩单。可能是材料不匹配，或文件内容缺少相关表述。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "required_elements",
+              "label": "要求要素",
+              "status": "pass",
+              "message": "材料要求中未提到签字、盖章、日期等必须要素，无需逐项比对。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "suspicious_phrases",
+              "label": "冲突风险",
+              "status": "unknown",
+              "message": "文件文本中出现「过期、失效」等表述，可能表示材料存在问题，需人工确认，系统不直接判定材料无效。",
+              "excerpt": "该证明材料已过期，原证件已失效。",
+              "location": "第 3 行"
+            }
+          ],
+          "reasons": [
+            "文件文本中未找到关键词：成绩单，需人工确认材料是否匹配。",
+            "文件文本存在可能表示材料不符合要求的表述，需人工确认。"
+          ],
+          "reviewer_note": null
+        },
+        "source_evidence": {
+          "text": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+          "location": "第 6 段",
+          "page": null,
+          "paragraph": 6
+        },
+        "origin": "generated",
+        "created_at": "2026-11-14T21:34:50.659",
+        "updated_at": "2026-11-14T21:34:50.735",
+        "events": []
+      }
+    },
+    "13_confirm_material": {
+      "status": 200,
+      "body": {
+        "id": 14,
+        "matter_id": 4,
+        "matter_name": "关于2026年度学生科研项目申报的通知",
+        "name": "成绩单复印件",
+        "description": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+        "status": "qualified",
+        "file_path": "matter-4/b02888ad96e04544882170f8036d79b8.txt",
+        "original_filename": "material_suspicious.txt",
+        "file_size": 99,
+        "file_type": "TXT",
+        "verification": {
+          "result": "qualified",
+          "source": "manual",
+          "verified_at": "2026-11-14T21:34:50.781",
+          "summary": "人工确认：已确认符合。E2E 测试人工确认",
+          "checks": [
+            {
+              "key": "file_readable",
+              "label": "文件可读取",
+              "status": "pass",
+              "message": "文件已通过格式与内容校验，可正常读取：3 段，31 字。",
+              "excerpt": null,
+              "location": "material_suspicious.txt"
+            },
+            {
+              "key": "text_extracted",
+              "label": "有效文本",
+              "status": "pass",
+              "message": "成功提取到 31 个字符，可用于内容比对。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "keyword_coverage",
+              "label": "关键内容",
+              "status": "warn",
+              "message": "已匹配：无；未找到：成绩单。可能是材料不匹配，或文件内容缺少相关表述。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "required_elements",
+              "label": "要求要素",
+              "status": "pass",
+              "message": "材料要求中未提到签字、盖章、日期等必须要素，无需逐项比对。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "suspicious_phrases",
+              "label": "冲突风险",
+              "status": "unknown",
+              "message": "文件文本中出现「过期、失效」等表述，可能表示材料存在问题，需人工确认，系统不直接判定材料无效。",
+              "excerpt": "该证明材料已过期，原证件已失效。",
+              "location": "第 3 行"
+            },
+            {
+              "key": "manual_evidence",
+              "label": "人工补充依据",
+              "status": "pass",
+              "message": "E2E 测试人工确认",
+              "excerpt": "测试用途材料样本",
+              "location": "人工填写"
+            }
+          ],
+          "reasons": [
+            "文件文本中未找到关键词：成绩单，需人工确认材料是否匹配。",
+            "文件文本存在可能表示材料不符合要求的表述，需人工确认。"
+          ],
+          "reviewer_note": "E2E 测试人工确认"
+        },
+        "source_evidence": {
+          "text": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+          "location": "第 6 段",
+          "page": null,
+          "paragraph": 6
+        },
+        "origin": "generated",
+        "created_at": "2026-11-14T21:34:50.659",
+        "updated_at": "2026-11-14T21:34:50.781",
+        "events": []
+      }
+    },
+    "13_material_detail": {
+      "id": 14,
+      "matter_id": 4,
+      "matter_name": "关于2026年度学生科研项目申报的通知",
+      "name": "成绩单复印件",
+      "description": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+      "status": "qualified",
+      "file_path": "matter-4/b02888ad96e04544882170f8036d79b8.txt",
+      "original_filename": "material_suspicious.txt",
+      "file_size": 99,
+      "file_type": "TXT",
+      "verification": {
+        "result": "qualified",
+        "source": "manual",
+        "verified_at": "2026-11-14T21:34:50.781",
+        "summary": "人工确认：已确认符合。E2E 测试人工确认",
+        "checks": [
+          {
+            "key": "file_readable",
+            "label": "文件可读取",
+            "status": "pass",
+            "message": "文件已通过格式与内容校验，可正常读取：3 段，31 字。",
+            "excerpt": null,
+            "location": "material_suspicious.txt"
+          },
+          {
+            "key": "text_extracted",
+            "label": "有效文本",
+            "status": "pass",
+            "message": "成功提取到 31 个字符，可用于内容比对。",
+            "excerpt": null,
+            "location": null
+          },
+          {
+            "key": "keyword_coverage",
+            "label": "关键内容",
+            "status": "warn",
+            "message": "已匹配：无；未找到：成绩单。可能是材料不匹配，或文件内容缺少相关表述。",
+            "excerpt": null,
+            "location": null
+          },
+          {
+            "key": "required_elements",
+            "label": "要求要素",
+            "status": "pass",
+            "message": "材料要求中未提到签字、盖章、日期等必须要素，无需逐项比对。",
+            "excerpt": null,
+            "location": null
+          },
+          {
+            "key": "suspicious_phrases",
+            "label": "冲突风险",
+            "status": "unknown",
+            "message": "文件文本中出现「过期、失效」等表述，可能表示材料存在问题，需人工确认，系统不直接判定材料无效。",
+            "excerpt": "该证明材料已过期，原证件已失效。",
+            "location": "第 3 行"
+          },
+          {
+            "key": "manual_evidence",
+            "label": "人工补充依据",
+            "status": "pass",
+            "message": "E2E 测试人工确认",
+            "excerpt": "测试用途材料样本",
+            "location": "人工填写"
+          }
+        ],
+        "reasons": [
+          "文件文本中未找到关键词：成绩单，需人工确认材料是否匹配。",
+          "文件文本存在可能表示材料不符合要求的表述，需人工确认。"
+        ],
+        "reviewer_note": "E2E 测试人工确认"
+      },
+      "source_evidence": {
+        "text": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+        "location": "第 6 段",
+        "page": null,
+        "paragraph": 6
+      },
+      "origin": "generated",
+      "created_at": "2026-11-14T21:34:50.659",
+      "updated_at": "2026-11-14T21:34:50.781",
+      "events": [
+        {
+          "id": 23,
+          "action": "generated",
+          "detail": "由事项材料要求生成",
+          "created_at": "2026-11-14T21:34:50.659"
+        },
+        {
+          "id": 24,
+          "action": "file_uploaded",
+          "detail": "上传文件：material_suspicious.txt",
+          "created_at": "2026-11-14T21:34:50.706"
+        },
+        {
+          "id": 25,
+          "action": "verified",
+          "detail": "文件文本出现可能表示材料存在问题的表述，系统无法判断，请人工确认。",
+          "created_at": "2026-11-14T21:34:50.735"
+        },
+        {
+          "id": 26,
+          "action": "confirmed",
+          "detail": "人工确认：已确认符合。E2E 测试人工确认",
+          "created_at": "2026-11-14T21:34:50.781"
+        }
+      ]
+    },
+    "14_refresh_risks": {
+      "status": 200,
+      "body": {
+        "generated_at": "2026-11-14T21:34:50.831+08:00",
+        "created": 4,
+        "updated": 7,
+        "revived": 0,
+        "resolved": 0,
+        "summary": {
+          "generated_at": "2026-11-14T21:34:50.831+08:00",
+          "timezone": "Asia/Shanghai",
+          "today": "2026-11-14",
+          "total_unresolved": 11,
+          "total_risks": 15,
+          "active": 11,
+          "read": 0,
+          "resolved": 4,
+          "high": 0,
+          "medium": 11,
+          "low": 0,
+          "by_type": {
+            "backlog": 1,
+            "material_incomplete": 1,
+            "material_missing": 9
+          },
+          "overdue_tasks": 0,
+          "due_soon_3d_tasks": 0,
+          "due_soon_7d_tasks": 0,
+          "pending_materials": 0,
+          "conflict_materials": 0,
+          "missing_materials": 10,
+          "uncertain_materials": 0,
+          "unfinished_tasks": 6,
+          "matters_with_risks": 3
+        }
+      }
+    },
+    "14_matter_risks": {
+      "status": 200,
+      "body": {
+        "summary": {
+          "matter_id": 4,
+          "matter_name": "关于2026年度学生科研项目申报的通知",
+          "matter_status": "pending",
+          "deadline": "2026年5月26日",
+          "deadline_source": "document",
+          "deadline_state": "overdue",
+          "deadline_days_left": -172,
+          "unfinished_tasks": 0,
+          "material_total": 4,
+          "material_missing": 3,
+          "material_pending": 0,
+          "material_conflict": 0,
+          "risk_total": 4,
+          "level": "high",
+          "headline": "已超过事项截止日期 172 天；3 项材料未提供。"
+        },
+        "risks": [
+          {
+            "id": 15,
+            "fingerprint": "material_missing|matter:4|material:11",
+            "risk_type": "material_missing",
+            "risk_level": "medium",
+            "title": "材料缺失：学生科研项目申请书",
+            "description": "事项「关于2026年度学生科研项目申报的通知」的材料「学生科研项目申请书」必需材料尚未提供。 材料要求：《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+            "matter_id": 4,
+            "matter_name": "关于2026年度学生科研项目申报的通知",
+            "task_id": null,
+            "task_title": null,
+            "material_id": 11,
+            "material_name": "学生科研项目申请书",
+            "evidence": {
+              "rule": "材料状态为「missing」，必需材料尚未提供。",
+              "data_sources": [
+                "materials.status",
+                "materials.verification_evidence_json"
+              ],
+              "timezone": "Asia/Shanghai",
+              "today": "2026-11-14",
+              "deadline_raw": null,
+              "deadline_normalized": null,
+              "deadline_source": null,
+              "days_left": null,
+              "matter_name": "关于2026年度学生科研项目申报的通知",
+              "task": null,
+              "unfinished_tasks": [],
+              "material": {
+                "name": "学生科研项目申请书",
+                "description": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+                "status": "missing",
+                "original_filename": null,
+                "file_type": null,
+                "file_size": null,
+                "requirement_evidence": {
+                  "text": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+                  "location": "第 6 段",
+                  "page": null,
+                  "paragraph": 6
+                },
+                "verification": null
+              },
+              "note": null
+            },
+            "suggestion": "请准备并上传该材料，上传后可执行规则核验。",
+            "status": "active",
+            "first_seen_at": "2026-11-14T21:34:50.815+08:00",
+            "last_seen_at": "2026-11-14T21:34:50.815+08:00",
+            "read_at": null,
+            "resolved_at": null
+          },
+          {
+            "id": 14,
+            "fingerprint": "material_missing|matter:4|material:12",
+            "risk_type": "material_missing",
+            "risk_level": "medium",
+            "title": "材料缺失：项目汇总表",
+            "description": "事项「关于2026年度学生科研项目申报的通知」的材料「项目汇总表」必需材料尚未提供。 材料要求：《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+            "matter_id": 4,
+            "matter_name": "关于2026年度学生科研项目申报的通知",
+            "task_id": null,
+            "task_title": null,
+            "material_id": 12,
+            "material_name": "项目汇总表",
+            "evidence": {
+              "rule": "材料状态为「missing」，必需材料尚未提供。",
+              "data_sources": [
+                "materials.status",
+                "materials.verification_evidence_json"
+              ],
+              "timezone": "Asia/Shanghai",
+              "today": "2026-11-14",
+              "deadline_raw": null,
+              "deadline_normalized": null,
+              "deadline_source": null,
+              "days_left": null,
+              "matter_name": "关于2026年度学生科研项目申报的通知",
+              "task": null,
+              "unfinished_tasks": [],
+              "material": {
+                "name": "项目汇总表",
+                "description": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+                "status": "missing",
+                "original_filename": null,
+                "file_type": null,
+                "file_size": null,
+                "requirement_evidence": {
+                  "text": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+                  "location": "第 6 段",
+                  "page": null,
+                  "paragraph": 6
+                },
+                "verification": null
+              },
+              "note": null
+            },
+            "suggestion": "请准备并上传该材料，上传后可执行规则核验。",
+            "status": "active",
+            "first_seen_at": "2026-11-14T21:34:50.815+08:00",
+            "last_seen_at": "2026-11-14T21:34:50.815+08:00",
+            "read_at": null,
+            "resolved_at": null
+          },
+          {
+            "id": 13,
+            "fingerprint": "material_missing|matter:4|material:13",
+            "risk_type": "material_missing",
+            "risk_level": "medium",
+            "title": "材料缺失：承诺书",
+            "description": "事项「关于2026年度学生科研项目申报的通知」的材料「承诺书」必需材料尚未提供。 材料要求：《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+            "matter_id": 4,
+            "matter_name": "关于2026年度学生科研项目申报的通知",
+            "task_id": null,
+            "task_title": null,
+            "material_id": 13,
+            "material_name": "承诺书",
+            "evidence": {
+              "rule": "材料状态为「missing」，必需材料尚未提供。",
+              "data_sources": [
+                "materials.status",
+                "materials.verification_evidence_json"
+              ],
+              "timezone": "Asia/Shanghai",
+              "today": "2026-11-14",
+              "deadline_raw": null,
+              "deadline_normalized": null,
+              "deadline_source": null,
+              "days_left": null,
+              "matter_name": "关于2026年度学生科研项目申报的通知",
+              "task": null,
+              "unfinished_tasks": [],
+              "material": {
+                "name": "承诺书",
+                "description": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+                "status": "missing",
+                "original_filename": null,
+                "file_type": null,
+                "file_size": null,
+                "requirement_evidence": {
+                  "text": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+                  "location": "第 6 段",
+                  "page": null,
+                  "paragraph": 6
+                },
+                "verification": null
+              },
+              "note": null
+            },
+            "suggestion": "请准备并上传该材料，上传后可执行规则核验。",
+            "status": "active",
+            "first_seen_at": "2026-11-14T21:34:50.815+08:00",
+            "last_seen_at": "2026-11-14T21:34:50.815+08:00",
+            "read_at": null,
+            "resolved_at": null
+          },
+          {
+            "id": 12,
+            "fingerprint": "backlog|matter:4",
+            "risk_type": "backlog",
+            "risk_level": "medium",
+            "title": "事项任务积压：关于2026年度学生科研项目申报的通知",
+            "description": "事项「关于2026年度学生科研项目申报的通知」还有 3 个未完成任务：登录科研系统上传电子版、准备项目汇总表和成绩单复印件、下载并填写项目申请书。任务处于未完成状态本身不判定为逾期，只有存在明确截止日期且已过期时才单独产生逾期提醒。",
+            "matter_id": 4,
+            "matter_name": "关于2026年度学生科研项目申报的通知",
+            "task_id": null,
+            "task_title": null,
+            "material_id": null,
+            "material_name": null,
+            "evidence": {
+              "rule": "事项下存在 3 个未完成任务（状态非 done）。",
+              "data_sources": [
+                "tasks.status",
+                "tasks.title",
+                "tasks.deadline"
+              ],
+              "timezone": "Asia/Shanghai",
+              "today": "2026-11-14",
+              "deadline_raw": null,
+              "deadline_normalized": null,
+              "deadline_source": null,
+              "days_left": null,
+              "matter_name": "关于2026年度学生科研项目申报的通知",
+              "task": null,
+              "unfinished_tasks": [
+                {
+                  "id": 19,
+                  "title": "登录科研系统上传电子版",
+                  "status": "pending",
+                  "deadline": null,
+                  "deadline_source": "none",
+                  "days_left": null
+                },
+                {
+                  "id": 18,
+                  "title": "准备项目汇总表和成绩单复印件",
+                  "status": "pending",
+                  "deadline": null,
+                  "deadline_source": "none",
+                  "days_left": null
+                },
+                {
+                  "id": 17,
+                  "title": "下载并填写项目申请书",
+                  "status": "pending",
+                  "deadline": null,
+                  "deadline_source": "none",
+                  "days_left": null
+                }
+              ],
+              "material": null,
+              "note": null
+            },
+            "suggestion": "建议按截止时间与优先级安排处理顺序，可前往任务中心逐项完成。",
+            "status": "active",
+            "first_seen_at": "2026-11-14T21:34:50.815+08:00",
+            "last_seen_at": "2026-11-14T21:34:50.815+08:00",
+            "read_at": null,
+            "resolved_at": null
+          }
+        ]
+      }
+    },
+    "16_task_status_change": {
+      "task_id": 19,
+      "after_done": [
+        "material_missing",
+        "material_missing",
+        "material_missing",
+        "backlog"
+      ],
+      "after_reopen": [
+        "material_missing",
+        "material_missing",
+        "material_missing",
+        "backlog"
+      ]
+    },
+    "16_all_tasks_done_risks": [
+      "material_missing",
+      "material_missing",
+      "material_missing"
+    ]
+  },
+  "checks": [],
+  "matter_id": 4,
+  "task_ids": [
+    19,
+    18,
+    17
+  ],
+  "material_ids": [
+    14,
+    13,
+    12,
+    11
+  ],
+  "analysis": {
+    "document": {
+      "filename": "d04_多材料申报通知.docx",
+      "extension": ".docx",
+      "size": 37130,
+      "char_count": 267,
+      "page_count": null,
+      "paragraph_count": 17
+    },
+    "fields": [
+      {
+        "key": "title",
+        "label": "事项名称",
+        "value": "关于2026年度学生科研项目申报的通知",
+        "status": "found",
+        "evidence": [
+          {
+            "text": "关于2026年度学生科研项目申报的通知",
+            "location": "第 1 段",
+            "page": null,
+            "paragraph": 1
+          }
+        ],
+        "note": null
+      },
+      {
+        "key": "matter_type",
+        "label": "事项类型",
+        "value": "材料申报",
+        "status": "found",
+        "evidence": [
+          {
+            "text": "关于2026年度学生科研项目申报的通知",
+            "location": "第 1 段",
+            "page": null,
+            "paragraph": 1
+          }
+        ],
+        "note": "依据标题关键词「申报」判断，仅供参考。"
+      },
+      {
+        "key": "qualification",
+        "label": "申请资格",
+        "value": "参与对象：全日制在校本科生、研究生",
+        "status": "found",
+        "evidence": [
+          {
+            "text": "申请对象：全日制在校本科生、研究生。",
+            "location": "第 2 段",
+            "page": null,
+            "paragraph": 2
+          }
+        ],
+        "note": "以上内容直接摘自原文对应章节或正文句子。"
+      },
+      {
+        "key": "registration_start",
+        "label": "报名开始日期",
+        "value": "2026年5月6日",
+        "status": "found",
+        "evidence": [
+          {
+            "text": "2026年5月6日至2026年5月26日",
+            "location": "第 4 段",
+            "page": null,
+            "paragraph": 4
+          }
+        ],
+        "note": null
+      },
+      {
+        "key": "deadline",
+        "label": "截止日期",
+        "value": "2026年5月26日",
+        "status": "found",
+        "evidence": [
+          {
+            "text": "2026年5月6日至2026年5月26日",
+            "location": "第 4 段",
+            "page": null,
+            "paragraph": 4
+          }
+        ],
+        "note": null
+      }
+    ],
+    "materials": [
+      {
+        "name": "学生科研项目申请书",
+        "status": "found",
+        "evidence": {
+          "text": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+          "location": "第 6 段",
+          "page": null,
+          "paragraph": 6
+        }
+      },
+      {
+        "name": "项目汇总表",
+        "status": "found",
+        "evidence": {
+          "text": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+          "location": "第 6 段",
+          "page": null,
+          "paragraph": 6
+        }
+      },
+      {
+        "name": "承诺书",
+        "status": "found",
+        "evidence": {
+          "text": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+          "location": "第 6 段",
+          "page": null,
+          "paragraph": 6
+        }
+      },
+      {
+        "name": "成绩单复印件",
+        "status": "found",
+        "evidence": {
+          "text": "《学生科研项目申请书》《项目汇总表》、承诺书、成绩单复印件。",
+          "location": "第 6 段",
+          "page": null,
+          "paragraph": 6
+        }
+      }
+    ],
+    "process": [
+      {
+        "index": 1,
+        "text": "下载并填写项目申请书",
+        "evidence": {
+          "text": "下载并填写项目申请书",
+          "location": "第 8 段",
+          "page": null,
+          "paragraph": 8
+        }
+      },
+      {
+        "index": 2,
+        "text": "准备项目汇总表和成绩单复印件",
+        "evidence": {
+          "text": "准备项目汇总表和成绩单复印件",
+          "location": "第 9 段",
+          "page": null,
+          "paragraph": 9
+        }
+      },
+      {
+        "index": 3,
+        "text": "登录科研系统上传电子版",
+        "evidence": {
+          "text": "登录科研系统上传电子版",
+          "location": "第 11 段",
+          "page": null,
+          "paragraph": 11
+        }
+      }
+    ],
+    "notes": [
+      {
+        "text": "材料不齐全的不予受理。",
+        "evidence": {
+          "text": "材料不齐全的不予受理。",
+          "location": "第 13 段",
+          "page": null,
+          "paragraph": 13
+        }
+      }
+    ],
+    "warnings": [],
+    "analysis_mode": "rule_based",
+    "ai_configured": false,
+    "ai_message": "当前未配置大模型 API，本次分析仅使用本地规则（章节标题 + 关键词 + 日期正则）提取，不是 AI 分析结果。未找到原文依据的字段已标记为「待核实」，请人工核对。",
+    "elapsed_ms": 7
+  }
+}

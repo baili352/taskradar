@@ -1,0 +1,1299 @@
+{
+  "file": "d06_日期模糊通知.txt",
+  "steps": {
+    "1_analyze": {
+      "status": 200,
+      "body": {
+        "document": {
+          "filename": "d06_日期模糊通知.txt",
+          "extension": ".txt",
+          "size": 718,
+          "char_count": 257,
+          "page_count": null,
+          "paragraph_count": 22
+        },
+        "fields": [
+          {
+            "key": "title",
+            "label": "事项名称",
+            "value": "关于2026年春季学期资助申请的通知",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "关于2026年春季学期资助申请的通知",
+                "location": "第 1 行",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "matter_type",
+            "label": "事项类型",
+            "value": "材料申报",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "关于2026年春季学期资助申请的通知",
+                "location": "第 1 行",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": "依据标题关键词「资助」判断，仅供参考。"
+          },
+          {
+            "key": "qualification",
+            "label": "申请资格",
+            "value": "参与对象：家庭经济困难的在校学生均可申请",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "家庭经济困难的在校学生均可申请。",
+                "location": "第 5 行",
+                "page": null,
+                "paragraph": 5
+              }
+            ],
+            "note": "以上内容直接摘自原文对应章节或正文句子。"
+          },
+          {
+            "key": "registration_start",
+            "label": "报名开始日期",
+            "value": null,
+            "status": "pending",
+            "evidence": [],
+            "note": "原文未找到明确的报名日期区间，无法确认报名开始日期，请核实。"
+          },
+          {
+            "key": "deadline",
+            "label": "截止日期",
+            "value": "5月20日",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "截止时间为5月20日。",
+                "location": "第 9 行",
+                "page": null,
+                "paragraph": 9
+              }
+            ],
+            "note": "原文未标注截止日期的年份，请核实具体年份。"
+          }
+        ],
+        "materials": [
+          {
+            "name": "资助申请表",
+            "status": "found",
+            "evidence": {
+              "text": "《资助申请表》、家庭情况说明。",
+              "location": "第 11 行",
+              "page": null,
+              "paragraph": 11
+            }
+          },
+          {
+            "name": "家庭情况说明",
+            "status": "found",
+            "evidence": {
+              "text": "《资助申请表》、家庭情况说明。",
+              "location": "第 11 行",
+              "page": null,
+              "paragraph": 11
+            }
+          }
+        ],
+        "process": [
+          {
+            "index": 1,
+            "text": "填写资助申请表",
+            "evidence": {
+              "text": "填写资助申请表",
+              "location": "第 13 行",
+              "page": null,
+              "paragraph": 13
+            }
+          },
+          {
+            "index": 2,
+            "text": "将申请表发送至学院邮箱",
+            "evidence": {
+              "text": "将申请表发送至学院邮箱",
+              "location": "第 14 行",
+              "page": null,
+              "paragraph": 14
+            }
+          },
+          {
+            "index": 3,
+            "text": "联系辅导员确认提交结果",
+            "evidence": {
+              "text": "联系辅导员确认提交结果",
+              "location": "第 15 行",
+              "page": null,
+              "paragraph": 15
+            }
+          }
+        ],
+        "notes": [
+          {
+            "text": "请如实填写家庭情况，不得弄虚作假。",
+            "evidence": {
+              "text": "请如实填写家庭情况，不得弄虚作假。",
+              "location": "第 17 行",
+              "page": null,
+              "paragraph": 17
+            }
+          }
+        ],
+        "warnings": [],
+        "analysis_mode": "rule_based",
+        "ai_configured": false,
+        "ai_message": "当前未配置大模型 API，本次分析仅使用本地规则（章节标题 + 关键词 + 日期正则）提取，不是 AI 分析结果。未找到原文依据的字段已标记为「待核实」，请人工核对。",
+        "elapsed_ms": 0
+      }
+    },
+    "5_create_matter": {
+      "status": 201,
+      "body": {
+        "id": 6,
+        "name": "关于2026年春季学期资助申请的通知",
+        "matter_type": "材料申报",
+        "qualification": "参与对象：家庭经济困难的在校学生均可申请",
+        "registration_start": null,
+        "deadline": "5月20日",
+        "deadline_source": "document",
+        "materials": [
+          {
+            "name": "资助申请表",
+            "status": "found",
+            "evidence": {
+              "text": "《资助申请表》、家庭情况说明。",
+              "location": "第 11 行",
+              "page": null,
+              "paragraph": 11
+            }
+          },
+          {
+            "name": "家庭情况说明",
+            "status": "found",
+            "evidence": {
+              "text": "《资助申请表》、家庭情况说明。",
+              "location": "第 11 行",
+              "page": null,
+              "paragraph": 11
+            }
+          }
+        ],
+        "process": [
+          {
+            "index": 1,
+            "text": "填写资助申请表",
+            "evidence": {
+              "text": "填写资助申请表",
+              "location": "第 13 行",
+              "page": null,
+              "paragraph": 13
+            }
+          },
+          {
+            "index": 2,
+            "text": "将申请表发送至学院邮箱",
+            "evidence": {
+              "text": "将申请表发送至学院邮箱",
+              "location": "第 14 行",
+              "page": null,
+              "paragraph": 14
+            }
+          },
+          {
+            "index": 3,
+            "text": "联系辅导员确认提交结果",
+            "evidence": {
+              "text": "联系辅导员确认提交结果",
+              "location": "第 15 行",
+              "page": null,
+              "paragraph": 15
+            }
+          }
+        ],
+        "notes": [
+          {
+            "text": "请如实填写家庭情况，不得弄虚作假。",
+            "evidence": {
+              "text": "请如实填写家庭情况，不得弄虚作假。",
+              "location": "第 17 行",
+              "page": null,
+              "paragraph": 17
+            }
+          }
+        ],
+        "fields": [
+          {
+            "key": "title",
+            "label": "事项名称",
+            "value": "关于2026年春季学期资助申请的通知",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "关于2026年春季学期资助申请的通知",
+                "location": "第 1 行",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "matter_type",
+            "label": "事项类型",
+            "value": "材料申报",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "关于2026年春季学期资助申请的通知",
+                "location": "第 1 行",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": "依据标题关键词「资助」判断，仅供参考。"
+          },
+          {
+            "key": "qualification",
+            "label": "申请资格",
+            "value": "参与对象：家庭经济困难的在校学生均可申请",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "家庭经济困难的在校学生均可申请。",
+                "location": "第 5 行",
+                "page": null,
+                "paragraph": 5
+              }
+            ],
+            "note": "以上内容直接摘自原文对应章节或正文句子。"
+          },
+          {
+            "key": "registration_start",
+            "label": "报名开始日期",
+            "value": null,
+            "status": "pending",
+            "evidence": [],
+            "note": "原文未找到明确的报名日期区间，无法确认报名开始日期，请核实。"
+          },
+          {
+            "key": "deadline",
+            "label": "截止日期",
+            "value": "5月20日",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "截止时间为5月20日。",
+                "location": "第 9 行",
+                "page": null,
+                "paragraph": 9
+              }
+            ],
+            "note": "原文未标注截止日期的年份，请核实具体年份。"
+          }
+        ],
+        "source_filename": "d06_日期模糊通知.txt",
+        "status": "pending",
+        "analysis_mode": "rule_based",
+        "created_at": "2026-11-14T21:34:52.088",
+        "updated_at": "2026-11-14T21:34:52.088"
+      }
+    },
+    "6_get_matter": {
+      "status": 200,
+      "body": {
+        "id": 6,
+        "name": "关于2026年春季学期资助申请的通知",
+        "matter_type": "材料申报",
+        "qualification": "参与对象：家庭经济困难的在校学生均可申请",
+        "registration_start": null,
+        "deadline": "5月20日",
+        "deadline_source": "document",
+        "materials": [
+          {
+            "name": "资助申请表",
+            "status": "found",
+            "evidence": {
+              "text": "《资助申请表》、家庭情况说明。",
+              "location": "第 11 行",
+              "page": null,
+              "paragraph": 11
+            }
+          },
+          {
+            "name": "家庭情况说明",
+            "status": "found",
+            "evidence": {
+              "text": "《资助申请表》、家庭情况说明。",
+              "location": "第 11 行",
+              "page": null,
+              "paragraph": 11
+            }
+          }
+        ],
+        "process": [
+          {
+            "index": 1,
+            "text": "填写资助申请表",
+            "evidence": {
+              "text": "填写资助申请表",
+              "location": "第 13 行",
+              "page": null,
+              "paragraph": 13
+            }
+          },
+          {
+            "index": 2,
+            "text": "将申请表发送至学院邮箱",
+            "evidence": {
+              "text": "将申请表发送至学院邮箱",
+              "location": "第 14 行",
+              "page": null,
+              "paragraph": 14
+            }
+          },
+          {
+            "index": 3,
+            "text": "联系辅导员确认提交结果",
+            "evidence": {
+              "text": "联系辅导员确认提交结果",
+              "location": "第 15 行",
+              "page": null,
+              "paragraph": 15
+            }
+          }
+        ],
+        "notes": [
+          {
+            "text": "请如实填写家庭情况，不得弄虚作假。",
+            "evidence": {
+              "text": "请如实填写家庭情况，不得弄虚作假。",
+              "location": "第 17 行",
+              "page": null,
+              "paragraph": 17
+            }
+          }
+        ],
+        "fields": [
+          {
+            "key": "title",
+            "label": "事项名称",
+            "value": "关于2026年春季学期资助申请的通知",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "关于2026年春季学期资助申请的通知",
+                "location": "第 1 行",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "matter_type",
+            "label": "事项类型",
+            "value": "材料申报",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "关于2026年春季学期资助申请的通知",
+                "location": "第 1 行",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": "依据标题关键词「资助」判断，仅供参考。"
+          },
+          {
+            "key": "qualification",
+            "label": "申请资格",
+            "value": "参与对象：家庭经济困难的在校学生均可申请",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "家庭经济困难的在校学生均可申请。",
+                "location": "第 5 行",
+                "page": null,
+                "paragraph": 5
+              }
+            ],
+            "note": "以上内容直接摘自原文对应章节或正文句子。"
+          },
+          {
+            "key": "registration_start",
+            "label": "报名开始日期",
+            "value": null,
+            "status": "pending",
+            "evidence": [],
+            "note": "原文未找到明确的报名日期区间，无法确认报名开始日期，请核实。"
+          },
+          {
+            "key": "deadline",
+            "label": "截止日期",
+            "value": "5月20日",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "截止时间为5月20日。",
+                "location": "第 9 行",
+                "page": null,
+                "paragraph": 9
+              }
+            ],
+            "note": "原文未标注截止日期的年份，请核实具体年份。"
+          }
+        ],
+        "source_filename": "d06_日期模糊通知.txt",
+        "status": "pending",
+        "analysis_mode": "rule_based",
+        "created_at": "2026-11-14T21:34:52.088",
+        "updated_at": "2026-11-14T21:34:52.088"
+      }
+    },
+    "7_generate_tasks": {
+      "status": 201,
+      "body": {
+        "matter_id": 6,
+        "created": 3,
+        "skipped": 0,
+        "total_process_steps": 3,
+        "message": "已生成 3 个任务。",
+        "tasks": [
+          {
+            "id": 29,
+            "matter_id": 6,
+            "title": "填写资助申请表",
+            "description": "填写资助申请表",
+            "deadline": null,
+            "deadline_source": "none",
+            "priority": "medium",
+            "status": "pending",
+            "origin": "generated",
+            "source_evidence": {
+              "text": "填写资助申请表",
+              "location": "第 13 行",
+              "page": null,
+              "paragraph": 13
+            },
+            "created_at": "2026-11-14T21:34:52.112",
+            "updated_at": "2026-11-14T21:34:52.112"
+          },
+          {
+            "id": 30,
+            "matter_id": 6,
+            "title": "将申请表发送至学院邮箱",
+            "description": "将申请表发送至学院邮箱",
+            "deadline": null,
+            "deadline_source": "none",
+            "priority": "high",
+            "status": "pending",
+            "origin": "generated",
+            "source_evidence": {
+              "text": "将申请表发送至学院邮箱",
+              "location": "第 14 行",
+              "page": null,
+              "paragraph": 14
+            },
+            "created_at": "2026-11-14T21:34:52.121",
+            "updated_at": "2026-11-14T21:34:52.121"
+          },
+          {
+            "id": 31,
+            "matter_id": 6,
+            "title": "联系辅导员确认提交结果",
+            "description": "联系辅导员确认提交结果",
+            "deadline": null,
+            "deadline_source": "none",
+            "priority": "high",
+            "status": "pending",
+            "origin": "generated",
+            "source_evidence": {
+              "text": "联系辅导员确认提交结果",
+              "location": "第 15 行",
+              "page": null,
+              "paragraph": 15
+            },
+            "created_at": "2026-11-14T21:34:52.131",
+            "updated_at": "2026-11-14T21:34:52.131"
+          }
+        ],
+        "suggestion": {
+          "deadline": "5月20日",
+          "note": "系统建议：依据事项总截止日期推断，仅作用于未设置截止时间的任务，确认后才会保存。",
+          "task_ids": [
+            29,
+            30,
+            31
+          ]
+        }
+      }
+    },
+    "9_generate_tasks_again": {
+      "status": 201,
+      "body": {
+        "matter_id": 6,
+        "created": 0,
+        "skipped": 3,
+        "total_process_steps": 3,
+        "message": "该事项的 3 个流程步骤都已生成过任务，未重复创建。",
+        "tasks": [],
+        "suggestion": null
+      }
+    },
+    "10_generate_materials": {
+      "status": 201,
+      "body": {
+        "matter_id": 6,
+        "created": 2,
+        "skipped": 0,
+        "total_source_materials": 2,
+        "message": "已生成 2 项材料。",
+        "materials": [
+          {
+            "id": 19,
+            "matter_id": 6,
+            "matter_name": "关于2026年春季学期资助申请的通知",
+            "name": "资助申请表",
+            "description": "《资助申请表》、家庭情况说明。",
+            "status": "missing",
+            "file_path": null,
+            "original_filename": null,
+            "file_size": null,
+            "file_type": null,
+            "verification": null,
+            "source_evidence": {
+              "text": "《资助申请表》、家庭情况说明。",
+              "location": "第 11 行",
+              "page": null,
+              "paragraph": 11
+            },
+            "origin": "generated",
+            "created_at": "2026-11-14T21:34:52.196",
+            "updated_at": "2026-11-14T21:34:52.196",
+            "events": []
+          },
+          {
+            "id": 20,
+            "matter_id": 6,
+            "matter_name": "关于2026年春季学期资助申请的通知",
+            "name": "家庭情况说明",
+            "description": "《资助申请表》、家庭情况说明。",
+            "status": "missing",
+            "file_path": null,
+            "original_filename": null,
+            "file_size": null,
+            "file_type": null,
+            "verification": null,
+            "source_evidence": {
+              "text": "《资助申请表》、家庭情况说明。",
+              "location": "第 11 行",
+              "page": null,
+              "paragraph": 11
+            },
+            "origin": "generated",
+            "created_at": "2026-11-14T21:34:52.196",
+            "updated_at": "2026-11-14T21:34:52.196",
+            "events": []
+          }
+        ]
+      }
+    },
+    "11_upload_material": {
+      "status": 200,
+      "body": {
+        "id": 20,
+        "matter_id": 6,
+        "matter_name": "关于2026年春季学期资助申请的通知",
+        "name": "家庭情况说明",
+        "description": "《资助申请表》、家庭情况说明。",
+        "status": "pending",
+        "file_path": "matter-6/c99f4f46cb0c4f1bae9c31336af5c421.txt",
+        "original_filename": "material_ok.txt",
+        "file_size": 197,
+        "file_type": "TXT",
+        "verification": null,
+        "source_evidence": {
+          "text": "《资助申请表》、家庭情况说明。",
+          "location": "第 11 行",
+          "page": null,
+          "paragraph": 11
+        },
+        "origin": "generated",
+        "created_at": "2026-11-14T21:34:52.196",
+        "updated_at": "2026-11-14T21:34:52.252",
+        "events": []
+      }
+    },
+    "12_verify_material": {
+      "status": 200,
+      "body": {
+        "id": 20,
+        "matter_id": 6,
+        "matter_name": "关于2026年春季学期资助申请的通知",
+        "name": "家庭情况说明",
+        "description": "《资助申请表》、家庭情况说明。",
+        "status": "incomplete",
+        "file_path": "matter-6/c99f4f46cb0c4f1bae9c31336af5c421.txt",
+        "original_filename": "material_ok.txt",
+        "file_size": 197,
+        "file_type": "TXT",
+        "verification": {
+          "result": "incomplete",
+          "source": "rule",
+          "verified_at": "2026-11-14T21:34:52.265",
+          "summary": "文件可读取，但部分关键内容或要求要素未在文本中找到，信息可能不完整，请人工确认。",
+          "checks": [
+            {
+              "key": "file_readable",
+              "label": "文件可读取",
+              "status": "pass",
+              "message": "文件已通过格式与内容校验，可正常读取：8 段，85 字。",
+              "excerpt": null,
+              "location": "material_ok.txt"
+            },
+            {
+              "key": "text_extracted",
+              "label": "有效文本",
+              "status": "pass",
+              "message": "成功提取到 85 个字符，可用于内容比对。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "keyword_coverage",
+              "label": "关键内容",
+              "status": "warn",
+              "message": "已匹配：无；未找到：家庭情况说明。可能是材料不匹配，或文件内容缺少相关表述。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "required_elements",
+              "label": "要求要素",
+              "status": "pass",
+              "message": "材料要求中未提到签字、盖章、日期等必须要素，无需逐项比对。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "suspicious_phrases",
+              "label": "冲突风险",
+              "status": "pass",
+              "message": "未发现「过期、失效、无效」等可能表示材料不符合要求的表述。",
+              "excerpt": null,
+              "location": null
+            }
+          ],
+          "reasons": [
+            "文件文本中未找到关键词：家庭情况说明，需人工确认材料是否匹配。"
+          ],
+          "reviewer_note": null
+        },
+        "source_evidence": {
+          "text": "《资助申请表》、家庭情况说明。",
+          "location": "第 11 行",
+          "page": null,
+          "paragraph": 11
+        },
+        "origin": "generated",
+        "created_at": "2026-11-14T21:34:52.196",
+        "updated_at": "2026-11-14T21:34:52.265",
+        "events": []
+      }
+    },
+    "13_confirm_material": {
+      "status": 200,
+      "body": {
+        "id": 20,
+        "matter_id": 6,
+        "matter_name": "关于2026年春季学期资助申请的通知",
+        "name": "家庭情况说明",
+        "description": "《资助申请表》、家庭情况说明。",
+        "status": "qualified",
+        "file_path": "matter-6/c99f4f46cb0c4f1bae9c31336af5c421.txt",
+        "original_filename": "material_ok.txt",
+        "file_size": 197,
+        "file_type": "TXT",
+        "verification": {
+          "result": "qualified",
+          "source": "manual",
+          "verified_at": "2026-11-14T21:34:52.280",
+          "summary": "人工确认：已确认符合。E2E 测试人工确认",
+          "checks": [
+            {
+              "key": "file_readable",
+              "label": "文件可读取",
+              "status": "pass",
+              "message": "文件已通过格式与内容校验，可正常读取：8 段，85 字。",
+              "excerpt": null,
+              "location": "material_ok.txt"
+            },
+            {
+              "key": "text_extracted",
+              "label": "有效文本",
+              "status": "pass",
+              "message": "成功提取到 85 个字符，可用于内容比对。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "keyword_coverage",
+              "label": "关键内容",
+              "status": "warn",
+              "message": "已匹配：无；未找到：家庭情况说明。可能是材料不匹配，或文件内容缺少相关表述。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "required_elements",
+              "label": "要求要素",
+              "status": "pass",
+              "message": "材料要求中未提到签字、盖章、日期等必须要素，无需逐项比对。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "suspicious_phrases",
+              "label": "冲突风险",
+              "status": "pass",
+              "message": "未发现「过期、失效、无效」等可能表示材料不符合要求的表述。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "manual_evidence",
+              "label": "人工补充依据",
+              "status": "pass",
+              "message": "E2E 测试人工确认",
+              "excerpt": "测试用途材料样本",
+              "location": "人工填写"
+            }
+          ],
+          "reasons": [
+            "文件文本中未找到关键词：家庭情况说明，需人工确认材料是否匹配。"
+          ],
+          "reviewer_note": "E2E 测试人工确认"
+        },
+        "source_evidence": {
+          "text": "《资助申请表》、家庭情况说明。",
+          "location": "第 11 行",
+          "page": null,
+          "paragraph": 11
+        },
+        "origin": "generated",
+        "created_at": "2026-11-14T21:34:52.196",
+        "updated_at": "2026-11-14T21:34:52.280",
+        "events": []
+      }
+    },
+    "13_material_detail": {
+      "id": 20,
+      "matter_id": 6,
+      "matter_name": "关于2026年春季学期资助申请的通知",
+      "name": "家庭情况说明",
+      "description": "《资助申请表》、家庭情况说明。",
+      "status": "qualified",
+      "file_path": "matter-6/c99f4f46cb0c4f1bae9c31336af5c421.txt",
+      "original_filename": "material_ok.txt",
+      "file_size": 197,
+      "file_type": "TXT",
+      "verification": {
+        "result": "qualified",
+        "source": "manual",
+        "verified_at": "2026-11-14T21:34:52.280",
+        "summary": "人工确认：已确认符合。E2E 测试人工确认",
+        "checks": [
+          {
+            "key": "file_readable",
+            "label": "文件可读取",
+            "status": "pass",
+            "message": "文件已通过格式与内容校验，可正常读取：8 段，85 字。",
+            "excerpt": null,
+            "location": "material_ok.txt"
+          },
+          {
+            "key": "text_extracted",
+            "label": "有效文本",
+            "status": "pass",
+            "message": "成功提取到 85 个字符，可用于内容比对。",
+            "excerpt": null,
+            "location": null
+          },
+          {
+            "key": "keyword_coverage",
+            "label": "关键内容",
+            "status": "warn",
+            "message": "已匹配：无；未找到：家庭情况说明。可能是材料不匹配，或文件内容缺少相关表述。",
+            "excerpt": null,
+            "location": null
+          },
+          {
+            "key": "required_elements",
+            "label": "要求要素",
+            "status": "pass",
+            "message": "材料要求中未提到签字、盖章、日期等必须要素，无需逐项比对。",
+            "excerpt": null,
+            "location": null
+          },
+          {
+            "key": "suspicious_phrases",
+            "label": "冲突风险",
+            "status": "pass",
+            "message": "未发现「过期、失效、无效」等可能表示材料不符合要求的表述。",
+            "excerpt": null,
+            "location": null
+          },
+          {
+            "key": "manual_evidence",
+            "label": "人工补充依据",
+            "status": "pass",
+            "message": "E2E 测试人工确认",
+            "excerpt": "测试用途材料样本",
+            "location": "人工填写"
+          }
+        ],
+        "reasons": [
+          "文件文本中未找到关键词：家庭情况说明，需人工确认材料是否匹配。"
+        ],
+        "reviewer_note": "E2E 测试人工确认"
+      },
+      "source_evidence": {
+        "text": "《资助申请表》、家庭情况说明。",
+        "location": "第 11 行",
+        "page": null,
+        "paragraph": 11
+      },
+      "origin": "generated",
+      "created_at": "2026-11-14T21:34:52.196",
+      "updated_at": "2026-11-14T21:34:52.280",
+      "events": [
+        {
+          "id": 35,
+          "action": "generated",
+          "detail": "由事项材料要求生成",
+          "created_at": "2026-11-14T21:34:52.196"
+        },
+        {
+          "id": 36,
+          "action": "file_uploaded",
+          "detail": "上传文件：material_ok.txt",
+          "created_at": "2026-11-14T21:34:52.252"
+        },
+        {
+          "id": 37,
+          "action": "verified",
+          "detail": "文件可读取，但部分关键内容或要求要素未在文本中找到，信息可能不完整，请人工确认。",
+          "created_at": "2026-11-14T21:34:52.265"
+        },
+        {
+          "id": 38,
+          "action": "confirmed",
+          "detail": "人工确认：已确认符合。E2E 测试人工确认",
+          "created_at": "2026-11-14T21:34:52.280"
+        }
+      ]
+    },
+    "14_refresh_risks": {
+      "status": 200,
+      "body": {
+        "generated_at": "2026-11-14T21:34:52.385+08:00",
+        "created": 3,
+        "updated": 13,
+        "revived": 0,
+        "resolved": 0,
+        "summary": {
+          "generated_at": "2026-11-14T21:34:52.385+08:00",
+          "timezone": "Asia/Shanghai",
+          "today": "2026-11-14",
+          "total_unresolved": 16,
+          "total_risks": 22,
+          "active": 16,
+          "read": 0,
+          "resolved": 6,
+          "high": 0,
+          "medium": 15,
+          "low": 1,
+          "by_type": {
+            "backlog": 1,
+            "date_unverified": 1,
+            "material_incomplete": 1,
+            "material_missing": 13
+          },
+          "overdue_tasks": 0,
+          "due_soon_3d_tasks": 0,
+          "due_soon_7d_tasks": 0,
+          "pending_materials": 0,
+          "conflict_materials": 0,
+          "missing_materials": 14,
+          "uncertain_materials": 0,
+          "unfinished_tasks": 8,
+          "matters_with_risks": 5
+        }
+      }
+    },
+    "14_matter_risks": {
+      "status": 200,
+      "body": {
+        "summary": {
+          "matter_id": 6,
+          "matter_name": "关于2026年春季学期资助申请的通知",
+          "matter_status": "pending",
+          "deadline": "5月20日",
+          "deadline_source": "document",
+          "deadline_state": "unverified",
+          "deadline_days_left": null,
+          "unfinished_tasks": 0,
+          "material_total": 2,
+          "material_missing": 1,
+          "material_pending": 0,
+          "material_conflict": 0,
+          "risk_total": 3,
+          "level": "medium",
+          "headline": "事项截止日期待核实；1 项材料未提供。"
+        },
+        "risks": [
+          {
+            "id": 22,
+            "fingerprint": "material_missing|matter:6|material:19",
+            "risk_type": "material_missing",
+            "risk_level": "medium",
+            "title": "材料缺失：资助申请表",
+            "description": "事项「关于2026年春季学期资助申请的通知」的材料「资助申请表」必需材料尚未提供。 材料要求：《资助申请表》、家庭情况说明。",
+            "matter_id": 6,
+            "matter_name": "关于2026年春季学期资助申请的通知",
+            "task_id": null,
+            "task_title": null,
+            "material_id": 19,
+            "material_name": "资助申请表",
+            "evidence": {
+              "rule": "材料状态为「missing」，必需材料尚未提供。",
+              "data_sources": [
+                "materials.status",
+                "materials.verification_evidence_json"
+              ],
+              "timezone": "Asia/Shanghai",
+              "today": "2026-11-14",
+              "deadline_raw": null,
+              "deadline_normalized": null,
+              "deadline_source": null,
+              "days_left": null,
+              "matter_name": "关于2026年春季学期资助申请的通知",
+              "task": null,
+              "unfinished_tasks": [],
+              "material": {
+                "name": "资助申请表",
+                "description": "《资助申请表》、家庭情况说明。",
+                "status": "missing",
+                "original_filename": null,
+                "file_type": null,
+                "file_size": null,
+                "requirement_evidence": {
+                  "text": "《资助申请表》、家庭情况说明。",
+                  "location": "第 11 行",
+                  "page": null,
+                  "paragraph": 11
+                },
+                "verification": null
+              },
+              "note": null
+            },
+            "suggestion": "请准备并上传该材料，上传后可执行规则核验。",
+            "status": "active",
+            "first_seen_at": "2026-11-14T21:34:52.373+08:00",
+            "last_seen_at": "2026-11-14T21:34:52.373+08:00",
+            "read_at": null,
+            "resolved_at": null
+          },
+          {
+            "id": 20,
+            "fingerprint": "backlog|matter:6",
+            "risk_type": "backlog",
+            "risk_level": "medium",
+            "title": "事项任务积压：关于2026年春季学期资助申请的通知",
+            "description": "事项「关于2026年春季学期资助申请的通知」还有 3 个未完成任务：联系辅导员确认提交结果、将申请表发送至学院邮箱、填写资助申请表。任务处于未完成状态本身不判定为逾期，只有存在明确截止日期且已过期时才单独产生逾期提醒。",
+            "matter_id": 6,
+            "matter_name": "关于2026年春季学期资助申请的通知",
+            "task_id": null,
+            "task_title": null,
+            "material_id": null,
+            "material_name": null,
+            "evidence": {
+              "rule": "事项下存在 3 个未完成任务（状态非 done）。",
+              "data_sources": [
+                "tasks.status",
+                "tasks.title",
+                "tasks.deadline"
+              ],
+              "timezone": "Asia/Shanghai",
+              "today": "2026-11-14",
+              "deadline_raw": null,
+              "deadline_normalized": null,
+              "deadline_source": null,
+              "days_left": null,
+              "matter_name": "关于2026年春季学期资助申请的通知",
+              "task": null,
+              "unfinished_tasks": [
+                {
+                  "id": 31,
+                  "title": "联系辅导员确认提交结果",
+                  "status": "pending",
+                  "deadline": null,
+                  "deadline_source": "none",
+                  "days_left": null
+                },
+                {
+                  "id": 30,
+                  "title": "将申请表发送至学院邮箱",
+                  "status": "pending",
+                  "deadline": null,
+                  "deadline_source": "none",
+                  "days_left": null
+                },
+                {
+                  "id": 29,
+                  "title": "填写资助申请表",
+                  "status": "pending",
+                  "deadline": null,
+                  "deadline_source": "none",
+                  "days_left": null
+                }
+              ],
+              "material": null,
+              "note": null
+            },
+            "suggestion": "建议按截止时间与优先级安排处理顺序，可前往任务中心逐项完成。",
+            "status": "active",
+            "first_seen_at": "2026-11-14T21:34:52.373+08:00",
+            "last_seen_at": "2026-11-14T21:34:52.373+08:00",
+            "read_at": null,
+            "resolved_at": null
+          },
+          {
+            "id": 21,
+            "fingerprint": "date_unverified|matter:6",
+            "risk_type": "date_unverified",
+            "risk_level": "low",
+            "title": "事项截止日期待核实：关于2026年春季学期资助申请的通知",
+            "description": "事项「关于2026年春季学期资助申请的通知」的截止日期为「5月20日」，原文只有「5月20日」，缺少年份，需要人工核实。",
+            "matter_id": 6,
+            "matter_name": "关于2026年春季学期资助申请的通知",
+            "task_id": null,
+            "task_title": null,
+            "material_id": null,
+            "material_name": null,
+            "evidence": {
+              "rule": "截止日期「5月20日」无法解析为明确日期。",
+              "data_sources": [
+                "matters.deadline",
+                "matters.deadline_source"
+              ],
+              "timezone": "Asia/Shanghai",
+              "today": "2026-11-14",
+              "deadline_raw": "5月20日",
+              "deadline_normalized": null,
+              "deadline_source": "document",
+              "days_left": null,
+              "matter_name": "关于2026年春季学期资助申请的通知",
+              "task": null,
+              "unfinished_tasks": [],
+              "material": null,
+              "note": "原文只有「5月20日」，缺少年份，需要人工核实。"
+            },
+            "suggestion": "请在事项详情中核实并补充明确截止日期，核实前不参与逾期判断。",
+            "status": "active",
+            "first_seen_at": "2026-11-14T21:34:52.373+08:00",
+            "last_seen_at": "2026-11-14T21:34:52.373+08:00",
+            "read_at": null,
+            "resolved_at": null
+          }
+        ]
+      }
+    },
+    "16_task_status_change": {
+      "task_id": 31,
+      "after_done": [
+        "material_missing",
+        "backlog",
+        "date_unverified"
+      ],
+      "after_reopen": [
+        "material_missing",
+        "backlog",
+        "date_unverified"
+      ]
+    },
+    "16_all_tasks_done_risks": [
+      "material_missing",
+      "date_unverified"
+    ]
+  },
+  "checks": [],
+  "matter_id": 6,
+  "task_ids": [
+    31,
+    30,
+    29
+  ],
+  "material_ids": [
+    20,
+    19
+  ],
+  "analysis": {
+    "document": {
+      "filename": "d06_日期模糊通知.txt",
+      "extension": ".txt",
+      "size": 718,
+      "char_count": 257,
+      "page_count": null,
+      "paragraph_count": 22
+    },
+    "fields": [
+      {
+        "key": "title",
+        "label": "事项名称",
+        "value": "关于2026年春季学期资助申请的通知",
+        "status": "found",
+        "evidence": [
+          {
+            "text": "关于2026年春季学期资助申请的通知",
+            "location": "第 1 行",
+            "page": null,
+            "paragraph": 1
+          }
+        ],
+        "note": null
+      },
+      {
+        "key": "matter_type",
+        "label": "事项类型",
+        "value": "材料申报",
+        "status": "found",
+        "evidence": [
+          {
+            "text": "关于2026年春季学期资助申请的通知",
+            "location": "第 1 行",
+            "page": null,
+            "paragraph": 1
+          }
+        ],
+        "note": "依据标题关键词「资助」判断，仅供参考。"
+      },
+      {
+        "key": "qualification",
+        "label": "申请资格",
+        "value": "参与对象：家庭经济困难的在校学生均可申请",
+        "status": "found",
+        "evidence": [
+          {
+            "text": "家庭经济困难的在校学生均可申请。",
+            "location": "第 5 行",
+            "page": null,
+            "paragraph": 5
+          }
+        ],
+        "note": "以上内容直接摘自原文对应章节或正文句子。"
+      },
+      {
+        "key": "registration_start",
+        "label": "报名开始日期",
+        "value": null,
+        "status": "pending",
+        "evidence": [],
+        "note": "原文未找到明确的报名日期区间，无法确认报名开始日期，请核实。"
+      },
+      {
+        "key": "deadline",
+        "label": "截止日期",
+        "value": "5月20日",
+        "status": "found",
+        "evidence": [
+          {
+            "text": "截止时间为5月20日。",
+            "location": "第 9 行",
+            "page": null,
+            "paragraph": 9
+          }
+        ],
+        "note": "原文未标注截止日期的年份，请核实具体年份。"
+      }
+    ],
+    "materials": [
+      {
+        "name": "资助申请表",
+        "status": "found",
+        "evidence": {
+          "text": "《资助申请表》、家庭情况说明。",
+          "location": "第 11 行",
+          "page": null,
+          "paragraph": 11
+        }
+      },
+      {
+        "name": "家庭情况说明",
+        "status": "found",
+        "evidence": {
+          "text": "《资助申请表》、家庭情况说明。",
+          "location": "第 11 行",
+          "page": null,
+          "paragraph": 11
+        }
+      }
+    ],
+    "process": [
+      {
+        "index": 1,
+        "text": "填写资助申请表",
+        "evidence": {
+          "text": "填写资助申请表",
+          "location": "第 13 行",
+          "page": null,
+          "paragraph": 13
+        }
+      },
+      {
+        "index": 2,
+        "text": "将申请表发送至学院邮箱",
+        "evidence": {
+          "text": "将申请表发送至学院邮箱",
+          "location": "第 14 行",
+          "page": null,
+          "paragraph": 14
+        }
+      },
+      {
+        "index": 3,
+        "text": "联系辅导员确认提交结果",
+        "evidence": {
+          "text": "联系辅导员确认提交结果",
+          "location": "第 15 行",
+          "page": null,
+          "paragraph": 15
+        }
+      }
+    ],
+    "notes": [
+      {
+        "text": "请如实填写家庭情况，不得弄虚作假。",
+        "evidence": {
+          "text": "请如实填写家庭情况，不得弄虚作假。",
+          "location": "第 17 行",
+          "page": null,
+          "paragraph": 17
+        }
+      }
+    ],
+    "warnings": [],
+    "analysis_mode": "rule_based",
+    "ai_configured": false,
+    "ai_message": "当前未配置大模型 API，本次分析仅使用本地规则（章节标题 + 关键词 + 日期正则）提取，不是 AI 分析结果。未找到原文依据的字段已标记为「待核实」，请人工核对。",
+    "elapsed_ms": 0
+  }
+}

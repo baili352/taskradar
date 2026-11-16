@@ -1,0 +1,1517 @@
+{
+  "file": "d05_招聘公告.txt",
+  "steps": {
+    "1_analyze": {
+      "status": 200,
+      "body": {
+        "document": {
+          "filename": "d05_招聘公告.txt",
+          "extension": ".txt",
+          "size": 686,
+          "char_count": 255,
+          "page_count": null,
+          "paragraph_count": 19
+        },
+        "fields": [
+          {
+            "key": "title",
+            "label": "事项名称",
+            "value": "某大学2026年公开招聘工作人员公告",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "某大学2026年公开招聘工作人员公告",
+                "location": "第 1 行",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "matter_type",
+            "label": "事项类型",
+            "value": "招聘招录",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "某大学2026年公开招聘工作人员公告",
+                "location": "第 1 行",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": "依据标题关键词「招聘」判断，仅供参考。"
+          },
+          {
+            "key": "qualification",
+            "label": "申请资格",
+            "value": "参与对象：具有硕士研究生及以上学历，符合岗位要求",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "具有硕士研究生及以上学历，符合岗位要求。",
+                "location": "第 6 行",
+                "page": null,
+                "paragraph": 6
+              }
+            ],
+            "note": "以上内容直接摘自原文对应章节或正文句子。"
+          },
+          {
+            "key": "registration_start",
+            "label": "报名开始日期",
+            "value": "2026年5月6日",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "2026年5月6日至2026年5月20日",
+                "location": "第 8 行",
+                "page": null,
+                "paragraph": 8
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "deadline",
+            "label": "截止日期",
+            "value": "2026年5月20日",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "2026年5月6日至2026年5月20日",
+                "location": "第 8 行",
+                "page": null,
+                "paragraph": 8
+              }
+            ],
+            "note": null
+          }
+        ],
+        "materials": [
+          {
+            "name": "应聘报名表",
+            "status": "found",
+            "evidence": {
+              "text": "1. 填写应聘报名表。",
+              "location": "第 10 行",
+              "page": null,
+              "paragraph": 10
+            }
+          },
+          {
+            "name": "个人简历",
+            "status": "found",
+            "evidence": {
+              "text": "2. 将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱。",
+              "location": "第 11 行",
+              "page": null,
+              "paragraph": 11
+            }
+          },
+          {
+            "name": "学历学位证书复印件",
+            "status": "found",
+            "evidence": {
+              "text": "2. 将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱。",
+              "location": "第 11 行",
+              "page": null,
+              "paragraph": 11
+            }
+          },
+          {
+            "name": "身份证复印件",
+            "status": "found",
+            "evidence": {
+              "text": "2. 将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱。",
+              "location": "第 11 行",
+              "page": null,
+              "paragraph": 11
+            }
+          }
+        ],
+        "process": [
+          {
+            "index": 1,
+            "text": "填写应聘报名表",
+            "evidence": {
+              "text": "填写应聘报名表",
+              "location": "第 10 行",
+              "page": null,
+              "paragraph": 10
+            }
+          },
+          {
+            "index": 2,
+            "text": "将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱",
+            "evidence": {
+              "text": "将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱",
+              "location": "第 11 行",
+              "page": null,
+              "paragraph": 11
+            }
+          },
+          {
+            "index": 3,
+            "text": "登录招聘系统确认报名信息",
+            "evidence": {
+              "text": "登录招聘系统确认报名信息",
+              "location": "第 12 行",
+              "page": null,
+              "paragraph": 12
+            }
+          }
+        ],
+        "notes": [
+          {
+            "text": "应聘材料恕不退还，请自留备份。",
+            "evidence": {
+              "text": "应聘材料恕不退还，请自留备份。",
+              "location": "第 14 行",
+              "page": null,
+              "paragraph": 14
+            }
+          }
+        ],
+        "warnings": [],
+        "analysis_mode": "rule_based",
+        "ai_configured": false,
+        "ai_message": "当前未配置大模型 API，本次分析仅使用本地规则（章节标题 + 关键词 + 日期正则）提取，不是 AI 分析结果。未找到原文依据的字段已标记为「待核实」，请人工核对。",
+        "elapsed_ms": 1
+      }
+    },
+    "5_create_matter": {
+      "status": 201,
+      "body": {
+        "id": 5,
+        "name": "某大学2026年公开招聘工作人员公告",
+        "matter_type": "招聘招录",
+        "qualification": "参与对象：具有硕士研究生及以上学历，符合岗位要求",
+        "registration_start": "2026年5月6日",
+        "deadline": "2026年5月20日",
+        "deadline_source": "document",
+        "materials": [
+          {
+            "name": "应聘报名表",
+            "status": "found",
+            "evidence": {
+              "text": "1. 填写应聘报名表。",
+              "location": "第 10 行",
+              "page": null,
+              "paragraph": 10
+            }
+          },
+          {
+            "name": "个人简历",
+            "status": "found",
+            "evidence": {
+              "text": "2. 将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱。",
+              "location": "第 11 行",
+              "page": null,
+              "paragraph": 11
+            }
+          },
+          {
+            "name": "学历学位证书复印件",
+            "status": "found",
+            "evidence": {
+              "text": "2. 将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱。",
+              "location": "第 11 行",
+              "page": null,
+              "paragraph": 11
+            }
+          },
+          {
+            "name": "身份证复印件",
+            "status": "found",
+            "evidence": {
+              "text": "2. 将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱。",
+              "location": "第 11 行",
+              "page": null,
+              "paragraph": 11
+            }
+          }
+        ],
+        "process": [
+          {
+            "index": 1,
+            "text": "填写应聘报名表",
+            "evidence": {
+              "text": "填写应聘报名表",
+              "location": "第 10 行",
+              "page": null,
+              "paragraph": 10
+            }
+          },
+          {
+            "index": 2,
+            "text": "将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱",
+            "evidence": {
+              "text": "将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱",
+              "location": "第 11 行",
+              "page": null,
+              "paragraph": 11
+            }
+          },
+          {
+            "index": 3,
+            "text": "登录招聘系统确认报名信息",
+            "evidence": {
+              "text": "登录招聘系统确认报名信息",
+              "location": "第 12 行",
+              "page": null,
+              "paragraph": 12
+            }
+          }
+        ],
+        "notes": [
+          {
+            "text": "应聘材料恕不退还，请自留备份。",
+            "evidence": {
+              "text": "应聘材料恕不退还，请自留备份。",
+              "location": "第 14 行",
+              "page": null,
+              "paragraph": 14
+            }
+          }
+        ],
+        "fields": [
+          {
+            "key": "title",
+            "label": "事项名称",
+            "value": "某大学2026年公开招聘工作人员公告",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "某大学2026年公开招聘工作人员公告",
+                "location": "第 1 行",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "matter_type",
+            "label": "事项类型",
+            "value": "招聘招录",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "某大学2026年公开招聘工作人员公告",
+                "location": "第 1 行",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": "依据标题关键词「招聘」判断，仅供参考。"
+          },
+          {
+            "key": "qualification",
+            "label": "申请资格",
+            "value": "参与对象：具有硕士研究生及以上学历，符合岗位要求",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "具有硕士研究生及以上学历，符合岗位要求。",
+                "location": "第 6 行",
+                "page": null,
+                "paragraph": 6
+              }
+            ],
+            "note": "以上内容直接摘自原文对应章节或正文句子。"
+          },
+          {
+            "key": "registration_start",
+            "label": "报名开始日期",
+            "value": "2026年5月6日",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "2026年5月6日至2026年5月20日",
+                "location": "第 8 行",
+                "page": null,
+                "paragraph": 8
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "deadline",
+            "label": "截止日期",
+            "value": "2026年5月20日",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "2026年5月6日至2026年5月20日",
+                "location": "第 8 行",
+                "page": null,
+                "paragraph": 8
+              }
+            ],
+            "note": null
+          }
+        ],
+        "source_filename": "d05_招聘公告.txt",
+        "status": "pending",
+        "analysis_mode": "rule_based",
+        "created_at": "2026-11-14T21:34:51.272",
+        "updated_at": "2026-11-14T21:34:51.272"
+      }
+    },
+    "6_get_matter": {
+      "status": 200,
+      "body": {
+        "id": 5,
+        "name": "某大学2026年公开招聘工作人员公告",
+        "matter_type": "招聘招录",
+        "qualification": "参与对象：具有硕士研究生及以上学历，符合岗位要求",
+        "registration_start": "2026年5月6日",
+        "deadline": "2026年5月20日",
+        "deadline_source": "document",
+        "materials": [
+          {
+            "name": "应聘报名表",
+            "status": "found",
+            "evidence": {
+              "text": "1. 填写应聘报名表。",
+              "location": "第 10 行",
+              "page": null,
+              "paragraph": 10
+            }
+          },
+          {
+            "name": "个人简历",
+            "status": "found",
+            "evidence": {
+              "text": "2. 将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱。",
+              "location": "第 11 行",
+              "page": null,
+              "paragraph": 11
+            }
+          },
+          {
+            "name": "学历学位证书复印件",
+            "status": "found",
+            "evidence": {
+              "text": "2. 将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱。",
+              "location": "第 11 行",
+              "page": null,
+              "paragraph": 11
+            }
+          },
+          {
+            "name": "身份证复印件",
+            "status": "found",
+            "evidence": {
+              "text": "2. 将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱。",
+              "location": "第 11 行",
+              "page": null,
+              "paragraph": 11
+            }
+          }
+        ],
+        "process": [
+          {
+            "index": 1,
+            "text": "填写应聘报名表",
+            "evidence": {
+              "text": "填写应聘报名表",
+              "location": "第 10 行",
+              "page": null,
+              "paragraph": 10
+            }
+          },
+          {
+            "index": 2,
+            "text": "将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱",
+            "evidence": {
+              "text": "将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱",
+              "location": "第 11 行",
+              "page": null,
+              "paragraph": 11
+            }
+          },
+          {
+            "index": 3,
+            "text": "登录招聘系统确认报名信息",
+            "evidence": {
+              "text": "登录招聘系统确认报名信息",
+              "location": "第 12 行",
+              "page": null,
+              "paragraph": 12
+            }
+          }
+        ],
+        "notes": [
+          {
+            "text": "应聘材料恕不退还，请自留备份。",
+            "evidence": {
+              "text": "应聘材料恕不退还，请自留备份。",
+              "location": "第 14 行",
+              "page": null,
+              "paragraph": 14
+            }
+          }
+        ],
+        "fields": [
+          {
+            "key": "title",
+            "label": "事项名称",
+            "value": "某大学2026年公开招聘工作人员公告",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "某大学2026年公开招聘工作人员公告",
+                "location": "第 1 行",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "matter_type",
+            "label": "事项类型",
+            "value": "招聘招录",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "某大学2026年公开招聘工作人员公告",
+                "location": "第 1 行",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": "依据标题关键词「招聘」判断，仅供参考。"
+          },
+          {
+            "key": "qualification",
+            "label": "申请资格",
+            "value": "参与对象：具有硕士研究生及以上学历，符合岗位要求",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "具有硕士研究生及以上学历，符合岗位要求。",
+                "location": "第 6 行",
+                "page": null,
+                "paragraph": 6
+              }
+            ],
+            "note": "以上内容直接摘自原文对应章节或正文句子。"
+          },
+          {
+            "key": "registration_start",
+            "label": "报名开始日期",
+            "value": "2026年5月6日",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "2026年5月6日至2026年5月20日",
+                "location": "第 8 行",
+                "page": null,
+                "paragraph": 8
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "deadline",
+            "label": "截止日期",
+            "value": "2026年5月20日",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "2026年5月6日至2026年5月20日",
+                "location": "第 8 行",
+                "page": null,
+                "paragraph": 8
+              }
+            ],
+            "note": null
+          }
+        ],
+        "source_filename": "d05_招聘公告.txt",
+        "status": "pending",
+        "analysis_mode": "rule_based",
+        "created_at": "2026-11-14T21:34:51.272",
+        "updated_at": "2026-11-14T21:34:51.272"
+      }
+    },
+    "7_generate_tasks": {
+      "status": 201,
+      "body": {
+        "matter_id": 5,
+        "created": 3,
+        "skipped": 0,
+        "total_process_steps": 3,
+        "message": "已生成 3 个任务。",
+        "tasks": [
+          {
+            "id": 23,
+            "matter_id": 5,
+            "title": "填写应聘报名表",
+            "description": "填写应聘报名表",
+            "deadline": null,
+            "deadline_source": "none",
+            "priority": "high",
+            "status": "pending",
+            "origin": "generated",
+            "source_evidence": {
+              "text": "填写应聘报名表",
+              "location": "第 10 行",
+              "page": null,
+              "paragraph": 10
+            },
+            "created_at": "2026-11-14T21:34:51.320",
+            "updated_at": "2026-11-14T21:34:51.320"
+          },
+          {
+            "id": 24,
+            "matter_id": 5,
+            "title": "将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱",
+            "description": "将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱",
+            "deadline": null,
+            "deadline_source": "none",
+            "priority": "high",
+            "status": "pending",
+            "origin": "generated",
+            "source_evidence": {
+              "text": "将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱",
+              "location": "第 11 行",
+              "page": null,
+              "paragraph": 11
+            },
+            "created_at": "2026-11-14T21:34:51.331",
+            "updated_at": "2026-11-14T21:34:51.331"
+          },
+          {
+            "id": 25,
+            "matter_id": 5,
+            "title": "登录招聘系统确认报名信息",
+            "description": "登录招聘系统确认报名信息",
+            "deadline": null,
+            "deadline_source": "none",
+            "priority": "high",
+            "status": "pending",
+            "origin": "generated",
+            "source_evidence": {
+              "text": "登录招聘系统确认报名信息",
+              "location": "第 12 行",
+              "page": null,
+              "paragraph": 12
+            },
+            "created_at": "2026-11-14T21:34:51.334",
+            "updated_at": "2026-11-14T21:34:51.334"
+          }
+        ],
+        "suggestion": {
+          "deadline": "2026年5月20日",
+          "note": "系统建议：依据事项总截止日期推断，仅作用于未设置截止时间的任务，确认后才会保存。",
+          "task_ids": [
+            23,
+            24,
+            25
+          ]
+        }
+      }
+    },
+    "9_generate_tasks_again": {
+      "status": 201,
+      "body": {
+        "matter_id": 5,
+        "created": 0,
+        "skipped": 3,
+        "total_process_steps": 3,
+        "message": "该事项的 3 个流程步骤都已生成过任务，未重复创建。",
+        "tasks": [],
+        "suggestion": null
+      }
+    },
+    "10_generate_materials": {
+      "status": 201,
+      "body": {
+        "matter_id": 5,
+        "created": 4,
+        "skipped": 0,
+        "total_source_materials": 4,
+        "message": "已生成 4 项材料。",
+        "materials": [
+          {
+            "id": 15,
+            "matter_id": 5,
+            "matter_name": "某大学2026年公开招聘工作人员公告",
+            "name": "应聘报名表",
+            "description": "1. 填写应聘报名表。",
+            "status": "missing",
+            "file_path": null,
+            "original_filename": null,
+            "file_size": null,
+            "file_type": null,
+            "verification": null,
+            "source_evidence": {
+              "text": "1. 填写应聘报名表。",
+              "location": "第 10 行",
+              "page": null,
+              "paragraph": 10
+            },
+            "origin": "generated",
+            "created_at": "2026-11-14T21:34:51.419",
+            "updated_at": "2026-11-14T21:34:51.419",
+            "events": []
+          },
+          {
+            "id": 16,
+            "matter_id": 5,
+            "matter_name": "某大学2026年公开招聘工作人员公告",
+            "name": "个人简历",
+            "description": "2. 将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱。",
+            "status": "missing",
+            "file_path": null,
+            "original_filename": null,
+            "file_size": null,
+            "file_type": null,
+            "verification": null,
+            "source_evidence": {
+              "text": "2. 将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱。",
+              "location": "第 11 行",
+              "page": null,
+              "paragraph": 11
+            },
+            "origin": "generated",
+            "created_at": "2026-11-14T21:34:51.419",
+            "updated_at": "2026-11-14T21:34:51.419",
+            "events": []
+          },
+          {
+            "id": 17,
+            "matter_id": 5,
+            "matter_name": "某大学2026年公开招聘工作人员公告",
+            "name": "学历学位证书复印件",
+            "description": "2. 将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱。",
+            "status": "missing",
+            "file_path": null,
+            "original_filename": null,
+            "file_size": null,
+            "file_type": null,
+            "verification": null,
+            "source_evidence": {
+              "text": "2. 将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱。",
+              "location": "第 11 行",
+              "page": null,
+              "paragraph": 11
+            },
+            "origin": "generated",
+            "created_at": "2026-11-14T21:34:51.419",
+            "updated_at": "2026-11-14T21:34:51.419",
+            "events": []
+          },
+          {
+            "id": 18,
+            "matter_id": 5,
+            "matter_name": "某大学2026年公开招聘工作人员公告",
+            "name": "身份证复印件",
+            "description": "2. 将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱。",
+            "status": "missing",
+            "file_path": null,
+            "original_filename": null,
+            "file_size": null,
+            "file_type": null,
+            "verification": null,
+            "source_evidence": {
+              "text": "2. 将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱。",
+              "location": "第 11 行",
+              "page": null,
+              "paragraph": 11
+            },
+            "origin": "generated",
+            "created_at": "2026-11-14T21:34:51.419",
+            "updated_at": "2026-11-14T21:34:51.419",
+            "events": []
+          }
+        ]
+      }
+    },
+    "11_upload_material": {
+      "status": 200,
+      "body": {
+        "id": 18,
+        "matter_id": 5,
+        "matter_name": "某大学2026年公开招聘工作人员公告",
+        "name": "身份证复印件",
+        "description": "2. 将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱。",
+        "status": "pending",
+        "file_path": "matter-5/6efc4fb7a1284f74b203b1fe5cdec8af.txt",
+        "original_filename": "material_ok.txt",
+        "file_size": 197,
+        "file_type": "TXT",
+        "verification": null,
+        "source_evidence": {
+          "text": "2. 将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱。",
+          "location": "第 11 行",
+          "page": null,
+          "paragraph": 11
+        },
+        "origin": "generated",
+        "created_at": "2026-11-14T21:34:51.419",
+        "updated_at": "2026-11-14T21:34:51.438",
+        "events": []
+      }
+    },
+    "12_verify_material": {
+      "status": 200,
+      "body": {
+        "id": 18,
+        "matter_id": 5,
+        "matter_name": "某大学2026年公开招聘工作人员公告",
+        "name": "身份证复印件",
+        "description": "2. 将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱。",
+        "status": "qualified",
+        "file_path": "matter-5/6efc4fb7a1284f74b203b1fe5cdec8af.txt",
+        "original_filename": "material_ok.txt",
+        "file_size": 197,
+        "file_type": "TXT",
+        "verification": {
+          "result": "qualified",
+          "source": "rule",
+          "verified_at": "2026-11-14T21:34:51.470",
+          "summary": "规则核验通过：文件可读取、文本有效，材料名称关键词均已匹配。该结论仅为规则比对结果，不代表对材料真实性或法律效力的认定，请人工确认。",
+          "checks": [
+            {
+              "key": "file_readable",
+              "label": "文件可读取",
+              "status": "pass",
+              "message": "文件已通过格式与内容校验，可正常读取：8 段，85 字。",
+              "excerpt": null,
+              "location": "material_ok.txt"
+            },
+            {
+              "key": "text_extracted",
+              "label": "有效文本",
+              "status": "pass",
+              "message": "成功提取到 85 个字符，可用于内容比对。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "keyword_coverage",
+              "label": "关键内容",
+              "status": "pass",
+              "message": "文件文本包含材料名称中的全部关键内容：身份证。",
+              "excerpt": "身份证号：TEST-ID-0001",
+              "location": "第 4 行"
+            },
+            {
+              "key": "required_elements",
+              "label": "要求要素",
+              "status": "pass",
+              "message": "材料要求涉及的要素均已出现：身份证号、联系方式。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "suspicious_phrases",
+              "label": "冲突风险",
+              "status": "pass",
+              "message": "未发现「过期、失效、无效」等可能表示材料不符合要求的表述。",
+              "excerpt": null,
+              "location": null
+            }
+          ],
+          "reasons": [],
+          "reviewer_note": null
+        },
+        "source_evidence": {
+          "text": "2. 将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱。",
+          "location": "第 11 行",
+          "page": null,
+          "paragraph": 11
+        },
+        "origin": "generated",
+        "created_at": "2026-11-14T21:34:51.419",
+        "updated_at": "2026-11-14T21:34:51.470",
+        "events": []
+      }
+    },
+    "13_confirm_material": {
+      "status": 200,
+      "body": {
+        "id": 18,
+        "matter_id": 5,
+        "matter_name": "某大学2026年公开招聘工作人员公告",
+        "name": "身份证复印件",
+        "description": "2. 将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱。",
+        "status": "qualified",
+        "file_path": "matter-5/6efc4fb7a1284f74b203b1fe5cdec8af.txt",
+        "original_filename": "material_ok.txt",
+        "file_size": 197,
+        "file_type": "TXT",
+        "verification": {
+          "result": "qualified",
+          "source": "manual",
+          "verified_at": "2026-11-14T21:34:51.482",
+          "summary": "人工确认：已确认符合。E2E 测试人工确认",
+          "checks": [
+            {
+              "key": "file_readable",
+              "label": "文件可读取",
+              "status": "pass",
+              "message": "文件已通过格式与内容校验，可正常读取：8 段，85 字。",
+              "excerpt": null,
+              "location": "material_ok.txt"
+            },
+            {
+              "key": "text_extracted",
+              "label": "有效文本",
+              "status": "pass",
+              "message": "成功提取到 85 个字符，可用于内容比对。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "keyword_coverage",
+              "label": "关键内容",
+              "status": "pass",
+              "message": "文件文本包含材料名称中的全部关键内容：身份证。",
+              "excerpt": "身份证号：TEST-ID-0001",
+              "location": "第 4 行"
+            },
+            {
+              "key": "required_elements",
+              "label": "要求要素",
+              "status": "pass",
+              "message": "材料要求涉及的要素均已出现：身份证号、联系方式。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "suspicious_phrases",
+              "label": "冲突风险",
+              "status": "pass",
+              "message": "未发现「过期、失效、无效」等可能表示材料不符合要求的表述。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "manual_evidence",
+              "label": "人工补充依据",
+              "status": "pass",
+              "message": "E2E 测试人工确认",
+              "excerpt": "测试用途材料样本",
+              "location": "人工填写"
+            }
+          ],
+          "reasons": [],
+          "reviewer_note": "E2E 测试人工确认"
+        },
+        "source_evidence": {
+          "text": "2. 将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱。",
+          "location": "第 11 行",
+          "page": null,
+          "paragraph": 11
+        },
+        "origin": "generated",
+        "created_at": "2026-11-14T21:34:51.419",
+        "updated_at": "2026-11-14T21:34:51.482",
+        "events": []
+      }
+    },
+    "13_material_detail": {
+      "id": 18,
+      "matter_id": 5,
+      "matter_name": "某大学2026年公开招聘工作人员公告",
+      "name": "身份证复印件",
+      "description": "2. 将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱。",
+      "status": "qualified",
+      "file_path": "matter-5/6efc4fb7a1284f74b203b1fe5cdec8af.txt",
+      "original_filename": "material_ok.txt",
+      "file_size": 197,
+      "file_type": "TXT",
+      "verification": {
+        "result": "qualified",
+        "source": "manual",
+        "verified_at": "2026-11-14T21:34:51.482",
+        "summary": "人工确认：已确认符合。E2E 测试人工确认",
+        "checks": [
+          {
+            "key": "file_readable",
+            "label": "文件可读取",
+            "status": "pass",
+            "message": "文件已通过格式与内容校验，可正常读取：8 段，85 字。",
+            "excerpt": null,
+            "location": "material_ok.txt"
+          },
+          {
+            "key": "text_extracted",
+            "label": "有效文本",
+            "status": "pass",
+            "message": "成功提取到 85 个字符，可用于内容比对。",
+            "excerpt": null,
+            "location": null
+          },
+          {
+            "key": "keyword_coverage",
+            "label": "关键内容",
+            "status": "pass",
+            "message": "文件文本包含材料名称中的全部关键内容：身份证。",
+            "excerpt": "身份证号：TEST-ID-0001",
+            "location": "第 4 行"
+          },
+          {
+            "key": "required_elements",
+            "label": "要求要素",
+            "status": "pass",
+            "message": "材料要求涉及的要素均已出现：身份证号、联系方式。",
+            "excerpt": null,
+            "location": null
+          },
+          {
+            "key": "suspicious_phrases",
+            "label": "冲突风险",
+            "status": "pass",
+            "message": "未发现「过期、失效、无效」等可能表示材料不符合要求的表述。",
+            "excerpt": null,
+            "location": null
+          },
+          {
+            "key": "manual_evidence",
+            "label": "人工补充依据",
+            "status": "pass",
+            "message": "E2E 测试人工确认",
+            "excerpt": "测试用途材料样本",
+            "location": "人工填写"
+          }
+        ],
+        "reasons": [],
+        "reviewer_note": "E2E 测试人工确认"
+      },
+      "source_evidence": {
+        "text": "2. 将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱。",
+        "location": "第 11 行",
+        "page": null,
+        "paragraph": 11
+      },
+      "origin": "generated",
+      "created_at": "2026-11-14T21:34:51.419",
+      "updated_at": "2026-11-14T21:34:51.482",
+      "events": [
+        {
+          "id": 30,
+          "action": "generated",
+          "detail": "由事项材料要求生成",
+          "created_at": "2026-11-14T21:34:51.419"
+        },
+        {
+          "id": 31,
+          "action": "file_uploaded",
+          "detail": "上传文件：material_ok.txt",
+          "created_at": "2026-11-14T21:34:51.438"
+        },
+        {
+          "id": 32,
+          "action": "verified",
+          "detail": "规则核验通过：文件可读取、文本有效，材料名称关键词均已匹配。该结论仅为规则比对结果，不代表对材料真实性或法律效力的认定，请人工确认。",
+          "created_at": "2026-11-14T21:34:51.470"
+        },
+        {
+          "id": 33,
+          "action": "confirmed",
+          "detail": "人工确认：已确认符合。E2E 测试人工确认",
+          "created_at": "2026-11-14T21:34:51.482"
+        }
+      ]
+    },
+    "14_refresh_risks": {
+      "status": 200,
+      "body": {
+        "generated_at": "2026-11-14T21:34:51.542+08:00",
+        "created": 4,
+        "updated": 10,
+        "revived": 0,
+        "resolved": 0,
+        "summary": {
+          "generated_at": "2026-11-14T21:34:51.542+08:00",
+          "timezone": "Asia/Shanghai",
+          "today": "2026-11-14",
+          "total_unresolved": 14,
+          "total_risks": 19,
+          "active": 14,
+          "read": 0,
+          "resolved": 5,
+          "high": 0,
+          "medium": 14,
+          "low": 0,
+          "by_type": {
+            "backlog": 1,
+            "material_incomplete": 1,
+            "material_missing": 12
+          },
+          "overdue_tasks": 0,
+          "due_soon_3d_tasks": 0,
+          "due_soon_7d_tasks": 0,
+          "pending_materials": 0,
+          "conflict_materials": 0,
+          "missing_materials": 13,
+          "uncertain_materials": 0,
+          "unfinished_tasks": 7,
+          "matters_with_risks": 4
+        }
+      }
+    },
+    "14_matter_risks": {
+      "status": 200,
+      "body": {
+        "summary": {
+          "matter_id": 5,
+          "matter_name": "某大学2026年公开招聘工作人员公告",
+          "matter_status": "pending",
+          "deadline": "2026年5月20日",
+          "deadline_source": "document",
+          "deadline_state": "overdue",
+          "deadline_days_left": -178,
+          "unfinished_tasks": 0,
+          "material_total": 4,
+          "material_missing": 3,
+          "material_pending": 0,
+          "material_conflict": 0,
+          "risk_total": 4,
+          "level": "high",
+          "headline": "已超过事项截止日期 178 天；3 项材料未提供。"
+        },
+        "risks": [
+          {
+            "id": 19,
+            "fingerprint": "material_missing|matter:5|material:15",
+            "risk_type": "material_missing",
+            "risk_level": "medium",
+            "title": "材料缺失：应聘报名表",
+            "description": "事项「某大学2026年公开招聘工作人员公告」的材料「应聘报名表」必需材料尚未提供。 材料要求：1. 填写应聘报名表。",
+            "matter_id": 5,
+            "matter_name": "某大学2026年公开招聘工作人员公告",
+            "task_id": null,
+            "task_title": null,
+            "material_id": 15,
+            "material_name": "应聘报名表",
+            "evidence": {
+              "rule": "材料状态为「missing」，必需材料尚未提供。",
+              "data_sources": [
+                "materials.status",
+                "materials.verification_evidence_json"
+              ],
+              "timezone": "Asia/Shanghai",
+              "today": "2026-11-14",
+              "deadline_raw": null,
+              "deadline_normalized": null,
+              "deadline_source": null,
+              "days_left": null,
+              "matter_name": "某大学2026年公开招聘工作人员公告",
+              "task": null,
+              "unfinished_tasks": [],
+              "material": {
+                "name": "应聘报名表",
+                "description": "1. 填写应聘报名表。",
+                "status": "missing",
+                "original_filename": null,
+                "file_type": null,
+                "file_size": null,
+                "requirement_evidence": {
+                  "text": "1. 填写应聘报名表。",
+                  "location": "第 10 行",
+                  "page": null,
+                  "paragraph": 10
+                },
+                "verification": null
+              },
+              "note": null
+            },
+            "suggestion": "请准备并上传该材料，上传后可执行规则核验。",
+            "status": "active",
+            "first_seen_at": "2026-11-14T21:34:51.531+08:00",
+            "last_seen_at": "2026-11-14T21:34:51.531+08:00",
+            "read_at": null,
+            "resolved_at": null
+          },
+          {
+            "id": 18,
+            "fingerprint": "material_missing|matter:5|material:16",
+            "risk_type": "material_missing",
+            "risk_level": "medium",
+            "title": "材料缺失：个人简历",
+            "description": "事项「某大学2026年公开招聘工作人员公告」的材料「个人简历」必需材料尚未提供。 材料要求：2. 将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱。",
+            "matter_id": 5,
+            "matter_name": "某大学2026年公开招聘工作人员公告",
+            "task_id": null,
+            "task_title": null,
+            "material_id": 16,
+            "material_name": "个人简历",
+            "evidence": {
+              "rule": "材料状态为「missing」，必需材料尚未提供。",
+              "data_sources": [
+                "materials.status",
+                "materials.verification_evidence_json"
+              ],
+              "timezone": "Asia/Shanghai",
+              "today": "2026-11-14",
+              "deadline_raw": null,
+              "deadline_normalized": null,
+              "deadline_source": null,
+              "days_left": null,
+              "matter_name": "某大学2026年公开招聘工作人员公告",
+              "task": null,
+              "unfinished_tasks": [],
+              "material": {
+                "name": "个人简历",
+                "description": "2. 将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱。",
+                "status": "missing",
+                "original_filename": null,
+                "file_type": null,
+                "file_size": null,
+                "requirement_evidence": {
+                  "text": "2. 将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱。",
+                  "location": "第 11 行",
+                  "page": null,
+                  "paragraph": 11
+                },
+                "verification": null
+              },
+              "note": null
+            },
+            "suggestion": "请准备并上传该材料，上传后可执行规则核验。",
+            "status": "active",
+            "first_seen_at": "2026-11-14T21:34:51.531+08:00",
+            "last_seen_at": "2026-11-14T21:34:51.531+08:00",
+            "read_at": null,
+            "resolved_at": null
+          },
+          {
+            "id": 17,
+            "fingerprint": "material_missing|matter:5|material:17",
+            "risk_type": "material_missing",
+            "risk_level": "medium",
+            "title": "材料缺失：学历学位证书复印件",
+            "description": "事项「某大学2026年公开招聘工作人员公告」的材料「学历学位证书复印件」必需材料尚未提供。 材料要求：2. 将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱。",
+            "matter_id": 5,
+            "matter_name": "某大学2026年公开招聘工作人员公告",
+            "task_id": null,
+            "task_title": null,
+            "material_id": 17,
+            "material_name": "学历学位证书复印件",
+            "evidence": {
+              "rule": "材料状态为「missing」，必需材料尚未提供。",
+              "data_sources": [
+                "materials.status",
+                "materials.verification_evidence_json"
+              ],
+              "timezone": "Asia/Shanghai",
+              "today": "2026-11-14",
+              "deadline_raw": null,
+              "deadline_normalized": null,
+              "deadline_source": null,
+              "days_left": null,
+              "matter_name": "某大学2026年公开招聘工作人员公告",
+              "task": null,
+              "unfinished_tasks": [],
+              "material": {
+                "name": "学历学位证书复印件",
+                "description": "2. 将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱。",
+                "status": "missing",
+                "original_filename": null,
+                "file_type": null,
+                "file_size": null,
+                "requirement_evidence": {
+                  "text": "2. 将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱。",
+                  "location": "第 11 行",
+                  "page": null,
+                  "paragraph": 11
+                },
+                "verification": null
+              },
+              "note": null
+            },
+            "suggestion": "请准备并上传该材料，上传后可执行规则核验。",
+            "status": "active",
+            "first_seen_at": "2026-11-14T21:34:51.531+08:00",
+            "last_seen_at": "2026-11-14T21:34:51.531+08:00",
+            "read_at": null,
+            "resolved_at": null
+          },
+          {
+            "id": 16,
+            "fingerprint": "backlog|matter:5",
+            "risk_type": "backlog",
+            "risk_level": "medium",
+            "title": "事项任务积压：某大学2026年公开招聘工作人员公告",
+            "description": "事项「某大学2026年公开招聘工作人员公告」还有 3 个未完成任务：登录招聘系统确认报名信息、将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱、填写应聘报名表。任务处于未完成状态本身不判定为逾期，只有存在明确截止日期且已过期时才单独产生逾期提醒。",
+            "matter_id": 5,
+            "matter_name": "某大学2026年公开招聘工作人员公告",
+            "task_id": null,
+            "task_title": null,
+            "material_id": null,
+            "material_name": null,
+            "evidence": {
+              "rule": "事项下存在 3 个未完成任务（状态非 done）。",
+              "data_sources": [
+                "tasks.status",
+                "tasks.title",
+                "tasks.deadline"
+              ],
+              "timezone": "Asia/Shanghai",
+              "today": "2026-11-14",
+              "deadline_raw": null,
+              "deadline_normalized": null,
+              "deadline_source": null,
+              "days_left": null,
+              "matter_name": "某大学2026年公开招聘工作人员公告",
+              "task": null,
+              "unfinished_tasks": [
+                {
+                  "id": 25,
+                  "title": "登录招聘系统确认报名信息",
+                  "status": "pending",
+                  "deadline": null,
+                  "deadline_source": "none",
+                  "days_left": null
+                },
+                {
+                  "id": 24,
+                  "title": "将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱",
+                  "status": "pending",
+                  "deadline": null,
+                  "deadline_source": "none",
+                  "days_left": null
+                },
+                {
+                  "id": 23,
+                  "title": "填写应聘报名表",
+                  "status": "pending",
+                  "deadline": null,
+                  "deadline_source": "none",
+                  "days_left": null
+                }
+              ],
+              "material": null,
+              "note": null
+            },
+            "suggestion": "建议按截止时间与优先级安排处理顺序，可前往任务中心逐项完成。",
+            "status": "active",
+            "first_seen_at": "2026-11-14T21:34:51.531+08:00",
+            "last_seen_at": "2026-11-14T21:34:51.531+08:00",
+            "read_at": null,
+            "resolved_at": null
+          }
+        ]
+      }
+    },
+    "16_task_status_change": {
+      "task_id": 25,
+      "after_done": [
+        "material_missing",
+        "material_missing",
+        "material_missing",
+        "backlog"
+      ],
+      "after_reopen": [
+        "material_missing",
+        "material_missing",
+        "material_missing",
+        "backlog"
+      ]
+    },
+    "16_all_tasks_done_risks": [
+      "material_missing",
+      "material_missing",
+      "material_missing"
+    ]
+  },
+  "checks": [],
+  "matter_id": 5,
+  "task_ids": [
+    25,
+    24,
+    23
+  ],
+  "material_ids": [
+    18,
+    17,
+    16,
+    15
+  ],
+  "analysis": {
+    "document": {
+      "filename": "d05_招聘公告.txt",
+      "extension": ".txt",
+      "size": 686,
+      "char_count": 255,
+      "page_count": null,
+      "paragraph_count": 19
+    },
+    "fields": [
+      {
+        "key": "title",
+        "label": "事项名称",
+        "value": "某大学2026年公开招聘工作人员公告",
+        "status": "found",
+        "evidence": [
+          {
+            "text": "某大学2026年公开招聘工作人员公告",
+            "location": "第 1 行",
+            "page": null,
+            "paragraph": 1
+          }
+        ],
+        "note": null
+      },
+      {
+        "key": "matter_type",
+        "label": "事项类型",
+        "value": "招聘招录",
+        "status": "found",
+        "evidence": [
+          {
+            "text": "某大学2026年公开招聘工作人员公告",
+            "location": "第 1 行",
+            "page": null,
+            "paragraph": 1
+          }
+        ],
+        "note": "依据标题关键词「招聘」判断，仅供参考。"
+      },
+      {
+        "key": "qualification",
+        "label": "申请资格",
+        "value": "参与对象：具有硕士研究生及以上学历，符合岗位要求",
+        "status": "found",
+        "evidence": [
+          {
+            "text": "具有硕士研究生及以上学历，符合岗位要求。",
+            "location": "第 6 行",
+            "page": null,
+            "paragraph": 6
+          }
+        ],
+        "note": "以上内容直接摘自原文对应章节或正文句子。"
+      },
+      {
+        "key": "registration_start",
+        "label": "报名开始日期",
+        "value": "2026年5月6日",
+        "status": "found",
+        "evidence": [
+          {
+            "text": "2026年5月6日至2026年5月20日",
+            "location": "第 8 行",
+            "page": null,
+            "paragraph": 8
+          }
+        ],
+        "note": null
+      },
+      {
+        "key": "deadline",
+        "label": "截止日期",
+        "value": "2026年5月20日",
+        "status": "found",
+        "evidence": [
+          {
+            "text": "2026年5月6日至2026年5月20日",
+            "location": "第 8 行",
+            "page": null,
+            "paragraph": 8
+          }
+        ],
+        "note": null
+      }
+    ],
+    "materials": [
+      {
+        "name": "应聘报名表",
+        "status": "found",
+        "evidence": {
+          "text": "1. 填写应聘报名表。",
+          "location": "第 10 行",
+          "page": null,
+          "paragraph": 10
+        }
+      },
+      {
+        "name": "个人简历",
+        "status": "found",
+        "evidence": {
+          "text": "2. 将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱。",
+          "location": "第 11 行",
+          "page": null,
+          "paragraph": 11
+        }
+      },
+      {
+        "name": "学历学位证书复印件",
+        "status": "found",
+        "evidence": {
+          "text": "2. 将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱。",
+          "location": "第 11 行",
+          "page": null,
+          "paragraph": 11
+        }
+      },
+      {
+        "name": "身份证复印件",
+        "status": "found",
+        "evidence": {
+          "text": "2. 将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱。",
+          "location": "第 11 行",
+          "page": null,
+          "paragraph": 11
+        }
+      }
+    ],
+    "process": [
+      {
+        "index": 1,
+        "text": "填写应聘报名表",
+        "evidence": {
+          "text": "填写应聘报名表",
+          "location": "第 10 行",
+          "page": null,
+          "paragraph": 10
+        }
+      },
+      {
+        "index": 2,
+        "text": "将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱",
+        "evidence": {
+          "text": "将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱",
+          "location": "第 11 行",
+          "page": null,
+          "paragraph": 11
+        }
+      },
+      {
+        "index": 3,
+        "text": "登录招聘系统确认报名信息",
+        "evidence": {
+          "text": "登录招聘系统确认报名信息",
+          "location": "第 12 行",
+          "page": null,
+          "paragraph": 12
+        }
+      }
+    ],
+    "notes": [
+      {
+        "text": "应聘材料恕不退还，请自留备份。",
+        "evidence": {
+          "text": "应聘材料恕不退还，请自留备份。",
+          "location": "第 14 行",
+          "page": null,
+          "paragraph": 14
+        }
+      }
+    ],
+    "warnings": [],
+    "analysis_mode": "rule_based",
+    "ai_configured": false,
+    "ai_message": "当前未配置大模型 API，本次分析仅使用本地规则（章节标题 + 关键词 + 日期正则）提取，不是 AI 分析结果。未找到原文依据的字段已标记为「待核实」，请人工核对。",
+    "elapsed_ms": 1
+  }
+}

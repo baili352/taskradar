@@ -1,0 +1,1621 @@
+{
+  "file": "d09_标题含材料关键词通知.txt",
+  "steps": {
+    "1_analyze": {
+      "status": 200,
+      "body": {
+        "document": {
+          "filename": "d09_标题含材料关键词通知.txt",
+          "extension": ".txt",
+          "size": 763,
+          "char_count": 280,
+          "page_count": null,
+          "paragraph_count": 20
+        },
+        "fields": [
+          {
+            "key": "title",
+            "label": "事项名称",
+            "value": "关于提交2026年国家奖学金材料的通知",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "关于提交2026年国家奖学金材料的通知",
+                "location": "第 1 行",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "matter_type",
+            "label": "事项类型",
+            "value": "材料申报",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "3. 登录学生资助系统上传电子版。",
+                "location": "第 13 行",
+                "page": null,
+                "paragraph": 13
+              }
+            ],
+            "note": "依据原文关键词「资助」判断，仅供参考。"
+          },
+          {
+            "key": "qualification",
+            "label": "申请资格",
+            "value": "参与对象：符合条件的全日制在校本科生均可申请；提交时间；2026年9月10日至2026年9月25日",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "符合条件的全日制在校本科生均可申请。",
+                "location": "第 5 行",
+                "page": null,
+                "paragraph": 5
+              },
+              {
+                "text": "二、提交时间",
+                "location": "第 6 行",
+                "page": null,
+                "paragraph": 6
+              },
+              {
+                "text": "2026年9月10日至2026年9月25日",
+                "location": "第 7 行",
+                "page": null,
+                "paragraph": 7
+              }
+            ],
+            "note": "以上内容直接摘自原文对应章节或正文句子。"
+          },
+          {
+            "key": "registration_start",
+            "label": "报名开始日期",
+            "value": "2026年9月10日",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "2026年9月10日至2026年9月25日",
+                "location": "第 7 行",
+                "page": null,
+                "paragraph": 7
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "deadline",
+            "label": "截止日期",
+            "value": "2026年9月25日",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "2026年9月10日至2026年9月25日",
+                "location": "第 7 行",
+                "page": null,
+                "paragraph": 7
+              }
+            ],
+            "note": null
+          }
+        ],
+        "materials": [
+          {
+            "name": "国家奖学金申请表",
+            "status": "found",
+            "evidence": {
+              "text": "《国家奖学金申请表》、成绩单、获奖证书复印件。",
+              "location": "第 9 行",
+              "page": null,
+              "paragraph": 9
+            }
+          },
+          {
+            "name": "成绩单",
+            "status": "found",
+            "evidence": {
+              "text": "《国家奖学金申请表》、成绩单、获奖证书复印件。",
+              "location": "第 9 行",
+              "page": null,
+              "paragraph": 9
+            }
+          },
+          {
+            "name": "获奖证书复印件",
+            "status": "found",
+            "evidence": {
+              "text": "《国家奖学金申请表》、成绩单、获奖证书复印件。",
+              "location": "第 9 行",
+              "page": null,
+              "paragraph": 9
+            }
+          },
+          {
+            "name": "2026年国家奖学金材料",
+            "status": "found",
+            "evidence": {
+              "text": "关于提交2026年国家奖学金材料的通知",
+              "location": "第 1 行",
+              "page": null,
+              "paragraph": 1
+            }
+          },
+          {
+            "name": "按材料",
+            "status": "found",
+            "evidence": {
+              "text": "标题中的“材料”不是材料名称，请按材料清单逐项准备。",
+              "location": "第 15 行",
+              "page": null,
+              "paragraph": 15
+            }
+          }
+        ],
+        "process": [
+          {
+            "index": 1,
+            "text": "填写国家奖学金申请表",
+            "evidence": {
+              "text": "填写国家奖学金申请表",
+              "location": "第 11 行",
+              "page": null,
+              "paragraph": 11
+            }
+          },
+          {
+            "index": 2,
+            "text": "登录学生资助系统上传电子版",
+            "evidence": {
+              "text": "登录学生资助系统上传电子版",
+              "location": "第 13 行",
+              "page": null,
+              "paragraph": 13
+            }
+          }
+        ],
+        "notes": [
+          {
+            "text": "标题中的“材料”不是材料名称，请按材料清单逐项准备。",
+            "evidence": {
+              "text": "标题中的“材料”不是材料名称，请按材料清单逐项准备。",
+              "location": "第 15 行",
+              "page": null,
+              "paragraph": 15
+            }
+          }
+        ],
+        "warnings": [],
+        "analysis_mode": "rule_based",
+        "ai_configured": false,
+        "ai_message": "当前未配置大模型 API，本次分析仅使用本地规则（章节标题 + 关键词 + 日期正则）提取，不是 AI 分析结果。未找到原文依据的字段已标记为「待核实」，请人工核对。",
+        "elapsed_ms": 1
+      }
+    },
+    "5_create_matter": {
+      "status": 201,
+      "body": {
+        "id": 9,
+        "name": "关于提交2026年国家奖学金材料的通知",
+        "matter_type": "材料申报",
+        "qualification": "参与对象：符合条件的全日制在校本科生均可申请；提交时间；2026年9月10日至2026年9月25日",
+        "registration_start": "2026年9月10日",
+        "deadline": "2026年9月25日",
+        "deadline_source": "document",
+        "materials": [
+          {
+            "name": "国家奖学金申请表",
+            "status": "found",
+            "evidence": {
+              "text": "《国家奖学金申请表》、成绩单、获奖证书复印件。",
+              "location": "第 9 行",
+              "page": null,
+              "paragraph": 9
+            }
+          },
+          {
+            "name": "成绩单",
+            "status": "found",
+            "evidence": {
+              "text": "《国家奖学金申请表》、成绩单、获奖证书复印件。",
+              "location": "第 9 行",
+              "page": null,
+              "paragraph": 9
+            }
+          },
+          {
+            "name": "获奖证书复印件",
+            "status": "found",
+            "evidence": {
+              "text": "《国家奖学金申请表》、成绩单、获奖证书复印件。",
+              "location": "第 9 行",
+              "page": null,
+              "paragraph": 9
+            }
+          },
+          {
+            "name": "2026年国家奖学金材料",
+            "status": "found",
+            "evidence": {
+              "text": "关于提交2026年国家奖学金材料的通知",
+              "location": "第 1 行",
+              "page": null,
+              "paragraph": 1
+            }
+          },
+          {
+            "name": "按材料",
+            "status": "found",
+            "evidence": {
+              "text": "标题中的“材料”不是材料名称，请按材料清单逐项准备。",
+              "location": "第 15 行",
+              "page": null,
+              "paragraph": 15
+            }
+          }
+        ],
+        "process": [
+          {
+            "index": 1,
+            "text": "填写国家奖学金申请表",
+            "evidence": {
+              "text": "填写国家奖学金申请表",
+              "location": "第 11 行",
+              "page": null,
+              "paragraph": 11
+            }
+          },
+          {
+            "index": 2,
+            "text": "登录学生资助系统上传电子版",
+            "evidence": {
+              "text": "登录学生资助系统上传电子版",
+              "location": "第 13 行",
+              "page": null,
+              "paragraph": 13
+            }
+          }
+        ],
+        "notes": [
+          {
+            "text": "标题中的“材料”不是材料名称，请按材料清单逐项准备。",
+            "evidence": {
+              "text": "标题中的“材料”不是材料名称，请按材料清单逐项准备。",
+              "location": "第 15 行",
+              "page": null,
+              "paragraph": 15
+            }
+          }
+        ],
+        "fields": [
+          {
+            "key": "title",
+            "label": "事项名称",
+            "value": "关于提交2026年国家奖学金材料的通知",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "关于提交2026年国家奖学金材料的通知",
+                "location": "第 1 行",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "matter_type",
+            "label": "事项类型",
+            "value": "材料申报",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "3. 登录学生资助系统上传电子版。",
+                "location": "第 13 行",
+                "page": null,
+                "paragraph": 13
+              }
+            ],
+            "note": "依据原文关键词「资助」判断，仅供参考。"
+          },
+          {
+            "key": "qualification",
+            "label": "申请资格",
+            "value": "参与对象：符合条件的全日制在校本科生均可申请；提交时间；2026年9月10日至2026年9月25日",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "符合条件的全日制在校本科生均可申请。",
+                "location": "第 5 行",
+                "page": null,
+                "paragraph": 5
+              },
+              {
+                "text": "二、提交时间",
+                "location": "第 6 行",
+                "page": null,
+                "paragraph": 6
+              },
+              {
+                "text": "2026年9月10日至2026年9月25日",
+                "location": "第 7 行",
+                "page": null,
+                "paragraph": 7
+              }
+            ],
+            "note": "以上内容直接摘自原文对应章节或正文句子。"
+          },
+          {
+            "key": "registration_start",
+            "label": "报名开始日期",
+            "value": "2026年9月10日",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "2026年9月10日至2026年9月25日",
+                "location": "第 7 行",
+                "page": null,
+                "paragraph": 7
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "deadline",
+            "label": "截止日期",
+            "value": "2026年9月25日",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "2026年9月10日至2026年9月25日",
+                "location": "第 7 行",
+                "page": null,
+                "paragraph": 7
+              }
+            ],
+            "note": null
+          }
+        ],
+        "source_filename": "d09_标题含材料关键词通知.txt",
+        "status": "pending",
+        "analysis_mode": "rule_based",
+        "created_at": "2026-11-14T21:34:54.520",
+        "updated_at": "2026-11-14T21:34:54.520"
+      }
+    },
+    "6_get_matter": {
+      "status": 200,
+      "body": {
+        "id": 9,
+        "name": "关于提交2026年国家奖学金材料的通知",
+        "matter_type": "材料申报",
+        "qualification": "参与对象：符合条件的全日制在校本科生均可申请；提交时间；2026年9月10日至2026年9月25日",
+        "registration_start": "2026年9月10日",
+        "deadline": "2026年9月25日",
+        "deadline_source": "document",
+        "materials": [
+          {
+            "name": "国家奖学金申请表",
+            "status": "found",
+            "evidence": {
+              "text": "《国家奖学金申请表》、成绩单、获奖证书复印件。",
+              "location": "第 9 行",
+              "page": null,
+              "paragraph": 9
+            }
+          },
+          {
+            "name": "成绩单",
+            "status": "found",
+            "evidence": {
+              "text": "《国家奖学金申请表》、成绩单、获奖证书复印件。",
+              "location": "第 9 行",
+              "page": null,
+              "paragraph": 9
+            }
+          },
+          {
+            "name": "获奖证书复印件",
+            "status": "found",
+            "evidence": {
+              "text": "《国家奖学金申请表》、成绩单、获奖证书复印件。",
+              "location": "第 9 行",
+              "page": null,
+              "paragraph": 9
+            }
+          },
+          {
+            "name": "2026年国家奖学金材料",
+            "status": "found",
+            "evidence": {
+              "text": "关于提交2026年国家奖学金材料的通知",
+              "location": "第 1 行",
+              "page": null,
+              "paragraph": 1
+            }
+          },
+          {
+            "name": "按材料",
+            "status": "found",
+            "evidence": {
+              "text": "标题中的“材料”不是材料名称，请按材料清单逐项准备。",
+              "location": "第 15 行",
+              "page": null,
+              "paragraph": 15
+            }
+          }
+        ],
+        "process": [
+          {
+            "index": 1,
+            "text": "填写国家奖学金申请表",
+            "evidence": {
+              "text": "填写国家奖学金申请表",
+              "location": "第 11 行",
+              "page": null,
+              "paragraph": 11
+            }
+          },
+          {
+            "index": 2,
+            "text": "登录学生资助系统上传电子版",
+            "evidence": {
+              "text": "登录学生资助系统上传电子版",
+              "location": "第 13 行",
+              "page": null,
+              "paragraph": 13
+            }
+          }
+        ],
+        "notes": [
+          {
+            "text": "标题中的“材料”不是材料名称，请按材料清单逐项准备。",
+            "evidence": {
+              "text": "标题中的“材料”不是材料名称，请按材料清单逐项准备。",
+              "location": "第 15 行",
+              "page": null,
+              "paragraph": 15
+            }
+          }
+        ],
+        "fields": [
+          {
+            "key": "title",
+            "label": "事项名称",
+            "value": "关于提交2026年国家奖学金材料的通知",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "关于提交2026年国家奖学金材料的通知",
+                "location": "第 1 行",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "matter_type",
+            "label": "事项类型",
+            "value": "材料申报",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "3. 登录学生资助系统上传电子版。",
+                "location": "第 13 行",
+                "page": null,
+                "paragraph": 13
+              }
+            ],
+            "note": "依据原文关键词「资助」判断，仅供参考。"
+          },
+          {
+            "key": "qualification",
+            "label": "申请资格",
+            "value": "参与对象：符合条件的全日制在校本科生均可申请；提交时间；2026年9月10日至2026年9月25日",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "符合条件的全日制在校本科生均可申请。",
+                "location": "第 5 行",
+                "page": null,
+                "paragraph": 5
+              },
+              {
+                "text": "二、提交时间",
+                "location": "第 6 行",
+                "page": null,
+                "paragraph": 6
+              },
+              {
+                "text": "2026年9月10日至2026年9月25日",
+                "location": "第 7 行",
+                "page": null,
+                "paragraph": 7
+              }
+            ],
+            "note": "以上内容直接摘自原文对应章节或正文句子。"
+          },
+          {
+            "key": "registration_start",
+            "label": "报名开始日期",
+            "value": "2026年9月10日",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "2026年9月10日至2026年9月25日",
+                "location": "第 7 行",
+                "page": null,
+                "paragraph": 7
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "deadline",
+            "label": "截止日期",
+            "value": "2026年9月25日",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "2026年9月10日至2026年9月25日",
+                "location": "第 7 行",
+                "page": null,
+                "paragraph": 7
+              }
+            ],
+            "note": null
+          }
+        ],
+        "source_filename": "d09_标题含材料关键词通知.txt",
+        "status": "pending",
+        "analysis_mode": "rule_based",
+        "created_at": "2026-11-14T21:34:54.520",
+        "updated_at": "2026-11-14T21:34:54.520"
+      }
+    },
+    "7_generate_tasks": {
+      "status": 201,
+      "body": {
+        "matter_id": 9,
+        "created": 2,
+        "skipped": 0,
+        "total_process_steps": 2,
+        "message": "已生成 2 个任务。",
+        "tasks": [
+          {
+            "id": 47,
+            "matter_id": 9,
+            "title": "填写国家奖学金申请表",
+            "description": "填写国家奖学金申请表",
+            "deadline": null,
+            "deadline_source": "none",
+            "priority": "medium",
+            "status": "pending",
+            "origin": "generated",
+            "source_evidence": {
+              "text": "填写国家奖学金申请表",
+              "location": "第 11 行",
+              "page": null,
+              "paragraph": 11
+            },
+            "created_at": "2026-11-14T21:34:54.535",
+            "updated_at": "2026-11-14T21:34:54.535"
+          },
+          {
+            "id": 48,
+            "matter_id": 9,
+            "title": "登录学生资助系统上传电子版",
+            "description": "登录学生资助系统上传电子版",
+            "deadline": null,
+            "deadline_source": "none",
+            "priority": "high",
+            "status": "pending",
+            "origin": "generated",
+            "source_evidence": {
+              "text": "登录学生资助系统上传电子版",
+              "location": "第 13 行",
+              "page": null,
+              "paragraph": 13
+            },
+            "created_at": "2026-11-14T21:34:54.541",
+            "updated_at": "2026-11-14T21:34:54.541"
+          }
+        ],
+        "suggestion": {
+          "deadline": "2026年9月25日",
+          "note": "系统建议：依据事项总截止日期推断，仅作用于未设置截止时间的任务，确认后才会保存。",
+          "task_ids": [
+            47,
+            48
+          ]
+        }
+      }
+    },
+    "9_generate_tasks_again": {
+      "status": 201,
+      "body": {
+        "matter_id": 9,
+        "created": 0,
+        "skipped": 2,
+        "total_process_steps": 2,
+        "message": "该事项的 2 个流程步骤都已生成过任务，未重复创建。",
+        "tasks": [],
+        "suggestion": null
+      }
+    },
+    "10_generate_materials": {
+      "status": 201,
+      "body": {
+        "matter_id": 9,
+        "created": 5,
+        "skipped": 0,
+        "total_source_materials": 5,
+        "message": "已生成 5 项材料。",
+        "materials": [
+          {
+            "id": 23,
+            "matter_id": 9,
+            "matter_name": "关于提交2026年国家奖学金材料的通知",
+            "name": "国家奖学金申请表",
+            "description": "《国家奖学金申请表》、成绩单、获奖证书复印件。",
+            "status": "missing",
+            "file_path": null,
+            "original_filename": null,
+            "file_size": null,
+            "file_type": null,
+            "verification": null,
+            "source_evidence": {
+              "text": "《国家奖学金申请表》、成绩单、获奖证书复印件。",
+              "location": "第 9 行",
+              "page": null,
+              "paragraph": 9
+            },
+            "origin": "generated",
+            "created_at": "2026-11-14T21:34:54.580",
+            "updated_at": "2026-11-14T21:34:54.580",
+            "events": []
+          },
+          {
+            "id": 24,
+            "matter_id": 9,
+            "matter_name": "关于提交2026年国家奖学金材料的通知",
+            "name": "成绩单",
+            "description": "《国家奖学金申请表》、成绩单、获奖证书复印件。",
+            "status": "missing",
+            "file_path": null,
+            "original_filename": null,
+            "file_size": null,
+            "file_type": null,
+            "verification": null,
+            "source_evidence": {
+              "text": "《国家奖学金申请表》、成绩单、获奖证书复印件。",
+              "location": "第 9 行",
+              "page": null,
+              "paragraph": 9
+            },
+            "origin": "generated",
+            "created_at": "2026-11-14T21:34:54.580",
+            "updated_at": "2026-11-14T21:34:54.580",
+            "events": []
+          },
+          {
+            "id": 25,
+            "matter_id": 9,
+            "matter_name": "关于提交2026年国家奖学金材料的通知",
+            "name": "获奖证书复印件",
+            "description": "《国家奖学金申请表》、成绩单、获奖证书复印件。",
+            "status": "missing",
+            "file_path": null,
+            "original_filename": null,
+            "file_size": null,
+            "file_type": null,
+            "verification": null,
+            "source_evidence": {
+              "text": "《国家奖学金申请表》、成绩单、获奖证书复印件。",
+              "location": "第 9 行",
+              "page": null,
+              "paragraph": 9
+            },
+            "origin": "generated",
+            "created_at": "2026-11-14T21:34:54.580",
+            "updated_at": "2026-11-14T21:34:54.580",
+            "events": []
+          },
+          {
+            "id": 26,
+            "matter_id": 9,
+            "matter_name": "关于提交2026年国家奖学金材料的通知",
+            "name": "2026年国家奖学金材料",
+            "description": "关于提交2026年国家奖学金材料的通知",
+            "status": "missing",
+            "file_path": null,
+            "original_filename": null,
+            "file_size": null,
+            "file_type": null,
+            "verification": null,
+            "source_evidence": {
+              "text": "关于提交2026年国家奖学金材料的通知",
+              "location": "第 1 行",
+              "page": null,
+              "paragraph": 1
+            },
+            "origin": "generated",
+            "created_at": "2026-11-14T21:34:54.580",
+            "updated_at": "2026-11-14T21:34:54.580",
+            "events": []
+          },
+          {
+            "id": 27,
+            "matter_id": 9,
+            "matter_name": "关于提交2026年国家奖学金材料的通知",
+            "name": "按材料",
+            "description": "标题中的“材料”不是材料名称，请按材料清单逐项准备。",
+            "status": "missing",
+            "file_path": null,
+            "original_filename": null,
+            "file_size": null,
+            "file_type": null,
+            "verification": null,
+            "source_evidence": {
+              "text": "标题中的“材料”不是材料名称，请按材料清单逐项准备。",
+              "location": "第 15 行",
+              "page": null,
+              "paragraph": 15
+            },
+            "origin": "generated",
+            "created_at": "2026-11-14T21:34:54.580",
+            "updated_at": "2026-11-14T21:34:54.580",
+            "events": []
+          }
+        ]
+      }
+    },
+    "11_upload_material": {
+      "status": 200,
+      "body": {
+        "id": 27,
+        "matter_id": 9,
+        "matter_name": "关于提交2026年国家奖学金材料的通知",
+        "name": "按材料",
+        "description": "标题中的“材料”不是材料名称，请按材料清单逐项准备。",
+        "status": "pending",
+        "file_path": "matter-9/647df052b45a46f6bde6c9aa8120cb68.txt",
+        "original_filename": "material_ok.txt",
+        "file_size": 197,
+        "file_type": "TXT",
+        "verification": null,
+        "source_evidence": {
+          "text": "标题中的“材料”不是材料名称，请按材料清单逐项准备。",
+          "location": "第 15 行",
+          "page": null,
+          "paragraph": 15
+        },
+        "origin": "generated",
+        "created_at": "2026-11-14T21:34:54.580",
+        "updated_at": "2026-11-14T21:34:54.608",
+        "events": []
+      }
+    },
+    "12_verify_material": {
+      "status": 200,
+      "body": {
+        "id": 27,
+        "matter_id": 9,
+        "matter_name": "关于提交2026年国家奖学金材料的通知",
+        "name": "按材料",
+        "description": "标题中的“材料”不是材料名称，请按材料清单逐项准备。",
+        "status": "incomplete",
+        "file_path": "matter-9/647df052b45a46f6bde6c9aa8120cb68.txt",
+        "original_filename": "material_ok.txt",
+        "file_size": 197,
+        "file_type": "TXT",
+        "verification": {
+          "result": "incomplete",
+          "source": "rule",
+          "verified_at": "2026-11-14T21:34:54.626",
+          "summary": "文件可读取，但部分关键内容或要求要素未在文本中找到，信息可能不完整，请人工确认。",
+          "checks": [
+            {
+              "key": "file_readable",
+              "label": "文件可读取",
+              "status": "pass",
+              "message": "文件已通过格式与内容校验，可正常读取：8 段，85 字。",
+              "excerpt": null,
+              "location": "material_ok.txt"
+            },
+            {
+              "key": "text_extracted",
+              "label": "有效文本",
+              "status": "pass",
+              "message": "成功提取到 85 个字符，可用于内容比对。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "keyword_coverage",
+              "label": "关键内容",
+              "status": "warn",
+              "message": "已匹配：无；未找到：按材料。可能是材料不匹配，或文件内容缺少相关表述。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "required_elements",
+              "label": "要求要素",
+              "status": "pass",
+              "message": "材料要求中未提到签字、盖章、日期等必须要素，无需逐项比对。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "suspicious_phrases",
+              "label": "冲突风险",
+              "status": "pass",
+              "message": "未发现「过期、失效、无效」等可能表示材料不符合要求的表述。",
+              "excerpt": null,
+              "location": null
+            }
+          ],
+          "reasons": [
+            "文件文本中未找到关键词：按材料，需人工确认材料是否匹配。"
+          ],
+          "reviewer_note": null
+        },
+        "source_evidence": {
+          "text": "标题中的“材料”不是材料名称，请按材料清单逐项准备。",
+          "location": "第 15 行",
+          "page": null,
+          "paragraph": 15
+        },
+        "origin": "generated",
+        "created_at": "2026-11-14T21:34:54.580",
+        "updated_at": "2026-11-14T21:34:54.626",
+        "events": []
+      }
+    },
+    "13_confirm_material": {
+      "status": 200,
+      "body": {
+        "id": 27,
+        "matter_id": 9,
+        "matter_name": "关于提交2026年国家奖学金材料的通知",
+        "name": "按材料",
+        "description": "标题中的“材料”不是材料名称，请按材料清单逐项准备。",
+        "status": "qualified",
+        "file_path": "matter-9/647df052b45a46f6bde6c9aa8120cb68.txt",
+        "original_filename": "material_ok.txt",
+        "file_size": 197,
+        "file_type": "TXT",
+        "verification": {
+          "result": "qualified",
+          "source": "manual",
+          "verified_at": "2026-11-14T21:34:54.636",
+          "summary": "人工确认：已确认符合。E2E 测试人工确认",
+          "checks": [
+            {
+              "key": "file_readable",
+              "label": "文件可读取",
+              "status": "pass",
+              "message": "文件已通过格式与内容校验，可正常读取：8 段，85 字。",
+              "excerpt": null,
+              "location": "material_ok.txt"
+            },
+            {
+              "key": "text_extracted",
+              "label": "有效文本",
+              "status": "pass",
+              "message": "成功提取到 85 个字符，可用于内容比对。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "keyword_coverage",
+              "label": "关键内容",
+              "status": "warn",
+              "message": "已匹配：无；未找到：按材料。可能是材料不匹配，或文件内容缺少相关表述。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "required_elements",
+              "label": "要求要素",
+              "status": "pass",
+              "message": "材料要求中未提到签字、盖章、日期等必须要素，无需逐项比对。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "suspicious_phrases",
+              "label": "冲突风险",
+              "status": "pass",
+              "message": "未发现「过期、失效、无效」等可能表示材料不符合要求的表述。",
+              "excerpt": null,
+              "location": null
+            },
+            {
+              "key": "manual_evidence",
+              "label": "人工补充依据",
+              "status": "pass",
+              "message": "E2E 测试人工确认",
+              "excerpt": "测试用途材料样本",
+              "location": "人工填写"
+            }
+          ],
+          "reasons": [
+            "文件文本中未找到关键词：按材料，需人工确认材料是否匹配。"
+          ],
+          "reviewer_note": "E2E 测试人工确认"
+        },
+        "source_evidence": {
+          "text": "标题中的“材料”不是材料名称，请按材料清单逐项准备。",
+          "location": "第 15 行",
+          "page": null,
+          "paragraph": 15
+        },
+        "origin": "generated",
+        "created_at": "2026-11-14T21:34:54.580",
+        "updated_at": "2026-11-14T21:34:54.636",
+        "events": []
+      }
+    },
+    "13_material_detail": {
+      "id": 27,
+      "matter_id": 9,
+      "matter_name": "关于提交2026年国家奖学金材料的通知",
+      "name": "按材料",
+      "description": "标题中的“材料”不是材料名称，请按材料清单逐项准备。",
+      "status": "qualified",
+      "file_path": "matter-9/647df052b45a46f6bde6c9aa8120cb68.txt",
+      "original_filename": "material_ok.txt",
+      "file_size": 197,
+      "file_type": "TXT",
+      "verification": {
+        "result": "qualified",
+        "source": "manual",
+        "verified_at": "2026-11-14T21:34:54.636",
+        "summary": "人工确认：已确认符合。E2E 测试人工确认",
+        "checks": [
+          {
+            "key": "file_readable",
+            "label": "文件可读取",
+            "status": "pass",
+            "message": "文件已通过格式与内容校验，可正常读取：8 段，85 字。",
+            "excerpt": null,
+            "location": "material_ok.txt"
+          },
+          {
+            "key": "text_extracted",
+            "label": "有效文本",
+            "status": "pass",
+            "message": "成功提取到 85 个字符，可用于内容比对。",
+            "excerpt": null,
+            "location": null
+          },
+          {
+            "key": "keyword_coverage",
+            "label": "关键内容",
+            "status": "warn",
+            "message": "已匹配：无；未找到：按材料。可能是材料不匹配，或文件内容缺少相关表述。",
+            "excerpt": null,
+            "location": null
+          },
+          {
+            "key": "required_elements",
+            "label": "要求要素",
+            "status": "pass",
+            "message": "材料要求中未提到签字、盖章、日期等必须要素，无需逐项比对。",
+            "excerpt": null,
+            "location": null
+          },
+          {
+            "key": "suspicious_phrases",
+            "label": "冲突风险",
+            "status": "pass",
+            "message": "未发现「过期、失效、无效」等可能表示材料不符合要求的表述。",
+            "excerpt": null,
+            "location": null
+          },
+          {
+            "key": "manual_evidence",
+            "label": "人工补充依据",
+            "status": "pass",
+            "message": "E2E 测试人工确认",
+            "excerpt": "测试用途材料样本",
+            "location": "人工填写"
+          }
+        ],
+        "reasons": [
+          "文件文本中未找到关键词：按材料，需人工确认材料是否匹配。"
+        ],
+        "reviewer_note": "E2E 测试人工确认"
+      },
+      "source_evidence": {
+        "text": "标题中的“材料”不是材料名称，请按材料清单逐项准备。",
+        "location": "第 15 行",
+        "page": null,
+        "paragraph": 15
+      },
+      "origin": "generated",
+      "created_at": "2026-11-14T21:34:54.580",
+      "updated_at": "2026-11-14T21:34:54.636",
+      "events": [
+        {
+          "id": 48,
+          "action": "generated",
+          "detail": "由事项材料要求生成",
+          "created_at": "2026-11-14T21:34:54.580"
+        },
+        {
+          "id": 49,
+          "action": "file_uploaded",
+          "detail": "上传文件：material_ok.txt",
+          "created_at": "2026-11-14T21:34:54.608"
+        },
+        {
+          "id": 50,
+          "action": "verified",
+          "detail": "文件可读取，但部分关键内容或要求要素未在文本中找到，信息可能不完整，请人工确认。",
+          "created_at": "2026-11-14T21:34:54.626"
+        },
+        {
+          "id": 51,
+          "action": "confirmed",
+          "detail": "人工确认：已确认符合。E2E 测试人工确认",
+          "created_at": "2026-11-14T21:34:54.636"
+        }
+      ]
+    },
+    "14_refresh_risks": {
+      "status": 200,
+      "body": {
+        "generated_at": "2026-11-14T21:34:54.750+08:00",
+        "created": 5,
+        "updated": 16,
+        "revived": 0,
+        "resolved": 0,
+        "summary": {
+          "generated_at": "2026-11-14T21:34:54.750+08:00",
+          "timezone": "Asia/Shanghai",
+          "today": "2026-11-14",
+          "total_unresolved": 21,
+          "total_risks": 30,
+          "active": 21,
+          "read": 0,
+          "resolved": 9,
+          "high": 0,
+          "medium": 20,
+          "low": 1,
+          "by_type": {
+            "backlog": 1,
+            "date_unverified": 1,
+            "material_incomplete": 1,
+            "material_missing": 18
+          },
+          "overdue_tasks": 0,
+          "due_soon_3d_tasks": 0,
+          "due_soon_7d_tasks": 0,
+          "pending_materials": 0,
+          "conflict_materials": 0,
+          "missing_materials": 19,
+          "uncertain_materials": 0,
+          "unfinished_tasks": 10,
+          "matters_with_risks": 7
+        }
+      }
+    },
+    "14_matter_risks": {
+      "status": 200,
+      "body": {
+        "summary": {
+          "matter_id": 9,
+          "matter_name": "关于提交2026年国家奖学金材料的通知",
+          "matter_status": "pending",
+          "deadline": "2026年9月25日",
+          "deadline_source": "document",
+          "deadline_state": "overdue",
+          "deadline_days_left": -50,
+          "unfinished_tasks": 0,
+          "material_total": 5,
+          "material_missing": 4,
+          "material_pending": 0,
+          "material_conflict": 0,
+          "risk_total": 5,
+          "level": "high",
+          "headline": "已超过事项截止日期 50 天；4 项材料未提供。"
+        },
+        "risks": [
+          {
+            "id": 30,
+            "fingerprint": "material_missing|matter:9|material:23",
+            "risk_type": "material_missing",
+            "risk_level": "medium",
+            "title": "材料缺失：国家奖学金申请表",
+            "description": "事项「关于提交2026年国家奖学金材料的通知」的材料「国家奖学金申请表」必需材料尚未提供。 材料要求：《国家奖学金申请表》、成绩单、获奖证书复印件。",
+            "matter_id": 9,
+            "matter_name": "关于提交2026年国家奖学金材料的通知",
+            "task_id": null,
+            "task_title": null,
+            "material_id": 23,
+            "material_name": "国家奖学金申请表",
+            "evidence": {
+              "rule": "材料状态为「missing」，必需材料尚未提供。",
+              "data_sources": [
+                "materials.status",
+                "materials.verification_evidence_json"
+              ],
+              "timezone": "Asia/Shanghai",
+              "today": "2026-11-14",
+              "deadline_raw": null,
+              "deadline_normalized": null,
+              "deadline_source": null,
+              "days_left": null,
+              "matter_name": "关于提交2026年国家奖学金材料的通知",
+              "task": null,
+              "unfinished_tasks": [],
+              "material": {
+                "name": "国家奖学金申请表",
+                "description": "《国家奖学金申请表》、成绩单、获奖证书复印件。",
+                "status": "missing",
+                "original_filename": null,
+                "file_type": null,
+                "file_size": null,
+                "requirement_evidence": {
+                  "text": "《国家奖学金申请表》、成绩单、获奖证书复印件。",
+                  "location": "第 9 行",
+                  "page": null,
+                  "paragraph": 9
+                },
+                "verification": null
+              },
+              "note": null
+            },
+            "suggestion": "请准备并上传该材料，上传后可执行规则核验。",
+            "status": "active",
+            "first_seen_at": "2026-11-14T21:34:54.736+08:00",
+            "last_seen_at": "2026-11-14T21:34:54.736+08:00",
+            "read_at": null,
+            "resolved_at": null
+          },
+          {
+            "id": 29,
+            "fingerprint": "material_missing|matter:9|material:24",
+            "risk_type": "material_missing",
+            "risk_level": "medium",
+            "title": "材料缺失：成绩单",
+            "description": "事项「关于提交2026年国家奖学金材料的通知」的材料「成绩单」必需材料尚未提供。 材料要求：《国家奖学金申请表》、成绩单、获奖证书复印件。",
+            "matter_id": 9,
+            "matter_name": "关于提交2026年国家奖学金材料的通知",
+            "task_id": null,
+            "task_title": null,
+            "material_id": 24,
+            "material_name": "成绩单",
+            "evidence": {
+              "rule": "材料状态为「missing」，必需材料尚未提供。",
+              "data_sources": [
+                "materials.status",
+                "materials.verification_evidence_json"
+              ],
+              "timezone": "Asia/Shanghai",
+              "today": "2026-11-14",
+              "deadline_raw": null,
+              "deadline_normalized": null,
+              "deadline_source": null,
+              "days_left": null,
+              "matter_name": "关于提交2026年国家奖学金材料的通知",
+              "task": null,
+              "unfinished_tasks": [],
+              "material": {
+                "name": "成绩单",
+                "description": "《国家奖学金申请表》、成绩单、获奖证书复印件。",
+                "status": "missing",
+                "original_filename": null,
+                "file_type": null,
+                "file_size": null,
+                "requirement_evidence": {
+                  "text": "《国家奖学金申请表》、成绩单、获奖证书复印件。",
+                  "location": "第 9 行",
+                  "page": null,
+                  "paragraph": 9
+                },
+                "verification": null
+              },
+              "note": null
+            },
+            "suggestion": "请准备并上传该材料，上传后可执行规则核验。",
+            "status": "active",
+            "first_seen_at": "2026-11-14T21:34:54.736+08:00",
+            "last_seen_at": "2026-11-14T21:34:54.736+08:00",
+            "read_at": null,
+            "resolved_at": null
+          },
+          {
+            "id": 28,
+            "fingerprint": "material_missing|matter:9|material:25",
+            "risk_type": "material_missing",
+            "risk_level": "medium",
+            "title": "材料缺失：获奖证书复印件",
+            "description": "事项「关于提交2026年国家奖学金材料的通知」的材料「获奖证书复印件」必需材料尚未提供。 材料要求：《国家奖学金申请表》、成绩单、获奖证书复印件。",
+            "matter_id": 9,
+            "matter_name": "关于提交2026年国家奖学金材料的通知",
+            "task_id": null,
+            "task_title": null,
+            "material_id": 25,
+            "material_name": "获奖证书复印件",
+            "evidence": {
+              "rule": "材料状态为「missing」，必需材料尚未提供。",
+              "data_sources": [
+                "materials.status",
+                "materials.verification_evidence_json"
+              ],
+              "timezone": "Asia/Shanghai",
+              "today": "2026-11-14",
+              "deadline_raw": null,
+              "deadline_normalized": null,
+              "deadline_source": null,
+              "days_left": null,
+              "matter_name": "关于提交2026年国家奖学金材料的通知",
+              "task": null,
+              "unfinished_tasks": [],
+              "material": {
+                "name": "获奖证书复印件",
+                "description": "《国家奖学金申请表》、成绩单、获奖证书复印件。",
+                "status": "missing",
+                "original_filename": null,
+                "file_type": null,
+                "file_size": null,
+                "requirement_evidence": {
+                  "text": "《国家奖学金申请表》、成绩单、获奖证书复印件。",
+                  "location": "第 9 行",
+                  "page": null,
+                  "paragraph": 9
+                },
+                "verification": null
+              },
+              "note": null
+            },
+            "suggestion": "请准备并上传该材料，上传后可执行规则核验。",
+            "status": "active",
+            "first_seen_at": "2026-11-14T21:34:54.736+08:00",
+            "last_seen_at": "2026-11-14T21:34:54.736+08:00",
+            "read_at": null,
+            "resolved_at": null
+          },
+          {
+            "id": 27,
+            "fingerprint": "material_missing|matter:9|material:26",
+            "risk_type": "material_missing",
+            "risk_level": "medium",
+            "title": "材料缺失：2026年国家奖学金材料",
+            "description": "事项「关于提交2026年国家奖学金材料的通知」的材料「2026年国家奖学金材料」必需材料尚未提供。 材料要求：关于提交2026年国家奖学金材料的通知",
+            "matter_id": 9,
+            "matter_name": "关于提交2026年国家奖学金材料的通知",
+            "task_id": null,
+            "task_title": null,
+            "material_id": 26,
+            "material_name": "2026年国家奖学金材料",
+            "evidence": {
+              "rule": "材料状态为「missing」，必需材料尚未提供。",
+              "data_sources": [
+                "materials.status",
+                "materials.verification_evidence_json"
+              ],
+              "timezone": "Asia/Shanghai",
+              "today": "2026-11-14",
+              "deadline_raw": null,
+              "deadline_normalized": null,
+              "deadline_source": null,
+              "days_left": null,
+              "matter_name": "关于提交2026年国家奖学金材料的通知",
+              "task": null,
+              "unfinished_tasks": [],
+              "material": {
+                "name": "2026年国家奖学金材料",
+                "description": "关于提交2026年国家奖学金材料的通知",
+                "status": "missing",
+                "original_filename": null,
+                "file_type": null,
+                "file_size": null,
+                "requirement_evidence": {
+                  "text": "关于提交2026年国家奖学金材料的通知",
+                  "location": "第 1 行",
+                  "page": null,
+                  "paragraph": 1
+                },
+                "verification": null
+              },
+              "note": null
+            },
+            "suggestion": "请准备并上传该材料，上传后可执行规则核验。",
+            "status": "active",
+            "first_seen_at": "2026-11-14T21:34:54.736+08:00",
+            "last_seen_at": "2026-11-14T21:34:54.736+08:00",
+            "read_at": null,
+            "resolved_at": null
+          },
+          {
+            "id": 26,
+            "fingerprint": "backlog|matter:9",
+            "risk_type": "backlog",
+            "risk_level": "medium",
+            "title": "事项任务积压：关于提交2026年国家奖学金材料的通知",
+            "description": "事项「关于提交2026年国家奖学金材料的通知」还有 2 个未完成任务：登录学生资助系统上传电子版、填写国家奖学金申请表。任务处于未完成状态本身不判定为逾期，只有存在明确截止日期且已过期时才单独产生逾期提醒。",
+            "matter_id": 9,
+            "matter_name": "关于提交2026年国家奖学金材料的通知",
+            "task_id": null,
+            "task_title": null,
+            "material_id": null,
+            "material_name": null,
+            "evidence": {
+              "rule": "事项下存在 2 个未完成任务（状态非 done）。",
+              "data_sources": [
+                "tasks.status",
+                "tasks.title",
+                "tasks.deadline"
+              ],
+              "timezone": "Asia/Shanghai",
+              "today": "2026-11-14",
+              "deadline_raw": null,
+              "deadline_normalized": null,
+              "deadline_source": null,
+              "days_left": null,
+              "matter_name": "关于提交2026年国家奖学金材料的通知",
+              "task": null,
+              "unfinished_tasks": [
+                {
+                  "id": 48,
+                  "title": "登录学生资助系统上传电子版",
+                  "status": "pending",
+                  "deadline": null,
+                  "deadline_source": "none",
+                  "days_left": null
+                },
+                {
+                  "id": 47,
+                  "title": "填写国家奖学金申请表",
+                  "status": "pending",
+                  "deadline": null,
+                  "deadline_source": "none",
+                  "days_left": null
+                }
+              ],
+              "material": null,
+              "note": null
+            },
+            "suggestion": "建议按截止时间与优先级安排处理顺序，可前往任务中心逐项完成。",
+            "status": "active",
+            "first_seen_at": "2026-11-14T21:34:54.736+08:00",
+            "last_seen_at": "2026-11-14T21:34:54.736+08:00",
+            "read_at": null,
+            "resolved_at": null
+          }
+        ]
+      }
+    },
+    "16_task_status_change": {
+      "task_id": 48,
+      "after_done": [
+        "material_missing",
+        "material_missing",
+        "material_missing",
+        "material_missing"
+      ],
+      "after_reopen": [
+        "material_missing",
+        "material_missing",
+        "material_missing",
+        "material_missing",
+        "backlog"
+      ]
+    },
+    "16_all_tasks_done_risks": [
+      "material_missing",
+      "material_missing",
+      "material_missing",
+      "material_missing"
+    ]
+  },
+  "checks": [],
+  "matter_id": 9,
+  "task_ids": [
+    48,
+    47
+  ],
+  "material_ids": [
+    27,
+    26,
+    25,
+    24,
+    23
+  ],
+  "analysis": {
+    "document": {
+      "filename": "d09_标题含材料关键词通知.txt",
+      "extension": ".txt",
+      "size": 763,
+      "char_count": 280,
+      "page_count": null,
+      "paragraph_count": 20
+    },
+    "fields": [
+      {
+        "key": "title",
+        "label": "事项名称",
+        "value": "关于提交2026年国家奖学金材料的通知",
+        "status": "found",
+        "evidence": [
+          {
+            "text": "关于提交2026年国家奖学金材料的通知",
+            "location": "第 1 行",
+            "page": null,
+            "paragraph": 1
+          }
+        ],
+        "note": null
+      },
+      {
+        "key": "matter_type",
+        "label": "事项类型",
+        "value": "材料申报",
+        "status": "found",
+        "evidence": [
+          {
+            "text": "3. 登录学生资助系统上传电子版。",
+            "location": "第 13 行",
+            "page": null,
+            "paragraph": 13
+          }
+        ],
+        "note": "依据原文关键词「资助」判断，仅供参考。"
+      },
+      {
+        "key": "qualification",
+        "label": "申请资格",
+        "value": "参与对象：符合条件的全日制在校本科生均可申请；提交时间；2026年9月10日至2026年9月25日",
+        "status": "found",
+        "evidence": [
+          {
+            "text": "符合条件的全日制在校本科生均可申请。",
+            "location": "第 5 行",
+            "page": null,
+            "paragraph": 5
+          },
+          {
+            "text": "二、提交时间",
+            "location": "第 6 行",
+            "page": null,
+            "paragraph": 6
+          },
+          {
+            "text": "2026年9月10日至2026年9月25日",
+            "location": "第 7 行",
+            "page": null,
+            "paragraph": 7
+          }
+        ],
+        "note": "以上内容直接摘自原文对应章节或正文句子。"
+      },
+      {
+        "key": "registration_start",
+        "label": "报名开始日期",
+        "value": "2026年9月10日",
+        "status": "found",
+        "evidence": [
+          {
+            "text": "2026年9月10日至2026年9月25日",
+            "location": "第 7 行",
+            "page": null,
+            "paragraph": 7
+          }
+        ],
+        "note": null
+      },
+      {
+        "key": "deadline",
+        "label": "截止日期",
+        "value": "2026年9月25日",
+        "status": "found",
+        "evidence": [
+          {
+            "text": "2026年9月10日至2026年9月25日",
+            "location": "第 7 行",
+            "page": null,
+            "paragraph": 7
+          }
+        ],
+        "note": null
+      }
+    ],
+    "materials": [
+      {
+        "name": "国家奖学金申请表",
+        "status": "found",
+        "evidence": {
+          "text": "《国家奖学金申请表》、成绩单、获奖证书复印件。",
+          "location": "第 9 行",
+          "page": null,
+          "paragraph": 9
+        }
+      },
+      {
+        "name": "成绩单",
+        "status": "found",
+        "evidence": {
+          "text": "《国家奖学金申请表》、成绩单、获奖证书复印件。",
+          "location": "第 9 行",
+          "page": null,
+          "paragraph": 9
+        }
+      },
+      {
+        "name": "获奖证书复印件",
+        "status": "found",
+        "evidence": {
+          "text": "《国家奖学金申请表》、成绩单、获奖证书复印件。",
+          "location": "第 9 行",
+          "page": null,
+          "paragraph": 9
+        }
+      },
+      {
+        "name": "2026年国家奖学金材料",
+        "status": "found",
+        "evidence": {
+          "text": "关于提交2026年国家奖学金材料的通知",
+          "location": "第 1 行",
+          "page": null,
+          "paragraph": 1
+        }
+      },
+      {
+        "name": "按材料",
+        "status": "found",
+        "evidence": {
+          "text": "标题中的“材料”不是材料名称，请按材料清单逐项准备。",
+          "location": "第 15 行",
+          "page": null,
+          "paragraph": 15
+        }
+      }
+    ],
+    "process": [
+      {
+        "index": 1,
+        "text": "填写国家奖学金申请表",
+        "evidence": {
+          "text": "填写国家奖学金申请表",
+          "location": "第 11 行",
+          "page": null,
+          "paragraph": 11
+        }
+      },
+      {
+        "index": 2,
+        "text": "登录学生资助系统上传电子版",
+        "evidence": {
+          "text": "登录学生资助系统上传电子版",
+          "location": "第 13 行",
+          "page": null,
+          "paragraph": 13
+        }
+      }
+    ],
+    "notes": [
+      {
+        "text": "标题中的“材料”不是材料名称，请按材料清单逐项准备。",
+        "evidence": {
+          "text": "标题中的“材料”不是材料名称，请按材料清单逐项准备。",
+          "location": "第 15 行",
+          "page": null,
+          "paragraph": 15
+        }
+      }
+    ],
+    "warnings": [],
+    "analysis_mode": "rule_based",
+    "ai_configured": false,
+    "ai_message": "当前未配置大模型 API，本次分析仅使用本地规则（章节标题 + 关键词 + 日期正则）提取，不是 AI 分析结果。未找到原文依据的字段已标记为「待核实」，请人工核对。",
+    "elapsed_ms": 1
+  }
+}

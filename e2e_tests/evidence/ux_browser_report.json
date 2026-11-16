@@ -1,0 +1,173 @@
+{
+  "desktop": [
+    {
+      "page": "dashboard-real",
+      "errors": []
+    },
+    {
+      "page": "settings-seeded",
+      "errors": []
+    },
+    {
+      "page": "dashboard-demo",
+      "stats": [
+        "3个",
+        "8个",
+        "16条",
+        "2个",
+        "1个",
+        "2项"
+      ],
+      "errors": []
+    },
+    {
+      "page": "analyze",
+      "errors": []
+    },
+    {
+      "page": "matters-detail",
+      "errors": []
+    },
+    {
+      "page": "tasks",
+      "errors": []
+    },
+    {
+      "page": "verification",
+      "errors": []
+    },
+    {
+      "page": "risks-detail",
+      "explain": "为什么出现\n\n材料状态为「conflict」，材料的核验结果或人工确认显示存在冲突信息。\n\n影响什么\n\n材料之间存在不一致，可能影响资格审核或受理结果。\n\n下一步做什么\n\n请优先核对冲突内容，必要时更换材料并重新核验。",
+      "errors": []
+    }
+  ],
+  "mobile": [
+    {
+      "page": "dashboard-demo",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "overflowX": "visible",
+      "clipped": [],
+      "errors": []
+    },
+    {
+      "page": "drawer",
+      "drawer": {
+        "open": true,
+        "left": 0,
+        "right": 248,
+        "width": 248
+      }
+    },
+    {
+      "page": "analyze",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "overflowX": "visible",
+      "clipped": [],
+      "errors": []
+    },
+    {
+      "page": "matters",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "overflowX": "visible",
+      "clipped": [],
+      "errors": []
+    },
+    {
+      "page": "matter-detail",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "overflowX": "visible",
+      "clipped": [],
+      "errors": []
+    },
+    {
+      "page": "tasks",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "overflowX": "visible",
+      "clipped": [],
+      "errors": []
+    },
+    {
+      "page": "verification",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "overflowX": "visible",
+      "clipped": [],
+      "errors": []
+    },
+    {
+      "page": "risks",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "overflowX": "visible",
+      "clipped": [],
+      "errors": []
+    },
+    {
+      "page": "risk-detail",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "overflowX": "visible",
+      "clipped": [],
+      "errors": []
+    },
+    {
+      "page": "settings",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "overflowX": "visible",
+      "clipped": [],
+      "errors": []
+    },
+    {
+      "page": "settings-modal",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "overflowX": "visible",
+      "clipped": [],
+      "errors": []
+    }
+  ],
+  "console": [],
+  "api": {
+    "real_before": {
+      "total": 0,
+      "pending": 0,
+      "in_progress": 0,
+      "done": 0
+    },
+    "clear": {
+      "available": true,
+      "seeded": false,
+      "matters": 0,
+      "tasks": 0,
+      "materials": 0,
+      "risks": 0,
+      "real_matters": 0,
+      "seeded_at": null,
+      "message": "尚未初始化演示数据。"
+    },
+    "real_after": {
+      "total": 0,
+      "pending": 0,
+      "in_progress": 0,
+      "done": 0
+    },
+    "real_unchanged": true
+  }
+}

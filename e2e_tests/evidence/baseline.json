@@ -1,0 +1,19 @@
+﻿{
+    "timestamp":  "20261114_213010",
+    "system_version":  "0.1.0",
+    "db_path":  "d:\\新建文件夹\\TaskRadar\\backend\\data\\taskradar.db",
+    "db_sha256_before":  "BCF4266BCDB6FD9B5EDB11BC388612FD74067B83B5C33A99773C309D4AFAE18E",
+    "db_sha256_backup":  "BCF4266BCDB6FD9B5EDB11BC388612FD74067B83B5C33A99773C309D4AFAE18E",
+    "db_size":  192512,
+    "uploads_file_count_before":  9,
+    "uploads_total_bytes_before":  37072,
+    "uploads_file_count_backup":  9,
+    "uploads_total_bytes_backup":  37072,
+    "backup_dir":  "d:\\新建文件夹\\TaskRadar_backups\\e2e_20261114_213010",
+    "counts":  {
+                   "materials":  "16",
+                   "matters":  "9",
+                   "tasks":  "20",
+                   "risks":  "31"
+               }
+}

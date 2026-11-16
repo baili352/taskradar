@@ -1,0 +1,4404 @@
+{
+  "finished_at": "2026-11-14T21:34:58",
+  "started_at": "2026-11-14T21:34:47",
+  "checks": [
+    {
+      "category": "文档解析",
+      "case": "d01_校园活动通知.txt",
+      "name": "上传并解析成功",
+      "result": "PASS",
+      "expected": "HTTP 200",
+      "actual": "HTTP 200",
+      "repro": "POST /api/analysis/analyze 上传 d01_校园活动通知.txt",
+      "evidence": "evidence/d01_校园活动通知.txt.json#1_analyze"
+    },
+    {
+      "category": "文档解析",
+      "case": "d01_校园活动通知.txt",
+      "name": "文档内容被真实读取",
+      "result": "PASS",
+      "expected": "char_count > 0",
+      "actual": "char_count=312",
+      "repro": "检查 analyze 返回的 document.char_count",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d01_校园活动通知.txt",
+      "name": "事项名称与标题一致",
+      "result": "PASS",
+      "expected": "关于开展2026年校园文化节活动的通知",
+      "actual": "关于开展2026年校园文化节活动的通知",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d01_校园活动通知.txt",
+      "name": "字段存在：事项名称",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d01_校园活动通知.txt",
+      "name": "字段存在：事项类型",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d01_校园活动通知.txt",
+      "name": "字段存在：申请资格",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d01_校园活动通知.txt",
+      "name": "字段存在：报名开始日期",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d01_校园活动通知.txt",
+      "name": "字段存在：截止日期",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d01_校园活动通知.txt",
+      "name": "报名开始日期解析",
+      "result": "PASS",
+      "expected": "None",
+      "actual": "None",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d01_校园活动通知.txt",
+      "name": "截止日期解析",
+      "result": "PASS",
+      "expected": "None",
+      "actual": "None",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d01_校园活动通知.txt",
+      "name": "每条提取结果均带原文证据",
+      "result": "PASS",
+      "expected": "所有 found 字段/材料/流程/备注均有可回溯证据",
+      "actual": "通过",
+      "repro": "逐条比对 evidence.text/location 与原文",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d01_校园活动通知.txt",
+      "name": "事项类型识别",
+      "result": "PASS",
+      "expected": "None",
+      "actual": "None",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d01_校园活动通知.txt",
+      "name": "流程步骤数量与原文一致",
+      "result": "PASS",
+      "expected": "3 个流程步骤",
+      "actual": "3 个：['登录学校活动平台填写报名表', '将报名表和学生证复印件交至校团委办公室', '扫码加入活动通知群，确认报名成功']",
+      "repro": "核对解析出的 process 数量",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d01_校园活动通知.txt",
+      "name": "材料名称覆盖原文要求",
+      "result": "PASS",
+      "expected": "包含：['报名表', '学生证复印件']",
+      "actual": "缺失：[]；实际=['登录学校活动平台填写报名表', '学生证复印件']",
+      "repro": "核对解析出的 materials 名称",
+      "evidence": ""
+    },
+    {
+      "category": "事项管理",
+      "case": "d01_校园活动通知.txt",
+      "name": "保存为事项",
+      "result": "PASS",
+      "expected": "HTTP 201",
+      "actual": "HTTP 201",
+      "repro": "POST /api/matters",
+      "evidence": ""
+    },
+    {
+      "category": "事项管理",
+      "case": "d01_校园活动通知.txt",
+      "name": "刷新后事项仍存在",
+      "result": "PASS",
+      "expected": "HTTP 200 且名称=关于开展2026年校园文化节活动的通知",
+      "actual": "HTTP 200 名称=关于开展2026年校园文化节活动的通知",
+      "repro": "GET /api/matters/1",
+      "evidence": ""
+    },
+    {
+      "category": "前后端集成",
+      "case": "d01_校园活动通知.txt",
+      "name": "保存后字段与解析结果一致",
+      "result": "PASS",
+      "expected": "日期、材料数、流程数与解析结果一致",
+      "actual": "deadline=None, start=None, materials=2, process=3",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d01_校园活动通知.txt",
+      "name": "按办理流程生成任务",
+      "result": "PASS",
+      "expected": "HTTP 201",
+      "actual": "HTTP 201",
+      "repro": "POST /api/matters/1/tasks",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d01_校园活动通知.txt",
+      "name": "任务数量与流程步骤一致",
+      "result": "PASS",
+      "expected": "3 个任务",
+      "actual": "3 个任务",
+      "repro": "比对 process=3 与 created=3",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d01_校园活动通知.txt",
+      "name": "任务来自真实流程步骤",
+      "result": "PASS",
+      "expected": "任务描述均来自原文流程步骤",
+      "actual": "全部匹配",
+      "repro": "比对任务 description 与事项 process.text",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d01_校园活动通知.txt",
+      "name": "任务保留原文证据",
+      "result": "PASS",
+      "expected": "每个任务有 source_evidence.text",
+      "actual": "通过",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d01_校园活动通知.txt",
+      "name": "重复生成不产生重复任务",
+      "result": "PASS",
+      "expected": "created=0 且任务总数保持 3",
+      "actual": "created=0 任务总数=3",
+      "repro": "连续两次 POST /api/matters/1/tasks",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d01_校园活动通知.txt",
+      "name": "按原文材料要求生成清单",
+      "result": "PASS",
+      "expected": "2 项材料",
+      "actual": "created=2 skipped=0",
+      "repro": "POST /api/matters/1/materials/generate",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d01_校园活动通知.txt",
+      "name": "上传材料测试文件",
+      "result": "PASS",
+      "expected": "HTTP 200 且状态 pending",
+      "actual": "HTTP 200 状态=pending",
+      "repro": "POST /api/materials/2/file",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d01_校园活动通知.txt",
+      "name": "执行规则核验",
+      "result": "PASS",
+      "expected": "返回合法核验结论",
+      "actual": "incomplete",
+      "repro": "POST /api/materials/2/verify",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d01_校园活动通知.txt",
+      "name": "核验记录包含逐项依据",
+      "result": "PASS",
+      "expected": "至少 3 项检查且有结论说明",
+      "actual": "checks=5",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d01_校园活动通知.txt",
+      "name": "人工确认写入记录",
+      "result": "PASS",
+      "expected": "HTTP 200 且状态=qualified",
+      "actual": "HTTP 200 状态=qualified",
+      "repro": "POST /api/materials/2/confirm",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d01_校园活动通知.txt",
+      "name": "人工确认记录可追溯",
+      "result": "PASS",
+      "expected": "material_events 中存在确认记录",
+      "actual": "events=['generated', 'file_uploaded', 'verified', 'confirmed']",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d01_校园活动通知.txt",
+      "name": "主动刷新风险",
+      "result": "PASS",
+      "expected": "HTTP 200",
+      "actual": "HTTP 200",
+      "repro": "POST /api/risks/refresh",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d01_校园活动通知.txt",
+      "name": "日期风险判断",
+      "result": "PASS",
+      "expected": "不应出现 date_unverified",
+      "actual": "实际风险类型=['material_missing', 'backlog']",
+      "repro": "检查事项风险列表中的 date_unverified",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d01_校园活动通知.txt",
+      "name": "材料缺失风险数量",
+      "result": "PASS",
+      "expected": "1 项 material_missing",
+      "actual": "1 项",
+      "repro": "核对材料状态与 material_missing 风险数量",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d01_校园活动通知.txt",
+      "name": "任务积压风险判断",
+      "result": "PASS",
+      "expected": "应出现 backlog",
+      "actual": "未完成任务=3 风险=['material_missing', 'backlog']",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d01_校园活动通知.txt",
+      "name": "任务完成/重新打开后风险同步变化",
+      "result": "PASS",
+      "expected": "完成一个任务后风险列表被重新计算",
+      "actual": "完成后=['material_missing', 'backlog']；重开后=['material_missing', 'backlog']",
+      "repro": "PATCH /api/tasks/3 status=done -> refresh -> status=pending",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d01_校园活动通知.txt",
+      "name": "全部任务完成后积压风险消失",
+      "result": "PASS",
+      "expected": "无 backlog 风险",
+      "actual": "实际=['material_missing']",
+      "repro": "将所有任务标记 done 后刷新风险",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d01_校园活动通知.txt",
+      "name": "已完成事项不再产生未完成风险",
+      "result": "PASS",
+      "expected": "0 条未解决风险",
+      "actual": "0 条：[]",
+      "repro": "PATCH 事项 status=done 后刷新风险",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d02_竞赛通知.docx",
+      "name": "上传并解析成功",
+      "result": "PASS",
+      "expected": "HTTP 200",
+      "actual": "HTTP 200",
+      "repro": "POST /api/analysis/analyze 上传 d02_竞赛通知.docx",
+      "evidence": "evidence/d02_竞赛通知.docx.json#1_analyze"
+    },
+    {
+      "category": "文档解析",
+      "case": "d02_竞赛通知.docx",
+      "name": "文档内容被真实读取",
+      "result": "PASS",
+      "expected": "char_count > 0",
+      "actual": "char_count=253",
+      "repro": "检查 analyze 返回的 document.char_count",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d02_竞赛通知.docx",
+      "name": "事项名称与标题一致",
+      "result": "PASS",
+      "expected": "关于举办2026年大学生创新创业竞赛的通知",
+      "actual": "关于举办2026年大学生创新创业竞赛的通知",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d02_竞赛通知.docx",
+      "name": "字段存在：事项名称",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d02_竞赛通知.docx",
+      "name": "字段存在：事项类型",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d02_竞赛通知.docx",
+      "name": "字段存在：申请资格",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d02_竞赛通知.docx",
+      "name": "字段存在：报名开始日期",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d02_竞赛通知.docx",
+      "name": "字段存在：截止日期",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d02_竞赛通知.docx",
+      "name": "报名开始日期解析",
+      "result": "PASS",
+      "expected": "2026年3月1日",
+      "actual": "2026年3月1日",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d02_竞赛通知.docx",
+      "name": "截止日期解析",
+      "result": "PASS",
+      "expected": "2026年3月31日",
+      "actual": "2026年3月31日",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d02_竞赛通知.docx",
+      "name": "每条提取结果均带原文证据",
+      "result": "PASS",
+      "expected": "所有 found 字段/材料/流程/备注均有可回溯证据",
+      "actual": "通过",
+      "repro": "逐条比对 evidence.text/location 与原文",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d02_竞赛通知.docx",
+      "name": "事项类型识别",
+      "result": "PASS",
+      "expected": "活动赛事",
+      "actual": "活动赛事",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d02_竞赛通知.docx",
+      "name": "流程步骤数量与原文一致",
+      "result": "FAIL",
+      "expected": "3 个流程步骤",
+      "actual": "2 个：['登录竞赛平台填写报名表', '提交项目申报书和推荐表']",
+      "repro": "核对解析出的 process 数量",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d02_竞赛通知.docx",
+      "name": "材料名称覆盖原文要求",
+      "result": "PASS",
+      "expected": "包含：['项目申报书', '推荐', '承诺书']",
+      "actual": "缺失：[]；实际=['项目申报书', '承诺书', '登录竞赛平台填写报名表', '推荐表', '纸质材料']",
+      "repro": "核对解析出的 materials 名称",
+      "evidence": ""
+    },
+    {
+      "category": "事项管理",
+      "case": "d02_竞赛通知.docx",
+      "name": "保存为事项",
+      "result": "PASS",
+      "expected": "HTTP 201",
+      "actual": "HTTP 201",
+      "repro": "POST /api/matters",
+      "evidence": ""
+    },
+    {
+      "category": "事项管理",
+      "case": "d02_竞赛通知.docx",
+      "name": "刷新后事项仍存在",
+      "result": "PASS",
+      "expected": "HTTP 200 且名称=关于举办2026年大学生创新创业竞赛的通知",
+      "actual": "HTTP 200 名称=关于举办2026年大学生创新创业竞赛的通知",
+      "repro": "GET /api/matters/2",
+      "evidence": ""
+    },
+    {
+      "category": "前后端集成",
+      "case": "d02_竞赛通知.docx",
+      "name": "保存后字段与解析结果一致",
+      "result": "PASS",
+      "expected": "日期、材料数、流程数与解析结果一致",
+      "actual": "deadline=2026年3月31日, start=2026年3月1日, materials=5, process=2",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d02_竞赛通知.docx",
+      "name": "按办理流程生成任务",
+      "result": "PASS",
+      "expected": "HTTP 201",
+      "actual": "HTTP 201",
+      "repro": "POST /api/matters/2/tasks",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d02_竞赛通知.docx",
+      "name": "任务数量与流程步骤一致",
+      "result": "PASS",
+      "expected": "2 个任务",
+      "actual": "2 个任务",
+      "repro": "比对 process=2 与 created=2",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d02_竞赛通知.docx",
+      "name": "任务来自真实流程步骤",
+      "result": "PASS",
+      "expected": "任务描述均来自原文流程步骤",
+      "actual": "全部匹配",
+      "repro": "比对任务 description 与事项 process.text",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d02_竞赛通知.docx",
+      "name": "任务保留原文证据",
+      "result": "PASS",
+      "expected": "每个任务有 source_evidence.text",
+      "actual": "通过",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d02_竞赛通知.docx",
+      "name": "重复生成不产生重复任务",
+      "result": "PASS",
+      "expected": "created=0 且任务总数保持 2",
+      "actual": "created=0 任务总数=2",
+      "repro": "连续两次 POST /api/matters/2/tasks",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d02_竞赛通知.docx",
+      "name": "按原文材料要求生成清单",
+      "result": "PASS",
+      "expected": "5 项材料",
+      "actual": "created=5 skipped=0",
+      "repro": "POST /api/matters/2/materials/generate",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d02_竞赛通知.docx",
+      "name": "上传材料测试文件",
+      "result": "PASS",
+      "expected": "HTTP 200 且状态 pending",
+      "actual": "HTTP 200 状态=pending",
+      "repro": "POST /api/materials/7/file",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d02_竞赛通知.docx",
+      "name": "执行规则核验",
+      "result": "PASS",
+      "expected": "返回合法核验结论",
+      "actual": "incomplete",
+      "repro": "POST /api/materials/7/verify",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d02_竞赛通知.docx",
+      "name": "核验记录包含逐项依据",
+      "result": "PASS",
+      "expected": "至少 3 项检查且有结论说明",
+      "actual": "checks=5",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d02_竞赛通知.docx",
+      "name": "人工确认写入记录",
+      "result": "PASS",
+      "expected": "HTTP 200 且状态=incomplete",
+      "actual": "HTTP 200 状态=incomplete",
+      "repro": "POST /api/materials/7/confirm",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d02_竞赛通知.docx",
+      "name": "人工确认记录可追溯",
+      "result": "PASS",
+      "expected": "material_events 中存在确认记录",
+      "actual": "events=['generated', 'file_uploaded', 'verified', 'confirmed']",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d02_竞赛通知.docx",
+      "name": "主动刷新风险",
+      "result": "PASS",
+      "expected": "HTTP 200",
+      "actual": "HTTP 200",
+      "repro": "POST /api/risks/refresh",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d02_竞赛通知.docx",
+      "name": "日期风险判断",
+      "result": "PASS",
+      "expected": "不应出现 date_unverified",
+      "actual": "实际风险类型=['material_missing', 'material_missing', 'material_missing', 'material_missing', 'material_incomplete', 'backlog']",
+      "repro": "检查事项风险列表中的 date_unverified",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d02_竞赛通知.docx",
+      "name": "材料缺失风险数量",
+      "result": "PASS",
+      "expected": "4 项 material_missing",
+      "actual": "4 项",
+      "repro": "核对材料状态与 material_missing 风险数量",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d02_竞赛通知.docx",
+      "name": "任务积压风险判断",
+      "result": "PASS",
+      "expected": "应出现 backlog",
+      "actual": "未完成任务=2 风险=['material_missing', 'material_missing', 'material_missing', 'material_missing', 'material_incomplete', 'backlog']",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d02_竞赛通知.docx",
+      "name": "任务完成/重新打开后风险同步变化",
+      "result": "PASS",
+      "expected": "完成一个任务后风险列表被重新计算",
+      "actual": "完成后=['material_missing', 'material_missing', 'material_missing', 'material_missing', 'material_incomplete']；重开后=['material_missing', 'material_missing', 'material_missing', 'material_missing', 'material_incomplete', 'backlog']",
+      "repro": "PATCH /api/tasks/8 status=done -> refresh -> status=pending",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d02_竞赛通知.docx",
+      "name": "全部任务完成后积压风险消失",
+      "result": "PASS",
+      "expected": "无 backlog 风险",
+      "actual": "实际=['material_missing', 'material_missing', 'material_missing', 'material_missing', 'material_incomplete']",
+      "repro": "将所有任务标记 done 后刷新风险",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d03_跨年度申报通知.txt",
+      "name": "上传并解析成功",
+      "result": "PASS",
+      "expected": "HTTP 200",
+      "actual": "HTTP 200",
+      "repro": "POST /api/analysis/analyze 上传 d03_跨年度申报通知.txt",
+      "evidence": "evidence/d03_跨年度申报通知.txt.json#1_analyze"
+    },
+    {
+      "category": "文档解析",
+      "case": "d03_跨年度申报通知.txt",
+      "name": "文档内容被真实读取",
+      "result": "PASS",
+      "expected": "char_count > 0",
+      "actual": "char_count=269",
+      "repro": "检查 analyze 返回的 document.char_count",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d03_跨年度申报通知.txt",
+      "name": "事项名称与标题一致",
+      "result": "PASS",
+      "expected": "关于2027年寒假社会实践项目申报的通知",
+      "actual": "关于2027年寒假社会实践项目申报的通知",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d03_跨年度申报通知.txt",
+      "name": "字段存在：事项名称",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d03_跨年度申报通知.txt",
+      "name": "字段存在：事项类型",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d03_跨年度申报通知.txt",
+      "name": "字段存在：申请资格",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d03_跨年度申报通知.txt",
+      "name": "字段存在：报名开始日期",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d03_跨年度申报通知.txt",
+      "name": "字段存在：截止日期",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d03_跨年度申报通知.txt",
+      "name": "报名开始日期解析",
+      "result": "PASS",
+      "expected": "2026年12月1日",
+      "actual": "2026年12月1日",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d03_跨年度申报通知.txt",
+      "name": "截止日期解析",
+      "result": "PASS",
+      "expected": "2027年1月15日",
+      "actual": "2027年1月15日",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d03_跨年度申报通知.txt",
+      "name": "每条提取结果均带原文证据",
+      "result": "PASS",
+      "expected": "所有 found 字段/材料/流程/备注均有可回溯证据",
+      "actual": "通过",
+      "repro": "逐条比对 evidence.text/location 与原文",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d03_跨年度申报通知.txt",
+      "name": "事项类型识别",
+      "result": "PASS",
+      "expected": "材料申报",
+      "actual": "材料申报",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d03_跨年度申报通知.txt",
+      "name": "流程步骤数量与原文一致",
+      "result": "PASS",
+      "expected": "3 个流程步骤",
+      "actual": "3 个：['填写社会实践项目申请书', '将申请书和实践方案发送至校团委邮箱', '登录实践管理系统确认提交']",
+      "repro": "核对解析出的 process 数量",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d03_跨年度申报通知.txt",
+      "name": "材料名称覆盖原文要求",
+      "result": "PASS",
+      "expected": "包含：['社会实践项目申请书', '实践方案', '安全承诺书']",
+      "actual": "缺失：[]；实际=['社会实践项目申请书', '实践方案', '安全承诺书']",
+      "repro": "核对解析出的 materials 名称",
+      "evidence": ""
+    },
+    {
+      "category": "事项管理",
+      "case": "d03_跨年度申报通知.txt",
+      "name": "保存为事项",
+      "result": "PASS",
+      "expected": "HTTP 201",
+      "actual": "HTTP 201",
+      "repro": "POST /api/matters",
+      "evidence": ""
+    },
+    {
+      "category": "事项管理",
+      "case": "d03_跨年度申报通知.txt",
+      "name": "刷新后事项仍存在",
+      "result": "PASS",
+      "expected": "HTTP 200 且名称=关于2027年寒假社会实践项目申报的通知",
+      "actual": "HTTP 200 名称=关于2027年寒假社会实践项目申报的通知",
+      "repro": "GET /api/matters/3",
+      "evidence": ""
+    },
+    {
+      "category": "前后端集成",
+      "case": "d03_跨年度申报通知.txt",
+      "name": "保存后字段与解析结果一致",
+      "result": "PASS",
+      "expected": "日期、材料数、流程数与解析结果一致",
+      "actual": "deadline=2027年1月15日, start=2026年12月1日, materials=3, process=3",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d03_跨年度申报通知.txt",
+      "name": "按办理流程生成任务",
+      "result": "PASS",
+      "expected": "HTTP 201",
+      "actual": "HTTP 201",
+      "repro": "POST /api/matters/3/tasks",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d03_跨年度申报通知.txt",
+      "name": "任务数量与流程步骤一致",
+      "result": "PASS",
+      "expected": "3 个任务",
+      "actual": "3 个任务",
+      "repro": "比对 process=3 与 created=3",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d03_跨年度申报通知.txt",
+      "name": "任务来自真实流程步骤",
+      "result": "PASS",
+      "expected": "任务描述均来自原文流程步骤",
+      "actual": "全部匹配",
+      "repro": "比对任务 description 与事项 process.text",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d03_跨年度申报通知.txt",
+      "name": "任务保留原文证据",
+      "result": "PASS",
+      "expected": "每个任务有 source_evidence.text",
+      "actual": "通过",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d03_跨年度申报通知.txt",
+      "name": "重复生成不产生重复任务",
+      "result": "PASS",
+      "expected": "created=0 且任务总数保持 3",
+      "actual": "created=0 任务总数=3",
+      "repro": "连续两次 POST /api/matters/3/tasks",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d03_跨年度申报通知.txt",
+      "name": "按原文材料要求生成清单",
+      "result": "PASS",
+      "expected": "3 项材料",
+      "actual": "created=3 skipped=0",
+      "repro": "POST /api/matters/3/materials/generate",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d03_跨年度申报通知.txt",
+      "name": "上传材料测试文件",
+      "result": "PASS",
+      "expected": "HTTP 200 且状态 pending",
+      "actual": "HTTP 200 状态=pending",
+      "repro": "POST /api/materials/10/file",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d03_跨年度申报通知.txt",
+      "name": "执行规则核验",
+      "result": "PASS",
+      "expected": "返回合法核验结论",
+      "actual": "incomplete",
+      "repro": "POST /api/materials/10/verify",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d03_跨年度申报通知.txt",
+      "name": "核验记录包含逐项依据",
+      "result": "PASS",
+      "expected": "至少 3 项检查且有结论说明",
+      "actual": "checks=5",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d03_跨年度申报通知.txt",
+      "name": "人工确认写入记录",
+      "result": "PASS",
+      "expected": "HTTP 200 且状态=qualified",
+      "actual": "HTTP 200 状态=qualified",
+      "repro": "POST /api/materials/10/confirm",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d03_跨年度申报通知.txt",
+      "name": "人工确认记录可追溯",
+      "result": "PASS",
+      "expected": "material_events 中存在确认记录",
+      "actual": "events=['generated', 'file_uploaded', 'verified', 'confirmed']",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d03_跨年度申报通知.txt",
+      "name": "主动刷新风险",
+      "result": "PASS",
+      "expected": "HTTP 200",
+      "actual": "HTTP 200",
+      "repro": "POST /api/risks/refresh",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d03_跨年度申报通知.txt",
+      "name": "日期风险判断",
+      "result": "PASS",
+      "expected": "不应出现 date_unverified",
+      "actual": "实际风险类型=['material_missing', 'material_missing', 'backlog']",
+      "repro": "检查事项风险列表中的 date_unverified",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d03_跨年度申报通知.txt",
+      "name": "材料缺失风险数量",
+      "result": "PASS",
+      "expected": "2 项 material_missing",
+      "actual": "2 项",
+      "repro": "核对材料状态与 material_missing 风险数量",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d03_跨年度申报通知.txt",
+      "name": "任务积压风险判断",
+      "result": "PASS",
+      "expected": "应出现 backlog",
+      "actual": "未完成任务=3 风险=['material_missing', 'material_missing', 'backlog']",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d03_跨年度申报通知.txt",
+      "name": "任务完成/重新打开后风险同步变化",
+      "result": "PASS",
+      "expected": "完成一个任务后风险列表被重新计算",
+      "actual": "完成后=['material_missing', 'material_missing', 'backlog']；重开后=['material_missing', 'material_missing', 'backlog']",
+      "repro": "PATCH /api/tasks/13 status=done -> refresh -> status=pending",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d03_跨年度申报通知.txt",
+      "name": "全部任务完成后积压风险消失",
+      "result": "PASS",
+      "expected": "无 backlog 风险",
+      "actual": "实际=['material_missing', 'material_missing']",
+      "repro": "将所有任务标记 done 后刷新风险",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d04_多材料申报通知.docx",
+      "name": "上传并解析成功",
+      "result": "PASS",
+      "expected": "HTTP 200",
+      "actual": "HTTP 200",
+      "repro": "POST /api/analysis/analyze 上传 d04_多材料申报通知.docx",
+      "evidence": "evidence/d04_多材料申报通知.docx.json#1_analyze"
+    },
+    {
+      "category": "文档解析",
+      "case": "d04_多材料申报通知.docx",
+      "name": "文档内容被真实读取",
+      "result": "PASS",
+      "expected": "char_count > 0",
+      "actual": "char_count=267",
+      "repro": "检查 analyze 返回的 document.char_count",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d04_多材料申报通知.docx",
+      "name": "事项名称与标题一致",
+      "result": "PASS",
+      "expected": "关于2026年度学生科研项目申报的通知",
+      "actual": "关于2026年度学生科研项目申报的通知",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d04_多材料申报通知.docx",
+      "name": "字段存在：事项名称",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d04_多材料申报通知.docx",
+      "name": "字段存在：事项类型",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d04_多材料申报通知.docx",
+      "name": "字段存在：申请资格",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d04_多材料申报通知.docx",
+      "name": "字段存在：报名开始日期",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d04_多材料申报通知.docx",
+      "name": "字段存在：截止日期",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d04_多材料申报通知.docx",
+      "name": "报名开始日期解析",
+      "result": "PASS",
+      "expected": "2026年5月6日",
+      "actual": "2026年5月6日",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d04_多材料申报通知.docx",
+      "name": "截止日期解析",
+      "result": "PASS",
+      "expected": "2026年5月26日",
+      "actual": "2026年5月26日",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d04_多材料申报通知.docx",
+      "name": "每条提取结果均带原文证据",
+      "result": "PASS",
+      "expected": "所有 found 字段/材料/流程/备注均有可回溯证据",
+      "actual": "通过",
+      "repro": "逐条比对 evidence.text/location 与原文",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d04_多材料申报通知.docx",
+      "name": "事项类型识别",
+      "result": "PASS",
+      "expected": "材料申报",
+      "actual": "材料申报",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d04_多材料申报通知.docx",
+      "name": "流程步骤数量与原文一致",
+      "result": "FAIL",
+      "expected": "4 个流程步骤",
+      "actual": "3 个：['下载并填写项目申请书', '准备项目汇总表和成绩单复印件', '登录科研系统上传电子版']",
+      "repro": "核对解析出的 process 数量",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d04_多材料申报通知.docx",
+      "name": "材料名称覆盖原文要求",
+      "result": "PASS",
+      "expected": "包含：['学生科研项目申请书', '项目汇总表', '承诺书', '成绩单复印件']",
+      "actual": "缺失：[]；实际=['学生科研项目申请书', '项目汇总表', '承诺书', '成绩单复印件']",
+      "repro": "核对解析出的 materials 名称",
+      "evidence": ""
+    },
+    {
+      "category": "事项管理",
+      "case": "d04_多材料申报通知.docx",
+      "name": "保存为事项",
+      "result": "PASS",
+      "expected": "HTTP 201",
+      "actual": "HTTP 201",
+      "repro": "POST /api/matters",
+      "evidence": ""
+    },
+    {
+      "category": "事项管理",
+      "case": "d04_多材料申报通知.docx",
+      "name": "刷新后事项仍存在",
+      "result": "PASS",
+      "expected": "HTTP 200 且名称=关于2026年度学生科研项目申报的通知",
+      "actual": "HTTP 200 名称=关于2026年度学生科研项目申报的通知",
+      "repro": "GET /api/matters/4",
+      "evidence": ""
+    },
+    {
+      "category": "前后端集成",
+      "case": "d04_多材料申报通知.docx",
+      "name": "保存后字段与解析结果一致",
+      "result": "PASS",
+      "expected": "日期、材料数、流程数与解析结果一致",
+      "actual": "deadline=2026年5月26日, start=2026年5月6日, materials=4, process=3",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d04_多材料申报通知.docx",
+      "name": "按办理流程生成任务",
+      "result": "PASS",
+      "expected": "HTTP 201",
+      "actual": "HTTP 201",
+      "repro": "POST /api/matters/4/tasks",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d04_多材料申报通知.docx",
+      "name": "任务数量与流程步骤一致",
+      "result": "PASS",
+      "expected": "3 个任务",
+      "actual": "3 个任务",
+      "repro": "比对 process=3 与 created=3",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d04_多材料申报通知.docx",
+      "name": "任务来自真实流程步骤",
+      "result": "PASS",
+      "expected": "任务描述均来自原文流程步骤",
+      "actual": "全部匹配",
+      "repro": "比对任务 description 与事项 process.text",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d04_多材料申报通知.docx",
+      "name": "任务保留原文证据",
+      "result": "PASS",
+      "expected": "每个任务有 source_evidence.text",
+      "actual": "通过",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d04_多材料申报通知.docx",
+      "name": "重复生成不产生重复任务",
+      "result": "PASS",
+      "expected": "created=0 且任务总数保持 3",
+      "actual": "created=0 任务总数=3",
+      "repro": "连续两次 POST /api/matters/4/tasks",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d04_多材料申报通知.docx",
+      "name": "按原文材料要求生成清单",
+      "result": "PASS",
+      "expected": "4 项材料",
+      "actual": "created=4 skipped=0",
+      "repro": "POST /api/matters/4/materials/generate",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d04_多材料申报通知.docx",
+      "name": "上传材料测试文件",
+      "result": "PASS",
+      "expected": "HTTP 200 且状态 pending",
+      "actual": "HTTP 200 状态=pending",
+      "repro": "POST /api/materials/14/file",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d04_多材料申报通知.docx",
+      "name": "执行规则核验",
+      "result": "PASS",
+      "expected": "返回合法核验结论",
+      "actual": "uncertain",
+      "repro": "POST /api/materials/14/verify",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d04_多材料申报通知.docx",
+      "name": "核验记录包含逐项依据",
+      "result": "PASS",
+      "expected": "至少 3 项检查且有结论说明",
+      "actual": "checks=5",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d04_多材料申报通知.docx",
+      "name": "人工确认写入记录",
+      "result": "PASS",
+      "expected": "HTTP 200 且状态=qualified",
+      "actual": "HTTP 200 状态=qualified",
+      "repro": "POST /api/materials/14/confirm",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d04_多材料申报通知.docx",
+      "name": "人工确认记录可追溯",
+      "result": "PASS",
+      "expected": "material_events 中存在确认记录",
+      "actual": "events=['generated', 'file_uploaded', 'verified', 'confirmed']",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d04_多材料申报通知.docx",
+      "name": "主动刷新风险",
+      "result": "PASS",
+      "expected": "HTTP 200",
+      "actual": "HTTP 200",
+      "repro": "POST /api/risks/refresh",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d04_多材料申报通知.docx",
+      "name": "日期风险判断",
+      "result": "PASS",
+      "expected": "不应出现 date_unverified",
+      "actual": "实际风险类型=['material_missing', 'material_missing', 'material_missing', 'backlog']",
+      "repro": "检查事项风险列表中的 date_unverified",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d04_多材料申报通知.docx",
+      "name": "材料缺失风险数量",
+      "result": "PASS",
+      "expected": "3 项 material_missing",
+      "actual": "3 项",
+      "repro": "核对材料状态与 material_missing 风险数量",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d04_多材料申报通知.docx",
+      "name": "任务积压风险判断",
+      "result": "PASS",
+      "expected": "应出现 backlog",
+      "actual": "未完成任务=3 风险=['material_missing', 'material_missing', 'material_missing', 'backlog']",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d04_多材料申报通知.docx",
+      "name": "任务完成/重新打开后风险同步变化",
+      "result": "PASS",
+      "expected": "完成一个任务后风险列表被重新计算",
+      "actual": "完成后=['material_missing', 'material_missing', 'material_missing', 'backlog']；重开后=['material_missing', 'material_missing', 'material_missing', 'backlog']",
+      "repro": "PATCH /api/tasks/19 status=done -> refresh -> status=pending",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d04_多材料申报通知.docx",
+      "name": "全部任务完成后积压风险消失",
+      "result": "PASS",
+      "expected": "无 backlog 风险",
+      "actual": "实际=['material_missing', 'material_missing', 'material_missing']",
+      "repro": "将所有任务标记 done 后刷新风险",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d05_招聘公告.txt",
+      "name": "上传并解析成功",
+      "result": "PASS",
+      "expected": "HTTP 200",
+      "actual": "HTTP 200",
+      "repro": "POST /api/analysis/analyze 上传 d05_招聘公告.txt",
+      "evidence": "evidence/d05_招聘公告.txt.json#1_analyze"
+    },
+    {
+      "category": "文档解析",
+      "case": "d05_招聘公告.txt",
+      "name": "文档内容被真实读取",
+      "result": "PASS",
+      "expected": "char_count > 0",
+      "actual": "char_count=255",
+      "repro": "检查 analyze 返回的 document.char_count",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d05_招聘公告.txt",
+      "name": "事项名称与标题一致",
+      "result": "PASS",
+      "expected": "某大学2026年公开招聘工作人员公告",
+      "actual": "某大学2026年公开招聘工作人员公告",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d05_招聘公告.txt",
+      "name": "字段存在：事项名称",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d05_招聘公告.txt",
+      "name": "字段存在：事项类型",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d05_招聘公告.txt",
+      "name": "字段存在：申请资格",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d05_招聘公告.txt",
+      "name": "字段存在：报名开始日期",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d05_招聘公告.txt",
+      "name": "字段存在：截止日期",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d05_招聘公告.txt",
+      "name": "报名开始日期解析",
+      "result": "PASS",
+      "expected": "2026年5月6日",
+      "actual": "2026年5月6日",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d05_招聘公告.txt",
+      "name": "截止日期解析",
+      "result": "PASS",
+      "expected": "2026年5月20日",
+      "actual": "2026年5月20日",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d05_招聘公告.txt",
+      "name": "每条提取结果均带原文证据",
+      "result": "PASS",
+      "expected": "所有 found 字段/材料/流程/备注均有可回溯证据",
+      "actual": "通过",
+      "repro": "逐条比对 evidence.text/location 与原文",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d05_招聘公告.txt",
+      "name": "事项类型识别",
+      "result": "PASS",
+      "expected": "招聘招录",
+      "actual": "招聘招录",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d05_招聘公告.txt",
+      "name": "流程步骤数量与原文一致",
+      "result": "PASS",
+      "expected": "3 个流程步骤",
+      "actual": "3 个：['填写应聘报名表', '将个人简历、学历学位证书复印件、身份证复印件发送至人事处邮箱', '登录招聘系统确认报名信息']",
+      "repro": "核对解析出的 process 数量",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d05_招聘公告.txt",
+      "name": "材料名称覆盖原文要求",
+      "result": "PASS",
+      "expected": "包含：['应聘报名表', '个人简历', '学历学位证书复印件', '身份证复印件']",
+      "actual": "缺失：[]；实际=['应聘报名表', '个人简历', '学历学位证书复印件', '身份证复印件']",
+      "repro": "核对解析出的 materials 名称",
+      "evidence": ""
+    },
+    {
+      "category": "事项管理",
+      "case": "d05_招聘公告.txt",
+      "name": "保存为事项",
+      "result": "PASS",
+      "expected": "HTTP 201",
+      "actual": "HTTP 201",
+      "repro": "POST /api/matters",
+      "evidence": ""
+    },
+    {
+      "category": "事项管理",
+      "case": "d05_招聘公告.txt",
+      "name": "刷新后事项仍存在",
+      "result": "PASS",
+      "expected": "HTTP 200 且名称=某大学2026年公开招聘工作人员公告",
+      "actual": "HTTP 200 名称=某大学2026年公开招聘工作人员公告",
+      "repro": "GET /api/matters/5",
+      "evidence": ""
+    },
+    {
+      "category": "前后端集成",
+      "case": "d05_招聘公告.txt",
+      "name": "保存后字段与解析结果一致",
+      "result": "PASS",
+      "expected": "日期、材料数、流程数与解析结果一致",
+      "actual": "deadline=2026年5月20日, start=2026年5月6日, materials=4, process=3",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d05_招聘公告.txt",
+      "name": "按办理流程生成任务",
+      "result": "PASS",
+      "expected": "HTTP 201",
+      "actual": "HTTP 201",
+      "repro": "POST /api/matters/5/tasks",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d05_招聘公告.txt",
+      "name": "任务数量与流程步骤一致",
+      "result": "PASS",
+      "expected": "3 个任务",
+      "actual": "3 个任务",
+      "repro": "比对 process=3 与 created=3",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d05_招聘公告.txt",
+      "name": "任务来自真实流程步骤",
+      "result": "PASS",
+      "expected": "任务描述均来自原文流程步骤",
+      "actual": "全部匹配",
+      "repro": "比对任务 description 与事项 process.text",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d05_招聘公告.txt",
+      "name": "任务保留原文证据",
+      "result": "PASS",
+      "expected": "每个任务有 source_evidence.text",
+      "actual": "通过",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d05_招聘公告.txt",
+      "name": "重复生成不产生重复任务",
+      "result": "PASS",
+      "expected": "created=0 且任务总数保持 3",
+      "actual": "created=0 任务总数=3",
+      "repro": "连续两次 POST /api/matters/5/tasks",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d05_招聘公告.txt",
+      "name": "按原文材料要求生成清单",
+      "result": "PASS",
+      "expected": "4 项材料",
+      "actual": "created=4 skipped=0",
+      "repro": "POST /api/matters/5/materials/generate",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d05_招聘公告.txt",
+      "name": "上传材料测试文件",
+      "result": "PASS",
+      "expected": "HTTP 200 且状态 pending",
+      "actual": "HTTP 200 状态=pending",
+      "repro": "POST /api/materials/18/file",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d05_招聘公告.txt",
+      "name": "执行规则核验",
+      "result": "PASS",
+      "expected": "返回合法核验结论",
+      "actual": "qualified",
+      "repro": "POST /api/materials/18/verify",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d05_招聘公告.txt",
+      "name": "核验记录包含逐项依据",
+      "result": "PASS",
+      "expected": "至少 3 项检查且有结论说明",
+      "actual": "checks=5",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d05_招聘公告.txt",
+      "name": "人工确认写入记录",
+      "result": "PASS",
+      "expected": "HTTP 200 且状态=qualified",
+      "actual": "HTTP 200 状态=qualified",
+      "repro": "POST /api/materials/18/confirm",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d05_招聘公告.txt",
+      "name": "人工确认记录可追溯",
+      "result": "PASS",
+      "expected": "material_events 中存在确认记录",
+      "actual": "events=['generated', 'file_uploaded', 'verified', 'confirmed']",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d05_招聘公告.txt",
+      "name": "主动刷新风险",
+      "result": "PASS",
+      "expected": "HTTP 200",
+      "actual": "HTTP 200",
+      "repro": "POST /api/risks/refresh",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d05_招聘公告.txt",
+      "name": "日期风险判断",
+      "result": "PASS",
+      "expected": "不应出现 date_unverified",
+      "actual": "实际风险类型=['material_missing', 'material_missing', 'material_missing', 'backlog']",
+      "repro": "检查事项风险列表中的 date_unverified",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d05_招聘公告.txt",
+      "name": "材料缺失风险数量",
+      "result": "PASS",
+      "expected": "3 项 material_missing",
+      "actual": "3 项",
+      "repro": "核对材料状态与 material_missing 风险数量",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d05_招聘公告.txt",
+      "name": "任务积压风险判断",
+      "result": "PASS",
+      "expected": "应出现 backlog",
+      "actual": "未完成任务=3 风险=['material_missing', 'material_missing', 'material_missing', 'backlog']",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d05_招聘公告.txt",
+      "name": "任务完成/重新打开后风险同步变化",
+      "result": "PASS",
+      "expected": "完成一个任务后风险列表被重新计算",
+      "actual": "完成后=['material_missing', 'material_missing', 'material_missing', 'backlog']；重开后=['material_missing', 'material_missing', 'material_missing', 'backlog']",
+      "repro": "PATCH /api/tasks/25 status=done -> refresh -> status=pending",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d05_招聘公告.txt",
+      "name": "全部任务完成后积压风险消失",
+      "result": "PASS",
+      "expected": "无 backlog 风险",
+      "actual": "实际=['material_missing', 'material_missing', 'material_missing']",
+      "repro": "将所有任务标记 done 后刷新风险",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d06_日期模糊通知.txt",
+      "name": "上传并解析成功",
+      "result": "PASS",
+      "expected": "HTTP 200",
+      "actual": "HTTP 200",
+      "repro": "POST /api/analysis/analyze 上传 d06_日期模糊通知.txt",
+      "evidence": "evidence/d06_日期模糊通知.txt.json#1_analyze"
+    },
+    {
+      "category": "文档解析",
+      "case": "d06_日期模糊通知.txt",
+      "name": "文档内容被真实读取",
+      "result": "PASS",
+      "expected": "char_count > 0",
+      "actual": "char_count=257",
+      "repro": "检查 analyze 返回的 document.char_count",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d06_日期模糊通知.txt",
+      "name": "事项名称与标题一致",
+      "result": "PASS",
+      "expected": "关于2026年春季学期资助申请的通知",
+      "actual": "关于2026年春季学期资助申请的通知",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d06_日期模糊通知.txt",
+      "name": "字段存在：事项名称",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d06_日期模糊通知.txt",
+      "name": "字段存在：事项类型",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d06_日期模糊通知.txt",
+      "name": "字段存在：申请资格",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d06_日期模糊通知.txt",
+      "name": "字段存在：报名开始日期",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d06_日期模糊通知.txt",
+      "name": "字段存在：截止日期",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d06_日期模糊通知.txt",
+      "name": "报名开始日期解析",
+      "result": "PASS",
+      "expected": "None",
+      "actual": "None",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d06_日期模糊通知.txt",
+      "name": "截止日期解析",
+      "result": "PASS",
+      "expected": "5月20日",
+      "actual": "5月20日",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d06_日期模糊通知.txt",
+      "name": "每条提取结果均带原文证据",
+      "result": "PASS",
+      "expected": "所有 found 字段/材料/流程/备注均有可回溯证据",
+      "actual": "通过",
+      "repro": "逐条比对 evidence.text/location 与原文",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d06_日期模糊通知.txt",
+      "name": "事项类型识别",
+      "result": "PASS",
+      "expected": "材料申报",
+      "actual": "材料申报",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d06_日期模糊通知.txt",
+      "name": "流程步骤数量与原文一致",
+      "result": "PASS",
+      "expected": "3 个流程步骤",
+      "actual": "3 个：['填写资助申请表', '将申请表发送至学院邮箱', '联系辅导员确认提交结果']",
+      "repro": "核对解析出的 process 数量",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d06_日期模糊通知.txt",
+      "name": "材料名称覆盖原文要求",
+      "result": "PASS",
+      "expected": "包含：['资助申请表', '家庭情况说明']",
+      "actual": "缺失：[]；实际=['资助申请表', '家庭情况说明']",
+      "repro": "核对解析出的 materials 名称",
+      "evidence": ""
+    },
+    {
+      "category": "事项管理",
+      "case": "d06_日期模糊通知.txt",
+      "name": "保存为事项",
+      "result": "PASS",
+      "expected": "HTTP 201",
+      "actual": "HTTP 201",
+      "repro": "POST /api/matters",
+      "evidence": ""
+    },
+    {
+      "category": "事项管理",
+      "case": "d06_日期模糊通知.txt",
+      "name": "刷新后事项仍存在",
+      "result": "PASS",
+      "expected": "HTTP 200 且名称=关于2026年春季学期资助申请的通知",
+      "actual": "HTTP 200 名称=关于2026年春季学期资助申请的通知",
+      "repro": "GET /api/matters/6",
+      "evidence": ""
+    },
+    {
+      "category": "前后端集成",
+      "case": "d06_日期模糊通知.txt",
+      "name": "保存后字段与解析结果一致",
+      "result": "PASS",
+      "expected": "日期、材料数、流程数与解析结果一致",
+      "actual": "deadline=5月20日, start=None, materials=2, process=3",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d06_日期模糊通知.txt",
+      "name": "按办理流程生成任务",
+      "result": "PASS",
+      "expected": "HTTP 201",
+      "actual": "HTTP 201",
+      "repro": "POST /api/matters/6/tasks",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d06_日期模糊通知.txt",
+      "name": "任务数量与流程步骤一致",
+      "result": "PASS",
+      "expected": "3 个任务",
+      "actual": "3 个任务",
+      "repro": "比对 process=3 与 created=3",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d06_日期模糊通知.txt",
+      "name": "任务来自真实流程步骤",
+      "result": "PASS",
+      "expected": "任务描述均来自原文流程步骤",
+      "actual": "全部匹配",
+      "repro": "比对任务 description 与事项 process.text",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d06_日期模糊通知.txt",
+      "name": "任务保留原文证据",
+      "result": "PASS",
+      "expected": "每个任务有 source_evidence.text",
+      "actual": "通过",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d06_日期模糊通知.txt",
+      "name": "重复生成不产生重复任务",
+      "result": "PASS",
+      "expected": "created=0 且任务总数保持 3",
+      "actual": "created=0 任务总数=3",
+      "repro": "连续两次 POST /api/matters/6/tasks",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d06_日期模糊通知.txt",
+      "name": "按原文材料要求生成清单",
+      "result": "PASS",
+      "expected": "2 项材料",
+      "actual": "created=2 skipped=0",
+      "repro": "POST /api/matters/6/materials/generate",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d06_日期模糊通知.txt",
+      "name": "上传材料测试文件",
+      "result": "PASS",
+      "expected": "HTTP 200 且状态 pending",
+      "actual": "HTTP 200 状态=pending",
+      "repro": "POST /api/materials/20/file",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d06_日期模糊通知.txt",
+      "name": "执行规则核验",
+      "result": "PASS",
+      "expected": "返回合法核验结论",
+      "actual": "incomplete",
+      "repro": "POST /api/materials/20/verify",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d06_日期模糊通知.txt",
+      "name": "核验记录包含逐项依据",
+      "result": "PASS",
+      "expected": "至少 3 项检查且有结论说明",
+      "actual": "checks=5",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d06_日期模糊通知.txt",
+      "name": "人工确认写入记录",
+      "result": "PASS",
+      "expected": "HTTP 200 且状态=qualified",
+      "actual": "HTTP 200 状态=qualified",
+      "repro": "POST /api/materials/20/confirm",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d06_日期模糊通知.txt",
+      "name": "人工确认记录可追溯",
+      "result": "PASS",
+      "expected": "material_events 中存在确认记录",
+      "actual": "events=['generated', 'file_uploaded', 'verified', 'confirmed']",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d06_日期模糊通知.txt",
+      "name": "主动刷新风险",
+      "result": "PASS",
+      "expected": "HTTP 200",
+      "actual": "HTTP 200",
+      "repro": "POST /api/risks/refresh",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d06_日期模糊通知.txt",
+      "name": "日期风险判断",
+      "result": "PASS",
+      "expected": "应出现 date_unverified",
+      "actual": "实际风险类型=['material_missing', 'backlog', 'date_unverified']",
+      "repro": "检查事项风险列表中的 date_unverified",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d06_日期模糊通知.txt",
+      "name": "材料缺失风险数量",
+      "result": "PASS",
+      "expected": "1 项 material_missing",
+      "actual": "1 项",
+      "repro": "核对材料状态与 material_missing 风险数量",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d06_日期模糊通知.txt",
+      "name": "任务积压风险判断",
+      "result": "PASS",
+      "expected": "应出现 backlog",
+      "actual": "未完成任务=3 风险=['material_missing', 'backlog', 'date_unverified']",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d06_日期模糊通知.txt",
+      "name": "任务完成/重新打开后风险同步变化",
+      "result": "PASS",
+      "expected": "完成一个任务后风险列表被重新计算",
+      "actual": "完成后=['material_missing', 'backlog', 'date_unverified']；重开后=['material_missing', 'backlog', 'date_unverified']",
+      "repro": "PATCH /api/tasks/31 status=done -> refresh -> status=pending",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d06_日期模糊通知.txt",
+      "name": "全部任务完成后积压风险消失",
+      "result": "PASS",
+      "expected": "无 backlog 风险",
+      "actual": "实际=['material_missing', 'date_unverified']",
+      "repro": "将所有任务标记 done 后刷新风险",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d07_多流程办事通知.docx",
+      "name": "上传并解析成功",
+      "result": "PASS",
+      "expected": "HTTP 200",
+      "actual": "HTTP 200",
+      "repro": "POST /api/analysis/analyze 上传 d07_多流程办事通知.docx",
+      "evidence": "evidence/d07_多流程办事通知.docx.json#1_analyze"
+    },
+    {
+      "category": "文档解析",
+      "case": "d07_多流程办事通知.docx",
+      "name": "文档内容被真实读取",
+      "result": "PASS",
+      "expected": "char_count > 0",
+      "actual": "char_count=285",
+      "repro": "检查 analyze 返回的 document.char_count",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d07_多流程办事通知.docx",
+      "name": "事项名称与标题一致",
+      "result": "PASS",
+      "expected": "关于办理2026年校园一卡通补办的通知",
+      "actual": "关于办理2026年校园一卡通补办的通知",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d07_多流程办事通知.docx",
+      "name": "字段存在：事项名称",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d07_多流程办事通知.docx",
+      "name": "字段存在：事项类型",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d07_多流程办事通知.docx",
+      "name": "字段存在：申请资格",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d07_多流程办事通知.docx",
+      "name": "字段存在：报名开始日期",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d07_多流程办事通知.docx",
+      "name": "字段存在：截止日期",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d07_多流程办事通知.docx",
+      "name": "报名开始日期解析",
+      "result": "PASS",
+      "expected": "2026年9月1日",
+      "actual": "2026年9月1日",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d07_多流程办事通知.docx",
+      "name": "截止日期解析",
+      "result": "PASS",
+      "expected": "2026年9月30日",
+      "actual": "2026年9月30日",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d07_多流程办事通知.docx",
+      "name": "每条提取结果均带原文证据",
+      "result": "PASS",
+      "expected": "所有 found 字段/材料/流程/备注均有可回溯证据",
+      "actual": "通过",
+      "repro": "逐条比对 evidence.text/location 与原文",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d07_多流程办事通知.docx",
+      "name": "事项类型识别",
+      "result": "PASS",
+      "expected": "证件办理",
+      "actual": "证件办理",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d07_多流程办事通知.docx",
+      "name": "流程步骤数量与原文一致",
+      "result": "PASS",
+      "expected": "4 个流程步骤",
+      "actual": "4 个：['登录校园卡系统填写补办申请表', '打印申请表并签字', '携带申请表和身份证复印件前往校园卡服务中心', '缴纳补办费用并领取新卡']",
+      "repro": "核对解析出的 process 数量",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d07_多流程办事通知.docx",
+      "name": "材料名称覆盖原文要求",
+      "result": "PASS",
+      "expected": "包含：['一卡通补办申请表', '身份证复印件']",
+      "actual": "缺失：[]；实际=['一卡通补办申请表', '身份证复印件']",
+      "repro": "核对解析出的 materials 名称",
+      "evidence": ""
+    },
+    {
+      "category": "事项管理",
+      "case": "d07_多流程办事通知.docx",
+      "name": "保存为事项",
+      "result": "PASS",
+      "expected": "HTTP 201",
+      "actual": "HTTP 201",
+      "repro": "POST /api/matters",
+      "evidence": ""
+    },
+    {
+      "category": "事项管理",
+      "case": "d07_多流程办事通知.docx",
+      "name": "刷新后事项仍存在",
+      "result": "PASS",
+      "expected": "HTTP 200 且名称=关于办理2026年校园一卡通补办的通知",
+      "actual": "HTTP 200 名称=关于办理2026年校园一卡通补办的通知",
+      "repro": "GET /api/matters/7",
+      "evidence": ""
+    },
+    {
+      "category": "前后端集成",
+      "case": "d07_多流程办事通知.docx",
+      "name": "保存后字段与解析结果一致",
+      "result": "PASS",
+      "expected": "日期、材料数、流程数与解析结果一致",
+      "actual": "deadline=2026年9月30日, start=2026年9月1日, materials=2, process=4",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d07_多流程办事通知.docx",
+      "name": "按办理流程生成任务",
+      "result": "PASS",
+      "expected": "HTTP 201",
+      "actual": "HTTP 201",
+      "repro": "POST /api/matters/7/tasks",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d07_多流程办事通知.docx",
+      "name": "任务数量与流程步骤一致",
+      "result": "PASS",
+      "expected": "4 个任务",
+      "actual": "4 个任务",
+      "repro": "比对 process=4 与 created=4",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d07_多流程办事通知.docx",
+      "name": "任务来自真实流程步骤",
+      "result": "PASS",
+      "expected": "任务描述均来自原文流程步骤",
+      "actual": "全部匹配",
+      "repro": "比对任务 description 与事项 process.text",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d07_多流程办事通知.docx",
+      "name": "任务保留原文证据",
+      "result": "PASS",
+      "expected": "每个任务有 source_evidence.text",
+      "actual": "通过",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d07_多流程办事通知.docx",
+      "name": "重复生成不产生重复任务",
+      "result": "PASS",
+      "expected": "created=0 且任务总数保持 4",
+      "actual": "created=0 任务总数=4",
+      "repro": "连续两次 POST /api/matters/7/tasks",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d07_多流程办事通知.docx",
+      "name": "按原文材料要求生成清单",
+      "result": "PASS",
+      "expected": "2 项材料",
+      "actual": "created=2 skipped=0",
+      "repro": "POST /api/matters/7/materials/generate",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d07_多流程办事通知.docx",
+      "name": "上传材料测试文件",
+      "result": "PASS",
+      "expected": "HTTP 200 且状态 pending",
+      "actual": "HTTP 200 状态=pending",
+      "repro": "POST /api/materials/22/file",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d07_多流程办事通知.docx",
+      "name": "执行规则核验",
+      "result": "PASS",
+      "expected": "返回合法核验结论",
+      "actual": "qualified",
+      "repro": "POST /api/materials/22/verify",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d07_多流程办事通知.docx",
+      "name": "核验记录包含逐项依据",
+      "result": "PASS",
+      "expected": "至少 3 项检查且有结论说明",
+      "actual": "checks=5",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d07_多流程办事通知.docx",
+      "name": "人工确认写入记录",
+      "result": "PASS",
+      "expected": "HTTP 200 且状态=qualified",
+      "actual": "HTTP 200 状态=qualified",
+      "repro": "POST /api/materials/22/confirm",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d07_多流程办事通知.docx",
+      "name": "人工确认记录可追溯",
+      "result": "PASS",
+      "expected": "material_events 中存在确认记录",
+      "actual": "events=['generated', 'file_uploaded', 'verified', 'confirmed']",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d07_多流程办事通知.docx",
+      "name": "主动刷新风险",
+      "result": "PASS",
+      "expected": "HTTP 200",
+      "actual": "HTTP 200",
+      "repro": "POST /api/risks/refresh",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d07_多流程办事通知.docx",
+      "name": "日期风险判断",
+      "result": "PASS",
+      "expected": "不应出现 date_unverified",
+      "actual": "实际风险类型=['material_missing', 'backlog']",
+      "repro": "检查事项风险列表中的 date_unverified",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d07_多流程办事通知.docx",
+      "name": "材料缺失风险数量",
+      "result": "PASS",
+      "expected": "1 项 material_missing",
+      "actual": "1 项",
+      "repro": "核对材料状态与 material_missing 风险数量",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d07_多流程办事通知.docx",
+      "name": "任务积压风险判断",
+      "result": "PASS",
+      "expected": "应出现 backlog",
+      "actual": "未完成任务=4 风险=['material_missing', 'backlog']",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d07_多流程办事通知.docx",
+      "name": "任务完成/重新打开后风险同步变化",
+      "result": "PASS",
+      "expected": "完成一个任务后风险列表被重新计算",
+      "actual": "完成后=['material_missing', 'backlog']；重开后=['material_missing', 'backlog']",
+      "repro": "PATCH /api/tasks/38 status=done -> refresh -> status=pending",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d07_多流程办事通知.docx",
+      "name": "全部任务完成后积压风险消失",
+      "result": "PASS",
+      "expected": "无 backlog 风险",
+      "actual": "实际=['material_missing']",
+      "repro": "将所有任务标记 done 后刷新风险",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d08_无材料要求通知.txt",
+      "name": "上传并解析成功",
+      "result": "PASS",
+      "expected": "HTTP 200",
+      "actual": "HTTP 200",
+      "repro": "POST /api/analysis/analyze 上传 d08_无材料要求通知.txt",
+      "evidence": "evidence/d08_无材料要求通知.txt.json#1_analyze"
+    },
+    {
+      "category": "文档解析",
+      "case": "d08_无材料要求通知.txt",
+      "name": "文档内容被真实读取",
+      "result": "PASS",
+      "expected": "char_count > 0",
+      "actual": "char_count=215",
+      "repro": "检查 analyze 返回的 document.char_count",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d08_无材料要求通知.txt",
+      "name": "事项名称与标题一致",
+      "result": "PASS",
+      "expected": "关于举办2026年秋季运动会的通知",
+      "actual": "关于举办2026年秋季运动会的通知",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d08_无材料要求通知.txt",
+      "name": "字段存在：事项名称",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d08_无材料要求通知.txt",
+      "name": "字段存在：事项类型",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d08_无材料要求通知.txt",
+      "name": "字段存在：申请资格",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d08_无材料要求通知.txt",
+      "name": "字段存在：报名开始日期",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d08_无材料要求通知.txt",
+      "name": "字段存在：截止日期",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d08_无材料要求通知.txt",
+      "name": "报名开始日期解析",
+      "result": "PASS",
+      "expected": "None",
+      "actual": "None",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d08_无材料要求通知.txt",
+      "name": "截止日期解析",
+      "result": "PASS",
+      "expected": "None",
+      "actual": "None",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d08_无材料要求通知.txt",
+      "name": "每条提取结果均带原文证据",
+      "result": "PASS",
+      "expected": "所有 found 字段/材料/流程/备注均有可回溯证据",
+      "actual": "通过",
+      "repro": "逐条比对 evidence.text/location 与原文",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d08_无材料要求通知.txt",
+      "name": "事项类型识别",
+      "result": "PASS",
+      "expected": "活动赛事",
+      "actual": "活动赛事",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d08_无材料要求通知.txt",
+      "name": "流程步骤数量与原文一致",
+      "result": "PASS",
+      "expected": "2 个流程步骤",
+      "actual": "2 个：['登录体育系统填写报名信息', '前往体育部办公室确认参赛项目']",
+      "repro": "核对解析出的 process 数量",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d08_无材料要求通知.txt",
+      "name": "材料名称覆盖原文要求",
+      "result": "PASS",
+      "expected": "包含：[]",
+      "actual": "缺失：[]；实际=[]",
+      "repro": "核对解析出的 materials 名称",
+      "evidence": ""
+    },
+    {
+      "category": "事项管理",
+      "case": "d08_无材料要求通知.txt",
+      "name": "保存为事项",
+      "result": "PASS",
+      "expected": "HTTP 201",
+      "actual": "HTTP 201",
+      "repro": "POST /api/matters",
+      "evidence": ""
+    },
+    {
+      "category": "事项管理",
+      "case": "d08_无材料要求通知.txt",
+      "name": "刷新后事项仍存在",
+      "result": "PASS",
+      "expected": "HTTP 200 且名称=关于举办2026年秋季运动会的通知",
+      "actual": "HTTP 200 名称=关于举办2026年秋季运动会的通知",
+      "repro": "GET /api/matters/8",
+      "evidence": ""
+    },
+    {
+      "category": "前后端集成",
+      "case": "d08_无材料要求通知.txt",
+      "name": "保存后字段与解析结果一致",
+      "result": "PASS",
+      "expected": "日期、材料数、流程数与解析结果一致",
+      "actual": "deadline=None, start=None, materials=0, process=2",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d08_无材料要求通知.txt",
+      "name": "按办理流程生成任务",
+      "result": "PASS",
+      "expected": "HTTP 201",
+      "actual": "HTTP 201",
+      "repro": "POST /api/matters/8/tasks",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d08_无材料要求通知.txt",
+      "name": "任务数量与流程步骤一致",
+      "result": "PASS",
+      "expected": "2 个任务",
+      "actual": "2 个任务",
+      "repro": "比对 process=2 与 created=2",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d08_无材料要求通知.txt",
+      "name": "任务来自真实流程步骤",
+      "result": "PASS",
+      "expected": "任务描述均来自原文流程步骤",
+      "actual": "全部匹配",
+      "repro": "比对任务 description 与事项 process.text",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d08_无材料要求通知.txt",
+      "name": "任务保留原文证据",
+      "result": "PASS",
+      "expected": "每个任务有 source_evidence.text",
+      "actual": "通过",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d08_无材料要求通知.txt",
+      "name": "重复生成不产生重复任务",
+      "result": "PASS",
+      "expected": "created=0 且任务总数保持 2",
+      "actual": "created=0 任务总数=2",
+      "repro": "连续两次 POST /api/matters/8/tasks",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d08_无材料要求通知.txt",
+      "name": "按原文材料要求生成清单",
+      "result": "PASS",
+      "expected": "0 项材料",
+      "actual": "created=0 skipped=0",
+      "repro": "POST /api/matters/8/materials/generate",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d08_无材料要求通知.txt",
+      "name": "无材料要求时给出明确提示",
+      "result": "PASS",
+      "expected": "created=0 且提示未登记材料要求",
+      "actual": "created=0 message=该事项没有登记材料要求，暂无材料可生成。",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d08_无材料要求通知.txt",
+      "name": "11_upload_material",
+      "result": "UNEXECUTED",
+      "expected": "不适用（该事项无材料要求）",
+      "actual": "未执行",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d08_无材料要求通知.txt",
+      "name": "12_verify_material",
+      "result": "UNEXECUTED",
+      "expected": "不适用（该事项无材料要求）",
+      "actual": "未执行",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d08_无材料要求通知.txt",
+      "name": "13_confirm_material",
+      "result": "UNEXECUTED",
+      "expected": "不适用（该事项无材料要求）",
+      "actual": "未执行",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d08_无材料要求通知.txt",
+      "name": "主动刷新风险",
+      "result": "PASS",
+      "expected": "HTTP 200",
+      "actual": "HTTP 200",
+      "repro": "POST /api/risks/refresh",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d08_无材料要求通知.txt",
+      "name": "日期风险判断",
+      "result": "PASS",
+      "expected": "不应出现 date_unverified",
+      "actual": "实际风险类型=['backlog']",
+      "repro": "检查事项风险列表中的 date_unverified",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d08_无材料要求通知.txt",
+      "name": "无材料时不产生材料风险",
+      "result": "PASS",
+      "expected": "无 material_* 风险",
+      "actual": "实际=['backlog']",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d08_无材料要求通知.txt",
+      "name": "任务积压风险判断",
+      "result": "PASS",
+      "expected": "应出现 backlog",
+      "actual": "未完成任务=2 风险=['backlog']",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d08_无材料要求通知.txt",
+      "name": "任务完成/重新打开后风险同步变化",
+      "result": "PASS",
+      "expected": "完成一个任务后风险列表被重新计算",
+      "actual": "完成后=[]；重开后=['backlog']",
+      "repro": "PATCH /api/tasks/44 status=done -> refresh -> status=pending",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d08_无材料要求通知.txt",
+      "name": "全部任务完成后积压风险消失",
+      "result": "PASS",
+      "expected": "无 backlog 风险",
+      "actual": "实际=[]",
+      "repro": "将所有任务标记 done 后刷新风险",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d09_标题含材料关键词通知.txt",
+      "name": "上传并解析成功",
+      "result": "PASS",
+      "expected": "HTTP 200",
+      "actual": "HTTP 200",
+      "repro": "POST /api/analysis/analyze 上传 d09_标题含材料关键词通知.txt",
+      "evidence": "evidence/d09_标题含材料关键词通知.txt.json#1_analyze"
+    },
+    {
+      "category": "文档解析",
+      "case": "d09_标题含材料关键词通知.txt",
+      "name": "文档内容被真实读取",
+      "result": "PASS",
+      "expected": "char_count > 0",
+      "actual": "char_count=280",
+      "repro": "检查 analyze 返回的 document.char_count",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d09_标题含材料关键词通知.txt",
+      "name": "事项名称与标题一致",
+      "result": "PASS",
+      "expected": "关于提交2026年国家奖学金材料的通知",
+      "actual": "关于提交2026年国家奖学金材料的通知",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d09_标题含材料关键词通知.txt",
+      "name": "字段存在：事项名称",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d09_标题含材料关键词通知.txt",
+      "name": "字段存在：事项类型",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d09_标题含材料关键词通知.txt",
+      "name": "字段存在：申请资格",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d09_标题含材料关键词通知.txt",
+      "name": "字段存在：报名开始日期",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d09_标题含材料关键词通知.txt",
+      "name": "字段存在：截止日期",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d09_标题含材料关键词通知.txt",
+      "name": "报名开始日期解析",
+      "result": "PASS",
+      "expected": "2026年9月10日",
+      "actual": "2026年9月10日",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d09_标题含材料关键词通知.txt",
+      "name": "截止日期解析",
+      "result": "PASS",
+      "expected": "2026年9月25日",
+      "actual": "2026年9月25日",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d09_标题含材料关键词通知.txt",
+      "name": "每条提取结果均带原文证据",
+      "result": "PASS",
+      "expected": "所有 found 字段/材料/流程/备注均有可回溯证据",
+      "actual": "通过",
+      "repro": "逐条比对 evidence.text/location 与原文",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d09_标题含材料关键词通知.txt",
+      "name": "事项类型识别",
+      "result": "PASS",
+      "expected": "材料申报",
+      "actual": "材料申报",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d09_标题含材料关键词通知.txt",
+      "name": "流程步骤数量与原文一致",
+      "result": "FAIL",
+      "expected": "3 个流程步骤",
+      "actual": "2 个：['填写国家奖学金申请表', '登录学生资助系统上传电子版']",
+      "repro": "核对解析出的 process 数量",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d09_标题含材料关键词通知.txt",
+      "name": "材料名称覆盖原文要求",
+      "result": "PASS",
+      "expected": "包含：['国家奖学金申请表', '成绩单', '获奖证书复印件']",
+      "actual": "缺失：[]；实际=['国家奖学金申请表', '成绩单', '获奖证书复印件', '2026年国家奖学金材料', '按材料']",
+      "repro": "核对解析出的 materials 名称",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d09_标题含材料关键词通知.txt",
+      "name": "标题中的“材料”未被误提取为材料名称",
+      "result": "FAIL",
+      "expected": "材料名称均来自材料清单",
+      "actual": "误提取：['2026年国家奖学金材料']；实际=['国家奖学金申请表', '成绩单', '获奖证书复印件', '2026年国家奖学金材料', '按材料']",
+      "repro": "检查 materials 中是否包含标题片段",
+      "evidence": ""
+    },
+    {
+      "category": "事项管理",
+      "case": "d09_标题含材料关键词通知.txt",
+      "name": "保存为事项",
+      "result": "PASS",
+      "expected": "HTTP 201",
+      "actual": "HTTP 201",
+      "repro": "POST /api/matters",
+      "evidence": ""
+    },
+    {
+      "category": "事项管理",
+      "case": "d09_标题含材料关键词通知.txt",
+      "name": "刷新后事项仍存在",
+      "result": "PASS",
+      "expected": "HTTP 200 且名称=关于提交2026年国家奖学金材料的通知",
+      "actual": "HTTP 200 名称=关于提交2026年国家奖学金材料的通知",
+      "repro": "GET /api/matters/9",
+      "evidence": ""
+    },
+    {
+      "category": "前后端集成",
+      "case": "d09_标题含材料关键词通知.txt",
+      "name": "保存后字段与解析结果一致",
+      "result": "PASS",
+      "expected": "日期、材料数、流程数与解析结果一致",
+      "actual": "deadline=2026年9月25日, start=2026年9月10日, materials=5, process=2",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d09_标题含材料关键词通知.txt",
+      "name": "按办理流程生成任务",
+      "result": "PASS",
+      "expected": "HTTP 201",
+      "actual": "HTTP 201",
+      "repro": "POST /api/matters/9/tasks",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d09_标题含材料关键词通知.txt",
+      "name": "任务数量与流程步骤一致",
+      "result": "PASS",
+      "expected": "2 个任务",
+      "actual": "2 个任务",
+      "repro": "比对 process=2 与 created=2",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d09_标题含材料关键词通知.txt",
+      "name": "任务来自真实流程步骤",
+      "result": "PASS",
+      "expected": "任务描述均来自原文流程步骤",
+      "actual": "全部匹配",
+      "repro": "比对任务 description 与事项 process.text",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d09_标题含材料关键词通知.txt",
+      "name": "任务保留原文证据",
+      "result": "PASS",
+      "expected": "每个任务有 source_evidence.text",
+      "actual": "通过",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d09_标题含材料关键词通知.txt",
+      "name": "重复生成不产生重复任务",
+      "result": "PASS",
+      "expected": "created=0 且任务总数保持 2",
+      "actual": "created=0 任务总数=2",
+      "repro": "连续两次 POST /api/matters/9/tasks",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d09_标题含材料关键词通知.txt",
+      "name": "按原文材料要求生成清单",
+      "result": "PASS",
+      "expected": "5 项材料",
+      "actual": "created=5 skipped=0",
+      "repro": "POST /api/matters/9/materials/generate",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d09_标题含材料关键词通知.txt",
+      "name": "上传材料测试文件",
+      "result": "PASS",
+      "expected": "HTTP 200 且状态 pending",
+      "actual": "HTTP 200 状态=pending",
+      "repro": "POST /api/materials/27/file",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d09_标题含材料关键词通知.txt",
+      "name": "执行规则核验",
+      "result": "PASS",
+      "expected": "返回合法核验结论",
+      "actual": "incomplete",
+      "repro": "POST /api/materials/27/verify",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d09_标题含材料关键词通知.txt",
+      "name": "核验记录包含逐项依据",
+      "result": "PASS",
+      "expected": "至少 3 项检查且有结论说明",
+      "actual": "checks=5",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d09_标题含材料关键词通知.txt",
+      "name": "人工确认写入记录",
+      "result": "PASS",
+      "expected": "HTTP 200 且状态=qualified",
+      "actual": "HTTP 200 状态=qualified",
+      "repro": "POST /api/materials/27/confirm",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d09_标题含材料关键词通知.txt",
+      "name": "人工确认记录可追溯",
+      "result": "PASS",
+      "expected": "material_events 中存在确认记录",
+      "actual": "events=['generated', 'file_uploaded', 'verified', 'confirmed']",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d09_标题含材料关键词通知.txt",
+      "name": "主动刷新风险",
+      "result": "PASS",
+      "expected": "HTTP 200",
+      "actual": "HTTP 200",
+      "repro": "POST /api/risks/refresh",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d09_标题含材料关键词通知.txt",
+      "name": "日期风险判断",
+      "result": "PASS",
+      "expected": "不应出现 date_unverified",
+      "actual": "实际风险类型=['material_missing', 'material_missing', 'material_missing', 'material_missing', 'backlog']",
+      "repro": "检查事项风险列表中的 date_unverified",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d09_标题含材料关键词通知.txt",
+      "name": "材料缺失风险数量",
+      "result": "PASS",
+      "expected": "4 项 material_missing",
+      "actual": "4 项",
+      "repro": "核对材料状态与 material_missing 风险数量",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d09_标题含材料关键词通知.txt",
+      "name": "任务积压风险判断",
+      "result": "PASS",
+      "expected": "应出现 backlog",
+      "actual": "未完成任务=2 风险=['material_missing', 'material_missing', 'material_missing', 'material_missing', 'backlog']",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d09_标题含材料关键词通知.txt",
+      "name": "任务完成/重新打开后风险同步变化",
+      "result": "PASS",
+      "expected": "完成一个任务后风险列表被重新计算",
+      "actual": "完成后=['material_missing', 'material_missing', 'material_missing', 'material_missing']；重开后=['material_missing', 'material_missing', 'material_missing', 'material_missing', 'backlog']",
+      "repro": "PATCH /api/tasks/48 status=done -> refresh -> status=pending",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d09_标题含材料关键词通知.txt",
+      "name": "全部任务完成后积压风险消失",
+      "result": "PASS",
+      "expected": "无 backlog 风险",
+      "actual": "实际=['material_missing', 'material_missing', 'material_missing', 'material_missing']",
+      "repro": "将所有任务标记 done 后刷新风险",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d10_信息冲突通知.docx",
+      "name": "上传并解析成功",
+      "result": "PASS",
+      "expected": "HTTP 200",
+      "actual": "HTTP 200",
+      "repro": "POST /api/analysis/analyze 上传 d10_信息冲突通知.docx",
+      "evidence": "evidence/d10_信息冲突通知.docx.json#1_analyze"
+    },
+    {
+      "category": "文档解析",
+      "case": "d10_信息冲突通知.docx",
+      "name": "文档内容被真实读取",
+      "result": "PASS",
+      "expected": "char_count > 0",
+      "actual": "char_count=254",
+      "repro": "检查 analyze 返回的 document.char_count",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d10_信息冲突通知.docx",
+      "name": "事项名称与标题一致",
+      "result": "PASS",
+      "expected": "关于2026年优秀学生评选工作的通知",
+      "actual": "关于2026年优秀学生评选工作的通知",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d10_信息冲突通知.docx",
+      "name": "字段存在：事项名称",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d10_信息冲突通知.docx",
+      "name": "字段存在：事项类型",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d10_信息冲突通知.docx",
+      "name": "字段存在：申请资格",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d10_信息冲突通知.docx",
+      "name": "字段存在：报名开始日期",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d10_信息冲突通知.docx",
+      "name": "字段存在：截止日期",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d10_信息冲突通知.docx",
+      "name": "报名开始日期解析",
+      "result": "PASS",
+      "expected": "2026年5月1日",
+      "actual": "2026年5月1日",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d10_信息冲突通知.docx",
+      "name": "截止日期解析",
+      "result": "PASS",
+      "expected": "2026年5月10日",
+      "actual": "2026年5月10日",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d10_信息冲突通知.docx",
+      "name": "每条提取结果均带原文证据",
+      "result": "PASS",
+      "expected": "所有 found 字段/材料/流程/备注均有可回溯证据",
+      "actual": "通过",
+      "repro": "逐条比对 evidence.text/location 与原文",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d10_信息冲突通知.docx",
+      "name": "事项类型识别",
+      "result": "PASS",
+      "expected": "活动赛事",
+      "actual": "活动赛事",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d10_信息冲突通知.docx",
+      "name": "流程步骤数量与原文一致",
+      "result": "FAIL",
+      "expected": "2 个流程步骤",
+      "actual": "1 个：['填写优秀学生申请表']",
+      "repro": "核对解析出的 process 数量",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d10_信息冲突通知.docx",
+      "name": "材料名称覆盖原文要求",
+      "result": "PASS",
+      "expected": "包含：['优秀学生申请表', '成绩单复印件', '获奖证明']",
+      "actual": "缺失：[]；实际=['优秀学生申请表', '成绩单复印件', '获奖证明']",
+      "repro": "核对解析出的 materials 名称",
+      "evidence": ""
+    },
+    {
+      "category": "事项管理",
+      "case": "d10_信息冲突通知.docx",
+      "name": "保存为事项",
+      "result": "PASS",
+      "expected": "HTTP 201",
+      "actual": "HTTP 201",
+      "repro": "POST /api/matters",
+      "evidence": ""
+    },
+    {
+      "category": "事项管理",
+      "case": "d10_信息冲突通知.docx",
+      "name": "刷新后事项仍存在",
+      "result": "PASS",
+      "expected": "HTTP 200 且名称=关于2026年优秀学生评选工作的通知",
+      "actual": "HTTP 200 名称=关于2026年优秀学生评选工作的通知",
+      "repro": "GET /api/matters/10",
+      "evidence": ""
+    },
+    {
+      "category": "前后端集成",
+      "case": "d10_信息冲突通知.docx",
+      "name": "保存后字段与解析结果一致",
+      "result": "PASS",
+      "expected": "日期、材料数、流程数与解析结果一致",
+      "actual": "deadline=2026年5月10日, start=2026年5月1日, materials=3, process=1",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d10_信息冲突通知.docx",
+      "name": "按办理流程生成任务",
+      "result": "PASS",
+      "expected": "HTTP 201",
+      "actual": "HTTP 201",
+      "repro": "POST /api/matters/10/tasks",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d10_信息冲突通知.docx",
+      "name": "任务数量与流程步骤一致",
+      "result": "PASS",
+      "expected": "1 个任务",
+      "actual": "1 个任务",
+      "repro": "比对 process=1 与 created=1",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d10_信息冲突通知.docx",
+      "name": "任务来自真实流程步骤",
+      "result": "PASS",
+      "expected": "任务描述均来自原文流程步骤",
+      "actual": "全部匹配",
+      "repro": "比对任务 description 与事项 process.text",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d10_信息冲突通知.docx",
+      "name": "任务保留原文证据",
+      "result": "PASS",
+      "expected": "每个任务有 source_evidence.text",
+      "actual": "通过",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d10_信息冲突通知.docx",
+      "name": "重复生成不产生重复任务",
+      "result": "PASS",
+      "expected": "created=0 且任务总数保持 1",
+      "actual": "created=0 任务总数=1",
+      "repro": "连续两次 POST /api/matters/10/tasks",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d10_信息冲突通知.docx",
+      "name": "按原文材料要求生成清单",
+      "result": "PASS",
+      "expected": "3 项材料",
+      "actual": "created=3 skipped=0",
+      "repro": "POST /api/matters/10/materials/generate",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d10_信息冲突通知.docx",
+      "name": "上传材料测试文件",
+      "result": "PASS",
+      "expected": "HTTP 200 且状态 pending",
+      "actual": "HTTP 200 状态=pending",
+      "repro": "POST /api/materials/30/file",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d10_信息冲突通知.docx",
+      "name": "执行规则核验",
+      "result": "PASS",
+      "expected": "返回合法核验结论",
+      "actual": "incomplete",
+      "repro": "POST /api/materials/30/verify",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d10_信息冲突通知.docx",
+      "name": "核验记录包含逐项依据",
+      "result": "PASS",
+      "expected": "至少 3 项检查且有结论说明",
+      "actual": "checks=5",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d10_信息冲突通知.docx",
+      "name": "人工确认写入记录",
+      "result": "PASS",
+      "expected": "HTTP 200 且状态=qualified",
+      "actual": "HTTP 200 状态=qualified",
+      "repro": "POST /api/materials/30/confirm",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d10_信息冲突通知.docx",
+      "name": "人工确认记录可追溯",
+      "result": "PASS",
+      "expected": "material_events 中存在确认记录",
+      "actual": "events=['generated', 'file_uploaded', 'verified', 'confirmed']",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d10_信息冲突通知.docx",
+      "name": "主动刷新风险",
+      "result": "PASS",
+      "expected": "HTTP 200",
+      "actual": "HTTP 200",
+      "repro": "POST /api/risks/refresh",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d10_信息冲突通知.docx",
+      "name": "日期风险判断",
+      "result": "PASS",
+      "expected": "不应出现 date_unverified",
+      "actual": "实际风险类型=['material_missing', 'material_missing']",
+      "repro": "检查事项风险列表中的 date_unverified",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d10_信息冲突通知.docx",
+      "name": "材料缺失风险数量",
+      "result": "PASS",
+      "expected": "2 项 material_missing",
+      "actual": "2 项",
+      "repro": "核对材料状态与 material_missing 风险数量",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d10_信息冲突通知.docx",
+      "name": "任务积压风险判断",
+      "result": "PASS",
+      "expected": "不应出现 backlog",
+      "actual": "未完成任务=1 风险=['material_missing', 'material_missing']",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d10_信息冲突通知.docx",
+      "name": "任务完成/重新打开后风险同步变化",
+      "result": "PASS",
+      "expected": "完成一个任务后风险列表被重新计算",
+      "actual": "完成后=['material_missing', 'material_missing']；重开后=['material_missing', 'material_missing']",
+      "repro": "PATCH /api/tasks/51 status=done -> refresh -> status=pending",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d10_信息冲突通知.docx",
+      "name": "全部任务完成后积压风险消失",
+      "result": "PASS",
+      "expected": "无 backlog 风险",
+      "actual": "实际=['material_missing', 'material_missing']",
+      "repro": "将所有任务标记 done 后刷新风险",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d11_空流程通知.txt",
+      "name": "上传并解析成功",
+      "result": "PASS",
+      "expected": "HTTP 200",
+      "actual": "HTTP 200",
+      "repro": "POST /api/analysis/analyze 上传 d11_空流程通知.txt",
+      "evidence": "evidence/d11_空流程通知.txt.json#1_analyze"
+    },
+    {
+      "category": "文档解析",
+      "case": "d11_空流程通知.txt",
+      "name": "文档内容被真实读取",
+      "result": "PASS",
+      "expected": "char_count > 0",
+      "actual": "char_count=161",
+      "repro": "检查 analyze 返回的 document.char_count",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d11_空流程通知.txt",
+      "name": "事项名称与标题一致",
+      "result": "PASS",
+      "expected": "关于举办2026年学术讲座的通知",
+      "actual": "关于举办2026年学术讲座的通知",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d11_空流程通知.txt",
+      "name": "字段存在：事项名称",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d11_空流程通知.txt",
+      "name": "字段存在：事项类型",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d11_空流程通知.txt",
+      "name": "字段存在：申请资格",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d11_空流程通知.txt",
+      "name": "字段存在：报名开始日期",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d11_空流程通知.txt",
+      "name": "字段存在：截止日期",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d11_空流程通知.txt",
+      "name": "报名开始日期解析",
+      "result": "PASS",
+      "expected": "None",
+      "actual": "None",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d11_空流程通知.txt",
+      "name": "截止日期解析",
+      "result": "PASS",
+      "expected": "None",
+      "actual": "None",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d11_空流程通知.txt",
+      "name": "每条提取结果均带原文证据",
+      "result": "PASS",
+      "expected": "所有 found 字段/材料/流程/备注均有可回溯证据",
+      "actual": "通过",
+      "repro": "逐条比对 evidence.text/location 与原文",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d11_空流程通知.txt",
+      "name": "事项类型识别",
+      "result": "PASS",
+      "expected": "会议培训",
+      "actual": "会议培训",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d11_空流程通知.txt",
+      "name": "流程步骤数量与原文一致",
+      "result": "PASS",
+      "expected": "0 个流程步骤",
+      "actual": "0 个：[]",
+      "repro": "核对解析出的 process 数量",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d11_空流程通知.txt",
+      "name": "材料名称覆盖原文要求",
+      "result": "PASS",
+      "expected": "包含：[]",
+      "actual": "缺失：[]；实际=[]",
+      "repro": "核对解析出的 materials 名称",
+      "evidence": ""
+    },
+    {
+      "category": "事项管理",
+      "case": "d11_空流程通知.txt",
+      "name": "保存为事项",
+      "result": "PASS",
+      "expected": "HTTP 201",
+      "actual": "HTTP 201",
+      "repro": "POST /api/matters",
+      "evidence": ""
+    },
+    {
+      "category": "事项管理",
+      "case": "d11_空流程通知.txt",
+      "name": "刷新后事项仍存在",
+      "result": "PASS",
+      "expected": "HTTP 200 且名称=关于举办2026年学术讲座的通知",
+      "actual": "HTTP 200 名称=关于举办2026年学术讲座的通知",
+      "repro": "GET /api/matters/11",
+      "evidence": ""
+    },
+    {
+      "category": "前后端集成",
+      "case": "d11_空流程通知.txt",
+      "name": "保存后字段与解析结果一致",
+      "result": "PASS",
+      "expected": "日期、材料数、流程数与解析结果一致",
+      "actual": "deadline=None, start=None, materials=0, process=0",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d11_空流程通知.txt",
+      "name": "按办理流程生成任务",
+      "result": "PASS",
+      "expected": "HTTP 201",
+      "actual": "HTTP 201",
+      "repro": "POST /api/matters/11/tasks",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d11_空流程通知.txt",
+      "name": "任务数量与流程步骤一致",
+      "result": "PASS",
+      "expected": "0 个任务",
+      "actual": "0 个任务",
+      "repro": "比对 process=0 与 created=0",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d11_空流程通知.txt",
+      "name": "任务来自真实流程步骤",
+      "result": "PASS",
+      "expected": "任务描述均来自原文流程步骤",
+      "actual": "全部匹配",
+      "repro": "比对任务 description 与事项 process.text",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d11_空流程通知.txt",
+      "name": "任务保留原文证据",
+      "result": "PASS",
+      "expected": "每个任务有 source_evidence.text",
+      "actual": "通过",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d11_空流程通知.txt",
+      "name": "重复生成不产生重复任务",
+      "result": "PASS",
+      "expected": "created=0 且任务总数保持 0",
+      "actual": "created=0 任务总数=0",
+      "repro": "连续两次 POST /api/matters/11/tasks",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d11_空流程通知.txt",
+      "name": "按原文材料要求生成清单",
+      "result": "PASS",
+      "expected": "0 项材料",
+      "actual": "created=0 skipped=0",
+      "repro": "POST /api/matters/11/materials/generate",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d11_空流程通知.txt",
+      "name": "无材料要求时给出明确提示",
+      "result": "PASS",
+      "expected": "created=0 且提示未登记材料要求",
+      "actual": "created=0 message=该事项没有登记材料要求，暂无材料可生成。",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d11_空流程通知.txt",
+      "name": "11_upload_material",
+      "result": "UNEXECUTED",
+      "expected": "不适用（该事项无材料要求）",
+      "actual": "未执行",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d11_空流程通知.txt",
+      "name": "12_verify_material",
+      "result": "UNEXECUTED",
+      "expected": "不适用（该事项无材料要求）",
+      "actual": "未执行",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d11_空流程通知.txt",
+      "name": "13_confirm_material",
+      "result": "UNEXECUTED",
+      "expected": "不适用（该事项无材料要求）",
+      "actual": "未执行",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d11_空流程通知.txt",
+      "name": "主动刷新风险",
+      "result": "PASS",
+      "expected": "HTTP 200",
+      "actual": "HTTP 200",
+      "repro": "POST /api/risks/refresh",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d11_空流程通知.txt",
+      "name": "日期风险判断",
+      "result": "PASS",
+      "expected": "不应出现 date_unverified",
+      "actual": "实际风险类型=[]",
+      "repro": "检查事项风险列表中的 date_unverified",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d11_空流程通知.txt",
+      "name": "无材料时不产生材料风险",
+      "result": "PASS",
+      "expected": "无 material_* 风险",
+      "actual": "实际=[]",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d11_空流程通知.txt",
+      "name": "任务积压风险判断",
+      "result": "PASS",
+      "expected": "不应出现 backlog",
+      "actual": "未完成任务=0 风险=[]",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d11_空流程通知.txt",
+      "name": "空流程任务风险",
+      "result": "PASS",
+      "expected": "空流程不应产生任务风险",
+      "actual": "实际=[]",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d12_非法日期通知.txt",
+      "name": "上传并解析成功",
+      "result": "PASS",
+      "expected": "HTTP 200",
+      "actual": "HTTP 200",
+      "repro": "POST /api/analysis/analyze 上传 d12_非法日期通知.txt",
+      "evidence": "evidence/d12_非法日期通知.txt.json#1_analyze"
+    },
+    {
+      "category": "文档解析",
+      "case": "d12_非法日期通知.txt",
+      "name": "文档内容被真实读取",
+      "result": "PASS",
+      "expected": "char_count > 0",
+      "actual": "char_count=187",
+      "repro": "检查 analyze 返回的 document.char_count",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d12_非法日期通知.txt",
+      "name": "事项名称与标题一致",
+      "result": "PASS",
+      "expected": "关于2026年2月30日事项申报的通知",
+      "actual": "关于2026年2月30日事项申报的通知",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d12_非法日期通知.txt",
+      "name": "字段存在：事项名称",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d12_非法日期通知.txt",
+      "name": "字段存在：事项类型",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d12_非法日期通知.txt",
+      "name": "字段存在：申请资格",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d12_非法日期通知.txt",
+      "name": "字段存在：报名开始日期",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d12_非法日期通知.txt",
+      "name": "字段存在：截止日期",
+      "result": "PASS",
+      "expected": "字段存在",
+      "actual": "存在",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d12_非法日期通知.txt",
+      "name": "报名开始日期解析",
+      "result": "PASS",
+      "expected": "None",
+      "actual": "None",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d12_非法日期通知.txt",
+      "name": "截止日期解析",
+      "result": "PASS",
+      "expected": "2026年2月30日",
+      "actual": "2026年2月30日",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d12_非法日期通知.txt",
+      "name": "每条提取结果均带原文证据",
+      "result": "PASS",
+      "expected": "所有 found 字段/材料/流程/备注均有可回溯证据",
+      "actual": "通过",
+      "repro": "逐条比对 evidence.text/location 与原文",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d12_非法日期通知.txt",
+      "name": "事项类型识别",
+      "result": "PASS",
+      "expected": "材料申报",
+      "actual": "材料申报",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d12_非法日期通知.txt",
+      "name": "流程步骤数量与原文一致",
+      "result": "FAIL",
+      "expected": "2 个流程步骤",
+      "actual": "1 个：['填写事项申请表']",
+      "repro": "核对解析出的 process 数量",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "d12_非法日期通知.txt",
+      "name": "材料名称覆盖原文要求",
+      "result": "PASS",
+      "expected": "包含：['事项申请表']",
+      "actual": "缺失：[]；实际=['事项申请表']",
+      "repro": "核对解析出的 materials 名称",
+      "evidence": ""
+    },
+    {
+      "category": "事项管理",
+      "case": "d12_非法日期通知.txt",
+      "name": "保存为事项",
+      "result": "PASS",
+      "expected": "HTTP 201",
+      "actual": "HTTP 201",
+      "repro": "POST /api/matters",
+      "evidence": ""
+    },
+    {
+      "category": "事项管理",
+      "case": "d12_非法日期通知.txt",
+      "name": "刷新后事项仍存在",
+      "result": "PASS",
+      "expected": "HTTP 200 且名称=关于2026年2月30日事项申报的通知",
+      "actual": "HTTP 200 名称=关于2026年2月30日事项申报的通知",
+      "repro": "GET /api/matters/12",
+      "evidence": ""
+    },
+    {
+      "category": "前后端集成",
+      "case": "d12_非法日期通知.txt",
+      "name": "保存后字段与解析结果一致",
+      "result": "PASS",
+      "expected": "日期、材料数、流程数与解析结果一致",
+      "actual": "deadline=2026年2月30日, start=None, materials=1, process=1",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d12_非法日期通知.txt",
+      "name": "按办理流程生成任务",
+      "result": "PASS",
+      "expected": "HTTP 201",
+      "actual": "HTTP 201",
+      "repro": "POST /api/matters/12/tasks",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d12_非法日期通知.txt",
+      "name": "任务数量与流程步骤一致",
+      "result": "PASS",
+      "expected": "1 个任务",
+      "actual": "1 个任务",
+      "repro": "比对 process=1 与 created=1",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d12_非法日期通知.txt",
+      "name": "任务来自真实流程步骤",
+      "result": "PASS",
+      "expected": "任务描述均来自原文流程步骤",
+      "actual": "全部匹配",
+      "repro": "比对任务 description 与事项 process.text",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d12_非法日期通知.txt",
+      "name": "任务保留原文证据",
+      "result": "PASS",
+      "expected": "每个任务有 source_evidence.text",
+      "actual": "通过",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "d12_非法日期通知.txt",
+      "name": "重复生成不产生重复任务",
+      "result": "PASS",
+      "expected": "created=0 且任务总数保持 1",
+      "actual": "created=0 任务总数=1",
+      "repro": "连续两次 POST /api/matters/12/tasks",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d12_非法日期通知.txt",
+      "name": "按原文材料要求生成清单",
+      "result": "PASS",
+      "expected": "1 项材料",
+      "actual": "created=1 skipped=0",
+      "repro": "POST /api/matters/12/materials/generate",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d12_非法日期通知.txt",
+      "name": "上传材料测试文件",
+      "result": "PASS",
+      "expected": "HTTP 200 且状态 pending",
+      "actual": "HTTP 200 状态=pending",
+      "repro": "POST /api/materials/31/file",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d12_非法日期通知.txt",
+      "name": "执行规则核验",
+      "result": "PASS",
+      "expected": "返回合法核验结论",
+      "actual": "incomplete",
+      "repro": "POST /api/materials/31/verify",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d12_非法日期通知.txt",
+      "name": "核验记录包含逐项依据",
+      "result": "PASS",
+      "expected": "至少 3 项检查且有结论说明",
+      "actual": "checks=5",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d12_非法日期通知.txt",
+      "name": "人工确认写入记录",
+      "result": "PASS",
+      "expected": "HTTP 200 且状态=qualified",
+      "actual": "HTTP 200 状态=qualified",
+      "repro": "POST /api/materials/31/confirm",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "d12_非法日期通知.txt",
+      "name": "人工确认记录可追溯",
+      "result": "PASS",
+      "expected": "material_events 中存在确认记录",
+      "actual": "events=['generated', 'file_uploaded', 'verified', 'confirmed']",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d12_非法日期通知.txt",
+      "name": "主动刷新风险",
+      "result": "PASS",
+      "expected": "HTTP 200",
+      "actual": "HTTP 200",
+      "repro": "POST /api/risks/refresh",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d12_非法日期通知.txt",
+      "name": "日期风险判断",
+      "result": "PASS",
+      "expected": "应出现 date_unverified",
+      "actual": "实际风险类型=['date_unverified']",
+      "repro": "检查事项风险列表中的 date_unverified",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d12_非法日期通知.txt",
+      "name": "材料缺失风险数量",
+      "result": "PASS",
+      "expected": "0 项 material_missing",
+      "actual": "0 项",
+      "repro": "核对材料状态与 material_missing 风险数量",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d12_非法日期通知.txt",
+      "name": "任务积压风险判断",
+      "result": "PASS",
+      "expected": "不应出现 backlog",
+      "actual": "未完成任务=1 风险=['date_unverified']",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d12_非法日期通知.txt",
+      "name": "任务完成/重新打开后风险同步变化",
+      "result": "PASS",
+      "expected": "完成一个任务后风险列表被重新计算",
+      "actual": "完成后=['date_unverified']；重开后=['date_unverified']",
+      "repro": "PATCH /api/tasks/53 status=done -> refresh -> status=pending",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "d12_非法日期通知.txt",
+      "name": "全部任务完成后积压风险消失",
+      "result": "PASS",
+      "expected": "无 backlog 风险",
+      "actual": "实际=['date_unverified']",
+      "repro": "将所有任务标记 done 后刷新风险",
+      "evidence": ""
+    },
+    {
+      "category": "事项管理",
+      "case": "B01-无截止日期",
+      "name": "边界：无截止日期事项可保存",
+      "result": "PASS",
+      "expected": "HTTP 201 且 deadline 为空",
+      "actual": "HTTP 201",
+      "repro": "POST /api/matters，仅提供名称",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "B01-无截止日期",
+      "name": "边界：无截止日期不产生日期风险",
+      "result": "PASS",
+      "expected": "无日期类风险",
+      "actual": "实际=[]",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "B11-已读风险",
+      "name": "边界：标记已读",
+      "result": "PASS",
+      "expected": "status=read 且 read_at 有值",
+      "actual": "status=read read_at=2026-11-14T21:34:57.343+08:00",
+      "repro": "PATCH /api/risks/19/read",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "B11-已读风险",
+      "name": "边界：标记已读不改变 last_seen_at",
+      "result": "PASS",
+      "expected": "last_seen_at 保持不变",
+      "actual": "before=2026-11-14T21:34:57.206+08:00 after=2026-11-14T21:34:57.206+08:00",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "B12-已解决风险重现",
+      "name": "边界：逾期任务生成风险",
+      "result": "PASS",
+      "expected": "出现 overdue 风险",
+      "actual": "overdue=存在 refresh={'generated_at': '2026-11-14T21:34:57.467+08:00', 'created': 1, 'updated': 23, 'revived': 0, 'resolved': 0, 'summary': {'generated_at': '2026-11-14T21:34:57.467+08:00', 'timezone': 'Asia/Shanghai', 'today': '2026-11-14', 'total_unresolved': 24, 'total_risks': 34, 'active': 23, 'read': 1, 'resolved': 10, 'high': 1, 'medium': 21, 'low': 2, 'by_type': {'date_unverified': 2, 'material_incomplete': 1, 'material_missing': 20, 'overdue': 1}, 'overdue_tasks': 1, 'due_soon_3d_tasks': 0, 'due_soon_7d_tasks': 0, 'pending_materials': 0, 'conflict_materials': 0, 'missing_materials': 21, 'uncertain_materials': 0, 'unfinished_tasks': 11, 'matters_with_risks': 9}}",
+      "repro": "将任务截止日期改为 2026-01-01（manual）后刷新",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "B12-已解决风险重现",
+      "name": "边界：任务完成后逾期风险归档",
+      "result": "PASS",
+      "expected": "status=resolved",
+      "actual": "status=resolved",
+      "repro": "任务标记 done 后刷新",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "B12-已解决风险重现",
+      "name": "边界：已解决风险重新出现",
+      "result": "PASS",
+      "expected": "同一风险重新激活且 revived >= 1",
+      "actual": "status=active revived=1",
+      "repro": "重新打开任务后刷新",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "B13-损坏文件",
+      "name": "边界：损坏文件被拒绝",
+      "result": "PASS",
+      "expected": "HTTP 422 invalid_document",
+      "actual": "HTTP 422 {'code': 'invalid_document', 'message': '文件内容不是有效的 DOCX（不是 ZIP 容器），可能是旧版 .doc 或仅修改了扩展名。'}",
+      "repro": "POST /api/materials/22/file 上传 corrupt.docx",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "B14-格式错误",
+      "name": "边界：错误格式被拒绝",
+      "result": "PASS",
+      "expected": "HTTP 415 unsupported_format",
+      "actual": "HTTP 415 {'code': 'unsupported_format', 'message': '不支持的文件格式「.xlsx」，请上传 PDF / DOCX / TXT 文件。'}",
+      "repro": "POST /api/materials/22/file 上传 wrong_format.xlsx",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "B15-空文件",
+      "name": "边界：空文件被拒绝",
+      "result": "PASS",
+      "expected": "HTTP 400 empty_file",
+      "actual": "HTTP 400 {'code': 'empty_file', 'message': '文件内容为空（0 字节），请重新选择有效文件。'}",
+      "repro": "POST /api/materials/22/file 上传 empty.txt",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "B16-文件大小超限",
+      "name": "边界：超限文件被拒绝",
+      "result": "PASS",
+      "expected": "HTTP 413 file_too_large",
+      "actual": "HTTP 413 {'code': 'file_too_large', 'message': '文件超过 10MB 上限，请压缩或拆分后再上传。'}",
+      "repro": "POST /api/materials/22/file 上传 10MB+ 文件",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "B13-B16 文件异常",
+      "name": "边界：失败上传不破坏已有文件记录",
+      "result": "PASS",
+      "expected": "原文件名保持 material_ok.txt",
+      "actual": "当前=material_ok.txt",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "B16-文件大小超限",
+      "name": "边界：分析接口拒绝超限文档",
+      "result": "PASS",
+      "expected": "HTTP 413 file_too_large",
+      "actual": "HTTP 413 {'code': 'file_too_large', 'message': '文件超过 10MB 上限，请压缩或拆分后再上传。'}",
+      "repro": "POST /api/analysis/analyze 上传 10MB+ 文本",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "B06-材料名称模糊",
+      "name": "边界：模糊材料名称可登记",
+      "result": "PASS",
+      "expected": "HTTP 201",
+      "actual": "HTTP 201",
+      "repro": "POST /api/matters/8/materials name=材料",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "B18-材料无法判断",
+      "name": "边界：材料无法判断时给出 uncertain",
+      "result": "PASS",
+      "expected": "核验结果 uncertain",
+      "actual": "uncertain",
+      "repro": "POST /api/materials/32/verify",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "B18-材料无法判断",
+      "name": "边界：无法判断材料产生低风险提醒",
+      "result": "PASS",
+      "expected": "出现 material_uncertain",
+      "actual": "实际=['material_uncertain']",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "B17-材料信息冲突",
+      "name": "边界：可疑材料不直接判定合格",
+      "result": "PASS",
+      "expected": "核验结果 uncertain/incomplete",
+      "actual": "uncertain",
+      "repro": "POST /api/materials/13/verify（文本含“已过期/失效”）",
+      "evidence": ""
+    },
+    {
+      "category": "材料管理",
+      "case": "B17-材料信息冲突",
+      "name": "边界：人工可确认材料冲突",
+      "result": "PASS",
+      "expected": "status=conflict",
+      "actual": "HTTP 200 status=conflict",
+      "repro": "POST /api/materials/13/confirm status=conflict",
+      "evidence": ""
+    },
+    {
+      "category": "风险预警",
+      "case": "B17-材料信息冲突",
+      "name": "边界：冲突材料产生高风险",
+      "result": "PASS",
+      "expected": "出现 high 级 material_conflict",
+      "actual": "实际=['material_conflict', 'material_missing', 'material_missing']",
+      "repro": "",
+      "evidence": ""
+    },
+    {
+      "category": "文档解析",
+      "case": "B05-多个截止日期",
+      "name": "边界：多个截止日期应提示冲突",
+      "result": "FAIL",
+      "expected": "截止日期备注包含“多个截止日期”",
+      "actual": "note=",
+      "repro": "检查 d10 解析结果 deadline.note",
+      "evidence": ""
+    },
+    {
+      "category": "任务管理",
+      "case": "B08-空流程",
+      "name": "边界：空流程不生成任务",
+      "result": "PASS",
+      "expected": "0 个任务",
+      "actual": "0 个任务",
+      "repro": "检查 d11 事项任务列表",
+      "evidence": ""
+    }
+  ],
+  "matter_ids": {
+    "d01_校园活动通知.txt": 1,
+    "d02_竞赛通知.docx": 2,
+    "d03_跨年度申报通知.txt": 3,
+    "d04_多材料申报通知.docx": 4,
+    "d05_招聘公告.txt": 5,
+    "d06_日期模糊通知.txt": 6,
+    "d07_多流程办事通知.docx": 7,
+    "d08_无材料要求通知.txt": 8,
+    "d09_标题含材料关键词通知.txt": 9,
+    "d10_信息冲突通知.docx": 10,
+    "d11_空流程通知.txt": 11,
+    "d12_非法日期通知.txt": 12
+  },
+  "task_ids": {
+    "d01_校园活动通知.txt": [
+      3,
+      2,
+      1
+    ],
+    "d02_竞赛通知.docx": [
+      8,
+      7
+    ],
+    "d03_跨年度申报通知.txt": [
+      13,
+      12,
+      11
+    ],
+    "d04_多材料申报通知.docx": [
+      19,
+      18,
+      17
+    ],
+    "d05_招聘公告.txt": [
+      25,
+      24,
+      23
+    ],
+    "d06_日期模糊通知.txt": [
+      31,
+      30,
+      29
+    ],
+    "d07_多流程办事通知.docx": [
+      38,
+      37,
+      36,
+      35
+    ],
+    "d08_无材料要求通知.txt": [
+      44,
+      43
+    ],
+    "d09_标题含材料关键词通知.txt": [
+      48,
+      47
+    ],
+    "d10_信息冲突通知.docx": [
+      51
+    ],
+    "d12_非法日期通知.txt": [
+      53
+    ]
+  },
+  "material_ids": {
+    "d01_校园活动通知.txt": [
+      2,
+      1
+    ],
+    "d02_竞赛通知.docx": [
+      7,
+      6,
+      5,
+      4,
+      3
+    ],
+    "d03_跨年度申报通知.txt": [
+      10,
+      9,
+      8
+    ],
+    "d04_多材料申报通知.docx": [
+      14,
+      13,
+      12,
+      11
+    ],
+    "d05_招聘公告.txt": [
+      18,
+      17,
+      16,
+      15
+    ],
+    "d06_日期模糊通知.txt": [
+      20,
+      19
+    ],
+    "d07_多流程办事通知.docx": [
+      22,
+      21
+    ],
+    "d09_标题含材料关键词通知.txt": [
+      27,
+      26,
+      25,
+      24,
+      23
+    ],
+    "d10_信息冲突通知.docx": [
+      30,
+      29,
+      28
+    ],
+    "d12_非法日期通知.txt": [
+      31
+    ]
+  }
+}

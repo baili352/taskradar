@@ -1,0 +1,481 @@
+{
+  "file": "d11_空流程通知.txt",
+  "steps": {
+    "1_analyze": {
+      "status": 200,
+      "body": {
+        "document": {
+          "filename": "d11_空流程通知.txt",
+          "extension": ".txt",
+          "size": 424,
+          "char_count": 161,
+          "page_count": null,
+          "paragraph_count": 16
+        },
+        "fields": [
+          {
+            "key": "title",
+            "label": "事项名称",
+            "value": "关于举办2026年学术讲座的通知",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "关于举办2026年学术讲座的通知",
+                "location": "第 1 行",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "matter_type",
+            "label": "事项类型",
+            "value": "会议培训",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "关于举办2026年学术讲座的通知",
+                "location": "第 1 行",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": "依据标题关键词「讲座」判断，仅供参考。"
+          },
+          {
+            "key": "qualification",
+            "label": "申请资格",
+            "value": "参与对象：全体师生均可参加",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "全体师生均可参加。",
+                "location": "第 9 行",
+                "page": null,
+                "paragraph": 9
+              }
+            ],
+            "note": "以上内容直接摘自原文对应章节或正文句子。"
+          },
+          {
+            "key": "registration_start",
+            "label": "报名开始日期",
+            "value": null,
+            "status": "pending",
+            "evidence": [],
+            "note": "原文未找到明确的报名日期区间，无法确认报名开始日期，请核实。"
+          },
+          {
+            "key": "deadline",
+            "label": "截止日期",
+            "value": null,
+            "status": "pending",
+            "evidence": [],
+            "note": "原文中未找到日期信息，无法确定截止日期，请向办理机构核实。"
+          }
+        ],
+        "materials": [],
+        "process": [],
+        "notes": [
+          {
+            "text": "请提前十分钟入场。",
+            "evidence": {
+              "text": "请提前十分钟入场。",
+              "location": "第 11 行",
+              "page": null,
+              "paragraph": 11
+            }
+          }
+        ],
+        "warnings": [
+          "未识别到材料要求，请核实原文是否包含材料清单或「填写/提交」类要求。",
+          "未识别到办理流程，请核实原文是否包含「报名方式 / 办理流程」等章节。"
+        ],
+        "analysis_mode": "rule_based",
+        "ai_configured": false,
+        "ai_message": "当前未配置大模型 API，本次分析仅使用本地规则（章节标题 + 关键词 + 日期正则）提取，不是 AI 分析结果。未找到原文依据的字段已标记为「待核实」，请人工核对。",
+        "elapsed_ms": 0
+      }
+    },
+    "5_create_matter": {
+      "status": 201,
+      "body": {
+        "id": 11,
+        "name": "关于举办2026年学术讲座的通知",
+        "matter_type": "会议培训",
+        "qualification": "参与对象：全体师生均可参加",
+        "registration_start": null,
+        "deadline": null,
+        "deadline_source": "none",
+        "materials": [],
+        "process": [],
+        "notes": [
+          {
+            "text": "请提前十分钟入场。",
+            "evidence": {
+              "text": "请提前十分钟入场。",
+              "location": "第 11 行",
+              "page": null,
+              "paragraph": 11
+            }
+          }
+        ],
+        "fields": [
+          {
+            "key": "title",
+            "label": "事项名称",
+            "value": "关于举办2026年学术讲座的通知",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "关于举办2026年学术讲座的通知",
+                "location": "第 1 行",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "matter_type",
+            "label": "事项类型",
+            "value": "会议培训",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "关于举办2026年学术讲座的通知",
+                "location": "第 1 行",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": "依据标题关键词「讲座」判断，仅供参考。"
+          },
+          {
+            "key": "qualification",
+            "label": "申请资格",
+            "value": "参与对象：全体师生均可参加",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "全体师生均可参加。",
+                "location": "第 9 行",
+                "page": null,
+                "paragraph": 9
+              }
+            ],
+            "note": "以上内容直接摘自原文对应章节或正文句子。"
+          },
+          {
+            "key": "registration_start",
+            "label": "报名开始日期",
+            "value": null,
+            "status": "pending",
+            "evidence": [],
+            "note": "原文未找到明确的报名日期区间，无法确认报名开始日期，请核实。"
+          },
+          {
+            "key": "deadline",
+            "label": "截止日期",
+            "value": null,
+            "status": "pending",
+            "evidence": [],
+            "note": "原文中未找到日期信息，无法确定截止日期，请向办理机构核实。"
+          }
+        ],
+        "source_filename": "d11_空流程通知.txt",
+        "status": "pending",
+        "analysis_mode": "rule_based",
+        "created_at": "2026-11-14T21:34:56.151",
+        "updated_at": "2026-11-14T21:34:56.151"
+      }
+    },
+    "6_get_matter": {
+      "status": 200,
+      "body": {
+        "id": 11,
+        "name": "关于举办2026年学术讲座的通知",
+        "matter_type": "会议培训",
+        "qualification": "参与对象：全体师生均可参加",
+        "registration_start": null,
+        "deadline": null,
+        "deadline_source": "none",
+        "materials": [],
+        "process": [],
+        "notes": [
+          {
+            "text": "请提前十分钟入场。",
+            "evidence": {
+              "text": "请提前十分钟入场。",
+              "location": "第 11 行",
+              "page": null,
+              "paragraph": 11
+            }
+          }
+        ],
+        "fields": [
+          {
+            "key": "title",
+            "label": "事项名称",
+            "value": "关于举办2026年学术讲座的通知",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "关于举办2026年学术讲座的通知",
+                "location": "第 1 行",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": null
+          },
+          {
+            "key": "matter_type",
+            "label": "事项类型",
+            "value": "会议培训",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "关于举办2026年学术讲座的通知",
+                "location": "第 1 行",
+                "page": null,
+                "paragraph": 1
+              }
+            ],
+            "note": "依据标题关键词「讲座」判断，仅供参考。"
+          },
+          {
+            "key": "qualification",
+            "label": "申请资格",
+            "value": "参与对象：全体师生均可参加",
+            "status": "found",
+            "evidence": [
+              {
+                "text": "全体师生均可参加。",
+                "location": "第 9 行",
+                "page": null,
+                "paragraph": 9
+              }
+            ],
+            "note": "以上内容直接摘自原文对应章节或正文句子。"
+          },
+          {
+            "key": "registration_start",
+            "label": "报名开始日期",
+            "value": null,
+            "status": "pending",
+            "evidence": [],
+            "note": "原文未找到明确的报名日期区间，无法确认报名开始日期，请核实。"
+          },
+          {
+            "key": "deadline",
+            "label": "截止日期",
+            "value": null,
+            "status": "pending",
+            "evidence": [],
+            "note": "原文中未找到日期信息，无法确定截止日期，请向办理机构核实。"
+          }
+        ],
+        "source_filename": "d11_空流程通知.txt",
+        "status": "pending",
+        "analysis_mode": "rule_based",
+        "created_at": "2026-11-14T21:34:56.151",
+        "updated_at": "2026-11-14T21:34:56.151"
+      }
+    },
+    "7_generate_tasks": {
+      "status": 201,
+      "body": {
+        "matter_id": 11,
+        "created": 0,
+        "skipped": 0,
+        "total_process_steps": 0,
+        "message": "该事项没有可执行的办理流程，暂无任务可生成。",
+        "tasks": [],
+        "suggestion": null
+      }
+    },
+    "9_generate_tasks_again": {
+      "status": 201,
+      "body": {
+        "matter_id": 11,
+        "created": 0,
+        "skipped": 0,
+        "total_process_steps": 0,
+        "message": "该事项没有可执行的办理流程，暂无任务可生成。",
+        "tasks": [],
+        "suggestion": null
+      }
+    },
+    "10_generate_materials": {
+      "status": 201,
+      "body": {
+        "matter_id": 11,
+        "created": 0,
+        "skipped": 0,
+        "total_source_materials": 0,
+        "message": "该事项没有登记材料要求，暂无材料可生成。",
+        "materials": []
+      }
+    },
+    "14_refresh_risks": {
+      "status": 200,
+      "body": {
+        "generated_at": "2026-11-14T21:34:56.266+08:00",
+        "created": 0,
+        "updated": 22,
+        "revived": 0,
+        "resolved": 0,
+        "summary": {
+          "generated_at": "2026-11-14T21:34:56.266+08:00",
+          "timezone": "Asia/Shanghai",
+          "today": "2026-11-14",
+          "total_unresolved": 22,
+          "total_risks": 32,
+          "active": 22,
+          "read": 0,
+          "resolved": 10,
+          "high": 0,
+          "medium": 21,
+          "low": 1,
+          "by_type": {
+            "date_unverified": 1,
+            "material_incomplete": 1,
+            "material_missing": 20
+          },
+          "overdue_tasks": 0,
+          "due_soon_3d_tasks": 0,
+          "due_soon_7d_tasks": 0,
+          "pending_materials": 0,
+          "conflict_materials": 0,
+          "missing_materials": 21,
+          "uncertain_materials": 0,
+          "unfinished_tasks": 10,
+          "matters_with_risks": 8
+        }
+      }
+    },
+    "14_matter_risks": {
+      "status": 200,
+      "body": {
+        "summary": {
+          "matter_id": 11,
+          "matter_name": "关于举办2026年学术讲座的通知",
+          "matter_status": "pending",
+          "deadline": null,
+          "deadline_source": "none",
+          "deadline_state": "none",
+          "deadline_days_left": null,
+          "unfinished_tasks": 0,
+          "material_total": 0,
+          "material_missing": 0,
+          "material_pending": 0,
+          "material_conflict": 0,
+          "risk_total": 0,
+          "level": "low",
+          "headline": "暂无风险。"
+        },
+        "risks": []
+      }
+    }
+  },
+  "checks": [],
+  "matter_id": 11,
+  "task_ids": [],
+  "material_ids": [],
+  "analysis": {
+    "document": {
+      "filename": "d11_空流程通知.txt",
+      "extension": ".txt",
+      "size": 424,
+      "char_count": 161,
+      "page_count": null,
+      "paragraph_count": 16
+    },
+    "fields": [
+      {
+        "key": "title",
+        "label": "事项名称",
+        "value": "关于举办2026年学术讲座的通知",
+        "status": "found",
+        "evidence": [
+          {
+            "text": "关于举办2026年学术讲座的通知",
+            "location": "第 1 行",
+            "page": null,
+            "paragraph": 1
+          }
+        ],
+        "note": null
+      },
+      {
+        "key": "matter_type",
+        "label": "事项类型",
+        "value": "会议培训",
+        "status": "found",
+        "evidence": [
+          {
+            "text": "关于举办2026年学术讲座的通知",
+            "location": "第 1 行",
+            "page": null,
+            "paragraph": 1
+          }
+        ],
+        "note": "依据标题关键词「讲座」判断，仅供参考。"
+      },
+      {
+        "key": "qualification",
+        "label": "申请资格",
+        "value": "参与对象：全体师生均可参加",
+        "status": "found",
+        "evidence": [
+          {
+            "text": "全体师生均可参加。",
+            "location": "第 9 行",
+            "page": null,
+            "paragraph": 9
+          }
+        ],
+        "note": "以上内容直接摘自原文对应章节或正文句子。"
+      },
+      {
+        "key": "registration_start",
+        "label": "报名开始日期",
+        "value": null,
+        "status": "pending",
+        "evidence": [],
+        "note": "原文未找到明确的报名日期区间，无法确认报名开始日期，请核实。"
+      },
+      {
+        "key": "deadline",
+        "label": "截止日期",
+        "value": null,
+        "status": "pending",
+        "evidence": [],
+        "note": "原文中未找到日期信息，无法确定截止日期，请向办理机构核实。"
+      }
+    ],
+    "materials": [],
+    "process": [],
+    "notes": [
+      {
+        "text": "请提前十分钟入场。",
+        "evidence": {
+          "text": "请提前十分钟入场。",
+          "location": "第 11 行",
+          "page": null,
+          "paragraph": 11
+        }
+      }
+    ],
+    "warnings": [
+      "未识别到材料要求，请核实原文是否包含材料清单或「填写/提交」类要求。",
+      "未识别到办理流程，请核实原文是否包含「报名方式 / 办理流程」等章节。"
+    ],
+    "analysis_mode": "rule_based",
+    "ai_configured": false,
+    "ai_message": "当前未配置大模型 API，本次分析仅使用本地规则（章节标题 + 关键词 + 日期正则）提取，不是 AI 分析结果。未找到原文依据的字段已标记为「待核实」，请人工核对。",
+    "elapsed_ms": 0
+  }
+}
