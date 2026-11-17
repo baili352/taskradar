@@ -1,7 +1,7 @@
 """任务生成与管理接口。"""
 
 import sqlite3
-from typing import Literal
+from typing import Annotated, Literal
 
 from fastapi import APIRouter, HTTPException, Query, Response, status
 
@@ -159,9 +159,17 @@ def query_tasks(
     matter_id: int | None = Query(default=None, ge=1),
     status: TaskStatusQuery | None = None,
     priority: TaskPriority | None = None,
+    limit: Annotated[int | None, Query(ge=1, le=500, description="分页大小，不传返回全部")] = None,
+    offset: Annotated[int, Query(ge=0, description="分页偏移")] = 0,
 ) -> list[TaskRecord]:
     try:
-        return list_tasks(matter_id=matter_id, status=status, priority=priority)
+        return list_tasks(
+            matter_id=matter_id,
+            status=status,
+            priority=priority,
+            limit=limit,
+            offset=offset,
+        )
     except sqlite3.Error as error:
         raise HTTPException(
             status_code=500,

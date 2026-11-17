@@ -9,7 +9,9 @@ from __future__ import annotations
 import json
 import re
 import sys
+import tempfile
 import traceback
+from contextlib import contextmanager
 from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
@@ -25,6 +27,26 @@ EVIDENCE.mkdir(parents=True, exist_ok=True)
 
 CHECKS: list[dict] = []
 STARTED = datetime.now().isoformat(timespec="seconds")
+
+# 上传大小上限用例所需的超限文件在运行时生成，仓库中不保存约 10MB 的夹具。
+OVERSIZE_BYTES = 10 * 1024 * 1024 + 128
+
+
+@contextmanager
+def oversized_file():
+    """在系统临时目录生成超限文件，用完即删，避免向仓库落盘大文件。"""
+    handle = tempfile.NamedTemporaryFile(
+        prefix="taskradar-oversized-", suffix=".txt", delete=False
+    )
+    try:
+        handle.write(b"A" * OVERSIZE_BYTES)
+    finally:
+        handle.close()
+    path = Path(handle.name)
+    try:
+        yield path
+    finally:
+        path.unlink(missing_ok=True)
 
 
 def add_check(
@@ -790,37 +812,39 @@ def boundary_tests(context: dict) -> None:
             "B15-空文件",
             f"POST /api/materials/{mid}/file 上传 empty.txt",
         )
-        oversized = upload_file(f"/materials/{mid}/file", MATERIALS / "oversized.txt")
-        add_check(
-            "材料管理",
-            "边界：超限文件被拒绝",
-            oversized.status == 413 and (oversized.body or {}).get("detail", {}).get("code") == "file_too_large",
-            "HTTP 413 file_too_large",
-            f"HTTP {oversized.status} {(oversized.body or {}).get('detail')}",
-            "B16-文件大小超限",
-            f"POST /api/materials/{mid}/file 上传 10MB+ 文件",
-        )
-        after = request("GET", f"/materials/{mid}").body or {}
-        add_check(
-            "材料管理",
-            "边界：失败上传不破坏已有文件记录",
-            after.get("original_filename") == original.get("original_filename"),
-            f"原文件名保持 {original.get('original_filename')}",
-            f"当前={after.get('original_filename')}",
-            "B13-B16 文件异常",
-        )
+        with oversized_file() as oversized_path:
+            oversized = upload_file(f"/materials/{mid}/file", oversized_path)
+            add_check(
+                "材料管理",
+                "边界：超限文件被拒绝",
+                oversized.status == 413 and (oversized.body or {}).get("detail", {}).get("code") == "file_too_large",
+                "HTTP 413 file_too_large",
+                f"HTTP {oversized.status} {(oversized.body or {}).get('detail')}",
+                "B16-文件大小超限",
+                "POST /api/materials/{mid}/file 上传运行时生成的 10MB+ 文件",
+            )
+            after = request("GET", f"/materials/{mid}").body or {}
+            add_check(
+                "材料管理",
+                "边界：失败上传不破坏已有文件记录",
+                after.get("original_filename") == original.get("original_filename"),
+                f"原文件名保持 {original.get('original_filename')}",
+                f"当前={after.get('original_filename')}",
+                "B13-B16 文件异常",
+            )
 
-    analyze_oversize = upload_file("/analysis/analyze", MATERIALS / "oversized.txt")
-    add_check(
-        "文档解析",
-        "边界：分析接口拒绝超限文档",
-        analyze_oversize.status == 413
-        and (analyze_oversize.body or {}).get("detail", {}).get("code") == "file_too_large",
-        "HTTP 413 file_too_large",
-        f"HTTP {analyze_oversize.status} {(analyze_oversize.body or {}).get('detail')}",
-        "B16-文件大小超限",
-        "POST /api/analysis/analyze 上传 10MB+ 文本",
-    )
+    with oversized_file() as analyze_oversized_path:
+        analyze_oversize = upload_file("/analysis/analyze", analyze_oversized_path)
+        add_check(
+            "文档解析",
+            "边界：分析接口拒绝超限文档",
+            analyze_oversize.status == 413
+            and (analyze_oversize.body or {}).get("detail", {}).get("code") == "file_too_large",
+            "HTTP 413 file_too_large",
+            f"HTTP {analyze_oversize.status} {(analyze_oversize.body or {}).get('detail')}",
+            "B16-文件大小超限",
+            "POST /api/analysis/analyze 上传运行时生成的 10MB+ 文本",
+        )
 
     # B06 材料名称模糊 / B18 无法判断
     d08 = context.get("d08_无材料要求通知.txt", {})

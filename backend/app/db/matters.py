@@ -10,6 +10,7 @@ from datetime import datetime
 from typing import Any
 
 from app.db.database import get_connection
+from app.db.pagination import apply_pagination
 from app.schemas.matter import MatterCreate, MatterRecord, MatterUpdate
 
 logger = logging.getLogger(__name__)
@@ -120,12 +121,7 @@ def list_matters(
         params.append(f"%{text}%")
     where = f"WHERE {' AND '.join(conditions)}" if conditions else ""
     sql = f"SELECT * FROM matters {where} ORDER BY datetime(created_at) DESC, id DESC"
-    if limit is not None:
-        sql += " LIMIT ?"
-        params.append(limit)
-        if offset:
-            sql += " OFFSET ?"
-            params.append(offset)
+    sql, params = apply_pagination(sql, params, limit, offset)
 
     with get_connection() as conn:
         rows = conn.execute(sql, params).fetchall()

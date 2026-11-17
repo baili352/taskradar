@@ -97,7 +97,7 @@
 | `corrupt.docx` | 损坏 DOCX | 422 `invalid_document` |
 | `wrong_format.xlsx` | 不支持格式 | 415 `unsupported_format` |
 | `empty.txt` | 空文件 | 400 `empty_file` |
-| `oversized.txt` | 超过 10MB | 413 `file_too_large` |
+| （运行时生成）10MB+ 文本 | 超过 10MB 上传上限；由 `api_e2e.py` 写入系统临时目录，用完即删，不提交到仓库 | 413 `file_too_large` |
 
 ---
 

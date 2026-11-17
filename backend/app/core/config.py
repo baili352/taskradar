@@ -29,7 +29,13 @@ class Settings(BaseSettings):
     database_path: str = "./data/taskradar.db"
     # 材料文件受控存储目录（不对外静态暴露）
     material_upload_dir: str = "./data/uploads/materials"
-    cors_origins: str = "http://localhost:5173,http://127.0.0.1:5173"
+    # 默认覆盖 Vite 的 5173 与端口回落后的 5174、5175；
+    # start.bat 启动后端时会用环境变量 CORS_ORIGINS 覆盖为本机实际前端端口。
+    cors_origins: str = (
+        "http://localhost:5173,http://127.0.0.1:5173,"
+        "http://localhost:5174,http://127.0.0.1:5174,"
+        "http://localhost:5175,http://127.0.0.1:5175"
+    )
 
     # 统一业务时区：风险判断中的“今天”和截止时间都按该时区计算
     app_timezone: str = "Asia/Shanghai"
@@ -53,6 +59,10 @@ class Settings(BaseSettings):
     ocr_pdf_text_threshold: int = 20
     ocr_max_image_pixels: int = 20000000
     ocr_min_confidence: float = 0.5
+    # 分辨率下限是 DPI 的近似替代：低于阈值时提示屏幕截图类低质量输入，不拒绝识别。
+    # A4 @150DPI（1240×1754）不会触发，1440×900 / 1920×1080 屏幕截图会触发。
+    ocr_min_image_side: int = 1200
+    ocr_min_image_pixels: int = 1500000
 
     @property
     def base_dir(self) -> Path:

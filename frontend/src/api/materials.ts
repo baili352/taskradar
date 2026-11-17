@@ -16,10 +16,16 @@ const BASE = '/api'
 export function fetchMaterials(params: {
   matterId?: number
   status?: MaterialRecordStatus
+  /** 分页大小（1–500），不传返回全部 */
+  limit?: number
+  /** 分页偏移（≥0），仅在传 limit 时生效 */
+  offset?: number
 } = {}): Promise<MaterialRecord[]> {
   const query = new URLSearchParams()
   if (params.matterId) query.set('matter_id', String(params.matterId))
   if (params.status) query.set('status', params.status)
+  if (params.limit !== undefined) query.set('limit', String(params.limit))
+  if (params.offset !== undefined) query.set('offset', String(params.offset))
   const suffix = query.toString() ? `?${query.toString()}` : ''
   return requestJson<MaterialRecord[]>(`${BASE}/materials${suffix}`)
 }

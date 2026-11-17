@@ -193,6 +193,7 @@ TaskRadar/
 
 - 后端固定使用 `8000`。端口被占用时直接给出中文提示并退出，不会结束其他进程。
 - 前端优先 `5173`；被占用时自动改用 `5174`，仍被占用则使用 `5175`。
+- 端口回落不影响接口调用：`start.bat` 会用实际前端端口设置环境变量 `CORS_ORIGINS` 再启动后端；`backend` 的默认允许来源也已包含 `5174`、`5175`。若改为前后端直连（非 `/api` 代理），需同步 `CORS_ORIGINS`，把前端实际地址加入 `backend\.env`。
 - 实际使用的端口写入 `.run\ports.txt`（格式为 `BACKEND=8000`、`FRONTEND=5174`），该目录已加入 `.gitignore`。
 - `stop.bat` 读取该文件，先列出将结束的端口、PID 与进程名，输入 `Y` 确认后才执行 `taskkill /PID /T /F`；不会按 `uvicorn` / `node` 进程名批量结束。端口已空闲时会提示「已空闲」。若 `.run\ports.txt` 不存在（例如服务不是通过 `start.bat` 启动的），脚本只给出提示并退出，**不会按默认端口猜测并结束进程**，避免误杀其他项目。
 
@@ -409,6 +410,7 @@ Local:   http://127.0.0.1:5173/
 - PDF 页优先读取原生文本。整份 PDF 没有任何原生文本时，所有页面都作为 OCR 候选；存在原生文本时，只有非空白字符少于 `OCR_PDF_TEXT_THRESHOLD`（默认 20）且该页含图片的页面才执行 OCR。
 - 单份 PDF 需要 OCR 的页数超过 `OCR_MAX_PAGES`（默认 50）时拒绝处理，并提示拆分文档。
 - 页面按 `OCR_PDF_DPI`（默认 200）渲染；渲染后像素超过上限时提示降低 DPI 或拆分页面。
+- 图片短边低于 `OCR_MIN_IMAGE_SIDE`（默认 1200）或总像素低于 `OCR_MIN_IMAGE_PIXELS`（默认 1,500,000）时，在 `warnings` 中提示分辨率偏低，**不拒绝识别**；该阈值是 DPI 的近似替代，用于覆盖 1440×900 / 1920×1080 屏幕截图，A4 @150DPI（1240×1754）不会触发。
 - 识别结果按 `OCR_MIN_CONFIDENCE`（默认 0.5）过滤低置信度文本。
 - 部分页 OCR 失败但仍有原生文本时，保留已获得的内容，并在 `warnings` 中逐页说明；整份文档没有任何可用文本时才返回错误。
 - OCR 只产出统一的 `Segment`，后续规则提取、大模型分析与材料核验链路完全复用，不需要单独分支。
@@ -425,6 +427,8 @@ Local:   http://127.0.0.1:5173/
 | `OCR_PDF_DPI` | `200` | 扫描页渲染 DPI |
 | `OCR_PDF_TEXT_THRESHOLD` | `20` | 页面原生文本少于该字符数时视为低文本页 |
 | `OCR_MAX_IMAGE_PIXELS` | `20000000` | 单张图片或单页渲染的像素上限 |
+| `OCR_MIN_IMAGE_SIDE` | `1200` | 图片短边低于该值时提示分辨率偏低（只提示，不拒绝） |
+| `OCR_MIN_IMAGE_PIXELS` | `1500000` | 图片总像素低于该值时提示分辨率偏低（只提示，不拒绝） |
 | `OCR_MIN_CONFIDENCE` | `0.5` | 低于该置信度的识别结果被丢弃 |
 
 ### 资源上限
@@ -539,10 +543,11 @@ Local:   http://127.0.0.1:5173/
 | --- | --- | --- |
 | GET | `/api/demo/status` | 演示与正式事项、任务、材料、风险数量及初始化时间 |
 | POST | `/api/demo/seed` | 幂等初始化三份演示通知及其事项、任务、材料、风险 |
-| DELETE | `/api/demo/clear` | 只删除 `is_demo = 1` 的事项，级联清理其任务、材料、风险，并删除 `uploads/demo/` 目录 |
+| DELETE | `/api/demo/clear` | 只删除 `is_demo = 1` 的事项，级联清理其任务、材料、风险，并删除上传根目录下的 `demo/` 子目录（默认 `data/uploads/materials/demo/`） |
 
 - 初始化已存在时直接返回状态，不重复写入。
-- 演示材料文件写入上传根目录下的 `demo/` 子目录，不进入正式材料目录。
+- 演示材料文件为可直接读取的 TXT，写入上传根目录下的 `demo/` 子目录，不进入正式材料的 `matter-<id>/` 目录。
+- 清理只删除 `demo/` 子目录，正式材料目录与 `is_demo = 0` 的数据不会被触碰。
 - 演示数据不包含用户数量、节省时间、准确率等虚构指标。
 - 演示风险条数由当前风险规则计算，不是固定值。
 
@@ -620,7 +625,7 @@ Local:   http://127.0.0.1:5173/
 | 方法 | 路径 | 说明 |
 | --- | --- | --- |
 | POST | `/api/matters` | 创建并保存事项 |
-| GET | `/api/matters` | 获取事项列表 |
+| GET | `/api/matters` | 获取事项列表；支持 `limit`（1–500）与 `offset`（≥0），offset 可单独使用，缺省 limit 时返回 offset 之后的全部数据 |
 | GET | `/api/matters/{matter_id}` | 获取事项详情 |
 | PATCH | `/api/matters/{matter_id}` | 更新事项信息 |
 
@@ -630,7 +635,7 @@ Local:   http://127.0.0.1:5173/
 | --- | --- | --- |
 | POST | `/api/matters/{matter_id}/tasks` | 按事项办理流程生成任务 |
 | POST | `/api/tasks` | 手动新增任务 |
-| GET | `/api/tasks` | 查询任务列表 |
+| GET | `/api/tasks` | 查询任务列表；支持 `limit`（1–500）与 `offset`（≥0），offset 可单独使用，缺省 limit 时返回 offset 之后的全部数据 |
 | GET | `/api/tasks/{task_id}` | 查询任务详情 |
 | PATCH | `/api/tasks/{task_id}` | 修改任务 |
 | DELETE | `/api/tasks/{task_id}` | 删除任务 |
@@ -643,7 +648,7 @@ Local:   http://127.0.0.1:5173/
 | GET | `/api/matters/{matter_id}/materials` | 查询事项的材料清单 |
 | GET | `/api/matters/{matter_id}/materials/progress` | 查询事项材料准备进度 |
 | POST | `/api/matters/{matter_id}/materials` | 手动新增材料 |
-| GET | `/api/materials` | 查询材料列表 |
+| GET | `/api/materials` | 查询材料列表；支持 `limit`（1–500）与 `offset`（≥0），offset 可单独使用，缺省 limit 时返回 offset 之后的全部数据 |
 | GET | `/api/materials/{material_id}` | 查询材料详情 |
 | PATCH | `/api/materials/{material_id}` | 修改材料名称与要求说明 |
 | DELETE | `/api/materials/{material_id}` | 删除材料及其受控文件 |
@@ -748,9 +753,10 @@ Local:   http://127.0.0.1:5173/
 
 | 测试 | 日期 | 结果 | 来源 |
 | --- | --- | --- | --- |
-| 后端单元测试全量 | 2026-11-16 | 133 项通过 | 本次执行 `python -m unittest discover -s tests -v` |
+| 后端单元测试全量 | 2026-11-17 | 150 项通过 | 本次执行 `python -m unittest discover -s tests -v` |
 | 其中 AI / OCR 专项 | 2026-11-16 | 25 项通过 | `backend/tests/test_p4_ai_ocr.py` |
 | 前端类型检查与构建 | 2026-11-16 | 通过 | 本次执行 `npm run build`（`tsc --noEmit && vite build`，2131 个模块） |
+| CI 与前端单元测试 | 2026-11-17 | 本地 `npm test` 14 项通过 | `.github/workflows/ci.yml` 两个并行 job：后端 Python 3.11 跑全量 unittest；前端 Node 18/20 矩阵执行 `npm ci`、`npm run build`、`npm test`。vitest 仅覆盖纯函数：`lib/format.ts` 的文件大小与日期时间格式化、`lib/meta.ts` 的状态文案与色调映射，含空值与异常输入。 |
 | 真实场景端到端测试 | 2026-11-14 | 505 项检查，489 通过，8 失败后修复，8 项不适用 | `e2e_tests/E2E测试报告.md` |
 | 390px 适配与交互 | 2026-11-15 | 11 个页面/弹窗无横向溢出、控制台 0 错误 | `e2e_tests/第五阶段第三步_UX打磨报告.md` |
 | 界面预览截图 | 2026-11-16 | 10 张，`scrollWidth` 与视口一致、控制台 0 错误 | `docs/screenshots/` |

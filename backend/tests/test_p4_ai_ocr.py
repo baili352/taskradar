@@ -337,6 +337,41 @@ class ImageOCRTest(unittest.TestCase):
         self.assertEqual(caught.exception.code, "image_too_large")
         recognize_mock.assert_not_called()
 
+    def test_low_resolution_image_returns_warning_without_rejecting(self) -> None:
+        # 短边不足 1200 或总像素不足 1500000，均只提示、不拒绝。
+        cases = [(400, 300), (700, 700)]
+        for size in cases:
+            with self.subTest(size=size), mock.patch.object(
+                image_reader, "recognize", return_value=["报名表", "姓名：张三"]
+            ):
+                document = read_document("small.png", image_bytes(size=size), 100000)
+                self.assertTrue(document.ocr_used)
+                self.assertEqual(len(document.segments), 2)
+                self.assertEqual(
+                    document.warnings,
+                    [
+                        "图片分辨率较低，OCR 结果可能有误，"
+                        "建议使用 ≥200DPI 扫描件或清晰拍摄件"
+                    ],
+                )
+
+    def test_screen_screenshot_triggers_low_resolution_warning(self) -> None:
+        # 回归保护：1920×1080 屏幕截图短边不足阈值，必须提示但不拒绝。
+        with mock.patch.object(image_reader, "recognize", return_value=["总览", "风险提醒"]):
+            document = read_document(
+                "screen.png", image_bytes(size=(1920, 1080)), 100000
+            )
+        self.assertTrue(document.ocr_used)
+        self.assertIn("图片分辨率较低", document.warnings[0])
+        self.assertEqual(len(document.segments), 2)
+
+    def test_normal_resolution_image_has_no_warning(self) -> None:
+        with mock.patch.object(image_reader, "recognize", return_value=["报名表"]):
+            document = read_document(
+                "clear.png", image_bytes(size=(1600, 1200)), 100000
+            )
+        self.assertEqual(document.warnings, [])
+
     def test_empty_ocr_result_is_explicit_no_text(self) -> None:
         with mock.patch.object(image_reader, "recognize", return_value=[]):
             with self.assertRaises(DocumentError) as caught:

@@ -3,7 +3,7 @@
 import logging
 import sqlite3
 from datetime import datetime
-from typing import Literal
+from typing import Annotated, Literal
 
 from fastapi import APIRouter, File, HTTPException, Query, Response, UploadFile, status
 from fastapi.concurrency import run_in_threadpool
@@ -207,9 +207,16 @@ def create_manual_material(matter_id: int, payload: MaterialCreate) -> MaterialR
 def query_materials(
     matter_id: int | None = Query(default=None, ge=1),
     status_filter: MaterialStatusQuery | None = Query(default=None, alias="status"),
+    limit: Annotated[int | None, Query(ge=1, le=500, description="分页大小，不传返回全部")] = None,
+    offset: Annotated[int, Query(ge=0, description="分页偏移")] = 0,
 ) -> list[MaterialRecord]:
     try:
-        return list_materials(matter_id=matter_id, status=status_filter)
+        return list_materials(
+            matter_id=matter_id,
+            status=status_filter,
+            limit=limit,
+            offset=offset,
+        )
     except sqlite3.Error as error:
         raise _database_error("读取材料列表失败", error) from error
 

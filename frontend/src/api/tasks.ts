@@ -18,6 +18,10 @@ export type TaskQuery = {
   matterId?: number
   status?: TaskStatus
   priority?: TaskPriority
+  /** 分页大小（1–500），不传返回全部 */
+  limit?: number
+  /** 分页偏移（≥0），仅在传 limit 时生效 */
+  offset?: number
 }
 
 export function fetchTasks(query: TaskQuery = {}): Promise<TaskRecord[]> {
@@ -25,6 +29,8 @@ export function fetchTasks(query: TaskQuery = {}): Promise<TaskRecord[]> {
   if (query.matterId) params.set('matter_id', String(query.matterId))
   if (query.status) params.set('status', query.status)
   if (query.priority) params.set('priority', query.priority)
+  if (query.limit !== undefined) params.set('limit', String(query.limit))
+  if (query.offset !== undefined) params.set('offset', String(query.offset))
   const suffix = params.toString() ? `?${params.toString()}` : ''
   return requestJson<TaskRecord[]>(`/api/tasks${suffix}`)
 }

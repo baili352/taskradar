@@ -6,6 +6,7 @@ from datetime import datetime
 from typing import Any
 
 from app.db.database import get_connection
+from app.db.pagination import apply_pagination
 from app.schemas.material import (
     MaterialCreate,
     MaterialEventRecord,
@@ -150,6 +151,8 @@ def try_create_generated_material(
 def list_materials(
     matter_id: int | None = None,
     status: str | None = None,
+    limit: int | None = None,
+    offset: int = 0,
 ) -> list[dict]:
     conditions: list[str] = []
     params: list[Any] = []
@@ -161,12 +164,14 @@ def list_materials(
         params.append(status)
     where = f"WHERE {' AND '.join(conditions)}" if conditions else ""
 
+    sql = (
+        f"SELECT {_SELECT_COLUMNS} {_FROM} {where} "
+        "ORDER BY datetime(m.created_at) DESC, m.id DESC"
+    )
+    sql, params = apply_pagination(sql, params, limit, offset)
+
     with get_connection() as conn:
-        rows = conn.execute(
-            f"SELECT {_SELECT_COLUMNS} {_FROM} {where} "
-            "ORDER BY datetime(m.created_at) DESC, m.id DESC",
-            params,
-        ).fetchall()
+        rows = conn.execute(sql, params).fetchall()
     return [_row_to_material(row) for row in rows]
 
 

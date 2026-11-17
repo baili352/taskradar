@@ -78,6 +78,8 @@ if not exist "%ROOT%.run" mkdir "%ROOT%.run" >nul 2>&1
 )
 
 echo 正在启动后端（端口 %BACKEND_PORT%）...
+rem 把实际前端端口作为允许跨域来源传给后端，端口回落到 5174 / 5175 时无需改代码。
+set "CORS_ORIGINS=http://127.0.0.1:%FRONTEND_PORT%,http://localhost:%FRONTEND_PORT%"
 start "TaskRadar 后端" /D "%ROOT%backend" cmd /k ""%ROOT%backend\.venv\Scripts\python.exe" -m uvicorn app.main:app --port %BACKEND_PORT%"
 
 echo 正在启动前端（端口 %FRONTEND_PORT%）...

@@ -46,6 +46,11 @@ def read_image(filename: str, extension: str, content: bytes) -> ExtractedDocume
                     f"图片像素超过 {settings.ocr_max_image_pixels:,} 上限，请缩小后再上传。",
                     413,
                 )
+            # 分辨率偏低时只提示、不拒绝，避免挡住真实场景中的手机拍摄件。
+            low_resolution = (
+                min(width, height) < settings.ocr_min_image_side
+                or width * height < settings.ocr_min_image_pixels
+            )
             oriented = ImageOps.exif_transpose(source)
             rgb = oriented.convert("RGB")
             image = np.asarray(rgb)
@@ -68,6 +73,12 @@ def read_image(filename: str, extension: str, content: bytes) -> ExtractedDocume
         )
     validate_text_length(sum(len(line) for line in lines))
 
+    warnings: list[str] = []
+    if low_resolution:
+        warnings.append(
+            "图片分辨率较低，OCR 结果可能有误，建议使用 ≥200DPI 扫描件或清晰拍摄件"
+        )
+
     return ExtractedDocument(
         filename=filename,
         extension=extension,
@@ -78,4 +89,5 @@ def read_image(filename: str, extension: str, content: bytes) -> ExtractedDocume
         page_count=1,
         ocr_used=True,
         ocr_pages=[1],
+        warnings=warnings,
     )

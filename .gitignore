@@ -36,3 +36,7 @@ logs/
 
 # 测试与界面验证截图（本地生成，不随代码提交）
 .screenshots/
+
+# E2E 超大测试夹具（运行脚本时临时生成，不提交）
+e2e_tests/materials/oversized.txt
+e2e_tests/materials/*.generated

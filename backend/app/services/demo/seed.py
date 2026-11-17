@@ -16,7 +16,7 @@ from typing import Any
 
 from app.db.database import get_connection
 from app.schemas.dashboard import DemoStatus
-from app.services.materials.storage import get_upload_root
+from app.services.materials.storage import get_upload_root, sanitize_filename
 from app.services.risks.analyzer import analyze_risks
 from app.services.risks.dates import now_in_timezone, today_in_timezone
 
@@ -192,10 +192,11 @@ def _demo_folder() -> Path:
 def _write_demo_file(name: str, content: str) -> tuple[str, int]:
     folder = _demo_folder()
     folder.mkdir(parents=True, exist_ok=True)
-    path = folder / name
+    # 统一清理文件名，确保写入位置始终位于 demo/ 目录内，避免路径穿越。
+    path = folder / sanitize_filename(name)
     data = content.encode("utf-8")
     path.write_bytes(data)
-    return f"{DEMO_DIR_NAME}/{name}", len(data)
+    return f"{DEMO_DIR_NAME}/{path.name}", len(data)
 
 
 def _task(title: str, days: int | None, priority: str, status: str) -> dict:

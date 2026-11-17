@@ -9,6 +9,7 @@ from datetime import datetime
 from typing import Any
 
 from app.db.database import get_connection
+from app.db.pagination import apply_pagination
 from app.schemas.matter import MatterEvidence
 from app.schemas.task import TaskCreate, TaskRecord, TaskUpdate
 from app.services.risks.dates import now_in_timezone
@@ -152,6 +153,8 @@ def list_tasks(
     matter_id: int | None = None,
     status: str | None = None,
     priority: str | None = None,
+    limit: int | None = None,
+    offset: int = 0,
 ) -> list[TaskRecord]:
     conditions: list[str] = []
     params: list[Any] = []
@@ -166,12 +169,14 @@ def list_tasks(
         params.append(priority)
 
     where = f"WHERE {' AND '.join(conditions)}" if conditions else ""
+    sql = (
+        f"SELECT {_SELECT_COLUMNS} {_FROM} {where} "
+        "ORDER BY datetime(t.created_at) DESC, t.id DESC"
+    )
+    sql, params = apply_pagination(sql, params, limit, offset)
+
     with get_connection() as conn:
-        rows = conn.execute(
-            f"SELECT {_SELECT_COLUMNS} {_FROM} {where} "
-            "ORDER BY datetime(t.created_at) DESC, t.id DESC",
-            params,
-        ).fetchall()
+        rows = conn.execute(sql, params).fetchall()
 
     return [_row_to_task(row) for row in rows]
 

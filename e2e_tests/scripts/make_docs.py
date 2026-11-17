@@ -391,7 +391,7 @@ def main() -> None:
     (MATERIALS / "corrupt.docx").write_bytes(b"this is not a real docx file, test only")
     (MATERIALS / "wrong_format.xlsx").write_bytes(b"PK\x03\x04 fake xlsx test only")
     (MATERIALS / "empty.txt").write_bytes(b"")
-    (MATERIALS / "oversized.txt").write_bytes(b"A" * (10 * 1024 * 1024 + 128))
+    # 超限文件（约 10MB）不在此生成：api_e2e.py 在运行时写入系统临时目录并即时删除。
 
     (EVIDENCE / "document_manifest.json").write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8"
