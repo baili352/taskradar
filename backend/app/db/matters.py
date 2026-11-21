@@ -6,6 +6,7 @@
 
 import json
 import logging
+import sqlite3
 from datetime import datetime
 from typing import Any
 
@@ -108,8 +109,14 @@ def list_matters(
     keyword: str | None = None,
     limit: int | None = None,
     offset: int = 0,
+    *,
+    conn: sqlite3.Connection | None = None,
 ) -> list[MatterRecord]:
-    """查询事项列表，筛选与分页尽量下推到 SQL，避免无必要的全表读取。"""
+    """查询事项列表，筛选与分页尽量下推到 SQL，避免无必要的全表读取。
+
+    conn 非空时复用调用方连接，使读取与未提交的写入处于同一事务；
+    为空时自行开连接，保持既有调用方式不变。
+    """
     conditions: list[str] = []
     params: list[Any] = []
     if status:
@@ -123,8 +130,12 @@ def list_matters(
     sql = f"SELECT * FROM matters {where} ORDER BY datetime(created_at) DESC, id DESC"
     sql, params = apply_pagination(sql, params, limit, offset)
 
-    with get_connection() as conn:
+    if conn is not None:
         rows = conn.execute(sql, params).fetchall()
+        return [MatterRecord(**_row_to_dict(row)) for row in rows]
+
+    with get_connection() as own:
+        rows = own.execute(sql, params).fetchall()
     return [MatterRecord(**_row_to_dict(row)) for row in rows]
 
 

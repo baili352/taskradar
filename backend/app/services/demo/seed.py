@@ -273,9 +273,9 @@ def _insert_material(
     file_path = None
     size = None
     if row["file_text"] is not None:
-        file_path, size = _write_demo_file(
-            f"matter-{matter_id}-{row['name']}.txt", row["file_text"]
-        )
+        # 文件名只取材料名，不绑定事项 id：刷新时覆盖同名文件，
+        # 失败回滚后旧数据引用的仍是同一批文件，不会产生孤立文件。
+        file_path, size = _write_demo_file(f"{row['name']}.txt", row["file_text"])
     cursor = conn.execute(
         "INSERT INTO materials (matter_id, name, description, status, file_path, "
         "original_filename, file_size, file_type, origin, created_at, updated_at) "
@@ -303,8 +303,12 @@ def _insert_material(
 
 
 def _seed_risk_rows(conn, demo_matter_ids: set[int]) -> int:
-    """只为演示事项写入风险，不触碰正式数据的风险记录。"""
-    outcome = analyze_risks()
+    """只为演示事项写入风险，不触碰正式数据的风险记录。
+
+    风险候选必须用同一个连接读取，才能看到本事务中尚未提交的演示事项、
+    任务与材料；改由其他连接读取会因提交可见性而拿不到刚写入的数据。
+    """
+    outcome = analyze_risks(conn=conn)
     now = _now()
     inserted = 0
     for candidate in outcome.candidates:
@@ -409,7 +413,7 @@ def get_demo_status() -> DemoStatus:
 def _prune_unreferenced_demo_files() -> None:
     """删除 demo/ 下已不再被材料记录引用的文件。
 
-    刷新后旧文件名带有旧事项 id，写入新数据后这些文件不再被引用。
+    成功后清理历史版本遗留的、或材料清单变化后不再引用的文件。
     只遍历 demo/ 的直接子文件，不递归，也不会触碰该目录之外的路径。
     """
     folder = _demo_folder()
@@ -434,9 +438,10 @@ def seed_demo_data(refresh: bool = False) -> DemoStatus:
     """初始化演示数据。
 
     - refresh=False：保持幂等语义，已存在演示数据时直接返回，不重复写入；
-    - refresh=True：在与写入相同的事务内删除 is_demo = 1 的事项（任务、材料、
-      风险由外键级联删除），再按调用当天重新计算日期写入；插入失败整体回滚，
-      不会留下半套数据。
+    - refresh=True：在同一事务内删除 is_demo = 1 的事项（任务、材料、
+      风险由外键级联删除）并按调用当天重新计算日期写入；事项、任务、材料、
+      风险与历史状态共用同一连接，整个刷新只提交一次，任一步失败都整体回滚，
+      刷新前的旧演示数据原样保留，不做额外清理。
     """
     status = get_demo_status()
     if status.seeded and not refresh:
@@ -518,19 +523,13 @@ def seed_demo_data(refresh: bool = False) -> DemoStatus:
             now,
         )
 
-    risk_count = 0
-    try:
-        with get_connection() as conn:
-            conn.execute("BEGIN IMMEDIATE")
-            risk_count = _seed_risk_rows(conn, demo_matter_ids)
-            _mark_demo_history(conn, activity_id)
-    except Exception:
-        # 风险阶段失败时不留半套数据：连同刚写入的事项一起清理后再抛出。
-        clear_demo_data()
-        raise
+        # 风险与历史状态在同一事务内写入：整个 refresh 只提交一次，
+        # 任一步失败都整体回滚，刷新前的旧演示数据原样保留。
+        risk_count = _seed_risk_rows(conn, demo_matter_ids)
+        _mark_demo_history(conn, activity_id)
 
     if replaced:
-        # 旧文件名带旧事项 id，已不再被引用，删除这些残留文件。
+        # 只在事务提交成功后清理不再被引用的历史文件。
         _prune_unreferenced_demo_files()
 
     logger.info(

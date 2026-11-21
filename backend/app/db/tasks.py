@@ -5,6 +5,7 @@
 
 import json
 import logging
+import sqlite3
 from datetime import datetime
 from typing import Any
 
@@ -155,6 +156,8 @@ def list_tasks(
     priority: str | None = None,
     limit: int | None = None,
     offset: int = 0,
+    *,
+    conn: sqlite3.Connection | None = None,
 ) -> list[TaskRecord]:
     conditions: list[str] = []
     params: list[Any] = []
@@ -175,8 +178,12 @@ def list_tasks(
     )
     sql, params = apply_pagination(sql, params, limit, offset)
 
-    with get_connection() as conn:
+    if conn is not None:
         rows = conn.execute(sql, params).fetchall()
+        return [_row_to_task(row) for row in rows]
+
+    with get_connection() as own:
+        rows = own.execute(sql, params).fetchall()
 
     return [_row_to_task(row) for row in rows]
 

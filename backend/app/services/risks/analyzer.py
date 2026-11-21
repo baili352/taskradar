@@ -4,6 +4,7 @@
 风险事件按“风险类型 + 关联对象”生成稳定指纹，由数据层负责去重与状态恢复。
 """
 
+import sqlite3
 from collections import defaultdict
 from dataclasses import dataclass, field
 from datetime import date, datetime
@@ -133,14 +134,19 @@ def _format_days(value: int | None) -> str:
     return f"{abs(value)} 天"
 
 
-def analyze_risks() -> AnalysisOutcome:
+def analyze_risks(conn: sqlite3.Connection | None = None) -> AnalysisOutcome:
+    """计算风险候选。
+
+    conn 非空时所有读取都走该连接，调用方可在同一事务内看到尚未提交的写入；
+    为空时各读取函数自行开连接，保持原有行为。
+    """
     tz_name = get_timezone_name()
     moment = now_in_timezone()
     today = today_in_timezone()
 
-    matters = list_matters()
-    tasks = list_tasks()
-    materials = list_materials()
+    matters = list_matters(conn=conn)
+    tasks = list_tasks(conn=conn)
+    materials = list_materials(conn=conn)
 
     matter_names = {matter.id: matter.name for matter in matters}
     matter_statuses = {matter.id: matter.status for matter in matters}

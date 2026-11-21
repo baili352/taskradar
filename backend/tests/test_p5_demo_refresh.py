@@ -4,7 +4,8 @@
 - 已初始化时普通 seed 保持幂等，数量、截止日期与初始化时间都不变；
 - refresh=True 会清空重建，三个演示事项的截止日期按调用当天重新计算；
 - 刷新前后正式数据（is_demo = 0）的事项、任务、材料、风险与材料文件完全不变；
-- 刷新后 demo/ 目录只保留当前被引用的文件。
+- 刷新后 demo/ 目录只保留当前被引用的文件；
+- 风险阶段失败时整体回滚，刷新前的演示数据与 demo/ 文件原样保留。
 
 所有数据库与上传目录均位于系统临时目录，不读写真实业务数据。
 运行方式：在 backend 目录执行
@@ -238,6 +239,42 @@ class DemoRefreshTest(unittest.TestCase):
             ).fetchone()
         self.assertIsNotNone(row)
         self.assertEqual(int(row["is_demo"]), 0)
+
+    def test_refresh_failure_rolls_back_and_keeps_old_demo_data(self) -> None:
+        """风险阶段失败时不得清空旧演示数据，也不得留下孤立文件。"""
+        seed_demo_data()
+        matters_before = [
+            (row["id"], row["name"], row["deadline"], row["created_at"])
+            for row in self._demo_matters()
+        ]
+        counts_before = self._demo_counts()
+        folder = get_upload_root() / DEMO_DIR_NAME
+        files_before = {path.name for path in folder.iterdir()}
+
+        with mock.patch(
+            "app.services.demo.seed._seed_risk_rows",
+            side_effect=RuntimeError("模拟风险写入失败"),
+        ):
+            with self.assertRaises(RuntimeError):
+                seed_demo_data(refresh=True)
+
+        rows_after = self._demo_matters()
+        self.assertEqual(len(rows_after), 3, "刷新失败后演示事项数量必须保持不变")
+        self.assertEqual(
+            [
+                (row["id"], row["name"], row["deadline"], row["created_at"])
+                for row in rows_after
+            ],
+            matters_before,
+            "刷新失败后演示事项、截止日期与创建时间必须与刷新前完全一致",
+        )
+        self.assertEqual(self._demo_counts(), counts_before, "演示任务、材料、风险应整体回滚")
+
+        self.assertEqual(
+            {path.name for path in folder.iterdir()},
+            files_before,
+            "刷新失败后 demo/ 不应新增未被引用的孤立文件",
+        )
 
 
 if __name__ == "__main__":
