@@ -98,4 +98,6 @@ class DemoStatus(BaseModel):
     risks: int = 0
     real_matters: int = 0
     seeded_at: str | None = None
+    # 本次调用是否清空并重建了已有演示数据（refresh=true 且此前已初始化）。
+    refreshed: bool = False
     message: str = ""

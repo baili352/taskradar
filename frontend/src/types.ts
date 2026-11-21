@@ -520,6 +520,7 @@ export type DemoStatus = {
   risks: number
   real_matters: number
   seeded_at: string | null
+  refreshed: boolean
   message: string
 }
 

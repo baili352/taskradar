@@ -7,7 +7,7 @@
 import logging
 import sqlite3
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Query
 
 from app.schemas.dashboard import DemoStatus
 from app.services.demo.seed import clear_demo_data, get_demo_status, seed_demo_data
@@ -42,9 +42,14 @@ def query_demo_status() -> DemoStatus:
     response_model=DemoStatus,
     summary="一键初始化演示数据（不影响正式数据）",
 )
-def seed_demo() -> DemoStatus:
+def seed_demo(
+    refresh: bool = Query(
+        False,
+        description="为 true 时先清理已有演示数据并按当天重新计算日期后再写入",
+    ),
+) -> DemoStatus:
     try:
-        return seed_demo_data()
+        return seed_demo_data(refresh=refresh)
     except sqlite3.Error as error:
         raise _database_error("初始化演示数据失败", error) from error
 

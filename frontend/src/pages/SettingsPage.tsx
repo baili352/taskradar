@@ -12,7 +12,7 @@ import {
   ShieldCheck,
   Trash2,
 } from 'lucide-react'
-import { clearDemoData, fetchDemoStatus, seedDemoData } from '../api/demo'
+import { clearDemoData, fetchDemoStatus, refreshDemoData, seedDemoData } from '../api/demo'
 import { fetchAnalysisCapabilities, testAIConnection } from '../api/analysis'
 import { riskErrorMessage } from '../api/risks'
 import { Badge } from '../components/ui/Badge'
@@ -34,6 +34,7 @@ export function SettingsPage() {
   const [demoBusy, setDemoBusy] = useState(false)
   const [demoError, setDemoError] = useState('')
   const [confirmClear, setConfirmClear] = useState(false)
+  const [confirmRefresh, setConfirmRefresh] = useState(false)
   const [capabilities, setCapabilities] = useState<AnalysisCapabilities | null>(null)
   const [capabilityError, setCapabilityError] = useState('')
   const [aiTesting, setAiTesting] = useState(false)
@@ -74,6 +75,21 @@ export function SettingsPage() {
       )
     } catch (reason) {
       setDemoError(riskErrorMessage(reason, '初始化演示数据失败，请稍后重试。'))
+    } finally {
+      setDemoBusy(false)
+    }
+  }
+
+  const handleRefresh = async () => {
+    setDemoBusy(true)
+    setDemoError('')
+    try {
+      const status = await refreshDemoData()
+      setDemoStatus(status)
+      setConfirmRefresh(false)
+      showToast('演示数据已按今天重新计算，正式数据未受影响。', 'success')
+    } catch (reason) {
+      setDemoError(riskErrorMessage(reason, '刷新演示数据失败，请稍后重试。'))
     } finally {
       setDemoBusy(false)
     }
@@ -439,6 +455,31 @@ export function SettingsPage() {
             <div className="setting-row">
               <div className="setting-info">
                 <span className="setting-icon">
+                  <RefreshCw size={17} />
+                </span>
+                <div>
+                  <strong>刷新演示数据</strong>
+                  <p>
+                    清空并按今天重新计算演示数据的所有截止日期，避免演示前日期漂移；
+                    不影响正式数据，也不需要先清理再初始化。
+                  </p>
+                </div>
+              </div>
+              <div className="setting-action">
+                <Button
+                  variant="secondary"
+                  size="sm"
+                  onClick={() => setConfirmRefresh(true)}
+                  disabled={demoBusy || demoStatus?.seeded !== true}
+                >
+                  刷新演示数据
+                </Button>
+              </div>
+            </div>
+
+            <div className="setting-row">
+              <div className="setting-info">
+                <span className="setting-icon">
                   <Trash2 size={17} />
                 </span>
                 <div>
@@ -473,6 +514,34 @@ export function SettingsPage() {
           </p>
         </div>
       </div>
+
+      <Modal
+        open={confirmRefresh}
+        title="确认刷新演示数据？"
+        description="会按今天重新计算所有截止日期，不影响正式数据。"
+        onClose={() => {
+          if (!demoBusy) setConfirmRefresh(false)
+        }}
+        footer={
+          <>
+            <Button
+              variant="secondary"
+              onClick={() => setConfirmRefresh(false)}
+              disabled={demoBusy}
+            >
+              取消
+            </Button>
+            <Button variant="primary" onClick={() => void handleRefresh()} disabled={demoBusy}>
+              {demoBusy ? '正在刷新…' : '确认刷新演示数据'}
+            </Button>
+          </>
+        }
+      >
+        <p className="muted-note">
+          会先删除当前的 {demoStatus?.matters ?? 0} 个演示事项及其任务、材料与风险，
+          再按今天重新写入同一套演示数据。截止日期会重新计算，正式数据与正式材料文件不受影响。
+        </p>
+      </Modal>
 
       <Modal
         open={confirmClear}

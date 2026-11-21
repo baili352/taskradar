@@ -406,11 +406,42 @@ def get_demo_status() -> DemoStatus:
     )
 
 
-def seed_demo_data() -> DemoStatus:
-    """幂等初始化：已存在演示数据时直接返回状态，不重复插入。"""
+def _prune_unreferenced_demo_files() -> None:
+    """删除 demo/ 下已不再被材料记录引用的文件。
+
+    刷新后旧文件名带有旧事项 id，写入新数据后这些文件不再被引用。
+    只遍历 demo/ 的直接子文件，不递归，也不会触碰该目录之外的路径。
+    """
+    folder = _demo_folder()
+    if not folder.is_dir():
+        return
+    with get_connection() as conn:
+        rows = conn.execute(
+            "SELECT file_path FROM materials WHERE file_path LIKE ?",
+            (f"{DEMO_DIR_NAME}/%",),
+        ).fetchall()
+    referenced = {Path(row["file_path"]).name for row in rows if row["file_path"]}
+    for path in folder.iterdir():
+        if not path.is_file() or path.name in referenced:
+            continue
+        try:
+            path.unlink()
+        except OSError:
+            logger.warning("删除演示残留文件失败：%s", path.name)
+
+
+def seed_demo_data(refresh: bool = False) -> DemoStatus:
+    """初始化演示数据。
+
+    - refresh=False：保持幂等语义，已存在演示数据时直接返回，不重复写入；
+    - refresh=True：在与写入相同的事务内删除 is_demo = 1 的事项（任务、材料、
+      风险由外键级联删除），再按调用当天重新计算日期写入；插入失败整体回滚，
+      不会留下半套数据。
+    """
     status = get_demo_status()
-    if status.seeded:
+    if status.seeded and not refresh:
         return status
+    replaced = status.seeded
 
     matters = _build_matters()
     now = _now()
@@ -418,6 +449,9 @@ def seed_demo_data() -> DemoStatus:
 
     with get_connection() as conn:
         conn.execute("BEGIN IMMEDIATE")
+        if replaced:
+            # 复用清理语义：只删除演示事项，正式数据不参与。
+            conn.execute("DELETE FROM matters WHERE is_demo = 1")
         activity_id = _insert_matter(conn, matters[0], now)
         contest_id = _insert_matter(conn, matters[1], now)
         recruit_id = _insert_matter(conn, matters[2], now)
@@ -485,13 +519,29 @@ def seed_demo_data() -> DemoStatus:
         )
 
     risk_count = 0
-    with get_connection() as conn:
-        conn.execute("BEGIN IMMEDIATE")
-        risk_count = _seed_risk_rows(conn, demo_matter_ids)
-        _mark_demo_history(conn, activity_id)
+    try:
+        with get_connection() as conn:
+            conn.execute("BEGIN IMMEDIATE")
+            risk_count = _seed_risk_rows(conn, demo_matter_ids)
+            _mark_demo_history(conn, activity_id)
+    except Exception:
+        # 风险阶段失败时不留半套数据：连同刚写入的事项一起清理后再抛出。
+        clear_demo_data()
+        raise
 
-    logger.info("演示数据初始化完成：%s 个事项，%s 条风险", len(demo_matter_ids), risk_count)
-    return get_demo_status()
+    if replaced:
+        # 旧文件名带旧事项 id，已不再被引用，删除这些残留文件。
+        _prune_unreferenced_demo_files()
+
+    logger.info(
+        "演示数据%s完成：%s 个事项，%s 条风险",
+        "刷新" if replaced else "初始化",
+        len(demo_matter_ids),
+        risk_count,
+    )
+    result = get_demo_status()
+    result.refreshed = replaced
+    return result
 
 
 def clear_demo_data() -> tuple[DemoStatus, int]:
