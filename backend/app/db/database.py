@@ -9,6 +9,7 @@
 
 import logging
 import sqlite3
+import threading
 from contextlib import contextmanager, closing
 from collections.abc import Iterator
 from datetime import datetime
@@ -19,6 +20,10 @@ from app.core.config import settings
 logger = logging.getLogger(__name__)
 
 SCHEMA_VERSION = 6
+
+# journal_mode 切换需要独占锁且不走 busy 等待；并发首次连接时用锁串行化，
+# 避免两个线程同时切换抛出 database is locked。
+_PRAGMA_LOCK = threading.Lock()
 
 _MATTERS_TABLE_SQL = """
 CREATE TABLE IF NOT EXISTS matters (
@@ -161,12 +166,22 @@ def get_database_path() -> Path:
 
 @contextmanager
 def get_connection() -> Iterator[sqlite3.Connection]:
-    """提供带行工厂的连接，退出时提交并关闭。"""
+    """提供带行工厂的连接，退出时提交并关闭。
+
+    WAL 模式下读不阻塞写，最近提交的数据可能仍在 -wal 文件中，
+    因此备份必须走 SQLite Backup API，不能直接复制 .db 文件。
+    """
     conn = sqlite3.connect(get_database_path(), timeout=10)
     conn.row_factory = sqlite3.Row
-    # 开启外键约束，避免产生指向不存在事项的任务。
-    conn.execute("PRAGMA foreign_keys = ON")
     try:
+        # 开启外键约束，避免产生指向不存在事项的任务。
+        conn.execute("PRAGMA foreign_keys = ON")
+        # 并发读写与崩溃安全：WAL 提升读写并发，NORMAL 在 WAL 下足够安全；
+        # busy_timeout 让并发写入排队等待，而不是立刻抛 database is locked。
+        with _PRAGMA_LOCK:
+            conn.execute("PRAGMA journal_mode = WAL")
+        conn.execute("PRAGMA synchronous = NORMAL")
+        conn.execute("PRAGMA busy_timeout = 10000")
         yield conn
         conn.commit()
     except Exception:

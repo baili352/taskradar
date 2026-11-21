@@ -260,9 +260,10 @@ export function SettingsPage() {
                 当前版本没有云端同步，业务数据不会同步到云端，也没有多用户与权限管理：能访问本机文件的人都可以直接读取数据库与上传目录。
               </p>
               <p>
-                当前版本不提供自动备份。需要留存数据时，请自行复制
+                当前版本不提供自动备份。需要留存数据时，请先停止后端服务，用 SQLite 备份工具导出
                 <code>backend/data/taskradar.db</code>
-                与 <code>backend/data/uploads/materials</code> 目录。
+                （不要直接复制 .db 文件，WAL 模式下可能丢数据），并复制
+                <code>backend/data/uploads/materials</code> 目录。
               </p>
               <p>
                 智能分析在配置模型后可调用大模型，失败时回退到本地规则；材料核验始终只依据文件文本与材料要求原文给出规则线索。
@@ -356,8 +357,9 @@ export function SettingsPage() {
                 <div>
                   <strong>导出数据</strong>
                   <p>
-                    当前版本未提供应用内导出功能。数据以 SQLite 文件和上传目录形式保存在本机，
-                    可直接复制上述路径进行留存。
+                    当前版本未提供应用内导出功能。数据以 SQLite 文件与上传目录形式保存在本机；
+                    数据库请用 SQLite 备份工具导出（WAL 模式下不要直接复制 .db），
+                    上传目录可直接复制留存。
                   </p>
                 </div>
               </div>
@@ -376,7 +378,9 @@ export function SettingsPage() {
                 <div>
                   <strong>数据备份</strong>
                   <p>
-                    当前版本没有自动备份。请在停止后端服务后，自行复制数据库文件与上传目录；
+                    当前版本没有自动备份。请在停止后端服务后，用 SQLite 备份工具导出
+                    <code>backend/data/taskradar.db</code>
+                    （不要直接复制 .db 文件，WAL 模式下可能丢数据），并复制上传目录；
                     页面刷新不会清空或重置任何业务数据。
                   </p>
                 </div>

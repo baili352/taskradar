@@ -46,6 +46,7 @@ TaskRadar/
 │  │  │  └─ config.py                读取 .env 的配置中心
 │  │  ├─ db/
 │  │  │  ├─ __init__.py
+│  │  │  ├─ backup.py                 SQLite Backup API 备份（兼容 WAL）
 │  │  │  ├─ dashboard.py             总览统计 SQL 聚合
 │  │  │  ├─ database.py              建表、迁移、备份与连通性检查
 │  │  │  ├─ materials.py             材料与操作记录读写
@@ -712,13 +713,24 @@ Local:   http://127.0.0.1:5173/
 
 ## 十九、备份与恢复
 
-1. 停止后端，避免写入。
-2. 复制数据库：`backend/data/taskradar.db`。
+> **不要直接复制 `backend/data/taskradar.db`。** 数据库运行在 WAL 模式，最近已提交的写入可能只保存在 `taskradar.db-wal` 中，直接复制 `.db` 会静默丢失这部分数据。
+
+1. 停止后端，避免备份过程中继续写入。
+2. 用 SQLite Backup API 导出数据库（由引擎合并主库与 WAL，无需手工处理 `-wal` / `-shm`）：
+
+   ```powershell
+   cd backend
+   .\.venv\Scripts\python.exe -c "from app.db.backup import backup_database; backup_database(r'D:\backup\taskradar.db')"
+   ```
+
+   也可以在自己的脚本中调用 `backup_database(target_path)` 或 `sqlite3.Connection.backup()`，效果相同。
 3. 复制上传目录：`backend/data/uploads/`（保留 `materials/matter-{id}` 与 `demo` 子目录结构）。
-4. 恢复时将数据库与上传目录放回原位，再启动后端。
+4. 恢复时将备份数据库与上传目录放回原位，再启动后端。
 5. `init_database()` 只做增量建表与迁移，不会覆盖已有记录。
 
-迁移前自动备份位于 `backend/data/migration_backups/`，文件名包含原版本、目标版本与时间戳。回退时可用备份覆盖当前数据库。
+迁移前自动备份位于 `backend/data/migration_backups/`，文件名包含原版本、目标版本与时间戳；该备份同样使用 Backup API。回退时可用备份覆盖当前数据库。
+
+`.gitignore` 已忽略 `backend/data/` 与 `*.db` / `*.db-wal` / `*.db-shm`，WAL 临时文件不会被提交。
 
 ---
 
@@ -755,7 +767,7 @@ Local:   http://127.0.0.1:5173/
 
 | 测试 | 日期 | 结果 | 来源 |
 | --- | --- | --- | --- |
-| 后端单元测试全量 | 2026-11-21 | 156 项通过 | 本次执行 `python -m unittest discover -s tests -v` |
+| 后端单元测试全量 | 2026-11-21 | 159 项通过 | 本次执行 `python -m unittest discover -s tests -v` |
 | 其中 AI / OCR 专项 | 2026-11-16 | 25 项通过 | `backend/tests/test_p4_ai_ocr.py` |
 | 前端类型检查与构建 | 2026-11-16 | 通过 | 本次执行 `npm run build`（`tsc --noEmit && vite build`，2131 个模块） |
 | CI 与前端单元测试 | 2026-11-17 | 本地 `npm test` 14 项通过 | `.github/workflows/ci.yml` 两个并行 job：后端 Python 3.11 跑全量 unittest；前端 Node 18/20 矩阵执行 `npm ci`、`npm run build`、`npm test`。vitest 仅覆盖纯函数：`lib/format.ts` 的文件大小与日期时间格式化、`lib/meta.ts` 的状态文案与色调映射，含空值与异常输入。 |
