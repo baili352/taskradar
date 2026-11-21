@@ -441,7 +441,9 @@ def seed_demo_data(refresh: bool = False) -> DemoStatus:
     - refresh=True：在同一事务内删除 is_demo = 1 的事项（任务、材料、
       风险由外键级联删除）并按调用当天重新计算日期写入；事项、任务、材料、
       风险与历史状态共用同一连接，整个刷新只提交一次，任一步失败都整体回滚，
-      刷新前的旧演示数据原样保留，不做额外清理。
+      刷新前的旧演示数据原样保留。
+    - 材料文件在事务之外写入，失败回滚后会尽力删除本次新增且未被引用的文件；
+      文件系统不具备事务语义，该清理为 best-effort。
     """
     status = get_demo_status()
     if status.seeded and not refresh:
@@ -452,81 +454,92 @@ def seed_demo_data(refresh: bool = False) -> DemoStatus:
     now = _now()
     demo_matter_ids: set[int] = set()
 
-    with get_connection() as conn:
-        conn.execute("BEGIN IMMEDIATE")
-        if replaced:
-            # 复用清理语义：只删除演示事项，正式数据不参与。
-            conn.execute("DELETE FROM matters WHERE is_demo = 1")
-        activity_id = _insert_matter(conn, matters[0], now)
-        contest_id = _insert_matter(conn, matters[1], now)
-        recruit_id = _insert_matter(conn, matters[2], now)
-        demo_matter_ids = {activity_id, contest_id, recruit_id}
+    try:
+        with get_connection() as conn:
+            conn.execute("BEGIN IMMEDIATE")
+            if replaced:
+                # 复用清理语义：只删除演示事项，正式数据不参与。
+                conn.execute("DELETE FROM matters WHERE is_demo = 1")
+            activity_id = _insert_matter(conn, matters[0], now)
+            contest_id = _insert_matter(conn, matters[1], now)
+            recruit_id = _insert_matter(conn, matters[2], now)
+            demo_matter_ids = {activity_id, contest_id, recruit_id}
 
-        # 事项一：活动通知
-        _insert_task(conn, activity_id, _task("提交志愿者报名表", 3, "high", "pending"))
-        _insert_task(conn, activity_id, _task("参加岗前培训", 6, "medium", "pending"))
-        _insert_task(conn, activity_id, _task("确认活动物资清单", None, "low", "pending"))
-        _insert_task(conn, activity_id, _task("领取志愿者证", None, "low", "done"))
-        _insert_material(conn, activity_id, _material_row("志愿者报名表", "需本人签字", "missing", None), now)
-        _insert_material(
-            conn,
-            activity_id,
-            _material_row("志愿服务承诺书", "需本人签字", "pending", "本人自愿参加校园开放日志愿服务活动，并遵守相关安排。"),
-            now,
-        )
-        _insert_material(
-            conn,
-            activity_id,
-            _material_row("培训签到表", "岗前培训现场签到", "qualified", "岗前培训签到表：姓名 张同学，签到时间 09:00。"),
-            now,
-        )
-        _insert_material(
-            conn,
-            activity_id,
-            _material_row("活动安全预案", "由活动负责人提交", "uncertain", "安全预案内容待补充，现场疏散路线未写明。"),
-            now,
-        )
+            # 事项一：活动通知
+            _insert_task(conn, activity_id, _task("提交志愿者报名表", 3, "high", "pending"))
+            _insert_task(conn, activity_id, _task("参加岗前培训", 6, "medium", "pending"))
+            _insert_task(conn, activity_id, _task("确认活动物资清单", None, "low", "pending"))
+            _insert_task(conn, activity_id, _task("领取志愿者证", None, "low", "done"))
+            _insert_material(conn, activity_id, _material_row("志愿者报名表", "需本人签字", "missing", None), now)
+            _insert_material(
+                conn,
+                activity_id,
+                _material_row("志愿服务承诺书", "需本人签字", "pending", "本人自愿参加校园开放日志愿服务活动，并遵守相关安排。"),
+                now,
+            )
+            _insert_material(
+                conn,
+                activity_id,
+                _material_row("培训签到表", "岗前培训现场签到", "qualified", "岗前培训签到表：姓名 张同学，签到时间 09:00。"),
+                now,
+            )
+            _insert_material(
+                conn,
+                activity_id,
+                _material_row("活动安全预案", "由活动负责人提交", "uncertain", "安全预案内容待补充，现场疏散路线未写明。"),
+                now,
+            )
 
-        # 事项二：竞赛通知（含逾期）
-        _insert_task(conn, contest_id, _task("提交作品终稿", -2, "high", "pending"))
-        _insert_task(conn, contest_id, _task("完成报名缴费", -1, "high", "pending"))
-        _insert_task(conn, contest_id, _task("组队信息确认", None, "medium", "done"))
-        _insert_material(
-            conn,
-            contest_id,
-            _material_row("参赛报名表", "需全部成员签字", "conflict", "参赛报名表：团队人数 4 人，成员名单与系统登记不一致。"),
-            now,
-        )
-        _insert_material(
-            conn,
-            contest_id,
-            _material_row("项目作品说明书", "不超过 20 页", "qualified", "项目作品说明书，共 16 页，含项目简介与实施计划。"),
-            now,
-        )
-        _insert_material(conn, contest_id, _material_row("指导教师推荐信", "需教师签字", "missing", None), now)
+            # 事项二：竞赛通知（含逾期）
+            _insert_task(conn, contest_id, _task("提交作品终稿", -2, "high", "pending"))
+            _insert_task(conn, contest_id, _task("完成报名缴费", -1, "high", "pending"))
+            _insert_task(conn, contest_id, _task("组队信息确认", None, "medium", "done"))
+            _insert_material(
+                conn,
+                contest_id,
+                _material_row("参赛报名表", "需全部成员签字", "conflict", "参赛报名表：团队人数 4 人，成员名单与系统登记不一致。"),
+                now,
+            )
+            _insert_material(
+                conn,
+                contest_id,
+                _material_row("项目作品说明书", "不超过 20 页", "qualified", "项目作品说明书，共 16 页，含项目简介与实施计划。"),
+                now,
+            )
+            _insert_material(conn, contest_id, _material_row("指导教师推荐信", "需教师签字", "missing", None), now)
 
-        # 事项三：招聘通知
-        _insert_task(conn, recruit_id, _task("在线投递简历", 5, "medium", "pending"))
-        _insert_task(conn, recruit_id, _task("准备面试材料", 18, "low", "pending"))
-        _insert_task(conn, recruit_id, _task("参加招聘宣讲会", None, "low", "pending"))
-        _insert_material(conn, recruit_id, _material_row("个人简历", "需附近期照片", "missing", None), now)
-        _insert_material(
-            conn,
-            recruit_id,
-            _material_row("学历学位证书", "需扫描件", "pending", "学历证书扫描件：本科，专业为公共管理。"),
-            now,
-        )
-        _insert_material(
-            conn,
-            recruit_id,
-            _material_row("身份证复印件", "正反面复印", "incomplete", "身份证复印件：仅提供正面，缺少反面。"),
-            now,
-        )
+            # 事项三：招聘通知
+            _insert_task(conn, recruit_id, _task("在线投递简历", 5, "medium", "pending"))
+            _insert_task(conn, recruit_id, _task("准备面试材料", 18, "low", "pending"))
+            _insert_task(conn, recruit_id, _task("参加招聘宣讲会", None, "low", "pending"))
+            _insert_material(conn, recruit_id, _material_row("个人简历", "需附近期照片", "missing", None), now)
+            _insert_material(
+                conn,
+                recruit_id,
+                _material_row("学历学位证书", "需扫描件", "pending", "学历证书扫描件：本科，专业为公共管理。"),
+                now,
+            )
+            _insert_material(
+                conn,
+                recruit_id,
+                _material_row("身份证复印件", "正反面复印", "incomplete", "身份证复印件：仅提供正面，缺少反面。"),
+                now,
+            )
 
-        # 风险与历史状态在同一事务内写入：整个 refresh 只提交一次，
-        # 任一步失败都整体回滚，刷新前的旧演示数据原样保留。
-        risk_count = _seed_risk_rows(conn, demo_matter_ids)
-        _mark_demo_history(conn, activity_id)
+            # 风险与历史状态在同一事务内写入：整个 refresh 只提交一次，
+            # 任一步失败都整体回滚，刷新前的旧演示数据原样保留。
+            risk_count = _seed_risk_rows(conn, demo_matter_ids)
+            _mark_demo_history(conn, activity_id)
+    except Exception:
+        # 回滚已由 get_connection 完成，数据库恢复为刷新前的引用；
+        # 本次事务内新写入、且不被旧数据引用的文件在此刻判定为未引用，
+        # 做 best-effort 清理。文件系统不在事务内，该清理失败只记日志，
+        # 不得覆盖原始异常。
+        try:
+            _prune_unreferenced_demo_files()
+        except Exception:
+            logger.warning("刷新失败后清理演示残留文件出错，已忽略", exc_info=True)
+        raise
 
     if replaced:
         # 只在事务提交成功后清理不再被引用的历史文件。

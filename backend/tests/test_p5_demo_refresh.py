@@ -5,7 +5,9 @@
 - refresh=True 会清空重建，三个演示事项的截止日期按调用当天重新计算；
 - 刷新前后正式数据（is_demo = 0）的事项、任务、材料、风险与材料文件完全不变；
 - 刷新后 demo/ 目录只保留当前被引用的文件；
-- 风险阶段失败时整体回滚，刷新前的演示数据与 demo/ 文件原样保留。
+- 风险阶段失败时整体回滚，刷新前的演示数据与 demo/ 文件原样保留；
+- 旧命名（`matter-<事项id>-<材料名>.txt`）前置状态下刷新失败，demo/ 不新增文件；
+- 首次初始化（库中无演示数据）失败时，demo/ 不残留任何文件。
 
 所有数据库与上传目录均位于系统临时目录，不读写真实业务数据。
 运行方式：在 backend 目录执行
@@ -156,6 +158,27 @@ class DemoRefreshTest(unittest.TestCase):
             "file_bytes": Path(stored).read_bytes(),
         }
 
+    def _rename_demo_files_to_legacy(self) -> None:
+        """把演示材料文件改成历史版本的 matter-<事项id>-<材料名>.txt 命名。
+
+        模拟「旧命名迁移」这一真实前置状态：数据库引用与磁盘文件同为旧文件名。
+        """
+        folder = get_upload_root() / DEMO_DIR_NAME
+        with database.get_connection() as conn:
+            rows = conn.execute(
+                "SELECT ma.id, ma.matter_id, ma.name, ma.file_path FROM materials ma "
+                "JOIN matters m ON m.id = ma.matter_id "
+                "WHERE m.is_demo = 1 AND ma.file_path IS NOT NULL"
+            ).fetchall()
+            for row in rows:
+                current = folder / Path(row["file_path"]).name
+                legacy_name = f"matter-{row['matter_id']}-{row['name']}.txt"
+                current.rename(folder / legacy_name)
+                conn.execute(
+                    "UPDATE materials SET file_path = ? WHERE id = ?",
+                    (f"{DEMO_DIR_NAME}/{legacy_name}", row["id"]),
+                )
+
     # ---- 用例 -----------------------------------------------------------
 
     def test_seed_without_refresh_keeps_demo_data(self) -> None:
@@ -274,6 +297,66 @@ class DemoRefreshTest(unittest.TestCase):
             {path.name for path in folder.iterdir()},
             files_before,
             "刷新失败后 demo/ 不应新增未被引用的孤立文件",
+        )
+
+    def test_refresh_failure_with_legacy_filenames_keeps_files(self) -> None:
+        """旧命名前置状态：刷新失败后 demo/ 文件集合与失败前完全一致。"""
+        seed_demo_data()
+        self._rename_demo_files_to_legacy()
+
+        matters_before = [
+            (row["id"], row["name"], row["deadline"], row["created_at"])
+            for row in self._demo_matters()
+        ]
+        counts_before = self._demo_counts()
+        folder = get_upload_root() / DEMO_DIR_NAME
+        files_before = {path.name for path in folder.iterdir()}
+        self.assertEqual(len(files_before), 7, "前置状态应为 7 个旧命名演示文件")
+
+        with mock.patch(
+            "app.services.demo.seed._seed_risk_rows",
+            side_effect=RuntimeError("模拟风险写入失败"),
+        ):
+            with self.assertRaises(RuntimeError):
+                seed_demo_data(refresh=True)
+
+        rows_after = self._demo_matters()
+        self.assertEqual(len(rows_after), 3)
+        self.assertEqual(
+            [
+                (row["id"], row["name"], row["deadline"], row["created_at"])
+                for row in rows_after
+            ],
+            matters_before,
+            "刷新失败后演示事项与截止日期必须回滚为刷新前状态",
+        )
+        self.assertEqual(self._demo_counts(), counts_before)
+        self.assertEqual(
+            {path.name for path in folder.iterdir()},
+            files_before,
+            "失败回滚后不得残留本次新写入的文件",
+        )
+
+    def test_first_seed_failure_leaves_no_demo_files(self) -> None:
+        """首次初始化（库中无演示数据）失败时，demo/ 不得残留任何文件。"""
+        self.assertEqual(
+            self._demo_counts()["matters"], 0, "前置状态应为空库，无演示数据"
+        )
+
+        with mock.patch(
+            "app.services.demo.seed._seed_risk_rows",
+            side_effect=RuntimeError("模拟首次初始化失败"),
+        ):
+            with self.assertRaises(RuntimeError):
+                seed_demo_data()
+
+        self.assertEqual(
+            self._demo_counts()["matters"], 0, "失败后不应留下任何演示事项"
+        )
+        folder = get_upload_root() / DEMO_DIR_NAME
+        files = {path.name for path in folder.iterdir()} if folder.exists() else set()
+        self.assertEqual(
+            files, set(), "首次初始化失败后 demo/ 不得残留本次写入的文件"
         )
 
 
