@@ -6,11 +6,12 @@
 
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI
+from fastapi import Depends, FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.routes import (
     analysis,
+    auth,
     dashboard,
     demo,
     health,
@@ -21,6 +22,7 @@ from app.api.routes import (
 )
 from app.core.config import settings
 from app.db.database import init_database
+from app.services.auth import require_auth
 
 
 @asynccontextmanager
@@ -46,13 +48,18 @@ app.add_middleware(
 )
 
 app.include_router(health.router, prefix=settings.api_prefix)
-app.include_router(dashboard.router, prefix=settings.api_prefix)
-app.include_router(demo.router, prefix=settings.api_prefix)
-app.include_router(analysis.router, prefix=settings.api_prefix)
-app.include_router(matters.router, prefix=settings.api_prefix)
-app.include_router(tasks.router, prefix=settings.api_prefix)
-app.include_router(materials.router, prefix=settings.api_prefix)
-app.include_router(risks.router, prefix=settings.api_prefix)
+app.include_router(auth.router, prefix=settings.api_prefix)
+
+# 业务接口统一挂载登录校验：AUTH_ENABLED=false 时依赖直接放行，
+# 因此本地开发与既有测试不受影响。
+_protected = [Depends(require_auth)]
+app.include_router(dashboard.router, prefix=settings.api_prefix, dependencies=_protected)
+app.include_router(demo.router, prefix=settings.api_prefix, dependencies=_protected)
+app.include_router(analysis.router, prefix=settings.api_prefix, dependencies=_protected)
+app.include_router(matters.router, prefix=settings.api_prefix, dependencies=_protected)
+app.include_router(tasks.router, prefix=settings.api_prefix, dependencies=_protected)
+app.include_router(materials.router, prefix=settings.api_prefix, dependencies=_protected)
+app.include_router(risks.router, prefix=settings.api_prefix, dependencies=_protected)
 
 
 @app.get("/", tags=["系统"], summary="服务信息")

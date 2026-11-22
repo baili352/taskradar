@@ -789,7 +789,7 @@ cloudflared tunnel --url http://127.0.0.1:5174
 
 | 测试 | 日期 | 结果 | 来源 |
 | --- | --- | --- | --- |
-| 后端单元测试全量 | 2026-11-21 | 159 项通过 | 本次执行 `python -m unittest discover -s tests -v` |
+| 后端单元测试全量 | 2026-11-22 | 167 项通过 | 本次执行 `python -m unittest discover -s tests -v` |
 | 其中 AI / OCR 专项 | 2026-11-16 | 25 项通过 | `backend/tests/test_p4_ai_ocr.py` |
 | 前端类型检查与构建 | 2026-11-16 | 通过 | 本次执行 `npm run build`（`tsc --noEmit && vite build`，2131 个模块） |
 | CI 与前端单元测试 | 2026-11-17 | 本地 `npm test` 14 项通过 | `.github/workflows/ci.yml` 两个并行 job：后端 Python 3.11 跑全量 unittest；前端 Node 18/20 矩阵执行 `npm ci`、`npm run build`、`npm test`。vitest 仅覆盖纯函数：`lib/format.ts` 的文件大小与日期时间格式化、`lib/meta.ts` 的状态文案与色调映射，含空值与异常输入。 |

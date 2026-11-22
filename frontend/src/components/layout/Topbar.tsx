@@ -1,4 +1,5 @@
-import { Menu } from 'lucide-react'
+import { LogOut, Menu } from 'lucide-react'
+import type { AuthUser } from '../../api/auth'
 import { getNavItem } from '../../config/navigation'
 import type { RouteKey } from '../../hooks/useHashRoute'
 import { useSystemHealth } from '../../hooks/useSystemHealth'
@@ -7,9 +8,11 @@ type TopbarProps = {
   current: RouteKey
   onMenu: () => void
   onNavigate: (key: RouteKey) => void
+  user?: AuthUser | null
+  onLogout?: () => void
 }
 
-export function Topbar({ current, onMenu, onNavigate }: TopbarProps) {
+export function Topbar({ current, onMenu, onNavigate, user, onLogout }: TopbarProps) {
   const { data, loading, error } = useSystemHealth()
   const online = data?.status === 'ok'
   const nav = getNavItem(current)
@@ -39,13 +42,34 @@ export function Topbar({ current, onMenu, onNavigate }: TopbarProps) {
           <span className="dot" />
           {statusText}
         </button>
-        <div className="user-chip">
-          <span className="avatar">体</span>
-          <div className="user-meta">
-            <strong>体验用户</strong>
-            <small>演示账号</small>
+        {user ? (
+          <div className="user-chip">
+            <span className="avatar">{user.username.slice(0, 1).toUpperCase()}</span>
+            <div className="user-meta">
+              <strong>{user.username}</strong>
+              <small>已登录</small>
+            </div>
+            {onLogout && (
+              <button
+                type="button"
+                className="icon-btn logout-btn"
+                onClick={onLogout}
+                title="退出登录"
+                aria-label="退出登录"
+              >
+                <LogOut size={16} />
+              </button>
+            )}
           </div>
-        </div>
+        ) : (
+          <div className="user-chip">
+            <span className="avatar">体</span>
+            <div className="user-meta">
+              <strong>体验用户</strong>
+              <small>演示账号</small>
+            </div>
+          </div>
+        )}
       </div>
     </header>
   )

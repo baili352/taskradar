@@ -124,7 +124,7 @@ class MigrationAtomicityTest(unittest.TestCase):
         _create_schema4_copy(self.db_path)
         database.init_database()
 
-        self.assertEqual(_schema_version(self.db_path), "6")
+        self.assertEqual(_schema_version(self.db_path), "7")
         self.assertIn("deadline_source", _matter_columns(self.db_path))
         with closing(sqlite3.connect(self.db_path)) as conn:
             rows = conn.execute(
@@ -151,7 +151,7 @@ class MigrationAtomicityTest(unittest.TestCase):
         # 再次启动及字段已存在时应幂等，不重复备份或回填。
         database.init_database()
         self.assertEqual(len(self._backups()), 1)
-        self.assertEqual(_schema_version(self.db_path), "6")
+        self.assertEqual(_schema_version(self.db_path), "7")
         with closing(sqlite3.connect(self.db_path)) as conn:
             self.assertEqual(
                 conn.execute("SELECT COUNT(*) FROM matters").fetchone()[0], 3
@@ -182,7 +182,7 @@ class MigrationAtomicityTest(unittest.TestCase):
 
         # 故障修复后再次启动可从原状态完整迁移。
         database.init_database()
-        self.assertEqual(_schema_version(self.db_path), "6")
+        self.assertEqual(_schema_version(self.db_path), "7")
         self.assertIn("deadline_source", _matter_columns(self.db_path))
         with closing(sqlite3.connect(self.db_path)) as conn:
             self.assertEqual(
@@ -207,7 +207,7 @@ class MigrationAtomicityTest(unittest.TestCase):
 
         database.init_database()
 
-        self.assertEqual(_schema_version(self.db_path), "6")
+        self.assertEqual(_schema_version(self.db_path), "7")
         self.assertEqual(self._backups(), [])
         with closing(sqlite3.connect(self.db_path)) as conn:
             after = conn.execute(

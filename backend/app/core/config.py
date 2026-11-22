@@ -22,6 +22,12 @@ class Settings(BaseSettings):
     app_version: str = "0.1.0"
     app_env: str = "development"
 
+    # 登录注册：默认关闭，避免本地开发与现有测试被登录拦住。
+    # 部署时设置 AUTH_ENABLED=true 与 AUTH_INVITE_CODE 后生效。
+    auth_enabled: bool = False
+    auth_invite_code: str = ""
+    auth_session_days: int = 7
+
     host: str = "127.0.0.1"
     port: int = 8000
     api_prefix: str = "/api"

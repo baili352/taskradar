@@ -15,7 +15,7 @@ ENV PYTHONUNBUFFERED=1 \
 
 # opencv 需要 libGL/libglib，onnxruntime 需要 libgomp，缺一个启动即崩
 RUN apt-get update && apt-get install -y --no-install-recommends \
-        nginx curl libgl1 libglib2.0-0 libgomp1 \
+        nginx curl openssl libgl1 libglib2.0-0 libgomp1 \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app

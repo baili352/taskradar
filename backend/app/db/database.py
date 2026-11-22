@@ -19,7 +19,7 @@ from app.core.config import settings
 
 logger = logging.getLogger(__name__)
 
-SCHEMA_VERSION = 6
+SCHEMA_VERSION = 7
 
 # journal_mode 切换需要独占锁且不走 busy 等待；并发首次连接时用锁串行化，
 # 避免两个线程同时切换抛出 database is locked。
@@ -153,6 +153,31 @@ _RISKS_INDEX_SQL = (
     "CREATE INDEX IF NOT EXISTS idx_risks_matter ON risks (matter_id)",
     "CREATE INDEX IF NOT EXISTS idx_risks_task ON risks (task_id)",
     "CREATE INDEX IF NOT EXISTS idx_risks_material ON risks (material_id)",
+)
+
+# schema_version 7：登录注册。用户与登录会话独立于业务数据，
+# 不改变事项/任务/材料/风险的归属与查询。
+_USERS_TABLE_SQL = """
+CREATE TABLE IF NOT EXISTS users (
+    id            INTEGER PRIMARY KEY AUTOINCREMENT,
+    username      TEXT NOT NULL UNIQUE COLLATE NOCASE,
+    password_hash TEXT NOT NULL,
+    created_at    TEXT NOT NULL
+)
+"""
+
+_SESSIONS_TABLE_SQL = """
+CREATE TABLE IF NOT EXISTS sessions (
+    token_hash TEXT PRIMARY KEY,
+    user_id    INTEGER NOT NULL REFERENCES users (id) ON DELETE CASCADE,
+    created_at TEXT NOT NULL,
+    expires_at TEXT NOT NULL
+)
+"""
+
+_SESSIONS_INDEX_SQL = (
+    "CREATE INDEX IF NOT EXISTS idx_sessions_user ON sessions (user_id)",
+    "CREATE INDEX IF NOT EXISTS idx_sessions_expires ON sessions (expires_at)",
 )
 
 
@@ -353,6 +378,12 @@ def init_database() -> None:
             _ensure_matter_demo_flag(conn)
             conn.execute(_RISKS_TABLE_SQL)
             for statement in _RISKS_INDEX_SQL:
+                conn.execute(statement)
+
+            # schema_version 6 -> 7：登录注册所需的用户与会话表。
+            conn.execute(_USERS_TABLE_SQL)
+            conn.execute(_SESSIONS_TABLE_SQL)
+            for statement in _SESSIONS_INDEX_SQL:
                 conn.execute(statement)
 
             if previous_version != SCHEMA_VERSION:
