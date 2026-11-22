@@ -11,6 +11,9 @@ dist-ssr/
 *.local
 *.tsbuildinfo
 
+# 临时演示链接（内网穿透地址，不提交）
+demo-link.txt
+
 # 数据库文件
 *.db
 *.db-journal

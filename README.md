@@ -245,6 +245,28 @@ Local:   http://127.0.0.1:5173/
 
 浏览器打开 <http://127.0.0.1:5173> 即可。
 
+### 远程演示（公网临时访问）
+
+`npm run dev` 的 dev server 仅供开发；公网演示使用构建产物，避免暴露源码与热更新连接。
+
+```powershell
+cd frontend
+npm run build
+npm run demo:preview
+```
+
+`demo:preview` 等价于 `vite preview --host 0.0.0.0 --port 5174 --strictPort`，由 `dist/` 提供服务，并复用 `server.proxy` 把 `/api` 转发到 `http://127.0.0.1:8000`。`vite.config.ts` 已把 `.trycloudflare.com` 写入 `server.allowedHosts` 与 `preview.allowedHosts`，隧道域名无需临时配置即可访问。
+
+需要公网访问时，另开终端建隧道（只隧道前端端口，不要隧道 8000）：
+
+```powershell
+cloudflared tunnel --url http://127.0.0.1:5174
+```
+
+终端会输出 `https://<随机子域名>.trycloudflare.com`。该地址对任何拿到链接的人公开，系统当前无鉴权；演示结束按 `Ctrl+C` 关闭隧道，链接立即失效。
+
+> 临时隧道地址不要写进 README，也不要提交，避免评委点到死链。
+
 ---
 
 ## 七、如何判断项目已成功运行

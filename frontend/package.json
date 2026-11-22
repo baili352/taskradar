@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "test": "vitest run",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "demo:preview": "vite preview --host 0.0.0.0 --port 5174 --strictPort"
   },
   "dependencies": {
     "lucide-react": "^1.72.0",
