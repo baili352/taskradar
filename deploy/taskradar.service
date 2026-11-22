@@ -1,0 +1,24 @@
+# TaskRadar 后端服务单元
+# 放置位置：/etc/systemd/system/taskradar.service
+# 启用：systemctl daemon-reload && systemctl enable --now taskradar
+
+[Unit]
+Description=TaskRadar AI API (FastAPI)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=taskradar
+Group=taskradar
+WorkingDirectory=/opt/taskradar/backend
+EnvironmentFile=/opt/taskradar/backend/.env
+# SQLite 写入串行化，固定单 worker；对外只监听本机，由 Nginx 转发
+ExecStart=/opt/taskradar/backend/.venv/bin/python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
+Restart=always
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
